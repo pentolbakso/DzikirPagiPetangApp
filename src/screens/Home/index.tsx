@@ -1,10 +1,11 @@
 import * as React from 'react';
 import {Text, View} from 'react-native';
+import {TextBold} from '../../components/Text';
 
 const HomeScreen = () => {
   return (
     <View>
-      <Text>This is home!</Text>
+      <TextBold>This is home!</TextBold>
     </View>
   );
 };
