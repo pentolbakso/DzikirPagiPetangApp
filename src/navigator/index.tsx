@@ -3,6 +3,7 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import HomeScreen from '../screens/Home';
 import AboutScreen from '../screens/About';
+import DzikirScreen from '../screens/Dzikir';
 
 const Stack = createStackNavigator();
 
@@ -15,7 +16,7 @@ const Navigator = () => {
             // backgroundColor: '#fff',
           },
           headerTintColor: '#333',
-          headerShown: true,
+          headerShown: false,
           headerBackTitleVisible: false,
         }}>
         <Stack.Screen
@@ -24,7 +25,12 @@ const Navigator = () => {
           options={{headerTitle: 'Home'}}
         />
         <Stack.Screen
-          name="Browse"
+          name="Dzikir"
+          component={DzikirScreen}
+          options={{headerTitle: 'Dzikir'}}
+        />
+        <Stack.Screen
+          name="About"
           component={AboutScreen}
           options={{headerTitle: 'About'}}
         />
