@@ -31,6 +31,7 @@ const Content = ({item}: {item: Dzikir}) => {
       <TextRegular>{tarjimArr.join(',')}</TextRegular> */}
       {arabicArr.map((it, idx) => (
         <View
+          key={idx}
           style={{
             paddingVertical: 10,
             borderBottomWidth: 1,

@@ -1,6 +1,4 @@
 export type Dzikir = {
-  id: number;
-  key: string;
   arabic: string;
   arabic_latin: string;
   faedah: string;

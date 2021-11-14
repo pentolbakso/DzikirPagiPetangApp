@@ -77,7 +77,7 @@ const HomeScreen = () => {
           gradientColor2="#00223E"
           onPress={() => navigation.navigate('Dzikir', {time: 'pagi'})}
         />
-        <View style={{height: 5, backgroundColor: '#fff'}} />
+        <View style={{height: 2, backgroundColor: '#fff'}} />
         <BigMenu
           subtitle="Dzikir"
           title="Petang"
@@ -86,8 +86,8 @@ const HomeScreen = () => {
           gradientColor2="#C06C84"
           onPress={() => navigation.navigate('Dzikir', {time: 'petang'})}
         />
-        <View style={{height: 5, backgroundColor: '#fff'}} />
-        <BigMenu
+        {/* <View style={{height: 2, backgroundColor: '#fff'}} /> */}
+        {/* <BigMenu
           subtitle="Dzikir"
           title="Setelah Sholat Fardhu"
           titleSize={26}
@@ -95,7 +95,7 @@ const HomeScreen = () => {
           gradientColor1="#3a7bd5"
           gradientColor2="#3a6073"
           onPress={() => navigation.navigate('Dzikir', {time: 'petang'})}
-        />
+        /> */}
       </ScrollView>
     </SafeAreaView>
   );

@@ -2,8 +2,6 @@ import { Dzikir } from "../types";
 
 export const dzikirDb: Array<Dzikir> = [
   {
-    id: 1,
-    key: '1',
     arabic:
       'اللَّهُ لاَ إِلَهَ إِلاَّ هُوَ الْحَيُّ الْقَيُّومُ| لاَ تَأْخُذُهُ سِنَةٌ وَلاَ نَوْمٌ| لَهُ مَا فِي السَّمَاوَاتِ وَمَا فِي الْأَرْضِ| مَنْ ذَا الَّذِي يَشْفَعُ عِنْدَهُ إِلاَّ بِإِذْنِهِ| يَعْلَمُ مَا بَيْنَ أَيْدِيهِمْ وَمَا خَلْفَهُمْ| وَلَا يُحِيطُونَ بِشَيْءٍ مِنْ عِلْمِهِ إِلاَّ بِمَا شَاءَ| وَسِعَ كُرْسِيُّهُ السَّمَاوَاتِ وَالْأَرْضَ| وَلَا يَئُودُهُ حِفْظُهُمَا| وَهُوَ الْعَلِيُّ الْعَظِيمُ',
     arabic_latin: '',
@@ -18,24 +16,48 @@ export const dzikirDb: Array<Dzikir> = [
     from_quran: true
   },
   {
-    id: 2,
-    key: '2',
     arabic:
-      'بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ\nقُلْ هُوَ اللَّهُ أَحَدٌ . اللَّهُ الصَّمَدُ . لَمْ يَلِدْ وَلَمْ يُولَدْ . وَلَمْ يَكُن لَّهُ كُفُوًا أَحَدٌ@بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِقُلْ أَعُوذُ بِرَبِّ الْفَلَقِ . مِن شَرِّ مَا خَلَقَ . وَمِن شَرِّ غَاسِقٍ إِذَا وَقَبَ . وَمِن شَرِّ النَّفَّاثَاتِ فِي الْعُقَدِ . وَمِن شَرِّ حَاسِدٍ إِذَا حَسَدَ@بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِقُلْ أَعُوذُ بِرَبِّ النَّاسِ . مَلِكِ النَّاسِ . إِلَهِ النَّاسِ . مِن شَرِّ الْوَسْوَاسِ الْخَنَّاسِ . الَّذِي يُوَسْوِسُ فِي صُدُورِ النَّاسِ . مِنَ الْجِنَّةِ وَ النَّاسِ',
+      'بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ|قُلْ هُوَ اللَّهُ أَحَدٌ| اللَّهُ الصَّمَدُ| لَمْ يَلِدْ وَلَمْ يُولَدْ| وَلَمْ يَكُن لَّهُ كُفُوًا أَحَدٌ',
     arabic_latin: '',
     faedah:
       'Siapa yang mengucapkannya masing-masing tiga kali ketika pagi dan petang, maka segala sesuatu akan dicukupkan untuknya. [HR. Abu Daud no. 5082, Tirmidzi no. 3575. Al Hafizh Abu Thohir mengatakan bahwa sanad hadits ini hasan]',
-    narrator: 'Q.S. Al Ikhlas: 1-4@Q.S. Al Falaq: 1-5@QS. An Naas: 1-6',
-    note: '@ Dibaca 3x',
-    title: 'Surah Al-Ikhlas, Al-Falaq dan An-Nas',
+    narrator: 'Q.S. Al Ikhlas: 1-4',
+    note: 'Dibaca 3x',
+    title: 'Surah Al-Ikhlas',
     translated_id:
-      'Dengan menyebut nama Allah Yang Maha Pengasih lagi Maha Penyayang. Katakanlah: Dialah Allah, Yang Maha Esa. Allah adalah ilah yang bergantung kepada-Nya segala urusan. Dia tidak beranak dan tiada pula diperanakkan, dan tidak ada seorang pun yang setara dengan Dia.@Dengan menyebut nama Allah Yang Maha Pengasih lagi Maha Penyayang. Katakanlah: Aku berlindung kepada Rabb yang menguasai Shubuh, dari kejahatan makhluk-Nya, dan dari kejahatan malam apabila telah gelap gulita, dan dari kejahatan-kejahatan wanita tukang sihir yang menghembus pada buhul-buhul, dan dari kejahatan orang yang dengki apabila ia dengki.@Dengan menyebut nama Allah Yang Maha Pengasih lagi Maha Penyayang. Katakanlah: Aku berlindung kepada Rabb manusia. Raja manusia. Sembahan manusia, dari kejahatan (bisikan) syaitan yang biasa bersembunyi, yang membisikkan (kejahatan) ke dalam dada manusia, dari jin dan manusia.',
+      'Dengan menyebut nama Allah Yang Maha Pengasih lagi Maha Penyayang.| Katakanlah: Dialah Allah, Yang Maha Esa.| Allah adalah ilah yang bergantung kepada-Nya segala urusan.| Dia tidak beranak dan tiada pula diperanakkan, dan tidak ada seorang pun yang setara dengan Dia.',
     time: '',
     from_quran: true
   },
   {
-    id: 3,
-    key: '3',
+    arabic:
+      'بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ|قُلْ أَعُوذُ بِرَبِّ الْفَلَقِ| مِن شَرِّ مَا خَلَقَ| وَمِن شَرِّ غَاسِقٍ إِذَا وَقَبَ| وَمِن شَرِّ النَّفَّاثَاتِ فِي الْعُقَدِ| وَمِن شَرِّ حَاسِدٍ إِذَا حَسَدَ',
+    arabic_latin: '',
+    faedah:
+      'Siapa yang mengucapkannya masing-masing tiga kali ketika pagi dan petang, maka segala sesuatu akan dicukupkan untuknya. [HR. Abu Daud no. 5082, Tirmidzi no. 3575. Al Hafizh Abu Thohir mengatakan bahwa sanad hadits ini hasan]',
+    narrator: 'Q.S. Al Falaq: 1-5',
+    note: 'Dibaca 3x',
+    title: 'Surah Al-Falaq',
+    translated_id:
+      'Dengan menyebut nama Allah Yang Maha Pengasih lagi Maha Penyayang.| Katakanlah: Aku berlindung kepada Rabb yang menguasai Shubuh,| dari kejahatan makhluk-Nya,| dan dari kejahatan malam apabila telah gelap gulita,| dan dari kejahatan-kejahatan wanita tukang sihir yang menghembus pada buhul-buhul,| dan dari kejahatan orang yang dengki apabila ia dengki.',
+    time: '',
+    from_quran: true
+  },
+  {
+    arabic:
+      'بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ|قُلْ أَعُوذُ بِرَبِّ النَّاسِ| مَلِكِ النَّاسِ| إِلَهِ النَّاسِ| مِن شَرِّ الْوَسْوَاسِ الْخَنَّاسِ| الَّذِي يُوَسْوِسُ فِي صُدُورِ النَّاسِ| مِنَ الْجِنَّةِ وَ النَّاسِ',
+    arabic_latin: '',
+    faedah:
+      'Siapa yang mengucapkannya masing-masing tiga kali ketika pagi dan petang, maka segala sesuatu akan dicukupkan untuknya. [HR. Abu Daud no. 5082, Tirmidzi no. 3575. Al Hafizh Abu Thohir mengatakan bahwa sanad hadits ini hasan]',
+    narrator: 'QS. An Naas: 1-6',
+    note: 'Dibaca 3x',
+    title: 'Surah An-Nas',
+    translated_id:
+      'Dengan menyebut nama Allah Yang Maha Pengasih lagi Maha Penyayang.| Katakanlah: Aku berlindung kepada Rabb manusia.| Raja manusia.| Sembahan manusia,| dari kejahatan (bisikan) syaitan yang biasa bersembunyi,| yang membisikkan (kejahatan) ke dalam dada manusia, dari jin dan manusia.',
+    time: '',
+    from_quran: true
+  },
+  {
     arabic:
       'أَصْبَحْنَا وَأَصْبَحَ الْمُلْكُ لِلَّهِ| وَالْحَمْدُ لِلَّهِ| لاَ إِلَـهَ إِلاَّ اللهُ وَحْدَهُ لاَ شَرِيْكَ لَهُ| لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ| وَهُوَ عَلَى كُلِّ شَيْءٍ قَدِيْرُ| رَبِّ أَسْأَلُكَ خَيْرَ مَا فِيْ هَذَا الْيَوْمِ وَخَيْرَ مَا بَعْدَهُ| وَأَعُوْذُ بِكَ مِنْ شَرِّ مَا فِيْ هَذَا الْيَوْمِ وَشَرِّ مَا بَعْدَهُ| رَبِّ أَعُوْذُ بِكَ مِنَ الْكَسَلِ وَسُوْءِ الْكِبَرِ| رَبِّ أَعُوْذُ بِكَ مِنْ عَذَابٍ فِي النَّارِ وَعَذَابٍ فِي الْقَبْرِ',
     arabic_latin:
@@ -50,8 +72,6 @@ export const dzikirDb: Array<Dzikir> = [
     time: 'pagi',
   },
   {
-    id: 4,
-    key: '4',
     arabic:
       'أَمْسَيْنَا وَأَمْسَى الْمُلْكُ للهِ| وَالْحَمْدُ للهِ| لَا إِلَهَ إِلاَّ اللهُ وَحْدَهُ لاَ شَرِيكَ لَهُ| لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ| وَهُوَ عَلَى كُلِّ شَيْءٍ قَدِيرٌ| رَبِّ أَسْأَلُكَ خَيْرَ مَا فِي هَذِهِ اللَّيْلَةِ وَخَيْرَ مَا بَعْدَهَا| وَأَعُوذُبِكَ مِنْ شَرِّ مَا فِي هَذِهِ اللَّيْلَةِ وَشَرِّ مَا بَعْدَهَا| رَبِّ أَعُوذُبِكَ مِنَ الْكَسَلِ وَسُوءِ الْكِبَرِ| رَبِّ أَعُوذُبِكَ مِنْ عَذَابٍ فِي النَّارِ وَعَذَابٍ فِي الْقَبْرِ',
     arabic_latin:
@@ -66,8 +86,6 @@ export const dzikirDb: Array<Dzikir> = [
     time: 'petang',
   },
   {
-    id: 5,
-    key: '5',
     arabic:
       'اَللَّهُمَّ بِكَ أَصْبَحْنَا| وَبِكَ أَمْسَيْنَا| وَبِكَ نَحْيَا وَبِكَ نَمُوْتُ| وَإِلَيْكَ النُّشُوْرُ',
     arabic_latin:
@@ -82,8 +100,6 @@ export const dzikirDb: Array<Dzikir> = [
     time: 'pagi',
   },
   {
-    id: 6,
-    key: '6',
     arabic:
       'اللَّهُمَّ بِكَ أَمْسَيْنَا| وَبِكَ أَصْبَحْنَا|وَبِكَ نَحْيَا وَبِكَ نَمُوتُ| وَإِلَيْكَ الْمَصِيْرُ',
     arabic_latin:
@@ -98,8 +114,6 @@ export const dzikirDb: Array<Dzikir> = [
     time: 'petang',
   },
   {
-    id: 7,
-    key: '7',
     arabic:
       'اَللَّهُمَّ أَنْتَ رَبِّيْ لاَ إِلَـهَ إِلاَّ أَنْتَ| خَلَقْتَنِيْ وَأَنَا عَبْدُكَ| وَأَنَا عَلَى عَهْدِكَ وَوَعْدِكَ مَا اسْتَطَعْتُ| أَعُوْذُ بِكَ مِنْ شَرِّ مَا صَنَعْتُ| أَبُوْءُ لَكَ بِنِعْمَتِكَ عَلَيَّ وَأَبُوْءُ بِذَنْبِيْ| فَاغْفِرْ لِيْ فَإِنَّهُ لاَ يَغْفِرُ الذُّنُوْبَ إِلاَّ أَنْتَ.',
     arabic_latin:
@@ -114,8 +128,6 @@ export const dzikirDb: Array<Dzikir> = [
     time: '',
   },
   {
-    id: 10,
-    key: '10',
     arabic:
       'اَللَّهُمَّ إِنِّيْ أَسْأَلُكَ الْعَفْوَ وَالْعَافِيَةَ فِي الدُّنْيَا وَاْلآخِرَةِ| اَللَّهُمَّ إِنِّيْ أَسْأَلُكَ الْعَفْوَ وَالْعَافِيَةَ فِي دِيْنِيْ وَدُنْيَايَ وَأَهْلِيْ وَمَالِيْ| اللَّهُمَّ اسْتُرْ عَوْرَاتِى وَآمِنْ رَوْعَاتِى| اَللَّهُمَّ احْفَظْنِيْ مِنْ بَيْنِ يَدَيَّ وَمِنْ خَلْفِيْ وَعَنْ يَمِيْنِيْ وَعَنْ شِمَالِيْ وَمِنْ فَوْقِيْ| وَأَعُوْذُ بِعَظَمَتِكَ أَنْ أُغْتَالَ مِنْ تَحْتِيْ',
     arabic_latin:
@@ -130,8 +142,6 @@ export const dzikirDb: Array<Dzikir> = [
     time: '',
   },
   {
-    id: 11,
-    key: '11',
     arabic:
       'اَللَّهُمَّ عَالِمَ الْغَيْبِ وَالشَّهَادَةِ فَاطِرَ السَّمَاوَاتِ وَاْلأَرْضِ| رَبَّ كُلِّ شَيْءٍ وَمَلِيْكَهُ| أَشْهَدُ أَنْ لاَ إِلَـهَ إِلاَّ أَنْتَ| أَعُوْذُ بِكَ مِنْ شَرِّ نَفْسِيْ وَمِنْ شَرِّ الشَّيْطَانِ وَشِرْكِهِ| وَأَنْ أَقْتَرِفَ عَلَى نَفْسِيْ سُوْءًا أَوْ أَجُرَّهُ إِلَى مُسْلِمٍ',
     arabic_latin:
@@ -146,8 +156,6 @@ export const dzikirDb: Array<Dzikir> = [
     time: '',
   },
   {
-    id: 12,
-    key: '12',
     arabic:
       'بِسْمِ اللَّهِ الَّذِى لاَ يَضُرُّ مَعَ اسْمِهِ شَىْءٌ فِى الأَرْضِ وَلاَ فِى السَّمَاءِ| وَهُوَ السَّمِيعُ الْعَلِيمُ',
     arabic_latin:
@@ -162,8 +170,6 @@ export const dzikirDb: Array<Dzikir> = [
     time: '',
   },
   {
-    id: 13,
-    key: '13',
     arabic:
       'رَضِيْتُ بِاللهِ رَبًّا| وَبِاْلإِسْلاَمِ دِيْنًا| وَبِمُحَمَّدٍ صَلَّى اللهُ عَلَيْهِ وَسَلَّمَ نَبِيًّا',
     arabic_latin:
@@ -178,8 +184,6 @@ export const dzikirDb: Array<Dzikir> = [
     time: '',
   },
   {
-    id: 14,
-    key: '14',
     arabic:
       'يَا حَيُّ يَا قَيُّوْمُ بِرَحْمَتِكَ أَسْتَغِيْثُ| وَأَصْلِحْ لِيْ شَأْنِيْ كُلَّهُ| وَلاَ تَكِلْنِيْ إِلَى نَفْسِيْ طَرْفَةَ عَيْنٍ أَبَدًا',
     arabic_latin:
@@ -194,8 +198,6 @@ export const dzikirDb: Array<Dzikir> = [
     time: '',
   },
   {
-    id: 15,
-    key: '15',
     arabic:
       'أَصْبَحْنَا عَلَى فِطْرَةِ اْلإِسْلاَمِ وَعَلَى كَلِمَةِ اْلإِخْلاَصِ| وَعَلَى دِيْنِ نَبِيِّنَا مُحَمَّدٍ صَلَّى اللهُ عَلَيْهِ وَسَلَّمَ| وَعَلَى مِلَّةِ أَبِيْنَا إِبْرَاهِيْمَ حَنِيْفًا مُسْلِمًا وَمَا كَانَ مِنَ الْمُشْرِكِيْنَ',
     arabic_latin:
@@ -210,8 +212,6 @@ export const dzikirDb: Array<Dzikir> = [
     time: 'pagi',
   },
   {
-    id: 16,
-    key: '16',
     arabic: 'سُبْحَانَ اللهِ وَبِحَمْدِهِ',
     arabic_latin: 'Subhanallahi wa bi-hamdih.',
     faedah:
@@ -220,11 +220,9 @@ export const dzikirDb: Array<Dzikir> = [
     note: 'Dibaca 100x',
     title: 'Dzikir Ringan Namun Berat di Timbangan',
     translated_id: 'Maha suci Allah, aku memuji-Nya.',
-    time: '',
+    time: ''
   },
   {
-    id: 17,
-    key: '17',
     arabic:
       'لاَ إِلَـهَ إِلاَّ اللهُ وَحْدَهُ لاَ شَرِيْكَ لَهُ| لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ وَهُوَ عَلَى كُلِّ شَيْءٍ قَدِيْرُ',
     arabic_latin:
@@ -239,8 +237,6 @@ export const dzikirDb: Array<Dzikir> = [
     time: '',
   },
   {
-    id: 18,
-    key: '18',
     arabic:
       'سُبْحَانَ اللهِ وَبِحَمْدِهِ| عَدَدَ خَلْقِهِ| وَرِضَا نَفْسِهِ| وَزِنَةَ عَرْشِهِ| وَمِدَادَ كَلِمَاتِهِ',
     arabic_latin:
@@ -255,8 +251,6 @@ export const dzikirDb: Array<Dzikir> = [
     time: 'pagi',
   },
   {
-    id: 19,
-    key: '19',
     arabic:
       'اَللَّهُمَّ إِنِّيْ أَسْأَلُكَ عِلْمًا نَافِعًا| وَرِزْقًا طَيِّبًا| وَعَمَلاً مُتَقَبَّلاً',
     arabic_latin:
@@ -271,8 +265,6 @@ export const dzikirDb: Array<Dzikir> = [
     time: 'pagi',
   },
   {
-    id: 20,
-    key: '20',
     arabic: 'أَسْتَغْفِرُ اللهَ وَأَتُوْبُ إِلَيْهِ',
     arabic_latin: 'Astagh-firullah wa atuubu ilaih.',
     faedah: '',
@@ -283,8 +275,6 @@ export const dzikirDb: Array<Dzikir> = [
     time: 'pagi',
   },
   {
-    id: 21,
-    key: '21',
     arabic:
       'أَعُوْذُ بِكَلِمَاتِ اللهِ التَّامَّاتِ مِنْ شَرِّ مَا خَلَقَ',
     arabic_latin: 'A’udzu bikalimaatillahit-taammaati min syarri maa kholaq.',
