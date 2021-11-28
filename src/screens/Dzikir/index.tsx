@@ -1,12 +1,6 @@
 import {useNavigation, useRoute} from '@react-navigation/native';
 import * as React from 'react';
-import {
-  Animated,
-  Pressable,
-  StyleSheet,
-  Text,
-  useWindowDimensions,
-} from 'react-native';
+import {Animated, Pressable, Text} from 'react-native';
 import {View} from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import PagerView from 'react-native-pager-view';
@@ -15,7 +9,6 @@ import {
   TextBold,
   TextLight,
   TextRegular,
-  TextSemiBold,
 } from '../../components/Text';
 import {dzikirDb} from '../../services/db';
 import {Dzikir} from '../../types';
@@ -24,11 +17,20 @@ import Icon from 'react-native-vector-icons/Feather';
 import * as Progress from 'react-native-progress';
 import {Colors} from '../../colors';
 import MenuDrawer from 'react-native-side-drawer';
+import {useDispatch, useSelector} from 'react-redux';
+import {Dispatch, RootState} from '../../rematch/store';
 
 const AnimatedPagerView = Animated.createAnimatedComponent(PagerView);
 
-const SwithModeButton = () => {
-  const [mode, setMode] = React.useState('normal');
+const SwithModeButton = ({
+  initialMode,
+  onChange,
+}: {
+  initialMode: string;
+  onChange: (val: string) => void;
+}) => {
+  const [mode, setMode] = React.useState(initialMode);
+  React.useEffect(() => onChange(mode), [mode]);
 
   const SwitchBtn = ({id, label}: {id: string; label: string}) => (
     <Pressable
@@ -67,35 +69,87 @@ const SwithModeButton = () => {
   );
 };
 
-const Content = ({item}: {item: Dzikir}) => {
+const Content = ({item, mode}: {item: Dzikir; mode: string}) => {
+  const arabicFontSize = useSelector(
+    (state: RootState) => state.app.arabicFontSize,
+  );
+  const arabicLatinFontSize = useSelector(
+    (state: RootState) => state.app.arabicLatinFontSize,
+  );
+  const translationFontSize = useSelector(
+    (state: RootState) => state.app.translationFontSize,
+  );
+  const showArabicLatin = useSelector(
+    (state: RootState) => state.app.showArabicLatin,
+  );
   const arabicArr = React.useMemo(() => item.arabic.split('|'), [item]);
   const latinArr = React.useMemo(() => item.arabic_latin.split('|'), [item]);
   const tarjimArr = React.useMemo(() => item.translated_id.split('|'), [item]);
 
   return (
-    <ScrollView style={{backgroundColor: '#fff', padding: 15}}>
+    <ScrollView
+      style={{backgroundColor: '#fff', padding: 15, flex: 1}}
+      showsVerticalScrollIndicator={true}>
       <TextBold style={{fontSize: 24, textAlign: 'center'}}>
         {item.title}
       </TextBold>
-      {/* <TextArabic>{arabicArr.join(',')}</TextArabic>
-      <TextRegular>{tarjimArr.join(',')}</TextRegular> */}
-      {/* {arabicArr.map((it, idx) => (
-        <View
-          key={idx}
-          style={{
-            paddingVertical: 10,
-            borderBottomWidth: 1,
-            borderBottomColor: '#ccc',
-          }}>
-          <TextArabic>{it}</TextArabic>
-          <TextLight style={{textAlign: 'right', color: '#333'}}>
-            {latinArr[idx]}
-          </TextLight>
-          <TextRegular style={{textAlign: 'right'}}>
-            {tarjimArr[idx]}
+      {mode == 'normal' ? (
+        <View style={{marginTop: 10}}>
+          <TextArabic style={{textAlign: 'center', fontSize: arabicFontSize}}>
+            {arabicArr.join(',')}
+          </TextArabic>
+          {showArabicLatin && (
+            <TextLight
+              style={{
+                marginTop: 15,
+                textAlign: 'center',
+                color: '#333',
+                fontSize: arabicLatinFontSize,
+              }}>
+              {latinArr.join(' ')}
+            </TextLight>
+          )}
+          <TextRegular
+            style={{
+              marginTop: 15,
+              textAlign: 'center',
+              fontSize: translationFontSize,
+            }}>
+            {tarjimArr.join(',')}
           </TextRegular>
         </View>
-      ))} */}
+      ) : (
+        <View style={{marginTop: 10}}>
+          {arabicArr.map((it, idx) => (
+            <View
+              key={idx}
+              style={{
+                paddingVertical: 10,
+                borderBottomWidth: 1,
+                borderBottomColor: '#eee',
+              }}>
+              <TextArabic
+                style={{textAlign: 'center', fontSize: arabicFontSize}}>
+                {it}
+              </TextArabic>
+              {showArabicLatin && (
+                <TextLight
+                  style={{
+                    textAlign: 'center',
+                    color: '#333',
+                    fontSize: arabicLatinFontSize,
+                  }}>
+                  {latinArr[idx]}
+                </TextLight>
+              )}
+              <TextRegular
+                style={{textAlign: 'center', fontSize: translationFontSize}}>
+                {tarjimArr[idx]}
+              </TextRegular>
+            </View>
+          ))}
+        </View>
+      )}
       <View style={{height: 30}} />
     </ScrollView>
   );
@@ -107,12 +161,14 @@ const DzikirScreen = () => {
   const time: string = (route.params as any).time || undefined;
   const [currentPage, setCurrentPage] = React.useState(0);
   const [drawerOpened, setDrawerOpened] = React.useState(false);
+  // const [mode, setMode] = React.useState('normal');
+  const dispatch = useDispatch<Dispatch>();
+  const mode = useSelector((state: RootState) => state.app.viewMode);
 
   const ref = React.useRef<PagerView>(null);
 
   const items: Array<Dzikir> = React.useMemo(
-    // () => dzikirDb.filter(it => it.time == time || it.time == ''),
-    () => dzikirDb,
+    () => dzikirDb.filter(it => it.time == time || it.time == ''),
     [time],
   );
 
@@ -120,7 +176,7 @@ const DzikirScreen = () => {
     () => (
       <View style={{flexDirection: 'row', height: '100%'}}>
         <Pressable
-          style={{backgroundColor: '#00000066', flex: 1}}
+          style={{backgroundColor: '#00000099', flex: 1}}
           onPress={() => setDrawerOpened(false)}
         />
         <ScrollView
@@ -143,15 +199,22 @@ const DzikirScreen = () => {
                 padding: 10,
                 borderBottomColor: '#eee',
                 borderBottomWidth: 1,
+                backgroundColor:
+                  currentPage == idx ? Colors.lightBlue : undefined,
               }}>
-              <TextRegular>{item.title}</TextRegular>
+              <TextRegular
+                style={{
+                  color: currentPage == idx ? Colors.white : undefined,
+                }}>
+                {item.title}
+              </TextRegular>
             </Pressable>
           ))}
           <View style={{height: 30}} />
         </ScrollView>
       </View>
     ),
-    [items, time],
+    [items, time, currentPage],
   );
 
   const progress = React.useMemo(() => {
@@ -182,7 +245,10 @@ const DzikirScreen = () => {
             <Icon name="home" size={22} />
           </Pressable>
           <View style={{flex: 1, alignItems: 'center'}}>
-            <SwithModeButton />
+            <SwithModeButton
+              initialMode={mode}
+              onChange={val => dispatch.app.setViewMode(val)}
+            />
           </View>
           <Pressable onPress={() => setDrawerOpened(true)}>
             <Icon name="list" size={22} />
@@ -199,14 +265,14 @@ const DzikirScreen = () => {
         />
         <AnimatedPagerView
           ref={ref}
-          style={{flex: 1, backgroundColor: 'red'}}
+          style={{flex: 1}}
           onPageSelected={e => setCurrentPage(e.nativeEvent.position)}>
           {React.useMemo(
             () =>
               items.map((item, idx) => {
-                return <Content item={item} key={idx} />;
+                return <Content item={item} key={idx} mode={mode} />;
               }),
-            [items],
+            [items, mode],
           )}
         </AnimatedPagerView>
       </SafeAreaView>

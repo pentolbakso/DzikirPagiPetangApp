@@ -4,6 +4,7 @@ import persist from '@rematch/persist';
 import AsyncStorage from '@react-native-community/async-storage';
 import { models, RootModel } from './models';
 import { createTransform } from 'redux-persist';
+import { AppState } from 'react-native';
 
 const appTransformer = createTransform(
   // transform state on its way to being serialized and persisted.
@@ -13,7 +14,7 @@ const appTransformer = createTransform(
   },
   // transform state being rehydrated
   (outboundState, key) => {
-    // console.log('rehydrated', outboundState);
+    console.log('rehydrated', outboundState);
     return {
       ...outboundState,
       // session: null, // for testing, reset every startup

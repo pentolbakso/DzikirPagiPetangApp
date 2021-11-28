@@ -3,36 +3,36 @@ import { Dzikir } from "../types";
 export const dzikirDb: Array<Dzikir> = [
   {
     arabic:
-      'اللَّهُ لاَ إِلَهَ إِلاَّ هُوَ الْحَيُّ الْقَيُّومُ| لاَ تَأْخُذُهُ سِنَةٌ وَلاَ نَوْمٌ| لَهُ مَا فِي السَّمَاوَاتِ وَمَا فِي الْأَرْضِ| مَنْ ذَا الَّذِي يَشْفَعُ عِنْدَهُ إِلاَّ بِإِذْنِهِ| يَعْلَمُ مَا بَيْنَ أَيْدِيهِمْ وَمَا خَلْفَهُمْ| وَلَا يُحِيطُونَ بِشَيْءٍ مِنْ عِلْمِهِ إِلاَّ بِمَا شَاءَ| وَسِعَ كُرْسِيُّهُ السَّمَاوَاتِ وَالْأَرْضَ| وَلَا يَئُودُهُ حِفْظُهُمَا| وَهُوَ الْعَلِيُّ الْعَظِيمُ',
-    arabic_latin: '',
+      'اللَّهُ لاَ إِلَهَ إِلاَّ هُوَ الْحَيُّ الْقَيُّومُ| لاَ تَأْخُذُهُ سِنَةٌ وَلاَ نَوْمٌ| لَهُ مَا فِي السَّمَاوَاتِ وَمَا فِي الْأَرْضِ| مَنْ ذَا الَّذِي يَشْفَعُ عِنْدَهُ إِلاَّ بِإِذْنِهِ| يَعْلَمُ مَا بَيْنَ أَيْدِيْهِمْ وَمَا خَلْفَهُمْ| وَلَا يُحِيطُوْنَ بِشَيْءٍ مِنْ عِلْمِهِ إِلاَّ بِمَا شَاءَ| وَسِعَ كُرْسِيُّهُ السَّمَاوَاتِ وَالْأَرْضَ| وَلَا يَئُوْدُهُ حِفْظُهُمَا| وَهُوَ الْعَلِيُّ الْعَظِيْمُ',
+    arabic_latin: 'Allaahu laa illaa huwal-hayyul-qayyuum,| laa ta’khudzuhuu sinatu wa laa nauum,| lahuu maa fis-samawati wa maa fil-ard,| man dzalladzii yasyfa’u ‘indahuu illaa bi idznih.| Ya’lamu maa baina aidiihim wa maa khalfahum,| wa laa yuhiithuuna bi syai’im min’ilmihii illaa bimaa syaa’a,| wa si’a kursiyyuhus-samaawaati wal-ard,| wa laa ya’uudhuhuu hifzhuhumaa| wa huwal-‘aliyyul-‘azhiim.',
     faedah:
       'Siapa yang membacanya ketika petang, maka ia akan dilindungi (oleh Allah dari berbagai gangguan) hingga pagi. Siapa yang membacanya ketika pagi, maka ia akan dilindungi hingga petang. [HR. Al Hakim (1: 562). Syaikh Al Albani menshahihkan hadits tersebut dalam Shahih At Targhib wa At Tarhib no. 655]',
     narrator: 'Q.S. Al-Baqarah: 255',
     note: 'Dibaca 1x',
     title: 'Ayat Kursi',
     translated_id:
-      'Allah, tidak ada ilah (yang berhak disembah) melainkan Dia,| yang hidup kekal lagi terus menerus mengurus (makhluk-Nya).| Dia tidak mengantuk dan tidak tidur.| Kepunyaan-Nya apa yang di langit dan di bumi.| Tiada yang dapat memberi syafa’at di sisi-Nya tanpa seizin-Nya.| Dia mengetahui apa-apa yang di hadapan mereka dan di belakang mereka.| Mereka tidak mengetahui apa-apa dari ilmu Allah melainkan apa yang dikehendaki-Nya.| Kursi Allah meliputi langit dan bumi,| Dia tidak merasa berat memelihara keduanya.| Dan Dia Maha Tinggi lagi Maha besar.',
+      'Allah, tidak ada ilah (yang berhak disembah) melainkan Dia, yang hidup kekal lagi terus menerus mengurus (makhluk-Nya).| Dia tidak mengantuk dan tidak tidur.| Kepunyaan-Nya apa yang di langit dan di bumi.| Tiada yang dapat memberi syafa’at di sisi-Nya tanpa seizin-Nya.| Dia mengetahui apa-apa yang di hadapan mereka dan di belakang mereka.| Mereka tidak mengetahui apa-apa dari ilmu Allah melainkan apa yang dikehendaki-Nya.| Kursi Allah meliputi langit dan bumi,| Dia tidak merasa berat memelihara keduanya.| Dan Dia Maha Tinggi lagi Maha besar.',
     time: '',
     from_quran: true
   },
   {
     arabic:
       'بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ|قُلْ هُوَ اللَّهُ أَحَدٌ| اللَّهُ الصَّمَدُ| لَمْ يَلِدْ وَلَمْ يُولَدْ| وَلَمْ يَكُن لَّهُ كُفُوًا أَحَدٌ',
-    arabic_latin: '',
+    arabic_latin: 'Bismillahirrahmannirrahiim| Qul huwallahu ahad| Allahu shomad| lam yalid wa lam yụlad| wa lam yakul lahụ kufuwan ahad',
     faedah:
       'Siapa yang mengucapkannya masing-masing tiga kali ketika pagi dan petang, maka segala sesuatu akan dicukupkan untuknya. [HR. Abu Daud no. 5082, Tirmidzi no. 3575. Al Hafizh Abu Thohir mengatakan bahwa sanad hadits ini hasan]',
     narrator: 'Q.S. Al Ikhlas: 1-4',
     note: 'Dibaca 3x',
     title: 'Surah Al-Ikhlas',
     translated_id:
-      'Dengan menyebut nama Allah Yang Maha Pengasih lagi Maha Penyayang.| Katakanlah: Dialah Allah, Yang Maha Esa.| Allah adalah ilah yang bergantung kepada-Nya segala urusan.| Dia tidak beranak dan tiada pula diperanakkan, dan tidak ada seorang pun yang setara dengan Dia.',
+      'Dengan menyebut nama Allah Yang Maha Pengasih lagi Maha Penyayang.| Katakanlah: Dialah Allah, Yang Maha Esa.| Allah adalah ilah yang bergantung kepada-Nya segala urusan.| Dia tidak beranak dan tiada pula diperanakkan,| dan tidak ada seorang pun yang setara dengan Dia.',
     time: '',
     from_quran: true
   },
   {
     arabic:
       'بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ|قُلْ أَعُوذُ بِرَبِّ الْفَلَقِ| مِن شَرِّ مَا خَلَقَ| وَمِن شَرِّ غَاسِقٍ إِذَا وَقَبَ| وَمِن شَرِّ النَّفَّاثَاتِ فِي الْعُقَدِ| وَمِن شَرِّ حَاسِدٍ إِذَا حَسَدَ',
-    arabic_latin: '',
+    arabic_latin: 'Bismillahirrahmannirrahiim| qul a`ụżu birabbil-falaq| min syarri mā khalaq| wa min syarri gāsiqin iżā waqab|wa min syarrin-naffāṡāti fil-`uqad| wa min syarri ḥāsidin iżā ḥasad',
     faedah:
       'Siapa yang mengucapkannya masing-masing tiga kali ketika pagi dan petang, maka segala sesuatu akan dicukupkan untuknya. [HR. Abu Daud no. 5082, Tirmidzi no. 3575. Al Hafizh Abu Thohir mengatakan bahwa sanad hadits ini hasan]',
     narrator: 'Q.S. Al Falaq: 1-5',
@@ -46,14 +46,14 @@ export const dzikirDb: Array<Dzikir> = [
   {
     arabic:
       'بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ|قُلْ أَعُوذُ بِرَبِّ النَّاسِ| مَلِكِ النَّاسِ| إِلَهِ النَّاسِ| مِن شَرِّ الْوَسْوَاسِ الْخَنَّاسِ| الَّذِي يُوَسْوِسُ فِي صُدُورِ النَّاسِ| مِنَ الْجِنَّةِ وَ النَّاسِ',
-    arabic_latin: '',
+    arabic_latin: 'Bismillahirrahmannirrahiim| qul a`ụżu birabbin-nās| malikin-nās| ilāhin-nās| min syarril-waswāsil-khannās| alladzi yuwaswisu fī ṣudụrin-nās| minal-jinnati wan-nās',
     faedah:
       'Siapa yang mengucapkannya masing-masing tiga kali ketika pagi dan petang, maka segala sesuatu akan dicukupkan untuknya. [HR. Abu Daud no. 5082, Tirmidzi no. 3575. Al Hafizh Abu Thohir mengatakan bahwa sanad hadits ini hasan]',
     narrator: 'QS. An Naas: 1-6',
     note: 'Dibaca 3x',
     title: 'Surah An-Nas',
     translated_id:
-      'Dengan menyebut nama Allah Yang Maha Pengasih lagi Maha Penyayang.| Katakanlah: Aku berlindung kepada Rabb manusia.| Raja manusia.| Sembahan manusia,| dari kejahatan (bisikan) syaitan yang biasa bersembunyi,| yang membisikkan (kejahatan) ke dalam dada manusia, dari jin dan manusia.',
+      'Dengan menyebut nama Allah Yang Maha Pengasih lagi Maha Penyayang.| Katakanlah: Aku berlindung kepada Rabb manusia.| Raja manusia.| Sembahan manusia,| dari kejahatan (bisikan) syaitan yang biasa bersembunyi,| yang membisikkan (kejahatan) ke dalam dada manusia,| dari jin dan manusia.',
     time: '',
     from_quran: true
   },
@@ -73,7 +73,7 @@ export const dzikirDb: Array<Dzikir> = [
   },
   {
     arabic:
-      'أَمْسَيْنَا وَأَمْسَى الْمُلْكُ للهِ| وَالْحَمْدُ للهِ| لَا إِلَهَ إِلاَّ اللهُ وَحْدَهُ لاَ شَرِيكَ لَهُ| لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ| وَهُوَ عَلَى كُلِّ شَيْءٍ قَدِيرٌ| رَبِّ أَسْأَلُكَ خَيْرَ مَا فِي هَذِهِ اللَّيْلَةِ وَخَيْرَ مَا بَعْدَهَا| وَأَعُوذُبِكَ مِنْ شَرِّ مَا فِي هَذِهِ اللَّيْلَةِ وَشَرِّ مَا بَعْدَهَا| رَبِّ أَعُوذُبِكَ مِنَ الْكَسَلِ وَسُوءِ الْكِبَرِ| رَبِّ أَعُوذُبِكَ مِنْ عَذَابٍ فِي النَّارِ وَعَذَابٍ فِي الْقَبْرِ',
+      'أَمْسَيْنَا وَأَمْسَى الْمُلْكُ لِلَّهِ| وَالْحَمْدُ لِلَّهِ| لَا إِلَهَ إِلاَّ اللَّهُ وَحْدَهُ لاَ شَرِيكَ لَهُ| لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ| وَهُوَ عَلَى كُلِّ شَيْءٍ قَدِيرٌ| رَبِّ أَسْأَلُكَ خَيْرَ مَا فِي هَذِهِ اللَّيْلَةِ وَخَيْرَ مَا بَعْدَهَا| وَأَعُوذُبِكَ مِنْ شَرِّ مَا فِي هَذِهِ اللَّيْلَةِ وَشَرِّ مَا بَعْدَهَا| رَبِّ أَعُوذُبِكَ مِنَ الْكَسَلِ وَسُوءِ الْكِبَرِ| رَبِّ أَعُوذُبِكَ مِنْ عَذَابٍ فِي النَّارِ وَعَذَابٍ فِي الْقَبْرِ',
     arabic_latin:
       'Amsaynaa wa amsal mulku lillah| walhamdulillah| laa ilaha illallah wahdahu laa syarika lah,| lahul mulku walahul hamdu| wa huwa ‘ala kulli syai-in qodir.| Robbi as-aluka khoiro maa fii hadzihil lailah wa khoiro maa ba’dahaa,| wa a’udzu bika min syarri maa fii hadzihil lailah wa syarri maa ba’dahaa.| Robbi a’udzu bika minal kasali wa suu-il kibar.| Robbi a’udzu bika min ‘adzabin fin naari wa ‘adzabin fil qobri.',
     faedah:
@@ -115,16 +115,16 @@ export const dzikirDb: Array<Dzikir> = [
   },
   {
     arabic:
-      'اَللَّهُمَّ أَنْتَ رَبِّيْ لاَ إِلَـهَ إِلاَّ أَنْتَ| خَلَقْتَنِيْ وَأَنَا عَبْدُكَ| وَأَنَا عَلَى عَهْدِكَ وَوَعْدِكَ مَا اسْتَطَعْتُ| أَعُوْذُ بِكَ مِنْ شَرِّ مَا صَنَعْتُ| أَبُوْءُ لَكَ بِنِعْمَتِكَ عَلَيَّ وَأَبُوْءُ بِذَنْبِيْ| فَاغْفِرْ لِيْ فَإِنَّهُ لاَ يَغْفِرُ الذُّنُوْبَ إِلاَّ أَنْتَ.',
+      'اَللَّهُمَّ أَنْتَ رَبِّيْ لاَ إِلَـهَ إِلاَّ أَنْتَ| خَلَقْتَنِيْ وَأَنَا عَبْدُكَ| وَأَنَا عَلَى عَهْدِكَ| وَوَعْدِكَ مَا اسْتَطَعْتُ| أَعُوْذُ بِكَ مِنْ شَرِّ مَا صَنَعْتُ| أَبُوْءُ لَكَ بِنِعْمَتِكَ عَلَيَّ| وَأَبُوْءُ بِذَنْبِيْ| فَاغْفِرْ لِيْ| فَإِنَّهُ لاَ يَغْفِرُ الذُّنُوْبَ إِلاَّ أَنْتَ.',
     arabic_latin:
-      'Allahumma anta robbii laa ilaha illa anta,| kholaqtanii wa anaa ‘abduka| wa anaa ‘ala ‘ahdika wa wa’dika mas-tatho’tu.| A’udzu bika min syarri maa shona’tu.| Abu-u laka bi ni’matika ‘alayya wa abu-u bi dzambii.| Fagh-firlii fainnahu laa yagh-firudz dzunuuba illa anta.',
+      'Allahumma anta robbii laa ilaha illa anta,| kholaqtanii wa anaa ‘abduka| wa anaa ‘ala ‘ahdika| wa wa’dika mas-tatho’tu.| A’udzu bika min syarri maa shona’tu.| Abu-u laka bi ni’matika ‘alayya| wa abu-u bi dzambii.| Fagh-firlii| fainnahu laa yagh-firudz dzunuuba illa anta.',
     faedah:
       'Barangsiapa mengucapkan dzikir ini di siang hari dalam keadaan penuh keyakinan, lalu ia mati pada hari tersebut sebelum petang hari, maka ia termasuk penghuni surga. Barangsiapa yang mengucapkannya di malam hari dalam keadaan penuh keyakinan, lalu ia mati sebelum pagi, maka ia termasuk penghuni surga. [HR. Bukhari no. 6306]',
     narrator: '',
     note: 'Dibaca 1x',
     title: 'Sayyidul Istighfar',
     translated_id:
-      'Ya Allah, Engkau adalah Rabbku, tidak ada ilah yang berhak disembah kecuali Engkau,| Engkaulah yang menciptakanku. Aku adalah hamba-Mu.| Aku akan setia pada perjanjianku pada-Mu (yaitu aku akan mentauhidkan-Mu) semampuku dan aku yakin akan janji-Mu (berupa surga untukku).| Aku berlindung kepada-Mu dari kejelekan yang kuperbuat.| Aku mengakui nikmat-Mu kepadaku dan aku mengakui dosaku.| Oleh karena itu, ampunilah aku. Sesungguhnya tiada yang mengampuni dosa kecuali Engkau.',
+      'Ya Allah, Engkau adalah Rabbku, tidak ada ilah yang berhak disembah kecuali Engkau,| Engkaulah yang menciptakanku. Aku adalah hamba-Mu.| Aku akan setia pada perjanjianku pada-Mu (yaitu aku akan mentauhidkan-Mu) semampuku| dan aku yakin akan janji-Mu (berupa surga untukku).| Aku berlindung kepada-Mu dari kejelekan yang kuperbuat.| Aku mengakui nikmat-Mu kepadaku| dan aku mengakui dosaku.| Oleh karena itu, ampunilah aku.| Sesungguhnya tiada yang mengampuni dosa kecuali Engkau.',
     time: '',
   },
   {
@@ -171,7 +171,7 @@ export const dzikirDb: Array<Dzikir> = [
   },
   {
     arabic:
-      'رَضِيْتُ بِاللهِ رَبًّا| وَبِاْلإِسْلاَمِ دِيْنًا| وَبِمُحَمَّدٍ صَلَّى اللهُ عَلَيْهِ وَسَلَّمَ نَبِيًّا',
+      'رَضِيْتُ بِاللَّهِ رَبًّا| وَبِاْلإِسْلاَمِ دِيْنًا| وَبِمُحَمَّدٍ صَلَّى اللَّهُ عَلَيْهِ وَسَلَّمَ نَبِيًّا',
     arabic_latin:
       'Rodhiitu billaahi robbaa| wa bil-islaami diinaa,| wa bi-muhammadin shallallaahu ‘alaihi wa sallama nabiyya.',
     faedah:
@@ -199,7 +199,7 @@ export const dzikirDb: Array<Dzikir> = [
   },
   {
     arabic:
-      'أَصْبَحْنَا عَلَى فِطْرَةِ اْلإِسْلاَمِ وَعَلَى كَلِمَةِ اْلإِخْلاَصِ| وَعَلَى دِيْنِ نَبِيِّنَا مُحَمَّدٍ صَلَّى اللهُ عَلَيْهِ وَسَلَّمَ| وَعَلَى مِلَّةِ أَبِيْنَا إِبْرَاهِيْمَ حَنِيْفًا مُسْلِمًا وَمَا كَانَ مِنَ الْمُشْرِكِيْنَ',
+      'أَصْبَحْنَا عَلَى فِطْرَةِ اْلإِسْلاَمِ وَعَلَى كَلِمَةِ اْلإِخْلاَصِ| وَعَلَى دِيْنِ نَبِيِّنَا مُحَمَّدٍ صَلَّى اللَّهُ عَلَيْهِ وَسَلَّمَ| وَعَلَى مِلَّةِ أَبِيْنَا إِبْرَاهِيْمَ حَنِيْفًا مُسْلِمًا وَمَا كَانَ مِنَ الْمُشْرِكِيْنَ',
     arabic_latin:
       'Ash-bahnaa ‘ala fithrotil islaam wa ‘alaa kalimatil ikhlaash,| wa ‘alaa diini nabiyyinaa Muhammadin shallallahu ‘alaihi wa sallam,| wa ‘alaa millati abiina Ibraahiima haniifam muslimaaw wa maa kaana minal musyrikin',
     faedah: '',
@@ -212,7 +212,7 @@ export const dzikirDb: Array<Dzikir> = [
     time: 'pagi',
   },
   {
-    arabic: 'سُبْحَانَ اللهِ وَبِحَمْدِهِ',
+    arabic: 'سُبْحَانَ اللَّهِ وَبِحَمْدِهِ',
     arabic_latin: 'Subhanallahi wa bi-hamdih.',
     faedah:
       'Barangsiapa yang mengucapkan kalimat ‘subhanallahi wa bi hamdih’ di pagi dan petang hari sebanyak 100x, maka tidak ada yang datang pada hari kiamat yang lebih baik dari yang ia lakukan kecuali orang yang mengucapkan semisal atau lebih dari itu. [HR. Muslim no. 2692]',
@@ -224,21 +224,21 @@ export const dzikirDb: Array<Dzikir> = [
   },
   {
     arabic:
-      'لاَ إِلَـهَ إِلاَّ اللهُ وَحْدَهُ لاَ شَرِيْكَ لَهُ| لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ وَهُوَ عَلَى كُلِّ شَيْءٍ قَدِيْرُ',
+      'لاَ إِلَـهَ إِلاَّ اللَّهُ وَحْدَهُ لاَ شَرِيْكَ لَهُ| لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ| وَهُوَ عَلَى كُلِّ شَيْءٍ قَدِيْرُ',
     arabic_latin:
-      'Laa ilaha illallah wahdahu laa syarika lah,| lahul mulku walahul hamdu wa huwa ‘ala kulli syai-in qodiir.',
+      'Laa ilaha illallah wahdahu laa syarika lah,| lahul mulku walahul hamdu| wa huwa ‘ala kulli syai-in qodiir.',
     faedah:
       '<b>Faedah jika dibaca 1 atau 10 kali</b>\nBarangsiapa yang membaca dzikir tersebut di pagi hari sebanyak sepuluh kali, Allah akan mencatatkan baginya 10 kebaikan, menghapuskan baginya 10 kesalahan, ia juga mendapatkan kebaikan semisal memerdekakan 10 budak, Allah akan melindunginya dari gangguan setan hingg petang hari. Siapa yang mengucapkannya di petang hari, ia akan mendapatkan keutamaan semisal itu pula. [HR. An Nasai Al Kubra 6:10]\n<br />\n<b>Faedah jika dibaca 100 kali dalam sehari</b>Barangsiapa yang mengucapkan dzikir tersebut dalam sehari sebanyak seratus kali, maka itu seperti membebaskan 10 orang budak, dicatat baginya 100 kebaikan, dihapus baginya 100 kesalahan, dirinya akan terjaga dari gangguan setan dari pagi hingga petang hari, dan tidak ada seorang pun yang lebih baik dari yang ia lakukan kecuali oleh orang yang mengamalkan lebih dari itu. [HR. Bukhari no. 3293 dan Muslim no. 2691]',
     narrator: '',
     note: 'Dibaca 10x',
     title: 'Bertauhid',
     translated_id:
-      'Tidak ada ilah yang berhak disembah selain Allah semata, tidak ada sekutu bagiNya.| Bagi-Nya kerajaan dan segala pujian. Dia-lah yang berkuasa atas segala sesuatu.',
+      'Tidak ada ilah yang berhak disembah selain Allah semata, tidak ada sekutu bagiNya.| Bagi-Nya kerajaan dan segala pujian.| Dia-lah yang berkuasa atas segala sesuatu.',
     time: '',
   },
   {
     arabic:
-      'سُبْحَانَ اللهِ وَبِحَمْدِهِ| عَدَدَ خَلْقِهِ| وَرِضَا نَفْسِهِ| وَزِنَةَ عَرْشِهِ| وَمِدَادَ كَلِمَاتِهِ',
+      'سُبْحَانَ اللَّهِ وَبِحَمْدِهِ| عَدَدَ خَلْقِهِ| وَرِضَا نَفْسِهِ| وَزِنَةَ عَرْشِهِ| وَمِدَادَ كَلِمَاتِهِ',
     arabic_latin:
       'Subhanallah wa bi-hamdih,| ‘adada kholqih| wa ridhoo nafsih.| wa zinata ‘arsyih,| wa midaada kalimaatih.',
     faedah:
@@ -265,7 +265,7 @@ export const dzikirDb: Array<Dzikir> = [
     time: 'pagi',
   },
   {
-    arabic: 'أَسْتَغْفِرُ اللهَ وَأَتُوْبُ إِلَيْهِ',
+    arabic: 'أَسْتَغْفِرُ اللَّهَ وَأَتُوْبُ إِلَيْهِ',
     arabic_latin: 'Astagh-firullah wa atuubu ilaih.',
     faedah: '',
     narrator: 'HR. Bukhari no. 6307 dan Muslim no. 2702',
@@ -276,7 +276,7 @@ export const dzikirDb: Array<Dzikir> = [
   },
   {
     arabic:
-      'أَعُوْذُ بِكَلِمَاتِ اللهِ التَّامَّاتِ مِنْ شَرِّ مَا خَلَقَ',
+      'أَعُوْذُ بِكَلِمَاتِ اللَّهِ التَّامَّاتِ مِنْ شَرِّ مَا خَلَقَ',
     arabic_latin: 'A’udzu bikalimaatillahit-taammaati min syarri maa kholaq.',
     faedah:
       'Siapa yang mengucapkannya di petang hari, niscaya tidak ada racun atau binatang (seperti: kalajengking) yang mencelakakannya di malam itu. [HR. Ahmad 2: 290. Syaikh Syu’aib Al Arnauth mengatakan bahwa sanad hadits ini shahih sesuai syarat Muslim. Lihat komentar Syaikh Syu’aib Al Arnauth terhadap hadits ini untuk pengertian hummah diartikan dengan racun atau sengatan kalajengking]',

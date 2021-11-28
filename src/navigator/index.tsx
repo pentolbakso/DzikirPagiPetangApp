@@ -2,8 +2,9 @@ import * as React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import HomeScreen from '../screens/Home';
-import AboutScreen from '../screens/About';
+import AboutScreen from '../screens/Setting';
 import DzikirScreen from '../screens/Dzikir';
+import SettingScreen from '../screens/Setting';
 
 const Stack = createStackNavigator();
 
@@ -30,9 +31,9 @@ const Navigator = () => {
           options={{headerTitle: 'Dzikir'}}
         />
         <Stack.Screen
-          name="About"
-          component={AboutScreen}
-          options={{headerTitle: 'About'}}
+          name="Setting"
+          component={SettingScreen}
+          options={{headerTitle: 'Pengaturan', headerShown: true}}
         />
       </Stack.Navigator>
     </NavigationContainer>

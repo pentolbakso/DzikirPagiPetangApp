@@ -78,7 +78,7 @@ export const TextArabic = ({
       textAlign: 'right',
       fontSize: 32,
       fontFamily: 'KFGQPCUthmanicScriptHAFS',
-      lineHeight: 52,
+      lineHeight: style?.fontSize ? style?.fontSize + 30 : 52,
       ...style,
     }}>
     {children}
