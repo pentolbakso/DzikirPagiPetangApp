@@ -96,7 +96,7 @@ const Content = ({item, mode}: {item: Dzikir; mode: string}) => {
       {mode == 'normal' ? (
         <View style={{marginTop: 10}}>
           <TextArabic style={{textAlign: 'center', fontSize: arabicFontSize}}>
-            {arabicArr.join(',')}
+            {arabicArr.join('، ')}
           </TextArabic>
           {showArabicLatin && (
             <TextLight
@@ -115,7 +115,7 @@ const Content = ({item, mode}: {item: Dzikir; mode: string}) => {
               textAlign: 'center',
               fontSize: translationFontSize,
             }}>
-            {tarjimArr.join(',')}
+            {tarjimArr.join(' ')}
           </TextRegular>
         </View>
       ) : (
