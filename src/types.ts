@@ -8,4 +8,5 @@ export type Dzikir = {
   translated_id: string;
   time: string;
   from_quran?: boolean;
+  is_surah?: boolean;
 }

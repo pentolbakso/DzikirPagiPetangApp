@@ -13,7 +13,8 @@ export const dzikirDb: Array<Dzikir> = [
     translated_id:
       'Allah, tidak ada ilah (yang berhak disembah) melainkan Dia, yang hidup kekal lagi terus menerus mengurus (makhluk-Nya).| Dia tidak mengantuk dan tidak tidur.| Kepunyaan-Nya apa yang di langit dan di bumi.| Tiada yang dapat memberi syafa’at di sisi-Nya tanpa seizin-Nya.| Dia mengetahui apa-apa yang di hadapan mereka dan di belakang mereka.| Mereka tidak mengetahui apa-apa dari ilmu Allah melainkan apa yang dikehendaki-Nya.| Kursi Allah meliputi langit dan bumi,| Dia tidak merasa berat memelihara keduanya.| Dan Dia Maha Tinggi lagi Maha besar.',
     time: '',
-    from_quran: true
+    from_quran: true,
+    is_surah: false
   },
   {
     arabic:
@@ -27,7 +28,8 @@ export const dzikirDb: Array<Dzikir> = [
     translated_id:
       'Dengan menyebut nama Allah Yang Maha Pengasih lagi Maha Penyayang.| Katakanlah: Dialah Allah, Yang Maha Esa.| Allah adalah ilah yang bergantung kepada-Nya segala urusan.| Dia tidak beranak dan tiada pula diperanakkan,| dan tidak ada seorang pun yang setara dengan Dia.',
     time: '',
-    from_quran: true
+    from_quran: true,
+    is_surah: true
   },
   {
     arabic:
@@ -41,7 +43,8 @@ export const dzikirDb: Array<Dzikir> = [
     translated_id:
       'Dengan menyebut nama Allah Yang Maha Pengasih lagi Maha Penyayang.| Katakanlah: Aku berlindung kepada Rabb yang menguasai Shubuh,| dari kejahatan makhluk-Nya,| dan dari kejahatan malam apabila telah gelap gulita,| dan dari kejahatan-kejahatan wanita tukang sihir yang menghembus pada buhul-buhul,| dan dari kejahatan orang yang dengki apabila ia dengki.',
     time: '',
-    from_quran: true
+    from_quran: true,
+    is_surah: true
   },
   {
     arabic:
@@ -55,7 +58,8 @@ export const dzikirDb: Array<Dzikir> = [
     translated_id:
       'Dengan menyebut nama Allah Yang Maha Pengasih lagi Maha Penyayang.| Katakanlah: Aku berlindung kepada Rabb manusia.| Raja manusia.| Sembahan manusia,| dari kejahatan (bisikan) syaitan yang biasa bersembunyi,| yang membisikkan (kejahatan) ke dalam dada manusia,| dari jin dan manusia.',
     time: '',
-    from_quran: true
+    from_quran: true,
+    is_surah: true
   },
   {
     arabic:

@@ -79,7 +79,7 @@ export const TextArabic = ({
       fontSize: 32,
       // fontFamily: 'KFGQPCUthmanicScriptHAFS',
       fontFamily: 'adwa-assalaf',
-      lineHeight: style?.fontSize ? style?.fontSize + 25 : 52,
+      lineHeight: style?.fontSize ? style?.fontSize + 30 : 52,
       ...style,
     }}>
     {children}
