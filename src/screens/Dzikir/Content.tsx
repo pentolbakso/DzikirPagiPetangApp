@@ -11,9 +11,10 @@ import {Dzikir} from '../../types';
 import {ScrollView} from 'react-native-gesture-handler';
 import {useSelector} from 'react-redux';
 import {RootState} from '../../rematch/store';
-import Notes from './Notes';
+import {useTheme} from '@react-navigation/native';
 
 const Content = ({item, mode}: {item: Dzikir; mode: string}) => {
+  const {colors: themeColors} = useTheme();
   const arabicFontSize = useSelector(
     (state: RootState) => state.app.arabicFontSize,
   );
@@ -35,16 +36,24 @@ const Content = ({item, mode}: {item: Dzikir; mode: string}) => {
 
   return (
     <ScrollView
-      style={{backgroundColor: '#fff', padding: 15, flex: 1}}
+      style={{backgroundColor: themeColors.background, padding: 15, flex: 1}}
       showsVerticalScrollIndicator={true}>
-      <TextBold style={{fontSize: 24, textAlign: 'center'}}>
+      <TextBold
+        style={{fontSize: 24, textAlign: 'center', color: themeColors.text}}>
         {item.title}
       </TextBold>
-      <TextItalic style={{textAlign: 'center'}}>{item.note}</TextItalic>
+      <TextItalic style={{textAlign: 'center', color: themeColors.text}}>
+        {item.note}
+      </TextItalic>
 
       {mode == 'normal' ? (
         <View style={{marginTop: 10}}>
-          <TextArabic style={{textAlign: 'center', fontSize: arabicFontSize}}>
+          <TextArabic
+            style={{
+              textAlign: 'center',
+              fontSize: arabicFontSize,
+              color: themeColors.text,
+            }}>
             {arabicArr.join(separator)}
           </TextArabic>
           {showArabicLatin && (
@@ -52,7 +61,7 @@ const Content = ({item, mode}: {item: Dzikir; mode: string}) => {
               style={{
                 marginTop: 15,
                 textAlign: 'center',
-                color: '#333',
+                color: themeColors.text,
                 fontSize: arabicLatinFontSize,
               }}>
               {latinArr.join(' ')}
@@ -62,6 +71,7 @@ const Content = ({item, mode}: {item: Dzikir; mode: string}) => {
             style={{
               marginTop: 15,
               textAlign: 'center',
+              color: themeColors.text,
               fontSize: translationFontSize,
             }}>
             {tarjimArr.join(' ')}
@@ -75,31 +85,38 @@ const Content = ({item, mode}: {item: Dzikir; mode: string}) => {
               style={{
                 paddingVertical: 10,
                 borderBottomWidth: 1,
-                borderBottomColor: '#eee',
+                borderBottomColor: themeColors.border,
               }}>
               <TextArabic
-                style={{textAlign: 'center', fontSize: arabicFontSize}}>
+                style={{
+                  textAlign: 'center',
+                  fontSize: arabicFontSize,
+                  color: themeColors.text,
+                }}>
                 {it}
               </TextArabic>
               {showArabicLatin && (
                 <TextLight
                   style={{
                     textAlign: 'center',
-                    color: '#333',
+                    color: themeColors.text,
                     fontSize: arabicLatinFontSize,
                   }}>
                   {latinArr[idx]}
                 </TextLight>
               )}
               <TextRegular
-                style={{textAlign: 'center', fontSize: translationFontSize}}>
+                style={{
+                  textAlign: 'center',
+                  fontSize: translationFontSize,
+                  color: themeColors.text,
+                }}>
                 {tarjimArr[idx]}
               </TextRegular>
             </View>
           ))}
         </View>
       )}
-      {/* <Notes item={item} /> */}
       <View style={{height: 90}} />
     </ScrollView>
   );

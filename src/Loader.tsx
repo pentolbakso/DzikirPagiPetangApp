@@ -1,10 +1,11 @@
 import * as React from 'react';
-import {AppState} from 'react-native';
-import {useDispatch} from 'react-redux';
-import {Dispatch} from './rematch/store';
+import {AppState, StatusBar} from 'react-native';
+import {useDispatch, useSelector} from 'react-redux';
+import {Dispatch, RootState} from './rematch/store';
 
 const Loader = () => {
   const dispatch = useDispatch<Dispatch>();
+  const darkMode = useSelector((state: RootState) => state.app.darkMode);
 
   const _startListening = () => {};
 
@@ -28,7 +29,7 @@ const Loader = () => {
     };
   }, []);
 
-  return null;
+  return <StatusBar barStyle={!!darkMode ? 'light-content' : 'dark-content'} />;
 };
 
 export default Loader;

@@ -8,6 +8,7 @@ export type AppState = {
   arabicLatinFontSize: number;
   translationFontSize: number;
   showArabicLatin: boolean;
+  darkMode: boolean;
 };
 
 export const app = createModel<RootModel>()({
@@ -18,6 +19,7 @@ export const app = createModel<RootModel>()({
     arabicLatinFontSize: 16,
     translationFontSize: 16,
     showArabicLatin: false,
+    darkMode: false,
   } as AppState,
 
   reducers: {
@@ -39,6 +41,9 @@ export const app = createModel<RootModel>()({
     setShowArabicLatin(state: AppState, value: boolean) {
       return { ...state, showArabicLatin: value }
     },
+    setDarkMode(state: AppState, value: boolean) {
+      return { ...state, darkMode: value }
+    }
   },
 
   effects: (dispatch) => ({

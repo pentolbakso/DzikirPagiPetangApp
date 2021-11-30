@@ -1,16 +1,38 @@
 import * as React from 'react';
-import {NavigationContainer} from '@react-navigation/native';
+import {
+  DarkTheme,
+  DefaultTheme,
+  NavigationContainer,
+} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import HomeScreen from '../screens/Home';
-import AboutScreen from '../screens/Setting';
 import DzikirScreen from '../screens/Dzikir';
 import SettingScreen from '../screens/Setting';
+import {useColorScheme} from 'react-native';
+import {Colors} from '../colors';
+import {useSelector} from 'react-redux';
+import {RootState} from '../rematch/store';
 
 const Stack = createStackNavigator();
 
+const MyDefaultTheme = {
+  ...DefaultTheme,
+  colors: {
+    ...DefaultTheme.colors,
+    primary: Colors.lightBlue,
+    background: Colors.white,
+    card: '#f5f5f5',
+  },
+};
+
 const Navigator = () => {
+  // const scheme = useColorScheme();
+  const darkMode = useSelector((state: RootState) => state.app.darkMode);
+  // console.log('darkMode', darkMode);
   return (
-    <NavigationContainer>
+    <NavigationContainer
+      // theme={MyDefaultTheme}
+      theme={darkMode ? DarkTheme : MyDefaultTheme}>
       <Stack.Navigator
         screenOptions={{
           headerStyle: {

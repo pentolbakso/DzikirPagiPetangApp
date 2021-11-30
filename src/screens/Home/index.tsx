@@ -5,7 +5,7 @@ import LinearGradient from 'react-native-linear-gradient';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import {TextBold, TextRegular} from '../../components/Text';
 import Icon from 'react-native-vector-icons/Feather';
-import {useNavigation} from '@react-navigation/native';
+import {useNavigation, useTheme} from '@react-navigation/native';
 import dayjs from 'dayjs';
 
 type BigMenuProps = {
@@ -66,6 +66,7 @@ const BigMenu = ({
 
 const HomeScreen = () => {
   const navigation = useNavigation();
+  const {colors: themeColors} = useTheme();
   const hour = dayjs().hour();
   const timeMode = React.useMemo(() => {
     // let hour = 3;
@@ -88,7 +89,7 @@ const HomeScreen = () => {
           angle={45}
           onPress={() => navigation.navigate('Dzikir', {time: 'pagi'})}
         />
-        <View style={{height: 10, backgroundColor: '#fff'}} />
+        <View style={{height: 10, backgroundColor: themeColors.background}} />
         <BigMenu
           subtitle="dzikir"
           title="petang"

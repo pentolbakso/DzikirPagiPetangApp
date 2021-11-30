@@ -1,4 +1,4 @@
-import {useNavigation, useRoute} from '@react-navigation/native';
+import {useNavigation, useRoute, useTheme} from '@react-navigation/native';
 import * as React from 'react';
 import {Animated, Pressable, StyleSheet, Text, ViewStyle} from 'react-native';
 import {View} from 'react-native';
@@ -84,6 +84,7 @@ const SwithModeButton = ({
 const DzikirScreen = () => {
   const navigation = useNavigation();
   const route = useRoute();
+  const {colors: themeColors} = useTheme();
   const time: string = (route.params as any).time || undefined;
   const [currentPage, setCurrentPage] = React.useState(0);
   const [drawerOpened, setDrawerOpened] = React.useState(false);
@@ -113,19 +114,25 @@ const DzikirScreen = () => {
 
   const drawerContent = React.useCallback(
     () => (
-      <View style={{flexDirection: 'row', height: '100%'}}>
+      <View
+        style={{
+          flexDirection: 'row',
+          height: '100%',
+        }}>
         <Pressable
-          style={{backgroundColor: '#00000099', flex: 1}}
+          style={{backgroundColor: '#00000066', flex: 1}}
           onPress={() => setDrawerOpened(false)}
         />
         <ScrollView
           style={{
-            backgroundColor: '#fff',
+            backgroundColor: themeColors.card,
             maxWidth: '60%',
             paddingTop: 20,
           }}>
           <View style={{padding: 10}}>
-            <TextBold style={{fontSize: 22}}>Dzikir {time}</TextBold>
+            <TextBold style={{fontSize: 22, color: themeColors.text}}>
+              Dzikir {time}
+            </TextBold>
           </View>
           {items.map((item, idx) => (
             <Pressable
@@ -136,14 +143,14 @@ const DzikirScreen = () => {
               }}
               style={{
                 padding: 10,
-                borderBottomColor: '#eee',
+                borderBottomColor: themeColors.border,
                 borderBottomWidth: 1,
                 backgroundColor:
-                  currentPage == idx ? Colors.lightBlue : undefined,
+                  currentPage == idx ? Colors.lightBlue : themeColors.card,
               }}>
               <TextRegular
                 style={{
-                  color: currentPage == idx ? Colors.white : undefined,
+                  color: currentPage == idx ? Colors.white : themeColors.text,
                 }}>
                 {item.title}
               </TextRegular>
@@ -170,7 +177,7 @@ const DzikirScreen = () => {
       overlay={true}
       // opacity={0.4}
       position="right">
-      <SafeAreaView style={{flex: 1, backgroundColor: '#fff'}}>
+      <SafeAreaView style={{flex: 1, backgroundColor: themeColors.background}}>
         <View
           style={{
             flexDirection: 'row',
@@ -181,7 +188,7 @@ const DzikirScreen = () => {
           <Pressable
             onPress={() => navigation.goBack()}
             hitSlop={{left: 5, top: 5, right: 5, bottom: 5}}>
-            <Icon name="home" size={22} />
+            <Icon name="home" size={22} color={themeColors.text} />
           </Pressable>
           <View style={{flex: 1, alignItems: 'center'}}>
             <SwithModeButton
@@ -190,7 +197,7 @@ const DzikirScreen = () => {
             />
           </View>
           <Pressable onPress={() => setDrawerOpened(true)}>
-            <Icon name="list" size={22} />
+            <Icon name="list" size={22} color={themeColors.text} />
           </Pressable>
         </View>
         <Progress.Bar
@@ -199,7 +206,7 @@ const DzikirScreen = () => {
           borderRadius={0}
           borderWidth={0}
           color={Colors.lightBlue}
-          unfilledColor={'#eee'}
+          unfilledColor={themeColors.card}
           height={3}
         />
         <AnimatedPagerView

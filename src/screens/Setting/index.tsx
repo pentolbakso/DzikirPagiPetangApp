@@ -20,23 +20,31 @@ import {Dispatch, RootState} from '../../rematch/store';
 import {Switch} from 'react-native-gesture-handler';
 import Icon from 'react-native-vector-icons/Feather';
 import Rate, {AndroidMarket} from 'react-native-rate';
+import {useTheme, useNavigation} from '@react-navigation/native';
 
-const Menu = ({label, onPress}: {label: string; onPress?: () => void}) => (
-  <Pressable
-    onPress={onPress}
-    style={{
-      paddingVertical: 10,
-      borderBottomWidth: 0.5,
-      borderBottomColor: '#ddd',
-      flexDirection: 'row',
-      alignItems: 'center',
-    }}>
-    <TextRegular style={{flex: 1}}>{label}</TextRegular>
-    <Icon name="chevron-right" size={18} color="#bbb" />
-  </Pressable>
-);
+const Menu = ({label, onPress}: {label: string; onPress?: () => void}) => {
+  const {colors: themeColors} = useTheme();
+  return (
+    <Pressable
+      onPress={onPress}
+      style={{
+        paddingVertical: 10,
+        borderBottomWidth: 0.5,
+        borderBottomColor: themeColors.border,
+        flexDirection: 'row',
+        alignItems: 'center',
+      }}>
+      <TextRegular style={{flex: 1, color: themeColors.text}}>
+        {label}
+      </TextRegular>
+      <Icon name="chevron-right" size={18} color={themeColors.text} />
+    </Pressable>
+  );
+};
 
 const SettingScreen = () => {
+  const navigation = useNavigation();
+  const {colors: themeColors} = useTheme();
   const width = useWindowDimensions().width;
   const dispatch = useDispatch<Dispatch>();
   const initialArabicFontSize = useSelector(
@@ -51,6 +59,7 @@ const SettingScreen = () => {
   const showArabicLatin = useSelector(
     (state: RootState) => state.app.showArabicLatin,
   );
+  const darkMode = useSelector((state: RootState) => state.app.darkMode);
 
   const [preview, showPreview] = React.useState(false);
 
@@ -79,14 +88,20 @@ const SettingScreen = () => {
     });
   };
 
+  React.useEffect(() => {
+    navigation.setOptions({headerTitleStyle: {color: themeColors.text}});
+  }, [darkMode]);
+
   return (
     <ScrollView style={{flex: 1, padding: 10}}>
-      <Card style={{paddingVertical: 5}}>
+      <Card style={{paddingVertical: 5, backgroundColor: themeColors.card}}>
         <View style={{flexDirection: 'row'}}>
-          <TextRegular style={{fontSize: 16, flex: 1}}>
+          <TextRegular style={{fontSize: 16, flex: 1, color: themeColors.text}}>
             Ukuran teks arab
           </TextRegular>
-          <TextBold style={{fontSize: 16}}>{arabicFontSize}</TextBold>
+          <TextBold style={{fontSize: 16, color: themeColors.text}}>
+            {arabicFontSize}
+          </TextBold>
         </View>
         <View style={{alignItems: 'center'}}>
           <Slider
@@ -107,12 +122,19 @@ const SettingScreen = () => {
           />
         </View>
       </Card>
-      <Card style={{marginTop: 10, paddingVertical: 5}}>
+      <Card
+        style={{
+          marginTop: 10,
+          paddingVertical: 5,
+          backgroundColor: themeColors.card,
+        }}>
         <View style={{flexDirection: 'row'}}>
-          <TextRegular style={{fontSize: 16, flex: 1}}>
+          <TextRegular style={{fontSize: 16, flex: 1, color: themeColors.text}}>
             Ukuran teks terjemahan
           </TextRegular>
-          <TextBold style={{fontSize: 16}}>{translationFontSize}</TextBold>
+          <TextBold style={{fontSize: 16, color: themeColors.text}}>
+            {translationFontSize}
+          </TextBold>
         </View>
         <View style={{alignItems: 'center'}}>
           <Slider
@@ -133,7 +155,12 @@ const SettingScreen = () => {
           />
         </View>
       </Card>
-      <Card style={{marginTop: 10, paddingVertical: 5}}>
+      <Card
+        style={{
+          marginTop: 10,
+          paddingVertical: 5,
+          backgroundColor: themeColors.card,
+        }}>
         <View
           style={{flexDirection: 'row', alignItems: 'center', marginTop: 5}}>
           <Switch
@@ -145,15 +172,17 @@ const SettingScreen = () => {
             }}
             value={showArabicLatin}
           />
-          <TextRegular style={{marginLeft: 10}}>
+          <TextRegular style={{marginLeft: 10, color: themeColors.text}}>
             Tampilkan arab latin
           </TextRegular>
         </View>
         <View style={{flexDirection: 'row', marginTop: 15}}>
-          <TextRegular style={{fontSize: 16, flex: 1}}>
+          <TextRegular style={{fontSize: 16, flex: 1, color: themeColors.text}}>
             Ukuran teks arab latin
           </TextRegular>
-          <TextBold style={{fontSize: 16}}>{arabicLatinFontSize}</TextBold>
+          <TextBold style={{fontSize: 16, color: themeColors.text}}>
+            {arabicLatinFontSize}
+          </TextBold>
         </View>
         <View style={{alignItems: 'center'}}>
           <Slider
@@ -176,21 +205,41 @@ const SettingScreen = () => {
         </View>
       </Card>
       {preview && (
-        <Card style={{marginTop: 10}}>
-          <TextArabic style={{fontSize: arabicFontSize}}>
+        <Card style={{marginTop: 10, backgroundColor: themeColors.card}}>
+          <TextArabic
+            style={{fontSize: arabicFontSize, color: themeColors.text}}>
             ضَرَبَ زَيْدٌ عَمْرًا
           </TextArabic>
           {showArabicLatin && (
-            <TextLight style={{fontSize: arabicLatinFontSize, color: '#333'}}>
+            <TextLight
+              style={{fontSize: arabicLatinFontSize, color: themeColors.text}}>
               Dhoroba Zaidun Amran
             </TextLight>
           )}
-          <TextRegular style={{fontSize: translationFontSize}}>
+          <TextRegular
+            style={{fontSize: translationFontSize, color: themeColors.text}}>
             Zaid telah memukul Amr
           </TextRegular>
         </Card>
       )}
-      <Card style={{marginTop: 10}}>
+      <Card style={{marginTop: 10, backgroundColor: themeColors.card}}>
+        <View
+          style={{flexDirection: 'row', alignItems: 'center', marginTop: 5}}>
+          <Switch
+            trackColor={{false: '#ddd', true: Colors.lightBlue}}
+            thumbColor={Colors.white}
+            ios_backgroundColor="#ddd"
+            onValueChange={(value: boolean) => {
+              dispatch.app.setDarkMode(value);
+            }}
+            value={!!darkMode}
+          />
+          <TextRegular style={{marginLeft: 10, color: themeColors.text}}>
+            Mode gelap
+          </TextRegular>
+        </View>
+      </Card>
+      <Card style={{marginTop: 10, backgroundColor: themeColors.card}}>
         <Menu label={'Beri Rating'} onPress={handleRateOurApp} />
         <Menu
           label={'Referensi'}
