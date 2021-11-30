@@ -1,8 +1,9 @@
 import * as React from 'react';
-import {View} from 'react-native';
+import {StyleSheet, View} from 'react-native';
 import {
   TextArabic,
   TextBold,
+  TextItalic,
   TextLight,
   TextRegular,
 } from '../../components/Text';
@@ -10,6 +11,7 @@ import {Dzikir} from '../../types';
 import {ScrollView} from 'react-native-gesture-handler';
 import {useSelector} from 'react-redux';
 import {RootState} from '../../rematch/store';
+import Notes from './Notes';
 
 const Content = ({item, mode}: {item: Dzikir; mode: string}) => {
   const arabicFontSize = useSelector(
@@ -38,6 +40,8 @@ const Content = ({item, mode}: {item: Dzikir; mode: string}) => {
       <TextBold style={{fontSize: 24, textAlign: 'center'}}>
         {item.title}
       </TextBold>
+      <TextItalic style={{textAlign: 'center'}}>{item.note}</TextItalic>
+
       {mode == 'normal' ? (
         <View style={{marginTop: 10}}>
           <TextArabic style={{textAlign: 'center', fontSize: arabicFontSize}}>
@@ -95,7 +99,8 @@ const Content = ({item, mode}: {item: Dzikir; mode: string}) => {
           ))}
         </View>
       )}
-      <View style={{height: 30}} />
+      {/* <Notes item={item} /> */}
+      <View style={{height: 90}} />
     </ScrollView>
   );
 };

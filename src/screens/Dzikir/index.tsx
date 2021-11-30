@@ -1,10 +1,10 @@
 import {useNavigation, useRoute} from '@react-navigation/native';
 import * as React from 'react';
-import {Animated, Pressable, Text} from 'react-native';
+import {Animated, Pressable, StyleSheet, Text, ViewStyle} from 'react-native';
 import {View} from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import PagerView from 'react-native-pager-view';
-import {TextBold, TextRegular} from '../../components/Text';
+import {TextBold, TextRegular, TextSemiBold} from '../../components/Text';
 import {dzikirDb} from '../../services/db';
 import {Dzikir} from '../../types';
 import {ScrollView} from 'react-native-gesture-handler';
@@ -15,8 +15,24 @@ import MenuDrawer from 'react-native-side-drawer';
 import {useDispatch, useSelector} from 'react-redux';
 import {Dispatch, RootState} from '../../rematch/store';
 import Content from './Content';
+import Notes from './Notes';
 
 const AnimatedPagerView = Animated.createAnimatedComponent(PagerView);
+
+const BottomSheetBackground = (props: any) => {
+  return (
+    <View
+      style={[
+        {
+          borderTopColor: '#ddd',
+          borderTopWidth: 1,
+          backgroundColor: '#fff',
+        },
+        {...props.style},
+      ]}
+    />
+  );
+};
 
 const SwithModeButton = ({
   initialMode,
@@ -71,16 +87,29 @@ const DzikirScreen = () => {
   const time: string = (route.params as any).time || undefined;
   const [currentPage, setCurrentPage] = React.useState(0);
   const [drawerOpened, setDrawerOpened] = React.useState(false);
-  // const [mode, setMode] = React.useState('normal');
   const dispatch = useDispatch<Dispatch>();
   const mode = useSelector((state: RootState) => state.app.viewMode);
 
+  const [mounted, setMounted] = React.useState(false);
   const ref = React.useRef<PagerView>(null);
 
   const items: Array<Dzikir> = React.useMemo(
     () => dzikirDb.filter(it => it.time == time || it.time == ''),
     [time],
   );
+
+  const currentItem = React.useMemo(() => {
+    if (!items) return undefined;
+    return items[currentPage];
+  }, [items, currentPage]);
+
+  React.useEffect(() => {
+    const unsubscribe = navigation.addListener('focus', () => {
+      // setTimeout(() => setMounted(true), 500);
+      setMounted(true);
+    });
+    return unsubscribe;
+  }, [navigation]);
 
   const drawerContent = React.useCallback(
     () => (
@@ -185,9 +214,9 @@ const DzikirScreen = () => {
             [items, mode],
           )}
         </AnimatedPagerView>
+        {mounted && <Notes item={currentItem} />}
       </SafeAreaView>
     </MenuDrawer>
   );
 };
-
 export default DzikirScreen;
