@@ -9,6 +9,7 @@ export type AppState = {
   translationFontSize: number;
   showArabicLatin: boolean;
   darkMode: boolean;
+  showCounter: boolean;
 };
 
 export const app = createModel<RootModel>()({
@@ -20,6 +21,7 @@ export const app = createModel<RootModel>()({
     translationFontSize: 16,
     showArabicLatin: false,
     darkMode: false,
+    showCounter: false,
   } as AppState,
 
   reducers: {
@@ -43,7 +45,10 @@ export const app = createModel<RootModel>()({
     },
     setDarkMode(state: AppState, value: boolean) {
       return { ...state, darkMode: value }
-    }
+    },
+    setShowCounter(state: AppState, value: boolean) {
+      return { ...state, showCounter: value }
+    },
   },
 
   effects: (dispatch) => ({

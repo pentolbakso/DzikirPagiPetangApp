@@ -1,4 +1,5 @@
 export type Dzikir = {
+  id: number;
   arabic: string;
   arabic_latin: string;
   faedah: string;
@@ -9,4 +10,5 @@ export type Dzikir = {
   time: string;
   from_quran?: boolean;
   is_surah?: boolean;
+  max_counter?: number;
 }

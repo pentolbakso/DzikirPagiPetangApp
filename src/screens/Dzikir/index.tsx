@@ -12,27 +12,15 @@ import Icon from 'react-native-vector-icons/Feather';
 import * as Progress from 'react-native-progress';
 import {Colors} from '../../colors';
 import MenuDrawer from 'react-native-side-drawer';
+import CircularProgress from 'react-native-circular-progress-indicator';
 import {useDispatch, useSelector} from 'react-redux';
 import {Dispatch, RootState} from '../../rematch/store';
 import Content from './Content';
 import Notes from './Notes';
 
-const AnimatedPagerView = Animated.createAnimatedComponent(PagerView);
+const rippleConfig = {color: 'lightgray', borderless: true};
 
-const BottomSheetBackground = (props: any) => {
-  return (
-    <View
-      style={[
-        {
-          borderTopColor: '#ddd',
-          borderTopWidth: 1,
-          backgroundColor: '#fff',
-        },
-        {...props.style},
-      ]}
-    />
-  );
-};
+const AnimatedPagerView = Animated.createAnimatedComponent(PagerView);
 
 const SwithModeButton = ({
   initialMode,
@@ -90,6 +78,12 @@ const DzikirScreen = () => {
   const [drawerOpened, setDrawerOpened] = React.useState(false);
   const dispatch = useDispatch<Dispatch>();
   const mode = useSelector((state: RootState) => state.app.viewMode);
+  const showCounter = useSelector(
+    (state: RootState) => state.app.showCounter || false,
+  );
+  const [counters, setCounters] = React.useState<Map<number, number>>(
+    new Map(),
+  );
 
   const [mounted, setMounted] = React.useState(false);
   const ref = React.useRef<PagerView>(null);
@@ -103,6 +97,15 @@ const DzikirScreen = () => {
     if (!items) return undefined;
     return items[currentPage];
   }, [items, currentPage]);
+
+  const increaseCounter = React.useCallback(() => {
+    let id = currentItem?.id || -1;
+    let count = counters.get(id) || 0;
+    let max = currentItem?.max_counter || 0;
+    if (count >= max) return;
+
+    setCounters(new Map(counters.set(id, count + 1)));
+  }, [currentItem]);
 
   React.useEffect(() => {
     const unsubscribe = navigation.addListener('focus', () => {
@@ -221,6 +224,38 @@ const DzikirScreen = () => {
             [items, mode],
           )}
         </AnimatedPagerView>
+        <View
+          style={{
+            position: 'absolute',
+            bottom: 70,
+            right: 10,
+          }}>
+          {!!showCounter &&
+            !!currentItem?.max_counter &&
+            currentItem?.max_counter > 1 && (
+              <Pressable
+                onPress={increaseCounter}
+                android_ripple={rippleConfig}>
+                <CircularProgress
+                  value={counters.get(currentItem?.id) || 0}
+                  radius={40}
+                  duration={300}
+                  textColor={Colors.lightBlue}
+                  textStyle={{fontSize: 22, fontFamily: 'Nunito-Bold'}}
+                  maxValue={currentItem?.max_counter}
+                  title={undefined}
+                  titleFontSize={16}
+                  titleColor={'#333'}
+                  titleStyle={{fontWeight: 'bold'}}
+                  circleBackgroundColor={themeColors.card}
+                  activeStrokeColor={'#2465FD'}
+                  activeStrokeSecondaryColor={'#C3305D'}
+                  inActiveStrokeColor={themeColors.border}
+                  activeStrokeWidth={8}
+                />
+              </Pressable>
+            )}
+        </View>
         {mounted && <Notes item={currentItem} />}
       </SafeAreaView>
     </MenuDrawer>

@@ -50,7 +50,7 @@ const Navigator = () => {
         <Stack.Screen
           name="Dzikir"
           component={DzikirScreen}
-          options={{headerTitle: 'Dzikir'}}
+          options={{headerTitle: 'Dzikir', gestureEnabled: false}}
         />
         <Stack.Screen
           name="Setting"

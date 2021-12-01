@@ -2,6 +2,7 @@ import { Dzikir } from "../types";
 
 export const dzikirDb: Array<Dzikir> = [
   {
+    id: 1,
     arabic:
       'اللَّهُ لَا إِلَهَ إِلَّا هُوَ الْحَيُّ الْقَيُّومُ| لَا تَأْخُذُهُ سِنَةٌ وَلَا نَوْمٌ| لَهُ مَا فِي السَّمَاوَاتِ وَمَا فِي الْأَرْضِ| مَنْ ذَا الَّذِي يَشْفَعُ عِنْدَهُ إِلَّا بِإِذْنِهِ| يَعْلَمُ مَا بَيْنَ أَيْدِيْهِمْ وَمَا خَلْفَهُمْ| وَلَا يُحِيطُوْنَ بِشَيْءٍ مِنْ عِلْمِهِ إِلَّا بِمَا شَاءَ| وَسِعَ كُرْسِيُّهُ السَّمَاوَاتِ وَالْأَرْضَ| وَلَا يَئُوْدُهُ حِفْظُهُمَا| وَهُوَ الْعَلِيُّ الْعَظِيْمُ',
     arabic_latin: 'Allaahu laa illaa huwal-hayyul-qayyuum,| laa ta’khudzuhuu sinatu wa laa nauum,| lahuu maa fis-samawati wa maa fil-ard,| man dzalladzii yasyfa’u ‘indahuu illaa bi idznih.| Ya’lamu maa baina aidiihim wa maa khalfahum,| wa laa yuhiithuuna bi syai’im min’ilmihii illaa bimaa syaa’a,| wa si’a kursiyyuhus-samaawaati wal-ard,| wa laa ya’uudhuhuu hifzhuhumaa| wa huwal-‘aliyyul-‘azhiim.',
@@ -17,6 +18,7 @@ export const dzikirDb: Array<Dzikir> = [
     is_surah: false
   },
   {
+    id: 2,
     arabic:
       'بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ|قُلْ هُوَ اللَّهُ أَحَدٌ| اللَّهُ الصَّمَدُ| لَمْ يَلِدْ وَلَمْ يُولَدْ| وَلَمْ يَكُن لَّهُ كُفُوًا أَحَدٌ',
     arabic_latin: 'Bismillahirrahmannirrahiim| Qul huwallahu ahad| Allahu shomad| lam yalid wa lam yụlad| wa lam yakul lahụ kufuwan ahad',
@@ -29,9 +31,11 @@ export const dzikirDb: Array<Dzikir> = [
       'Dengan menyebut nama Allah Yang Maha Pengasih lagi Maha Penyayang.| Katakanlah: Dialah Allah, Yang Maha Esa.| Allah adalah ilah yang bergantung kepada-Nya segala urusan.| Dia tidak beranak dan tiada pula diperanakkan,| dan tidak ada seorang pun yang setara dengan Dia.',
     time: '',
     from_quran: true,
-    is_surah: true
+    is_surah: true,
+    max_counter: 3
   },
   {
+    id: 3,
     arabic:
       'بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ|قُلْ أَعُوذُ بِرَبِّ الْفَلَقِ| مِن شَرِّ مَا خَلَقَ| وَمِن شَرِّ غَاسِقٍ إِذَا وَقَبَ| وَمِن شَرِّ النَّفَّاثَاتِ فِي الْعُقَدِ| وَمِن شَرِّ حَاسِدٍ إِذَا حَسَدَ',
     arabic_latin: 'Bismillahirrahmannirrahiim| qul a`ụżu birabbil-falaq| min syarri mā khalaq| wa min syarri gāsiqin iżā waqab|wa min syarrin-naffāṡāti fil-`uqad| wa min syarri ḥāsidin iżā ḥasad',
@@ -44,9 +48,11 @@ export const dzikirDb: Array<Dzikir> = [
       'Dengan menyebut nama Allah Yang Maha Pengasih lagi Maha Penyayang.| Katakanlah: Aku berlindung kepada Rabb yang menguasai Shubuh,| dari kejahatan makhluk-Nya,| dan dari kejahatan malam apabila telah gelap gulita,| dan dari kejahatan-kejahatan wanita tukang sihir yang menghembus pada buhul-buhul,| dan dari kejahatan orang yang dengki apabila ia dengki.',
     time: '',
     from_quran: true,
-    is_surah: true
+    is_surah: true,
+    max_counter: 3
   },
   {
+    id: 4,
     arabic:
       'بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ|قُلْ أَعُوذُ بِرَبِّ النَّاسِ| مَلِكِ النَّاسِ| إِلَهِ النَّاسِ| مِن شَرِّ الْوَسْوَاسِ الْخَنَّاسِ| الَّذِي يُوَسْوِسُ فِي صُدُورِ النَّاسِ| مِنَ الْجِنَّةِ وَ النَّاسِ',
     arabic_latin: 'Bismillahirrahmannirrahiim| qul a`ụżu birabbin-nās| malikin-nās| ilāhin-nās| min syarril-waswāsil-khannās| alladzi yuwaswisu fī ṣudụrin-nās| minal-jinnati wan-nās',
@@ -59,9 +65,11 @@ export const dzikirDb: Array<Dzikir> = [
       'Dengan menyebut nama Allah Yang Maha Pengasih lagi Maha Penyayang.| Katakanlah: Aku berlindung kepada Rabb manusia.| Raja manusia.| Sembahan manusia,| dari kejahatan (bisikan) syaitan yang biasa bersembunyi,| yang membisikkan (kejahatan) ke dalam dada manusia,| dari jin dan manusia.',
     time: '',
     from_quran: true,
-    is_surah: true
+    is_surah: true,
+    max_counter: 3
   },
   {
+    id: 5,
     arabic:
       'أَصْبَحْنَا وَأَصْبَحَ الْمُلْكُ لِلَّهِ| وَالْحَمْدُ لِلَّهِ| لَا إِلَـهَ إِلَّا اللهُ وَحْدَهُ لَا شَرِيْكَ لَهُ| لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ| وَهُوَ عَلَى كُلِّ شَيْءٍ قَدِيْرُ| رَبِّ أَسْأَلُكَ خَيْرَ مَا فِيْ هَذَا الْيَوْمِ وَخَيْرَ مَا بَعْدَهُ| وَأَعُوْذُ بِكَ مِنْ شَرِّ مَا فِيْ هَذَا الْيَوْمِ وَشَرِّ مَا بَعْدَهُ| رَبِّ أَعُوْذُ بِكَ مِنَ الْكَسَلِ وَسُوْءِ الْكِبَرِ| رَبِّ أَعُوْذُ بِكَ مِنْ عَذَابٍ فِي النَّارِ وَعَذَابٍ فِي الْقَبْرِ',
     arabic_latin:
@@ -76,6 +84,7 @@ export const dzikirDb: Array<Dzikir> = [
     time: 'pagi',
   },
   {
+    id: 6,
     arabic:
       'أَمْسَيْنَا وَأَمْسَى الْمُلْكُ لِلَّهِ| وَالْحَمْدُ لِلَّهِ| لَا إِلَهَ إِلَّا اللَّهُ وَحْدَهُ لَا شَرِيكَ لَهُ| لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ| وَهُوَ عَلَى كُلِّ شَيْءٍ قَدِيرٌ| رَبِّ أَسْأَلُكَ خَيْرَ مَا فِي هَذِهِ اللَّيْلَةِ وَخَيْرَ مَا بَعْدَهَا| وَأَعُوذُبِكَ مِنْ شَرِّ مَا فِي هَذِهِ اللَّيْلَةِ وَشَرِّ مَا بَعْدَهَا| رَبِّ أَعُوذُبِكَ مِنَ الْكَسَلِ وَسُوءِ الْكِبَرِ| رَبِّ أَعُوذُبِكَ مِنْ عَذَابٍ فِي النَّارِ وَعَذَابٍ فِي الْقَبْرِ',
     arabic_latin:
@@ -90,6 +99,7 @@ export const dzikirDb: Array<Dzikir> = [
     time: 'petang',
   },
   {
+    id: 7,
     arabic:
       'اَللَّهُمَّ بِكَ أَصْبَحْنَا| وَبِكَ أَمْسَيْنَا| وَبِكَ نَحْيَا وَبِكَ نَمُوْتُ| وَإِلَيْكَ النُّشُوْرُ',
     arabic_latin:
@@ -104,6 +114,7 @@ export const dzikirDb: Array<Dzikir> = [
     time: 'pagi',
   },
   {
+    id: 8,
     arabic:
       'اللَّهُمَّ بِكَ أَمْسَيْنَا| وَبِكَ أَصْبَحْنَا|وَبِكَ نَحْيَا وَبِكَ نَمُوتُ| وَإِلَيْكَ الْمَصِيْرُ',
     arabic_latin:
@@ -118,6 +129,7 @@ export const dzikirDb: Array<Dzikir> = [
     time: 'petang',
   },
   {
+    id: 9,
     arabic:
       'اَللَّهُمَّ أَنْتَ رَبِّيْ لَا إِلَـهَ إِلَّا أَنْتَ| خَلَقْتَنِيْ وَأَنَا عَبْدُكَ| وَأَنَا عَلَى عَهْدِكَ| وَوَعْدِكَ مَا اسْتَطَعْتُ| أَعُوْذُ بِكَ مِنْ شَرِّ مَا صَنَعْتُ| أَبُوْءُ لَكَ بِنِعْمَتِكَ عَلَيَّ| وَأَبُوْءُ بِذَنْبِيْ| فَاغْفِرْ لِيْ| فَإِنَّهُ لَا يَغْفِرُ الذُّنُوْبَ إِلَّا أَنْتَ.',
     arabic_latin:
@@ -132,6 +144,7 @@ export const dzikirDb: Array<Dzikir> = [
     time: '',
   },
   {
+    id: 10,
     arabic:
       'اَللَّهُمَّ إِنِّيْ أَسْأَلُكَ الْعَفْوَ وَالْعَافِيَةَ فِي الدُّنْيَا وَاْلآخِرَةِ| اَللَّهُمَّ إِنِّيْ أَسْأَلُكَ الْعَفْوَ وَالْعَافِيَةَ فِي دِيْنِيْ وَدُنْيَايَ وَأَهْلِيْ وَمَالِيْ| اللَّهُمَّ اسْتُرْ عَوْرَاتِى وَآمِنْ رَوْعَاتِى| اَللَّهُمَّ احْفَظْنِيْ مِنْ بَيْنِ يَدَيَّ وَمِنْ خَلْفِيْ وَعَنْ يَمِيْنِيْ وَعَنْ شِمَالِيْ وَمِنْ فَوْقِيْ| وَأَعُوْذُ بِعَظَمَتِكَ أَنْ أُغْتَالَ مِنْ تَحْتِيْ',
     arabic_latin:
@@ -146,6 +159,7 @@ export const dzikirDb: Array<Dzikir> = [
     time: '',
   },
   {
+    id: 11,
     arabic:
       'اَللَّهُمَّ عَالِمَ الْغَيْبِ وَالشَّهَادَةِ فَاطِرَ السَّمَاوَاتِ وَاْلأَرْضِ| رَبَّ كُلِّ شَيْءٍ وَمَلِيْكَهُ| أَشْهَدُ أَنْ لَا إِلَـهَ إِلَّا أَنْتَ| أَعُوْذُ بِكَ مِنْ شَرِّ نَفْسِيْ وَمِنْ شَرِّ الشَّيْطَانِ وَشِرْكِهِ| وَأَنْ أَقْتَرِفَ عَلَى نَفْسِيْ سُوْءًا أَوْ أَجُرَّهُ إِلَى مُسْلِمٍ',
     arabic_latin:
@@ -160,6 +174,7 @@ export const dzikirDb: Array<Dzikir> = [
     time: '',
   },
   {
+    id: 12,
     arabic:
       'بِسْمِ اللَّهِ الَّذِى لَا يَضُرُّ مَعَ اسْمِهِ شَىْءٌ فِى الأَرْضِ وَلَا فِى السَّمَاءِ| وَهُوَ السَّمِيعُ الْعَلِيمُ',
     arabic_latin:
@@ -172,8 +187,10 @@ export const dzikirDb: Array<Dzikir> = [
     translated_id:
       'Dengan nama Allah yang bila disebut, segala sesuatu di bumi dan langit tidak akan berbahaya,| Dia-lah Yang Maha Mendengar lagi Maha Mengetahui.',
     time: '',
+    max_counter: 3
   },
   {
+    id: 13,
     arabic:
       'رَضِيْتُ بِاللَّهِ رَبًّا| وَبِاْلإِسْلاَمِ دِيْنًا| وَبِمُحَمَّدٍ صَلَّى اللَّهُ عَلَيْهِ وَسَلَّمَ نَبِيًّا',
     arabic_latin:
@@ -186,8 +203,10 @@ export const dzikirDb: Array<Dzikir> = [
     translated_id:
       'Aku ridha Allah sebagai Rabb,| Islam sebagai agama| dan Muhammad shallallahu ‘alaihi wa sallam sebagai nabi.',
     time: '',
+    max_counter: 3
   },
   {
+    id: 14,
     arabic:
       'يَا حَيُّ يَا قَيُّوْمُ بِرَحْمَتِكَ أَسْتَغِيْثُ| وَأَصْلِحْ لِيْ شَأْنِيْ كُلَّهُ| وَلَا تَكِلْنِيْ إِلَى نَفْسِيْ طَرْفَةَ عَيْنٍ أَبَدًا',
     arabic_latin:
@@ -202,6 +221,7 @@ export const dzikirDb: Array<Dzikir> = [
     time: '',
   },
   {
+    id: 15,
     arabic:
       'أَصْبَحْنَا عَلَى فِطْرَةِ اْلإِسْلاَمِ وَعَلَى كَلِمَةِ اْلإِخْلاَصِ| وَعَلَى دِيْنِ نَبِيِّنَا مُحَمَّدٍ صَلَّى اللَّهُ عَلَيْهِ وَسَلَّمَ| وَعَلَى مِلَّةِ أَبِيْنَا إِبْرَاهِيْمَ حَنِيْفًا مُسْلِمًا وَمَا كَانَ مِنَ الْمُشْرِكِيْنَ',
     arabic_latin:
@@ -216,6 +236,7 @@ export const dzikirDb: Array<Dzikir> = [
     time: 'pagi',
   },
   {
+    id: 16,
     arabic: 'سُبْحَانَ اللَّهِ وَبِحَمْدِهِ',
     arabic_latin: 'Subhanallahi wa bi-hamdih.',
     faedah:
@@ -224,9 +245,11 @@ export const dzikirDb: Array<Dzikir> = [
     note: 'Dibaca 100x',
     title: 'Dzikir Ringan Namun Berat di Timbangan',
     translated_id: 'Maha suci Allah, aku memuji-Nya.',
-    time: ''
+    time: '',
+    max_counter: 100
   },
   {
+    id: 17,
     arabic:
       'لَا إِلَـهَ إِلَّا اللَّهُ وَحْدَهُ لَا شَرِيْكَ لَهُ| لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ| وَهُوَ عَلَى كُلِّ شَيْءٍ قَدِيْرُ',
     arabic_latin:
@@ -234,13 +257,15 @@ export const dzikirDb: Array<Dzikir> = [
     faedah:
       '<b>Faedah jika dibaca 1 atau 10 kali</b>\nBarangsiapa yang membaca dzikir tersebut di pagi hari sebanyak sepuluh kali, Allah akan mencatatkan baginya 10 kebaikan, menghapuskan baginya 10 kesalahan, ia juga mendapatkan kebaikan semisal memerdekakan 10 budak, Allah akan melindunginya dari gangguan setan hingg petang hari. Siapa yang mengucapkannya di petang hari, ia akan mendapatkan keutamaan semisal itu pula. [HR. An Nasai Al Kubra 6:10]\n<br />\n<b>Faedah jika dibaca 100 kali dalam sehari</b>Barangsiapa yang mengucapkan dzikir tersebut dalam sehari sebanyak seratus kali, maka itu seperti membebaskan 10 orang budak, dicatat baginya 100 kebaikan, dihapus baginya 100 kesalahan, dirinya akan terjaga dari gangguan setan dari pagi hingga petang hari, dan tidak ada seorang pun yang lebih baik dari yang ia lakukan kecuali oleh orang yang mengamalkan lebih dari itu. [HR. Bukhari no. 3293 dan Muslim no. 2691]',
     narrator: '',
-    note: 'Dibaca 10x',
+    note: 'Dibaca 1x atau 10x atau 100x',
     title: 'Bertauhid',
     translated_id:
       'Tidak ada ilah yang berhak disembah selain Allah semata, tidak ada sekutu bagiNya.| Bagi-Nya kerajaan dan segala pujian.| Dia-lah yang berkuasa atas segala sesuatu.',
     time: '',
+    max_counter: 100
   },
   {
+    id: 18,
     arabic:
       'سُبْحَانَ اللَّهِ وَبِحَمْدِهِ| عَدَدَ خَلْقِهِ| وَرِضَا نَفْسِهِ| وَزِنَةَ عَرْشِهِ| وَمِدَادَ كَلِمَاتِهِ',
     arabic_latin:
@@ -253,8 +278,10 @@ export const dzikirDb: Array<Dzikir> = [
     translated_id:
       'Maha Suci Allah,| aku memujiNya sebanyak makhluk-Nya,| sejauh kerelaan-Nya,| seberat timbangan ‘Arsy-Nya| dan sebanyak tinta tulisan kalimat-Nya.',
     time: 'pagi',
+    max_counter: 3
   },
   {
+    id: 19,
     arabic:
       'اَللَّهُمَّ إِنِّيْ أَسْأَلُكَ عِلْمًا نَافِعًا| وَرِزْقًا طَيِّبًا| وَعَمَلاً مُتَقَبَّلاً',
     arabic_latin:
@@ -269,6 +296,7 @@ export const dzikirDb: Array<Dzikir> = [
     time: 'pagi',
   },
   {
+    id: 20,
     arabic: 'أَسْتَغْفِرُ اللَّهَ وَأَتُوْبُ إِلَيْهِ',
     arabic_latin: 'Astagh-firullah wa atuubu ilaih.',
     faedah: '',
@@ -277,8 +305,10 @@ export const dzikirDb: Array<Dzikir> = [
     title: 'Istighfar',
     translated_id: 'Aku memohon ampun kepada Allah dan bertobat kepada-Nya.',
     time: 'pagi',
+    max_counter: 100
   },
   {
+    id: 21,
     arabic:
       'أَعُوْذُ بِكَلِمَاتِ اللَّهِ التَّامَّاتِ مِنْ شَرِّ مَا خَلَقَ',
     arabic_latin: 'A’udzu bikalimaatillahit-taammaati min syarri maa kholaq.',
@@ -290,5 +320,6 @@ export const dzikirDb: Array<Dzikir> = [
     translated_id:
       'Aku berlindung dengan kalimat-kalimat Allah yang sempurna dari kejahatan makhluk yang diciptakanNya.',
     time: 'petang',
+    max_counter: 3
   },
 ];

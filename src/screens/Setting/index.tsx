@@ -48,18 +48,23 @@ const SettingScreen = () => {
   const width = useWindowDimensions().width;
   const dispatch = useDispatch<Dispatch>();
   const initialArabicFontSize = useSelector(
-    (state: RootState) => state.app.arabicFontSize,
+    (state: RootState) => state.app.arabicFontSize || 32,
   );
   const initialArabicLatinFontSize = useSelector(
-    (state: RootState) => state.app.arabicLatinFontSize,
+    (state: RootState) => state.app.arabicLatinFontSize || 16,
   );
   const initialTranslationFontSize = useSelector(
-    (state: RootState) => state.app.translationFontSize,
+    (state: RootState) => state.app.translationFontSize || 16,
   );
   const showArabicLatin = useSelector(
-    (state: RootState) => state.app.showArabicLatin,
+    (state: RootState) => state.app.showArabicLatin || false,
   );
-  const darkMode = useSelector((state: RootState) => state.app.darkMode);
+  const darkMode = useSelector(
+    (state: RootState) => state.app.darkMode || false,
+  );
+  const showCounter = useSelector(
+    (state: RootState) => state.app.showCounter || false,
+  );
 
   const [preview, showPreview] = React.useState(false);
 
@@ -121,13 +126,6 @@ const SettingScreen = () => {
             onValueChange={val => setArabicFontSize(Math.trunc(val))}
           />
         </View>
-      </Card>
-      <Card
-        style={{
-          marginTop: 10,
-          paddingVertical: 5,
-          backgroundColor: themeColors.card,
-        }}>
         <View style={{flexDirection: 'row'}}>
           <TextRegular style={{fontSize: 16, flex: 1, color: themeColors.text}}>
             Ukuran teks terjemahan
@@ -154,13 +152,6 @@ const SettingScreen = () => {
             }}
           />
         </View>
-      </Card>
-      <Card
-        style={{
-          marginTop: 10,
-          paddingVertical: 5,
-          backgroundColor: themeColors.card,
-        }}>
         <View
           style={{flexDirection: 'row', alignItems: 'center', marginTop: 5}}>
           <Switch
@@ -230,6 +221,21 @@ const SettingScreen = () => {
             thumbColor={Colors.white}
             ios_backgroundColor="#ddd"
             onValueChange={(value: boolean) => {
+              dispatch.app.setShowCounter(value);
+            }}
+            value={!!showCounter}
+          />
+          <TextRegular style={{marginLeft: 10, color: themeColors.text}}>
+            Penghitung dzikir
+          </TextRegular>
+        </View>
+        <View
+          style={{flexDirection: 'row', alignItems: 'center', marginTop: 10}}>
+          <Switch
+            trackColor={{false: '#ddd', true: Colors.lightBlue}}
+            thumbColor={Colors.white}
+            ios_backgroundColor="#ddd"
+            onValueChange={(value: boolean) => {
               dispatch.app.setDarkMode(value);
             }}
             value={!!darkMode}
@@ -260,6 +266,7 @@ const SettingScreen = () => {
           }
         />
       </Card>
+      <View style={{height: 50}} />
     </ScrollView>
   );
 };

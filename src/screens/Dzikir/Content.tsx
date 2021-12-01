@@ -74,7 +74,7 @@ const Content = ({item, mode}: {item: Dzikir; mode: string}) => {
               color: themeColors.text,
               fontSize: translationFontSize,
             }}>
-            {tarjimArr.join(' ')}
+            {tarjimArr.join(item?.is_surah ? ' ۝ ' : ' ')}
           </TextRegular>
         </View>
       ) : (
@@ -117,7 +117,7 @@ const Content = ({item, mode}: {item: Dzikir; mode: string}) => {
           ))}
         </View>
       )}
-      <View style={{height: 90}} />
+      <View style={{height: 170}} />
     </ScrollView>
   );
 };
