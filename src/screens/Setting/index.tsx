@@ -9,6 +9,7 @@ import {
 import {
   TextArabic,
   TextBold,
+  TextItalic,
   TextLight,
   TextRegular,
 } from '../../components/Text';
@@ -97,7 +98,9 @@ const SettingScreen = () => {
   };
 
   React.useEffect(() => {
-    navigation.setOptions({headerTitleStyle: {color: themeColors.text}});
+    navigation.setOptions({
+      headerTintColor: themeColors.text,
+    });
   }, [darkMode]);
 
   return (
@@ -273,16 +276,16 @@ const SettingScreen = () => {
             )
           }
         />
-        <Menu
-          label={'Tentang Aplikasi'}
-          onPress={() =>
-            Alert.alert(
-              'Aplikasi Dzikir Pagi Petang',
-              'oleh\r\nPagi Petang Studio',
-            )
-          }
-        />
       </Card>
+      <TextRegular
+        style={{
+          color: themeColors.text,
+          marginTop: 10,
+          textAlign: 'center',
+          fontSize: 14,
+        }}>
+        dari{'\n'}Pagi Petang Studio
+      </TextRegular>
       <View style={{height: 50}} />
     </ScrollView>
   );

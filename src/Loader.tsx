@@ -1,3 +1,4 @@
+import {useTheme} from '@react-navigation/native';
 import * as React from 'react';
 import {AppState, StatusBar} from 'react-native';
 import {useDispatch, useSelector} from 'react-redux';
@@ -6,6 +7,7 @@ import {Dispatch, RootState} from './rematch/store';
 const Loader = () => {
   const dispatch = useDispatch<Dispatch>();
   const darkMode = useSelector((state: RootState) => state.app.darkMode);
+  const {colors: themeColors} = useTheme();
 
   const _startListening = () => {};
 
@@ -29,7 +31,12 @@ const Loader = () => {
     };
   }, []);
 
-  return <StatusBar barStyle={!!darkMode ? 'light-content' : 'dark-content'} />;
+  return (
+    <StatusBar
+      barStyle={darkMode ? 'light-content' : 'dark-content'}
+      backgroundColor={darkMode ? '#000' : '#fff'}
+    />
+  );
 };
 
 export default Loader;

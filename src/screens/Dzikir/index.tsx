@@ -2,6 +2,7 @@ import {useNavigation, useRoute, useTheme} from '@react-navigation/native';
 import * as React from 'react';
 import {
   Animated,
+  Platform,
   Pressable,
   StyleSheet,
   Text,
@@ -113,11 +114,11 @@ const DzikirScreen = () => {
     let count = counters.get(id) || 0;
     let max = currentItem?.max_counter || 0;
     if (count >= max) {
-      if (enableVibrate) Vibration.vibrate(1000);
+      if (enableVibrate) Vibration.vibrate(500);
       return;
     }
 
-    if (enableVibrate) Vibration.vibrate(200);
+    if (enableVibrate) Vibration.vibrate(100);
     setCounters(new Map(counters.set(id, count + 1)));
   }, [currentItem, enableVibrate]);
 
@@ -204,7 +205,7 @@ const DzikirScreen = () => {
           }}>
           <Pressable
             onPress={() => navigation.goBack()}
-            hitSlop={{left: 5, top: 5, right: 5, bottom: 5}}>
+            hitSlop={{left: 10, top: 10, right: 10, bottom: 10}}>
             <Icon name="home" size={22} color={themeColors.text} />
           </Pressable>
           <View style={{flex: 1, alignItems: 'center'}}>
@@ -213,7 +214,9 @@ const DzikirScreen = () => {
               onChange={val => dispatch.app.setViewMode(val)}
             />
           </View>
-          <Pressable onPress={() => setDrawerOpened(true)}>
+          <Pressable
+            onPress={() => setDrawerOpened(true)}
+            hitSlop={{left: 10, top: 10, right: 10, bottom: 10}}>
             <Icon name="list" size={22} color={themeColors.text} />
           </Pressable>
         </View>
@@ -241,7 +244,7 @@ const DzikirScreen = () => {
         <View
           style={{
             position: 'absolute',
-            bottom: 70,
+            bottom: Platform.OS == 'ios' ? 70 : 90,
             right: 10,
           }}>
           {!!showCounter &&

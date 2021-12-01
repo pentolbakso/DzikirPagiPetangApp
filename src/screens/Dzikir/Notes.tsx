@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {View, StyleSheet, Pressable} from 'react-native';
+import {View, Platform, Pressable} from 'react-native';
 import {TextRegular, TextSemiBold} from '../../components/Text';
 import {Dzikir} from '../../types';
 import BottomSheet from '@gorhom/bottom-sheet';
@@ -15,8 +15,8 @@ const BottomSheetBackground = (props: any) => {
       style={[
         {
           borderWidth: 0,
-          borderTopColor: '#ccc',
-          borderTopWidth: 0.5,
+          borderTopColor: themeColors.border,
+          borderTopWidth: 1,
           backgroundColor: themeColors.card,
         },
         {...props.style},
@@ -28,7 +28,10 @@ const BottomSheetBackground = (props: any) => {
 const Notes = ({item}: {item?: Dzikir}) => {
   const {colors: themeColors} = useTheme();
   const bottomSheetRef = React.useRef<BottomSheet>(null);
-  const snapPoints = React.useMemo(() => [60, '60%'], []);
+  const snapPoints = React.useMemo(
+    () => (Platform.OS == 'ios' ? [60, '60%'] : [80, '60%']),
+    [],
+  );
   const handleClose = () => bottomSheetRef.current?.snapToIndex(0);
 
   return (
@@ -42,7 +45,7 @@ const Notes = ({item}: {item?: Dzikir}) => {
         <TextSemiBold style={{color: themeColors.text}}>
           Catatan / Faedah
         </TextSemiBold>
-        <ScrollView style={{padding: 15}}>
+        <ScrollView style={{margin: 15}}>
           <TextRegular style={{color: themeColors.text}}>
             {item?.faedah}
           </TextRegular>
