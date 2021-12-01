@@ -65,6 +65,9 @@ const SettingScreen = () => {
   const showCounter = useSelector(
     (state: RootState) => state.app.showCounter || false,
   );
+  const enableVibrate = useSelector(
+    (state: RootState) => state.app.enableVibrate || false,
+  );
 
   const [preview, showPreview] = React.useState(false);
 
@@ -225,8 +228,22 @@ const SettingScreen = () => {
             }}
             value={!!showCounter}
           />
-          <TextRegular style={{marginLeft: 10, color: themeColors.text}}>
+          <TextRegular
+            style={{marginLeft: 10, color: themeColors.text, marginRight: 10}}>
             Penghitung dzikir
+          </TextRegular>
+          <Switch
+            trackColor={{false: '#ddd', true: Colors.lightBlue}}
+            thumbColor={Colors.white}
+            ios_backgroundColor="#ddd"
+            onValueChange={(value: boolean) => {
+              dispatch.app.setEnableVibrate(value);
+            }}
+            value={!!enableVibrate}
+            disabled={!showCounter}
+          />
+          <TextRegular style={{marginLeft: 10, color: themeColors.text}}>
+            Getar
           </TextRegular>
         </View>
         <View

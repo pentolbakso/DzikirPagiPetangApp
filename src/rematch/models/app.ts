@@ -10,6 +10,7 @@ export type AppState = {
   showArabicLatin: boolean;
   darkMode: boolean;
   showCounter: boolean;
+  enableVibrate: boolean;
 };
 
 export const app = createModel<RootModel>()({
@@ -22,6 +23,7 @@ export const app = createModel<RootModel>()({
     showArabicLatin: false,
     darkMode: false,
     showCounter: false,
+    enableVibrate: false
   } as AppState,
 
   reducers: {
@@ -48,6 +50,9 @@ export const app = createModel<RootModel>()({
     },
     setShowCounter(state: AppState, value: boolean) {
       return { ...state, showCounter: value }
+    },
+    setEnableVibrate(state: AppState, value: boolean) {
+      return { ...state, enableVibrate: value }
     },
   },
 

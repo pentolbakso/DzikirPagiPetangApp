@@ -1,6 +1,13 @@
 import {useNavigation, useRoute, useTheme} from '@react-navigation/native';
 import * as React from 'react';
-import {Animated, Pressable, StyleSheet, Text, ViewStyle} from 'react-native';
+import {
+  Animated,
+  Pressable,
+  StyleSheet,
+  Text,
+  Vibration,
+  ViewStyle,
+} from 'react-native';
 import {View} from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import PagerView from 'react-native-pager-view';
@@ -81,6 +88,9 @@ const DzikirScreen = () => {
   const showCounter = useSelector(
     (state: RootState) => state.app.showCounter || false,
   );
+  const enableVibrate = useSelector(
+    (state: RootState) => state.app.enableVibrate || false,
+  );
   const [counters, setCounters] = React.useState<Map<number, number>>(
     new Map(),
   );
@@ -102,10 +112,14 @@ const DzikirScreen = () => {
     let id = currentItem?.id || -1;
     let count = counters.get(id) || 0;
     let max = currentItem?.max_counter || 0;
-    if (count >= max) return;
+    if (count >= max) {
+      if (enableVibrate) Vibration.vibrate(1000);
+      return;
+    }
 
+    if (enableVibrate) Vibration.vibrate(200);
     setCounters(new Map(counters.set(id, count + 1)));
-  }, [currentItem]);
+  }, [currentItem, enableVibrate]);
 
   React.useEffect(() => {
     const unsubscribe = navigation.addListener('focus', () => {
