@@ -55,6 +55,7 @@ const Notes = ({item}: {item?: Dzikir}) => {
               flexDirection: 'row',
               justifyContent: 'center',
               alignItems: 'center',
+              marginTop: 10,
             }}>
             <Icon name="x" color={themeColors.primary} size={16} />
             <TextSemiBold style={{color: themeColors.primary}}>

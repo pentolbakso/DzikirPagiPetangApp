@@ -7,8 +7,7 @@ export const dzikirDb: Array<Dzikir> = [
       'اللَّهُ لَا إِلَهَ إِلَّا هُوَ الْحَيُّ الْقَيُّومُ| لَا تَأْخُذُهُ سِنَةٌ وَلَا نَوْمٌ| لَهُ مَا فِي السَّمَاوَاتِ وَمَا فِي الْأَرْضِ| مَنْ ذَا الَّذِي يَشْفَعُ عِنْدَهُ إِلَّا بِإِذْنِهِ| يَعْلَمُ مَا بَيْنَ أَيْدِيْهِمْ وَمَا خَلْفَهُمْ| وَلَا يُحِيطُوْنَ بِشَيْءٍ مِنْ عِلْمِهِ إِلَّا بِمَا شَاءَ| وَسِعَ كُرْسِيُّهُ السَّمَاوَاتِ وَالْأَرْضَ| وَلَا يَئُوْدُهُ حِفْظُهُمَا| وَهُوَ الْعَلِيُّ الْعَظِيْمُ',
     arabic_latin: 'Allaahu laa illaa huwal-hayyul-qayyuum,| laa ta’khudzuhuu sinatu wa laa nauum,| lahuu maa fis-samawati wa maa fil-ard,| man dzalladzii yasyfa’u ‘indahuu illaa bi idznih.| Ya’lamu maa baina aidiihim wa maa khalfahum,| wa laa yuhiithuuna bi syai’im min’ilmihii illaa bimaa syaa’a,| wa si’a kursiyyuhus-samaawaati wal-ard,| wa laa ya’uudhuhuu hifzhuhumaa| wa huwal-‘aliyyul-‘azhiim.',
     faedah:
-      'Siapa yang membacanya ketika petang, maka ia akan dilindungi (oleh Allah dari berbagai gangguan) hingga pagi. Siapa yang membacanya ketika pagi, maka ia akan dilindungi hingga petang. [HR. Al Hakim (1: 562). Syaikh Al Albani menshahihkan hadits tersebut dalam Shahih At Targhib wa At Tarhib no. 655]',
-    narrator: 'Q.S. Al-Baqarah: 255',
+      'Siapa yang membacanya ketika petang, maka ia akan dilindungi (oleh Allah dari berbagai gangguan) hingga pagi. Siapa yang membacanya ketika pagi, maka ia akan dilindungi hingga petang.\n\nHR. Al Hakim (1: 562). Syaikh Al Albani menshahihkan hadits tersebut dalam Shahih At Targhib wa At Tarhib no. 655',
     note: 'Dibaca 1x',
     title: 'Ayat Kursi',
     translated_id:
@@ -23,8 +22,7 @@ export const dzikirDb: Array<Dzikir> = [
       'بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ|قُلْ هُوَ اللَّهُ أَحَدٌ| اللَّهُ الصَّمَدُ| لَمْ يَلِدْ وَلَمْ يُولَدْ| وَلَمْ يَكُن لَّهُ كُفُوًا أَحَدٌ',
     arabic_latin: 'Bismillahirrahmannirrahiim| Qul huwallahu ahad| Allahu shomad| lam yalid wa lam yụlad| wa lam yakul lahụ kufuwan ahad',
     faedah:
-      'Siapa yang mengucapkannya masing-masing tiga kali ketika pagi dan petang, maka segala sesuatu akan dicukupkan untuknya. [HR. Abu Daud no. 5082, Tirmidzi no. 3575. Al Hafizh Abu Thohir mengatakan bahwa sanad hadits ini hasan]',
-    narrator: 'Q.S. Al Ikhlas: 1-4',
+      'Siapa yang mengucapkannya masing-masing tiga kali ketika pagi dan petang, maka segala sesuatu akan dicukupkan untuknya.\n\nHR. Abu Daud no. 5082, Tirmidzi no. 3575. Al Hafizh Abu Thohir mengatakan bahwa sanad hadits ini hasan',
     note: 'Dibaca 3x',
     title: 'Surah Al-Ikhlas',
     translated_id:
@@ -40,8 +38,7 @@ export const dzikirDb: Array<Dzikir> = [
       'بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ|قُلْ أَعُوذُ بِرَبِّ الْفَلَقِ| مِن شَرِّ مَا خَلَقَ| وَمِن شَرِّ غَاسِقٍ إِذَا وَقَبَ| وَمِن شَرِّ النَّفَّاثَاتِ فِي الْعُقَدِ| وَمِن شَرِّ حَاسِدٍ إِذَا حَسَدَ',
     arabic_latin: 'Bismillahirrahmannirrahiim| qul a`ụżu birabbil-falaq| min syarri mā khalaq| wa min syarri gāsiqin iżā waqab|wa min syarrin-naffāṡāti fil-`uqad| wa min syarri ḥāsidin iżā ḥasad',
     faedah:
-      'Siapa yang mengucapkannya masing-masing tiga kali ketika pagi dan petang, maka segala sesuatu akan dicukupkan untuknya. [HR. Abu Daud no. 5082, Tirmidzi no. 3575. Al Hafizh Abu Thohir mengatakan bahwa sanad hadits ini hasan]',
-    narrator: 'Q.S. Al Falaq: 1-5',
+      'Siapa yang mengucapkannya masing-masing tiga kali ketika pagi dan petang, maka segala sesuatu akan dicukupkan untuknya.\n\nHR. Abu Daud no. 5082, Tirmidzi no. 3575. Al Hafizh Abu Thohir mengatakan bahwa sanad hadits ini hasan',
     note: 'Dibaca 3x',
     title: 'Surah Al-Falaq',
     translated_id:
@@ -57,8 +54,7 @@ export const dzikirDb: Array<Dzikir> = [
       'بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ|قُلْ أَعُوذُ بِرَبِّ النَّاسِ| مَلِكِ النَّاسِ| إِلَهِ النَّاسِ| مِن شَرِّ الْوَسْوَاسِ الْخَنَّاسِ| الَّذِي يُوَسْوِسُ فِي صُدُورِ النَّاسِ| مِنَ الْجِنَّةِ وَ النَّاسِ',
     arabic_latin: 'Bismillahirrahmannirrahiim| qul a`ụżu birabbin-nās| malikin-nās| ilāhin-nās| min syarril-waswāsil-khannās| alladzi yuwaswisu fī ṣudụrin-nās| minal-jinnati wan-nās',
     faedah:
-      'Siapa yang mengucapkannya masing-masing tiga kali ketika pagi dan petang, maka segala sesuatu akan dicukupkan untuknya. [HR. Abu Daud no. 5082, Tirmidzi no. 3575. Al Hafizh Abu Thohir mengatakan bahwa sanad hadits ini hasan]',
-    narrator: 'QS. An Naas: 1-6',
+      'Siapa yang mengucapkannya masing-masing tiga kali ketika pagi dan petang, maka segala sesuatu akan dicukupkan untuknya.\n\nHR. Abu Daud no. 5082, Tirmidzi no. 3575. Al Hafizh Abu Thohir mengatakan bahwa sanad hadits ini hasan',
     note: 'Dibaca 3x',
     title: 'Surah An-Nas',
     translated_id:
@@ -75,8 +71,7 @@ export const dzikirDb: Array<Dzikir> = [
     arabic_latin:
       'Ash-bahnaa wa ash-bahal mulku lillah| walhamdulillah| laa ilaha illallah wahdahu laa syarika lah| lahul mulku walahul hamdu| wa huwa ‘ala kulli syai-in qodir| Robbi as-aluka khoiro maa fii hadzal yaum wa khoiro maa ba’dahu| wa a’udzu bika min syarri maa fii hadzal yaum wa syarri maa ba’dahu| Robbi a’udzu bika minal kasali wa su-il kibar| Robbi a’udzu bika min ‘adzabin fin naari wa ‘adzabin fil qobri.',
     faedah:
-      'Meminta pada Allah kebaikan di hari ini dan kebaikan sesudahnya, juga agar terhindar dari kejelekan di hari ini dan kejelekan sesudahnya. Di dalamnya berisi pula permintaan agar terhindar dari rasa malas padahal mampu untuk beramal, juga agar terhindar dari kejelekan di masa tua. Di dalamnya juga berisi permintaan agar terselamatkan dari siksa kubur dan siksa neraka yang merupakan siksa terberat di hari kiamat kelak. [HR. Muslim no. 2723. Lihat keterangan Syarh Hisnul Muslim, hal. 161]',
-    narrator: '',
+      'Meminta pada Allah kebaikan di hari ini dan kebaikan sesudahnya, juga agar terhindar dari kejelekan di hari ini dan kejelekan sesudahnya. Di dalamnya berisi pula permintaan agar terhindar dari rasa malas padahal mampu untuk beramal, juga agar terhindar dari kejelekan di masa tua. Di dalamnya juga berisi permintaan agar terselamatkan dari siksa kubur dan siksa neraka yang merupakan siksa terberat di hari kiamat kelak.\n\nHR. Muslim no. 2723. Lihat keterangan Syarh Hisnul Muslim, hal. 161',
     note: 'Dibaca 1x',
     title: 'Meminta kebaikan untuk hari Ini',
     translated_id:
@@ -90,8 +85,7 @@ export const dzikirDb: Array<Dzikir> = [
     arabic_latin:
       'Amsaynaa wa amsal mulku lillah| walhamdulillah| laa ilaha illallah wahdahu laa syarika lah,| lahul mulku walahul hamdu| wa huwa ‘ala kulli syai-in qodir.| Robbi as-aluka khoiro maa fii hadzihil lailah wa khoiro maa ba’dahaa,| wa a’udzu bika min syarri maa fii hadzihil lailah wa syarri maa ba’dahaa.| Robbi a’udzu bika minal kasali wa suu-il kibar.| Robbi a’udzu bika min ‘adzabin fin naari wa ‘adzabin fil qobri.',
     faedah:
-      'Meminta pada Allah kebaikan di malam ini dan kebaikan sesudahnya, juga agar terhindar dari kejelekan di malam ini dan kejelekan sesudahnya. Di dalamnya berisi pula permintaan agar terhindar dari rasa malas padahal mampu untuk beramal, juga agar terhindar dari kejelekan di masa tua. Di dalamnya juga berisi permintaan agar terselamatkan dari siksa kubur dan siksa neraka yang merupakan siksa terberat di hari kiamat kelak. [HR. Muslim no. 2723. Lihat keterangan Syarh Hisnul Muslim, hal. 161]',
-    narrator: '',
+      'Meminta pada Allah kebaikan di malam ini dan kebaikan sesudahnya, juga agar terhindar dari kejelekan di malam ini dan kejelekan sesudahnya. Di dalamnya berisi pula permintaan agar terhindar dari rasa malas padahal mampu untuk beramal, juga agar terhindar dari kejelekan di masa tua. Di dalamnya juga berisi permintaan agar terselamatkan dari siksa kubur dan siksa neraka yang merupakan siksa terberat di hari kiamat kelak.\n\nHR. Muslim no. 2723. Lihat keterangan Syarh Hisnul Muslim, hal. 161',
     note: 'Dibaca 1x',
     title: 'Meminta kebaikan untuk malam Ini',
     translated_id:
@@ -104,9 +98,7 @@ export const dzikirDb: Array<Dzikir> = [
       'اَللَّهُمَّ بِكَ أَصْبَحْنَا| وَبِكَ أَمْسَيْنَا| وَبِكَ نَحْيَا وَبِكَ نَمُوْتُ| وَإِلَيْكَ النُّشُوْرُ',
     arabic_latin:
       'Allahumma bika ash-bahnaa| wa bika amsaynaa| wa bika nahyaa wa bika namuutu| wa ilaikan nusyuur.',
-    faedah: '',
-    narrator:
-      'HR. Tirmidzi no. 3391 dan Abu Daud no. 5068. Al Hafizh Abu Thohir mengatakan bahwa sanad hadits ini shahih.',
+    faedah: 'HR. Tirmidzi no. 3391 dan Abu Daud no. 5068. Al Hafizh Abu Thohir mengatakan bahwa sanad hadits ini shahih.',
     note: 'Dibaca 1x',
     title: 'Do’a ketika memasuki waktu pagi',
     translated_id:
@@ -119,9 +111,7 @@ export const dzikirDb: Array<Dzikir> = [
       'اللَّهُمَّ بِكَ أَمْسَيْنَا| وَبِكَ أَصْبَحْنَا|وَبِكَ نَحْيَا وَبِكَ نَمُوتُ| وَإِلَيْكَ الْمَصِيْرُ',
     arabic_latin:
       'Allahumma bika amsaynaa| wa bika ash-bahnaa| wa bika nahyaa wa bika namuutu| wa ilaikal mashiir.',
-    faedah: '',
-    narrator:
-      'HR. Tirmidzi no. 3391 dan Abu Daud no. 5068. Al Hafizh Abu Thohir mengatakan bahwa sanad hadits ini shahih.',
+    faedah: 'HR. Tirmidzi no. 3391 dan Abu Daud no. 5068. Al Hafizh Abu Thohir mengatakan bahwa sanad hadits ini shahih.',
     note: 'Dibaca 1x',
     title: 'Do’a ketika memasuki waktu petang',
     translated_id:
@@ -135,8 +125,7 @@ export const dzikirDb: Array<Dzikir> = [
     arabic_latin:
       'Allahumma anta robbii laa ilaha illa anta,| kholaqtanii wa anaa ‘abduka| wa anaa ‘ala ‘ahdika| wa wa’dika mas-tatho’tu.| A’udzu bika min syarri maa shona’tu.| Abu-u laka bi ni’matika ‘alayya| wa abu-u bi dzambii.| Fagh-firlii| fainnahu laa yagh-firudz dzunuuba illa anta.',
     faedah:
-      'Barangsiapa mengucapkan dzikir ini di siang hari dalam keadaan penuh keyakinan, lalu ia mati pada hari tersebut sebelum petang hari, maka ia termasuk penghuni surga. Barangsiapa yang mengucapkannya di malam hari dalam keadaan penuh keyakinan, lalu ia mati sebelum pagi, maka ia termasuk penghuni surga. [HR. Bukhari no. 6306]',
-    narrator: '',
+      'Barangsiapa mengucapkan dzikir ini di siang hari dalam keadaan penuh keyakinan, lalu ia mati pada hari tersebut sebelum petang hari, maka ia termasuk penghuni surga. Barangsiapa yang mengucapkannya di malam hari dalam keadaan penuh keyakinan, lalu ia mati sebelum pagi, maka ia termasuk penghuni surga.\n\nHR. Bukhari no. 6306',
     note: 'Dibaca 1x',
     title: 'Sayyidul Istighfar',
     translated_id:
@@ -150,8 +139,7 @@ export const dzikirDb: Array<Dzikir> = [
     arabic_latin:
       'Allahumma innii as-alukal ‘afwa wal ‘aafiyah fid dunyaa wal aakhiroh.| Allahumma innii as-alukal ‘afwa wal ‘aafiyah fii diinii wa dun-yaya wa ahlii wa maalii.| Allahumas-tur ‘awrootii wa aamin row’aatii.| Allahummahfazh-nii mim bayni yadayya wa min kholfii wa ‘an yamiinii wa ‘an syimaalii wa min fawqii| wa a’udzu bi ‘azhomatik an ughtala min tahtii.',
     faedah:
-      'Rasulullah shallallahu ‘alaihi wa sallam tidaklah pernah meninggalkan do’a ini di pagi dan petang hari. Di dalamnya berisi perlindungan dan keselamatan pada agama, dunia, keluarga dan harta dari berbagai macam gangguan yang datang dari berbagai arah. [HR. Abu Daud no. 5074 dan Ibnu Majah no. 3871. Al Hafizh Abu Thohir mengatakan bahwa sanad hadits ini shahih]',
-    narrator: '',
+      'Rasulullah shallallahu ‘alaihi wa sallam tidaklah pernah meninggalkan do’a ini di pagi dan petang hari. Di dalamnya berisi perlindungan dan keselamatan pada agama, dunia, keluarga dan harta dari berbagai macam gangguan yang datang dari berbagai arah.\n\nHR. Abu Daud no. 5074 dan Ibnu Majah no. 3871. Al Hafizh Abu Thohir mengatakan bahwa sanad hadits ini shahih',
     note: 'Dibaca 1x',
     title: 'Memohon keselamatan dunia dan akhirat',
     translated_id:
@@ -165,8 +153,7 @@ export const dzikirDb: Array<Dzikir> = [
     arabic_latin:
       'Allahumma ‘aalimal ghoybi wasy syahaadah faathiros samaawaati wal ardh.| Robba kulli syai-in wa maliikah.| Asyhadu alla ilaha illa anta.| A’udzu bika min syarri nafsii wa min syarrisy syaythooni wa syirkihi,| wa an aqtarifa ‘alaa nafsii suu-an aw ajurrohu ilaa muslim.',
     faedah:
-      'Do’a ini diajarkan oleh Rasulullah shallallahu ‘alaihi wa sallam pada Abu Bakr Ash Shiddiq radhiyallahu ‘anhu untuk dibaca pada pagi, petang dan saat beranjak tidur. [HR. Tirmidzi no. 3392 dan Abu Daud no. 5067. Al Hafizh Abu Thohir mengatakan bahawa sanad hadits ini shahih. Adapun kalimat terakhir (وَأَنْ أَقْتَرِفَ عَلَى نَفْسِيْ سُوْءًا أَوْ أَجُرُّهُ إِلَى مُسْلِمٍ) adalah tambahan dari riwayat Ahmad 2: 196. Dikomentari oleh Syaikh Syu’aib Al Arnauth bahwa hadits tersebut shahih dilihat dari jalur lainnya (shahih lighoirihi)]',
-    narrator: '',
+      'Do’a ini diajarkan oleh Rasulullah shallallahu ‘alaihi wa sallam pada Abu Bakr Ash Shiddiq radhiyallahu ‘anhu untuk dibaca pada pagi, petang dan saat beranjak tidur.\n\nHR. Tirmidzi no. 3392 dan Abu Daud no. 5067. Al Hafizh Abu Thohir mengatakan bahwa sanad hadits ini shahih. Adapun kalimat terakhir (وَأَنْ أَقْتَرِفَ عَلَى نَفْسِيْ سُوْءًا أَوْ أَجُرُّهُ إِلَى مُسْلِمٍ) adalah tambahan dari riwayat Ahmad 2: 196. Dikomentari oleh Syaikh Syu’aib Al Arnauth bahwa hadits tersebut shahih dilihat dari jalur lainnya (shahih lighoirihi)',
     note: 'Dibaca 1x',
     title: "Do'a pagi, petang dan saat beranjak tidur",
     translated_id:
@@ -180,8 +167,7 @@ export const dzikirDb: Array<Dzikir> = [
     arabic_latin:
       'Bismillahilladzi laa yadhurru ma’asmihi syai-un fil ardhi wa laa fis samaa’| wa huwas samii’ul ‘aliim.',
     faedah:
-      'Barangsiapa yang mengucapkan dzikir tersebut sebanyak tiga kali di pagi hari dan tiga kali di petang hari, maka tidak akan ada bahaya yang tiba-tiba memudaratkannya. [HR. Abu Daud no. 5088, 5089, Tirmidzi no. 3388, dan Ibnu Majah no. 3869. Al Hafizh Abu Thohir mengatakan bahwa sanad hadits ini hasan.]',
-    narrator: '',
+      'Barangsiapa yang mengucapkan dzikir tersebut sebanyak tiga kali di pagi hari dan tiga kali di petang hari, maka tidak akan ada bahaya yang tiba-tiba memudaratkannya.\n\nHR. Abu Daud no. 5088, 5089, Tirmidzi no. 3388, dan Ibnu Majah no. 3869. Al Hafizh Abu Thohir mengatakan bahwa sanad hadits ini hasan.',
     note: 'Dibaca 3x',
     title: "Do'a terhindar dari bahaya yang tiba-tiba",
     translated_id:
@@ -196,8 +182,7 @@ export const dzikirDb: Array<Dzikir> = [
     arabic_latin:
       'Rodhiitu billaahi robbaa| wa bil-islaami diinaa,| wa bi-muhammadin shallallaahu ‘alaihi wa sallama nabiyya.',
     faedah:
-      'Barangsiapa yang mengucapkan dzikir ini sebanyak tiga kali di pagi hari dan tiga kali di petang hari, maka pantas baginya mendapatkan ridha Allah. [HR. Abu Daud no. 5072, Tirmidzi no. 3389. Al Hafizh Abu Thohir mengatakan bahwa hadits ini hasan]',
-    narrator: '',
+      'Barangsiapa yang mengucapkan dzikir ini sebanyak tiga kali di pagi hari dan tiga kali di petang hari, maka pantas baginya mendapatkan ridha Allah.\n\nHR. Abu Daud no. 5072, Tirmidzi no. 3389. Al Hafizh Abu Thohir mengatakan bahwa hadits ini hasan',
     note: 'Dibaca 3x',
     title: 'Ridha',
     translated_id:
@@ -212,8 +197,7 @@ export const dzikirDb: Array<Dzikir> = [
     arabic_latin:
       'Yaa Hayyu Yaa Qoyyum, bi-rohmatika as-taghiits,| wa ash-lih lii sya’nii kullahu| wa laa takilnii ilaa nafsii thorfata ‘ainin Abadan.',
     faedah:
-      'Dzikir ini diajarkan oleh Nabi shallallahu ‘alaihi wa sallam pada Fathimah supaya diamalkan pagi dan petang. [HR. Ibnu As Sunni dalam ‘Amalul Yaum wal Lailah no. 46, An Nasai dalam Al Kubro (381/ 570), Al Bazzar dalam musnadnya (4/ 25/ 3107), Al Hakim (1: 545). Sanad hadits ini hasan sebagaimana dikatakan oleh Syaikh Al Albani dalam As Silsilah Ash Shahihah no. 227]',
-    narrator: '',
+      'Dzikir ini diajarkan oleh Nabi shallallahu ‘alaihi wa sallam pada Fathimah supaya diamalkan pagi dan petang.\n\nHR. Ibnu As Sunni dalam ‘Amalul Yaum wal Lailah no. 46, An Nasai dalam Al Kubro (381/ 570), Al Bazzar dalam musnadnya (4/ 25/ 3107), Al Hakim (1: 545). Sanad hadits ini hasan sebagaimana dikatakan oleh Syaikh Al Albani dalam As Silsilah Ash Shahihah no. 227',
     note: 'Dibaca 1x',
     title: "Do'a meminta dilancarkan urusan",
     translated_id:
@@ -226,9 +210,7 @@ export const dzikirDb: Array<Dzikir> = [
       'أَصْبَحْنَا عَلَى فِطْرَةِ اْلإِسْلاَمِ وَعَلَى كَلِمَةِ اْلإِخْلاَصِ| وَعَلَى دِيْنِ نَبِيِّنَا مُحَمَّدٍ صَلَّى اللَّهُ عَلَيْهِ وَسَلَّمَ| وَعَلَى مِلَّةِ أَبِيْنَا إِبْرَاهِيْمَ حَنِيْفًا مُسْلِمًا وَمَا كَانَ مِنَ الْمُشْرِكِيْنَ',
     arabic_latin:
       'Ash-bahnaa ‘ala fithrotil islaam wa ‘alaa kalimatil ikhlaash,| wa ‘alaa diini nabiyyinaa Muhammadin shallallahu ‘alaihi wa sallam,| wa ‘alaa millati abiina Ibraahiima haniifam muslimaaw wa maa kaana minal musyrikin',
-    faedah: '',
-    narrator:
-      'HR. Ahmad (3: 406). Syaikh Syu’aib Al Arnauth mengatakan bahwa sanad hadits ini shahih sesuai syarat Bukhari Muslim. Lihat pula As Silsilah Ash Shahihah no. 2989',
+    faedah: 'HR. Ahmad (3: 406). Syaikh Syu’aib Al Arnauth mengatakan bahwa sanad hadits ini shahih sesuai syarat Bukhari Muslim. Lihat pula As Silsilah Ash Shahihah no. 2989',
     note: 'Dibaca 1x',
     title: 'Bertauhid',
     translated_id:
@@ -240,8 +222,7 @@ export const dzikirDb: Array<Dzikir> = [
     arabic: 'سُبْحَانَ اللَّهِ وَبِحَمْدِهِ',
     arabic_latin: 'Subhanallahi wa bi-hamdih.',
     faedah:
-      'Barangsiapa yang mengucapkan kalimat ‘subhanallahi wa bi hamdih’ di pagi dan petang hari sebanyak 100x, maka tidak ada yang datang pada hari kiamat yang lebih baik dari yang ia lakukan kecuali orang yang mengucapkan semisal atau lebih dari itu. [HR. Muslim no. 2692]',
-    narrator: '',
+      'Barangsiapa yang mengucapkan kalimat ‘subhanallahi wa bi hamdih’ di pagi dan petang hari sebanyak 100x, maka tidak ada yang datang pada hari kiamat yang lebih baik dari yang ia lakukan kecuali orang yang mengucapkan semisal atau lebih dari itu.\n\nHR. Muslim no. 2692',
     note: 'Dibaca 100x',
     title: 'Dzikir Ringan Namun Berat di Timbangan',
     translated_id: 'Maha suci Allah, aku memuji-Nya.',
@@ -255,8 +236,7 @@ export const dzikirDb: Array<Dzikir> = [
     arabic_latin:
       'Laa ilaha illallah wahdahu laa syarika lah,| lahul mulku walahul hamdu| wa huwa ‘ala kulli syai-in qodiir.',
     faedah:
-      '<b>Faedah jika dibaca 1 atau 10 kali</b>\nBarangsiapa yang membaca dzikir tersebut di pagi hari sebanyak sepuluh kali, Allah akan mencatatkan baginya 10 kebaikan, menghapuskan baginya 10 kesalahan, ia juga mendapatkan kebaikan semisal memerdekakan 10 budak, Allah akan melindunginya dari gangguan setan hingg petang hari. Siapa yang mengucapkannya di petang hari, ia akan mendapatkan keutamaan semisal itu pula. [HR. An Nasai Al Kubra 6:10]\n<br />\n<b>Faedah jika dibaca 100 kali dalam sehari</b>Barangsiapa yang mengucapkan dzikir tersebut dalam sehari sebanyak seratus kali, maka itu seperti membebaskan 10 orang budak, dicatat baginya 100 kebaikan, dihapus baginya 100 kesalahan, dirinya akan terjaga dari gangguan setan dari pagi hingga petang hari, dan tidak ada seorang pun yang lebih baik dari yang ia lakukan kecuali oleh orang yang mengamalkan lebih dari itu. [HR. Bukhari no. 3293 dan Muslim no. 2691]',
-    narrator: '',
+      'Faedah jika dibaca 1 atau 10 kali\nBarangsiapa yang membaca dzikir tersebut di pagi hari sebanyak sepuluh kali, Allah akan mencatatkan baginya 10 kebaikan, menghapuskan baginya 10 kesalahan, ia juga mendapatkan kebaikan semisal memerdekakan 10 budak, Allah akan melindunginya dari gangguan setan hingga petang hari. Siapa yang mengucapkannya di petang hari, ia akan mendapatkan keutamaan semisal itu pula.\nHR. An Nasai Al Kubra 6:10\n\nFaedah jika dibaca 100 kali dalam sehari\nBarangsiapa yang mengucapkan dzikir tersebut dalam sehari sebanyak seratus kali, maka itu seperti membebaskan 10 orang budak, dicatat baginya 100 kebaikan, dihapus baginya 100 kesalahan, dirinya akan terjaga dari gangguan setan dari pagi hingga petang hari, dan tidak ada seorang pun yang lebih baik dari yang ia lakukan kecuali oleh orang yang mengamalkan lebih dari itu.\nHR. Bukhari no. 3293 dan Muslim no. 2691',
     note: 'Dibaca 1x atau 10x atau 100x',
     title: 'Bertauhid',
     translated_id:
@@ -271,8 +251,7 @@ export const dzikirDb: Array<Dzikir> = [
     arabic_latin:
       'Subhanallah wa bi-hamdih,| ‘adada kholqih| wa ridhoo nafsih.| wa zinata ‘arsyih,| wa midaada kalimaatih.',
     faedah:
-      'Nabi shallallahu ‘alaihi wa sallam mengatakan pada Juwairiyah bahwa dzikir di atas telah mengalahkan dzikir yang dibaca oleh Juwairiyah dari selepas Shubuh sampai waktu Dhuha. [HR. Muslim no. 2726]',
-    narrator: '',
+      'Nabi shallallahu ‘alaihi wa sallam mengatakan pada Juwairiyah bahwa dzikir di atas telah mengalahkan dzikir yang dibaca oleh Juwairiyah dari selepas Shubuh sampai waktu Dhuha.\n\nHR. Muslim no. 2726',
     note: 'Dibaca 3x',
     title: "Memuji-muji Allah Subhana wa Ta'ala",
     translated_id:
@@ -287,8 +266,7 @@ export const dzikirDb: Array<Dzikir> = [
     arabic_latin:
       'Allahumma innii as-aluka ‘ilman naafi’a,| wa rizqon thoyyibaa,| wa ‘amalan mutaqobbalaa.',
     faedah:
-      'Ya Allah, sungguh aku memohon kepada-Mu ilmu yang bermanfaat (bagi diriku dan orang lain), rizki yang halal dan amal yang diterima (di sisi-Mu dan mendapatkan ganjaran yang baik). [HR. Ibnu Majah no. 925 dan Ahmad 6: 305, 322. Al Hafizh Abu Thohir mengatakan bahwa hadits ini shahih]',
-    narrator: '',
+      'Ya Allah, sungguh aku memohon kepada-Mu ilmu yang bermanfaat (bagi diriku dan orang lain), rizki yang halal dan amal yang diterima (di sisi-Mu dan mendapatkan ganjaran yang baik).\n\nHR. Ibnu Majah no. 925 dan Ahmad 6: 305, 322. Al Hafizh Abu Thohir mengatakan bahwa hadits ini shahih',
     note: 'Dibaca 1x',
     title: 'Meminta Ilmu dan Rezeki',
     translated_id:
@@ -299,8 +277,7 @@ export const dzikirDb: Array<Dzikir> = [
     id: 20,
     arabic: 'أَسْتَغْفِرُ اللَّهَ وَأَتُوْبُ إِلَيْهِ',
     arabic_latin: 'Astagh-firullah wa atuubu ilaih.',
-    faedah: '',
-    narrator: 'HR. Bukhari no. 6307 dan Muslim no. 2702',
+    faedah: 'HR. Bukhari no. 6307 dan Muslim no. 2702',
     note: 'Dibaca 100x sehari',
     title: 'Istighfar',
     translated_id: 'Aku memohon ampun kepada Allah dan bertobat kepada-Nya.',
@@ -313,8 +290,7 @@ export const dzikirDb: Array<Dzikir> = [
       'أَعُوْذُ بِكَلِمَاتِ اللَّهِ التَّامَّاتِ مِنْ شَرِّ مَا خَلَقَ',
     arabic_latin: 'A’udzu bikalimaatillahit-taammaati min syarri maa kholaq.',
     faedah:
-      'Siapa yang mengucapkannya di petang hari, niscaya tidak ada racun atau binatang (seperti: kalajengking) yang mencelakakannya di malam itu. [HR. Ahmad 2: 290. Syaikh Syu’aib Al Arnauth mengatakan bahwa sanad hadits ini shahih sesuai syarat Muslim. Lihat komentar Syaikh Syu’aib Al Arnauth terhadap hadits ini untuk pengertian hummah diartikan dengan racun atau sengatan kalajengking]',
-    narrator: '',
+      'Siapa yang mengucapkannya di petang hari, niscaya tidak ada racun atau binatang (seperti: kalajengking) yang mencelakakannya di malam itu.\n\nHR. Ahmad 2: 290. Syaikh Syu’aib Al Arnauth mengatakan bahwa sanad hadits ini shahih sesuai syarat Muslim. Lihat komentar Syaikh Syu’aib Al Arnauth terhadap hadits ini untuk pengertian hummah diartikan dengan racun atau sengatan kalajengking',
     note: 'Dibaca 3x',
     title: "Do'a meminta perlindungan",
     translated_id:
