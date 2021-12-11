@@ -73,7 +73,7 @@ export const dzikirDb: Array<Dzikir> = [
     faedah:
       'Meminta pada Allah kebaikan di hari ini dan kebaikan sesudahnya, juga agar terhindar dari kejelekan di hari ini dan kejelekan sesudahnya. Di dalamnya berisi pula permintaan agar terhindar dari rasa malas padahal mampu untuk beramal, juga agar terhindar dari kejelekan di masa tua. Di dalamnya juga berisi permintaan agar terselamatkan dari siksa kubur dan siksa neraka yang merupakan siksa terberat di hari kiamat kelak.\n\nHR. Muslim no. 2723. Lihat keterangan Syarh Hisnul Muslim, hal. 161',
     note: 'Dibaca 1x',
-    title: 'Meminta kebaikan untuk hari Ini',
+    title: 'Meminta kebaikan untuk hari ini',
     translated_id:
       'Kami telah memasuki waktu pagi dan kerajaan hanya milik Allah,| segala puji bagi Allah.| Tidak ada ilah (yang berhak disembah) kecuali Allah semata, tiada sekutu bagi-Nya.| Milik Allah kerajaan dan bagi-Nya pujian.| Dia-lah Yang Mahakuasa atas segala sesuatu.| Wahai Rabbku, aku mohon kepada-Mu kebaikan di hari ini dan kebaikan sesudahnya.| Aku berlindung kepada-Mu dari kejahatan hari ini dan kejahatan sesudahnya.| Wahai Rabbku, aku berlindung kepada-Mu dari kemalasan dan kejelekan di hari tua.| Wahai Rabbku, aku berlindung kepada-Mu dari siksaan di neraka dan siksaan di alam kubur.',
     time: 'pagi',
@@ -100,7 +100,7 @@ export const dzikirDb: Array<Dzikir> = [
       'Allahumma bika ash-bahnaa| wa bika amsaynaa| wa bika nahyaa wa bika namuutu| wa ilaikan nusyuur.',
     faedah: 'HR. Tirmidzi no. 3391 dan Abu Daud no. 5068. Al Hafizh Abu Thohir mengatakan bahwa sanad hadits ini shahih.',
     note: 'Dibaca 1x',
-    title: 'Do’a ketika memasuki waktu pagi',
+    title: 'Do’a memasuki waktu pagi',
     translated_id:
       'Ya Allah, dengan rahmat dan pertolongan-Mu kami memasuki waktu pagi| dan dengan rahmat dan pertolongan-Mu kami memasuki waktu petang.| Dengan rahmat dan pertolongan-Mu kami hidup dan dengan kehendak-Mu kami mati.| Dan kepada-Mu kebangkitan (bagi semua makhluk).',
     time: 'pagi',
@@ -113,7 +113,7 @@ export const dzikirDb: Array<Dzikir> = [
       'Allahumma bika amsaynaa| wa bika ash-bahnaa| wa bika nahyaa wa bika namuutu| wa ilaikal mashiir.',
     faedah: 'HR. Tirmidzi no. 3391 dan Abu Daud no. 5068. Al Hafizh Abu Thohir mengatakan bahwa sanad hadits ini shahih.',
     note: 'Dibaca 1x',
-    title: 'Do’a ketika memasuki waktu petang',
+    title: 'Do’a memasuki waktu petang',
     translated_id:
       'Ya Allah, dengan rahmat dan pertolongan-Mu kami memasuki waktu petang,| dan dengan rahmat dan pertolongan-Mu kami memasuki waktu pagi.| Dengan rahmat dan pertolonganMu kami hidup dan dengan kehendakMu kami mati.| Dan kepada-Mu tempat kembali (bagi semua makhluk).',
     time: 'petang',
@@ -169,7 +169,7 @@ export const dzikirDb: Array<Dzikir> = [
     faedah:
       'Barangsiapa yang mengucapkan dzikir tersebut sebanyak tiga kali di pagi hari dan tiga kali di petang hari, maka tidak akan ada bahaya yang tiba-tiba memudaratkannya.\n\nHR. Abu Daud no. 5088, 5089, Tirmidzi no. 3388, dan Ibnu Majah no. 3869. Al Hafizh Abu Thohir mengatakan bahwa sanad hadits ini hasan.',
     note: 'Dibaca 3x',
-    title: "Do'a terhindar dari bahaya yang tiba-tiba",
+    title: "Do'a terhindar dari bahaya",
     translated_id:
       'Dengan nama Allah yang bila disebut, segala sesuatu di bumi dan langit tidak akan berbahaya,| Dia-lah Yang Maha Mendengar lagi Maha Mengetahui.',
     time: '',
@@ -184,7 +184,7 @@ export const dzikirDb: Array<Dzikir> = [
     faedah:
       'Barangsiapa yang mengucapkan dzikir ini sebanyak tiga kali di pagi hari dan tiga kali di petang hari, maka pantas baginya mendapatkan ridha Allah.\n\nHR. Abu Daud no. 5072, Tirmidzi no. 3389. Al Hafizh Abu Thohir mengatakan bahwa hadits ini hasan',
     note: 'Dibaca 3x',
-    title: 'Ridha',
+    title: 'Ridha seorang hamba',
     translated_id:
       'Aku ridha Allah sebagai Rabb,| Islam sebagai agama| dan Muhammad shallallahu ‘alaihi wa sallam sebagai nabi.',
     time: '',
@@ -199,7 +199,7 @@ export const dzikirDb: Array<Dzikir> = [
     faedah:
       'Dzikir ini diajarkan oleh Nabi shallallahu ‘alaihi wa sallam pada Fathimah supaya diamalkan pagi dan petang.\n\nHR. Ibnu As Sunni dalam ‘Amalul Yaum wal Lailah no. 46, An Nasai dalam Al Kubro (381/ 570), Al Bazzar dalam musnadnya (4/ 25/ 3107), Al Hakim (1: 545). Sanad hadits ini hasan sebagaimana dikatakan oleh Syaikh Al Albani dalam As Silsilah Ash Shahihah no. 227',
     note: 'Dibaca 1x',
-    title: "Do'a meminta dilancarkan urusan",
+    title: "Do'a dilancarkan urusan",
     translated_id:
       'Wahai Rabb Yang Maha Hidup, wahai Rabb Yang Berdiri Sendiri (tidak butuh segala sesuatu), dengan rahmat-Mu aku minta pertolongan,| perbaikilah segala urusanku| dan jangan diserahkan kepadaku sekali pun sekejap mata (tanpa mendapat pertolongan dariMu).',
     time: '',
@@ -212,7 +212,7 @@ export const dzikirDb: Array<Dzikir> = [
       'Ash-bahnaa ‘ala fithrotil islaam wa ‘alaa kalimatil ikhlaash,| wa ‘alaa diini nabiyyinaa Muhammadin shallallahu ‘alaihi wa sallam,| wa ‘alaa millati abiina Ibraahiima haniifam muslimaaw wa maa kaana minal musyrikin',
     faedah: 'HR. Ahmad (3: 406). Syaikh Syu’aib Al Arnauth mengatakan bahwa sanad hadits ini shahih sesuai syarat Bukhari Muslim. Lihat pula As Silsilah Ash Shahihah no. 2989',
     note: 'Dibaca 1x',
-    title: 'Bertauhid',
+    title: 'Doa istiqomah di agama Islam',
     translated_id:
       'Di waktu pagi kami memegang agama Islam, kalimat ikhlas (kalimat syahadat),| agama Nabi kami Muhammad shallallahu ‘alaihi wa sallam,| dan agama bapak kami Ibrahim, yang berdiri di atas jalan yang lurus, muslim dan tidak tergolong orang-orang musyrik.',
     time: 'pagi',
@@ -224,7 +224,7 @@ export const dzikirDb: Array<Dzikir> = [
     faedah:
       'Barangsiapa yang mengucapkan kalimat ‘subhanallahi wa bi hamdih’ di pagi dan petang hari sebanyak 100x, maka tidak ada yang datang pada hari kiamat yang lebih baik dari yang ia lakukan kecuali orang yang mengucapkan semisal atau lebih dari itu.\n\nHR. Muslim no. 2692',
     note: 'Dibaca 100x',
-    title: 'Dzikir Ringan Namun Berat di Timbangan',
+    title: 'Dzikir ringan namun berat di timbangan (tasbih)',
     translated_id: 'Maha suci Allah, aku memuji-Nya.',
     time: '',
     max_counter: 100
@@ -238,7 +238,7 @@ export const dzikirDb: Array<Dzikir> = [
     faedah:
       'Faedah jika dibaca 1 atau 10 kali\nBarangsiapa yang membaca dzikir tersebut di pagi hari sebanyak sepuluh kali, Allah akan mencatatkan baginya 10 kebaikan, menghapuskan baginya 10 kesalahan, ia juga mendapatkan kebaikan semisal memerdekakan 10 budak, Allah akan melindunginya dari gangguan setan hingga petang hari. Siapa yang mengucapkannya di petang hari, ia akan mendapatkan keutamaan semisal itu pula.\nHR. An Nasai Al Kubra 6:10\n\nFaedah jika dibaca 100 kali dalam sehari\nBarangsiapa yang mengucapkan dzikir tersebut dalam sehari sebanyak seratus kali, maka itu seperti membebaskan 10 orang budak, dicatat baginya 100 kebaikan, dihapus baginya 100 kesalahan, dirinya akan terjaga dari gangguan setan dari pagi hingga petang hari, dan tidak ada seorang pun yang lebih baik dari yang ia lakukan kecuali oleh orang yang mengamalkan lebih dari itu.\nHR. Bukhari no. 3293 dan Muslim no. 2691',
     note: 'Dibaca 1x atau 10x atau 100x',
-    title: 'Bertauhid',
+    title: 'Kalimat laa ilaha illallah (tahlil)',
     translated_id:
       'Tidak ada ilah yang berhak disembah selain Allah semata, tidak ada sekutu bagiNya.| Bagi-Nya kerajaan dan segala pujian.| Dia-lah yang berkuasa atas segala sesuatu.',
     time: '',
@@ -268,7 +268,7 @@ export const dzikirDb: Array<Dzikir> = [
     faedah:
       'Ya Allah, sungguh aku memohon kepada-Mu ilmu yang bermanfaat (bagi diriku dan orang lain), rizki yang halal dan amal yang diterima (di sisi-Mu dan mendapatkan ganjaran yang baik).\n\nHR. Ibnu Majah no. 925 dan Ahmad 6: 305, 322. Al Hafizh Abu Thohir mengatakan bahwa hadits ini shahih',
     note: 'Dibaca 1x',
-    title: 'Meminta Ilmu dan Rezeki',
+    title: 'Meminta ilmu dan rezeki',
     translated_id:
       'Ya Allah, sungguh aku memohon kepada-Mu ilmu yang bermanfaat (bagi diriku dan orang lain),| rezeki yang halal| dan amal yang diterima (di sisi-Mu dan mendapatkan ganjaran yang baik).',
     time: 'pagi',

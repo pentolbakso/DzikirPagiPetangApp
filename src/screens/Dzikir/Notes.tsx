@@ -42,9 +42,7 @@ const Notes = ({item}: {item?: Dzikir}) => {
       backgroundComponent={props => <BottomSheetBackground {...props} />}
       snapPoints={snapPoints}>
       <View style={{flex: 1, alignItems: 'center'}}>
-        <TextSemiBold style={{color: themeColors.text}}>
-          Catatan / Faedah
-        </TextSemiBold>
+        <TextSemiBold style={{color: themeColors.text}}>Catatan</TextSemiBold>
         <ScrollView style={{margin: 15}}>
           <TextRegular style={{color: themeColors.text}}>
             {item?.faedah}

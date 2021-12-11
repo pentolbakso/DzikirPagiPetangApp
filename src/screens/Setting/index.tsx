@@ -1,6 +1,8 @@
 import * as React from 'react';
 import {
   Alert,
+  Linking,
+  Modal,
   Pressable,
   ScrollView,
   useWindowDimensions,
@@ -12,6 +14,7 @@ import {
   TextItalic,
   TextLight,
   TextRegular,
+  TextSemiBold,
 } from '../../components/Text';
 import Slider from '@react-native-community/slider';
 import {Colors} from '../../colors';
@@ -43,6 +46,79 @@ const Menu = ({label, onPress}: {label: string; onPress?: () => void}) => {
   );
 };
 
+const ModalReference = ({
+  visible,
+  onDismiss,
+}: {
+  visible: boolean;
+  onDismiss: () => void;
+}) => {
+  const {colors: themeColors} = useTheme();
+
+  return (
+    <Modal
+      visible={visible}
+      animationType="fade"
+      presentationStyle={'overFullScreen'}
+      transparent>
+      <View
+        style={{
+          flex: 1,
+          flexDirection: 'column',
+          backgroundColor: '#000000bb',
+          justifyContent: 'center',
+          alignItems: 'center',
+        }}>
+        <View
+          style={{
+            borderRadius: 5,
+            overflow: 'hidden',
+            width: '90%',
+            padding: 15,
+            backgroundColor: themeColors.card,
+          }}>
+          <TextBold
+            style={{color: themeColors.text, fontSize: 18, marginBottom: 10}}>
+            Referensi
+          </TextBold>
+          <TextRegular style={{color: themeColors.text, marginBottom: 10}}>
+            Referensi diambil dari artikel berjudul "Bacaan Dzikir Pagi" dan
+            "Bacaan Dzikir Petang" dari website Rumasyho.com, disusun oleh
+            Ustadz Muhammad Abduh Tuasikal Hafidzahullah.
+          </TextRegular>
+          <Pressable
+            onPress={() =>
+              Linking.openURL(
+                'https://rumaysho.com/1636-bacaan-dzikir-pagi.html',
+              )
+            }>
+            <TextItalic style={{color: themeColors.primary}}>
+              Bacaan Dzikir Pagi
+            </TextItalic>
+          </Pressable>
+          <Pressable
+            onPress={() =>
+              Linking.openURL(
+                'https://rumaysho.com/1638-bacaan-dzikir-petang.html',
+              )
+            }>
+            <TextItalic style={{color: themeColors.primary}}>
+              Bacaan Dzikir Petang
+            </TextItalic>
+          </Pressable>
+          <Pressable
+            onPress={onDismiss}
+            style={{alignItems: 'center', marginTop: 10}}>
+            <TextSemiBold style={{color: themeColors.text, fontSize: 18}}>
+              OK
+            </TextSemiBold>
+          </Pressable>
+        </View>
+      </View>
+    </Modal>
+  );
+};
+
 const SettingScreen = () => {
   const navigation = useNavigation();
   const {colors: themeColors} = useTheme();
@@ -71,6 +147,8 @@ const SettingScreen = () => {
   );
 
   const [preview, showPreview] = React.useState(false);
+  const [modalReferenceVisible, setModalReferenceVisible] =
+    React.useState(false);
 
   const [arabicFontSize, setArabicFontSize] = React.useState(
     initialArabicFontSize,
@@ -95,6 +173,10 @@ const SettingScreen = () => {
         // this technically only tells us if the user successfully went to the Review Page. Whether they actually did anything, we do not know.
       }
     });
+  };
+
+  const openPagiPetangWeb = () => {
+    Linking.openURL('https://www.instagram.com/pagipetangstudio/');
   };
 
   React.useEffect(() => {
@@ -269,23 +351,24 @@ const SettingScreen = () => {
         <Menu label={'Beri Rating'} onPress={handleRateOurApp} />
         <Menu
           label={'Referensi'}
-          onPress={() =>
-            Alert.alert(
-              'Referensi',
-              'Dzikir-dzikir pada aplikasi ini diambil dari buku "Dzikir Pagi Petang dan Sesudah Shalat Fardhu menurut Al-Quran dan As-Sunnah yang shahih", disusun oleh Ustadz Yazid bin Abdul Qadir Jawas hafizahullah, diterbitkan oleh Pustaka Imam Asy-Syafi"i',
-            )
-          }
+          onPress={() => setModalReferenceVisible(true)}
         />
       </Card>
-      <TextRegular
-        style={{
-          color: themeColors.text,
-          marginTop: 10,
-          textAlign: 'center',
-          fontSize: 14,
-        }}>
-        dari{'\n'}Pagi Petang Studio
-      </TextRegular>
+      <Pressable onPress={openPagiPetangWeb}>
+        <TextRegular
+          style={{
+            color: themeColors.text,
+            marginTop: 10,
+            textAlign: 'center',
+            fontSize: 14,
+          }}>
+          dari{'\n'}Pagi Petang Studio
+        </TextRegular>
+      </Pressable>
+      <ModalReference
+        visible={modalReferenceVisible}
+        onDismiss={() => setModalReferenceVisible(false)}
+      />
       <View style={{height: 50}} />
     </ScrollView>
   );
