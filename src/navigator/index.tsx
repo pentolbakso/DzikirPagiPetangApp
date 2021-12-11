@@ -15,13 +15,21 @@ import {RootState} from '../rematch/store';
 
 const Stack = createStackNavigator();
 
-const MyDefaultTheme = {
+const MyLightTheme = {
   ...DefaultTheme,
   colors: {
     ...DefaultTheme.colors,
     primary: Colors.lightBlue,
     background: Colors.white,
-    card: '#f5f5f5',
+    card: '#eee',
+  },
+};
+const MyDarkTheme = {
+  ...DarkTheme,
+  colors: {
+    ...DarkTheme.colors,
+    background: '#1a1a1a',
+    card: '#333',
   },
 };
 
@@ -31,8 +39,8 @@ const Navigator = () => {
   // console.log('darkMode', darkMode);
   return (
     <NavigationContainer
-      // theme={MyDefaultTheme}
-      theme={darkMode ? DarkTheme : MyDefaultTheme}>
+      // theme={MyLightTheme}
+      theme={darkMode ? MyDarkTheme : MyLightTheme}>
       <Stack.Navigator
         screenOptions={{
           headerStyle: {

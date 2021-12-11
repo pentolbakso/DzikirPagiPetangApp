@@ -7,7 +7,6 @@ import {Dispatch, RootState} from './rematch/store';
 const Loader = () => {
   const dispatch = useDispatch<Dispatch>();
   const darkMode = useSelector((state: RootState) => state.app.darkMode);
-  const {colors: themeColors} = useTheme();
 
   const _startListening = () => {};
 
