@@ -135,6 +135,21 @@ export const dzikirDb: Array<Dzikir> = [
   {
     id: 10,
     arabic:
+      'اللَّهُمَّ عَافِنِي فِي بَدَنِي| اللَّهُمَّ عَافِنِي فِي سَمعِي| اللَّهُمَّ عَافِنِي فِي بَصَرِي| لاَإِلَهَ إلاَّ أَّنتَ| اَللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنَ الكُفرِ وَالفَقرِ| اَللَّهُمَّ إِنِّي أعُوذُ بِكَ مِن عَذَابِ القَبرِ| لاَإِلَهَ إلاَّأنتَ',
+    arabic_latin:
+      'Allahumma ‘aafinii fii badanii.| Allahumma ‘aafinii fii sam’ii.| Allahumma ‘aafinii fii bashorii.| Laa ilaaha illa anta.| Allahumma inni a’uudzubika minal kufri wal faqri.| Allahumma innii ‘audzu bika min ‘adzabil qabri.| laa ilaaha illa anta.',
+    faedah:
+      'Hasan: HR. Al-Bukhari dalam Adabul Mufrad (no. 701), Abu Dawud (no. 5090), dan Ahmad (V/42) dari Abu Bakrah. Lihat kitab Shahih al-Adabil Mufrad (no. 542)',
+    note: 'Dibaca 3x',
+    title: 'Doa `Afiat (Allohuma `Aafinii)',
+    translated_id:
+      'Ya Allah selamatkanlah tubuhku ini (dari penyakit dan dari apa yang tidak aku inginkan),| Ya Allah selamatkanlah pendengaranku (dari penyakit dan maksiat atau dari apa yang tidak aku inginkan),| Ya Allah selamatkanlah penglihatanku,| tiada ilah (yang berhak diibadahi dengan benar) kecuali Engkau,| Ya Allah sesungguhnya aku berlindung kepadamu dari kekufuran dan kefakiran.| Ya Allah Aku berlindung kepada mu dari siksa kubur,| tiada ilah (yang berhak iibadahi dengan benar) kecuali Engkau.',
+    time: '',
+    max_counter: 3
+  },  
+  {
+    id: 11,
+    arabic:
       'اَللَّهُمَّ إِنِّيْ أَسْأَلُكَ الْعَفْوَ وَالْعَافِيَةَ فِي الدُّنْيَا وَاْلآخِرَةِ| اَللَّهُمَّ إِنِّيْ أَسْأَلُكَ الْعَفْوَ وَالْعَافِيَةَ فِي دِيْنِيْ وَدُنْيَايَ وَأَهْلِيْ وَمَالِيْ| اللَّهُمَّ اسْتُرْ عَوْرَاتِى وَآمِنْ رَوْعَاتِى| اَللَّهُمَّ احْفَظْنِيْ مِنْ بَيْنِ يَدَيَّ وَمِنْ خَلْفِيْ وَعَنْ يَمِيْنِيْ وَعَنْ شِمَالِيْ وَمِنْ فَوْقِيْ| وَأَعُوْذُ بِعَظَمَتِكَ أَنْ أُغْتَالَ مِنْ تَحْتِيْ',
     arabic_latin:
       'Allahumma innii as-alukal ‘afwa wal ‘aafiyah fid dunyaa wal aakhiroh.| Allahumma innii as-alukal ‘afwa wal ‘aafiyah fii diinii wa dun-yaya wa ahlii wa maalii.| Allahumas-tur ‘awrootii wa aamin row’aatii.| Allahummahfazh-nii mim bayni yadayya wa min kholfii wa ‘an yamiinii wa ‘an syimaalii wa min fawqii| wa a’udzu bi ‘azhomatik an ughtala min tahtii.',
@@ -147,7 +162,7 @@ export const dzikirDb: Array<Dzikir> = [
     time: '',
   },
   {
-    id: 11,
+    id: 12,
     arabic:
       'اَللَّهُمَّ عَالِمَ الْغَيْبِ وَالشَّهَادَةِ فَاطِرَ السَّمَاوَاتِ وَاْلأَرْضِ| رَبَّ كُلِّ شَيْءٍ وَمَلِيْكَهُ| أَشْهَدُ أَنْ لَا إِلَـهَ إِلَّا أَنْتَ| أَعُوْذُ بِكَ مِنْ شَرِّ نَفْسِيْ وَمِنْ شَرِّ الشَّيْطَانِ وَشِرْكِهِ| وَأَنْ أَقْتَرِفَ عَلَى نَفْسِيْ سُوْءًا أَوْ أَجُرَّهُ إِلَى مُسْلِمٍ',
     arabic_latin:
@@ -161,7 +176,7 @@ export const dzikirDb: Array<Dzikir> = [
     time: '',
   },
   {
-    id: 12,
+    id: 13,
     arabic:
       'بِسْمِ اللَّهِ الَّذِى لَا يَضُرُّ مَعَ اسْمِهِ شَىْءٌ فِى الأَرْضِ وَلَا فِى السَّمَاءِ| وَهُوَ السَّمِيعُ الْعَلِيمُ',
     arabic_latin:
@@ -176,7 +191,7 @@ export const dzikirDb: Array<Dzikir> = [
     max_counter: 3
   },
   {
-    id: 13,
+    id: 14,
     arabic:
       'رَضِيْتُ بِاللَّهِ رَبًّا| وَبِاْلإِسْلاَمِ دِيْنًا| وَبِمُحَمَّدٍ صَلَّى اللَّهُ عَلَيْهِ وَسَلَّمَ نَبِيًّا',
     arabic_latin:
@@ -191,7 +206,7 @@ export const dzikirDb: Array<Dzikir> = [
     max_counter: 3
   },
   {
-    id: 14,
+    id: 15,
     arabic:
       'يَا حَيُّ يَا قَيُّوْمُ بِرَحْمَتِكَ أَسْتَغِيْثُ| وَأَصْلِحْ لِيْ شَأْنِيْ كُلَّهُ| وَلَا تَكِلْنِيْ إِلَى نَفْسِيْ طَرْفَةَ عَيْنٍ أَبَدًا',
     arabic_latin:
@@ -205,7 +220,7 @@ export const dzikirDb: Array<Dzikir> = [
     time: '',
   },
   {
-    id: 15,
+    id: 16,
     arabic:
       'أَصْبَحْنَا عَلَى فِطْرَةِ اْلإِسْلاَمِ وَعَلَى كَلِمَةِ اْلإِخْلاَصِ| وَعَلَى دِيْنِ نَبِيِّنَا مُحَمَّدٍ صَلَّى اللَّهُ عَلَيْهِ وَسَلَّمَ| وَعَلَى مِلَّةِ أَبِيْنَا إِبْرَاهِيْمَ حَنِيْفًا مُسْلِمًا وَمَا كَانَ مِنَ الْمُشْرِكِيْنَ',
     arabic_latin:
@@ -218,7 +233,7 @@ export const dzikirDb: Array<Dzikir> = [
     time: 'pagi',
   },
   {
-    id: 16,
+    id: 17,
     arabic: 'سُبْحَانَ اللَّهِ وَبِحَمْدِهِ',
     arabic_latin: 'Subhanallahi wa bi-hamdih.',
     faedah:
@@ -230,7 +245,7 @@ export const dzikirDb: Array<Dzikir> = [
     max_counter: 100
   },
   {
-    id: 17,
+    id: 18,
     arabic:
       'لَا إِلَـهَ إِلَّا اللَّهُ وَحْدَهُ لَا شَرِيْكَ لَهُ| لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ| وَهُوَ عَلَى كُلِّ شَيْءٍ قَدِيْرُ',
     arabic_latin:
@@ -245,7 +260,7 @@ export const dzikirDb: Array<Dzikir> = [
     max_counter: 100
   },
   {
-    id: 18,
+    id: 19,
     arabic:
       'سُبْحَانَ اللَّهِ وَبِحَمْدِهِ| عَدَدَ خَلْقِهِ| وَرِضَا نَفْسِهِ| وَزِنَةَ عَرْشِهِ| وَمِدَادَ كَلِمَاتِهِ',
     arabic_latin:
@@ -260,7 +275,7 @@ export const dzikirDb: Array<Dzikir> = [
     max_counter: 3
   },
   {
-    id: 19,
+    id: 20,
     arabic:
       'اَللَّهُمَّ إِنِّيْ أَسْأَلُكَ عِلْمًا نَافِعًا| وَرِزْقًا طَيِّبًا| وَعَمَلاً مُتَقَبَّلاً',
     arabic_latin:
@@ -274,7 +289,7 @@ export const dzikirDb: Array<Dzikir> = [
     time: 'pagi',
   },
   {
-    id: 20,
+    id: 21,
     arabic: 'أَسْتَغْفِرُ اللَّهَ وَأَتُوْبُ إِلَيْهِ',
     arabic_latin: 'Astagh-firullah wa atuubu ilaih.',
     faedah: 'HR. Bukhari no. 6307 dan Muslim no. 2702',
@@ -285,7 +300,7 @@ export const dzikirDb: Array<Dzikir> = [
     max_counter: 100
   },
   {
-    id: 21,
+    id: 22,
     arabic:
       'أَعُوْذُ بِكَلِمَاتِ اللَّهِ التَّامَّاتِ مِنْ شَرِّ مَا خَلَقَ',
     arabic_latin: 'A’udzu bikalimaatillahit-taammaati min syarri maa kholaq.',
