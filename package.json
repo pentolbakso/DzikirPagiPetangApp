@@ -8,7 +8,8 @@
     "ios13": "react-native run-ios --simulator='iPhone 13'",
     "start": "react-native start",
     "test": "jest",
-    "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "set-java15": "export JAVA_HOME=`/usr/libexec/java_home -v 15.0.7`"
   },
   "dependencies": {
     "@gorhom/bottom-sheet": "^4",
