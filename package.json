@@ -9,7 +9,7 @@
     "start": "react-native start",
     "test": "jest",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
-    "set-java15": "export JAVA_HOME=`/usr/libexec/java_home -v 15.0.7`"
+    "set-java15": "export JAVA_HOME=`/usr/libexec/java_home -v 15`"
   },
   "dependencies": {
     "@gorhom/bottom-sheet": "^4",
