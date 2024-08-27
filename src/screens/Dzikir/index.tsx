@@ -1,25 +1,17 @@
 import {useNavigation, useRoute, useTheme} from '@react-navigation/native';
 import * as React from 'react';
-import {
-  Animated,
-  Platform,
-  Pressable,
-  StyleSheet,
-  Text,
-  Vibration,
-  ViewStyle,
-} from 'react-native';
+import {Animated, Platform, Pressable, Text, Vibration} from 'react-native';
 import {View} from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import PagerView from 'react-native-pager-view';
-import {TextBold, TextRegular, TextSemiBold} from '../../components/Text';
+import {TextBold, TextRegular} from '../../components/Text';
 import {dzikirDb} from '../../services/db';
 import {Dzikir} from '../../types';
 import {ScrollView} from 'react-native-gesture-handler';
 import Icon from 'react-native-vector-icons/Feather';
 import * as Progress from 'react-native-progress';
 import {Colors} from '../../colors';
-import MenuDrawer from 'react-native-side-drawer';
+import MenuDrawer, {MenuDrawerProps} from 'react-native-side-drawer';
 import CircularProgress from 'react-native-circular-progress-indicator';
 import {useDispatch, useSelector} from 'react-redux';
 import {Dispatch, RootState} from '../../rematch/store';
@@ -30,7 +22,26 @@ const rippleConfig = {color: 'lightgray', borderless: true};
 
 const AnimatedPagerView = Animated.createAnimatedComponent(PagerView);
 
-const SwithModeButton = ({
+type Props = {
+  children: React.ReactNode;
+};
+
+const Drawer: React.FC<Props & MenuDrawerProps> = props => {
+  return (
+    <MenuDrawer
+      open={props.open}
+      drawerContent={props.drawerContent}
+      drawerPercentage={100}
+      animationTime={150}
+      overlay={true}
+      // opacity={0.4}
+      position="right">
+      {props.children}
+    </MenuDrawer>
+  );
+};
+
+const SwitchModeButton = ({
   initialMode,
   onChange,
 }: {
@@ -38,26 +49,45 @@ const SwithModeButton = ({
   onChange: (val: string) => void;
 }) => {
   const [mode, setMode] = React.useState(initialMode);
-  React.useEffect(() => onChange(mode), [mode]);
+  const SwitchBtn = React.useMemo(
+    () =>
+      ({
+        id,
+        label,
+        onPress,
+      }: {
+        id: string;
+        label: string;
+        onPress: (id: string) => void;
+      }) =>
+        (
+          <Pressable
+            style={{
+              flex: 1,
+              height: '100%',
+              alignItems: 'center',
+              justifyContent: 'center',
+              backgroundColor: mode == id ? Colors.lightBlue : undefined,
+            }}
+            onPress={() => onPress(id)}>
+            <Text
+              style={{
+                fontWeight: '600',
+                color: mode == id ? Colors.white : Colors.lightBlue,
+              }}>
+              {label}
+            </Text>
+          </Pressable>
+        ),
+    [mode],
+  );
 
-  const SwitchBtn = ({id, label}: {id: string; label: string}) => (
-    <Pressable
-      style={{
-        flex: 1,
-        height: '100%',
-        alignItems: 'center',
-        justifyContent: 'center',
-        backgroundColor: mode == id ? Colors.lightBlue : undefined,
-      }}
-      onPress={() => setMode(id)}>
-      <Text
-        style={{
-          fontWeight: '600',
-          color: mode == id ? Colors.white : Colors.lightBlue,
-        }}>
-        {label}
-      </Text>
-    </Pressable>
+  const handlePress = React.useCallback(
+    (id: string) => {
+      setMode(id);
+      onChange(id);
+    },
+    [setMode, onChange],
   );
 
   return (
@@ -71,8 +101,8 @@ const SwithModeButton = ({
         height: 32,
         minWidth: 180,
       }}>
-      <SwitchBtn id="normal" label="Normal" />
-      <SwitchBtn id="hafalan" label="Hafalan" />
+      <SwitchBtn id="normal" label="Normal" onPress={handlePress} />
+      <SwitchBtn id="hafalan" label="Hafalan" onPress={handlePress} />
     </View>
   );
 };
@@ -127,7 +157,9 @@ const DzikirScreen = () => {
       // setTimeout(() => setMounted(true), 500);
       setMounted(true);
     });
-    return unsubscribe;
+    return () => {
+      unsubscribe();
+    };
   }, [navigation]);
 
   const drawerContent = React.useCallback(
@@ -187,7 +219,7 @@ const DzikirScreen = () => {
   }, [currentPage, items]);
 
   return (
-    <MenuDrawer
+    <Drawer
       open={drawerOpened}
       drawerContent={drawerContent()}
       drawerPercentage={100}
@@ -209,7 +241,7 @@ const DzikirScreen = () => {
             <Icon name="home" size={22} color={themeColors.text} />
           </Pressable>
           <View style={{flex: 1, alignItems: 'center'}}>
-            <SwithModeButton
+            <SwitchModeButton
               initialMode={mode}
               onChange={val => dispatch.app.setViewMode(val)}
             />
@@ -257,8 +289,8 @@ const DzikirScreen = () => {
                   value={counters.get(currentItem?.id) || 0}
                   radius={40}
                   duration={300}
-                  textColor={Colors.lightBlue}
-                  textStyle={{fontSize: 22, fontFamily: 'Nunito-Bold'}}
+                  progressValueColor={Colors.lightBlue}
+                  progressValueStyle={{fontSize: 22, fontFamily: 'Nunito-Bold'}}
                   maxValue={currentItem?.max_counter}
                   title={undefined}
                   titleFontSize={16}
@@ -275,7 +307,7 @@ const DzikirScreen = () => {
         </View>
         {mounted && <Notes item={currentItem} />}
       </SafeAreaView>
-    </MenuDrawer>
+    </Drawer>
   );
 };
 export default DzikirScreen;

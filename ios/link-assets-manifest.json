@@ -1,0 +1,33 @@
+{
+  "migIndex": 1,
+  "data": [
+    {
+      "path": "src/assets/fonts/KFGQPCUthmanicScriptHAFS.otf",
+      "sha1": "23868a63cc7188f94875b97ca0c60a3b1d172919"
+    },
+    {
+      "path": "src/assets/fonts/Nunito-Bold.ttf",
+      "sha1": "231df28194a466da9e8ad72532164f50ad5f8750"
+    },
+    {
+      "path": "src/assets/fonts/Nunito-Italic.ttf",
+      "sha1": "7f33350e63b55455f6e129392838087f52d99384"
+    },
+    {
+      "path": "src/assets/fonts/Nunito-Light.ttf",
+      "sha1": "900d95ad1ebc89f6aef490a92680cf8b56193b6b"
+    },
+    {
+      "path": "src/assets/fonts/Nunito-Regular.ttf",
+      "sha1": "07822103331d2ebc7756a0746d8f34a7210a68ed"
+    },
+    {
+      "path": "src/assets/fonts/Nunito-SemiBold.ttf",
+      "sha1": "91ab95e4bfedccb234e05305eeb2de76e5f5f66a"
+    },
+    {
+      "path": "src/assets/fonts/adwa-assalaf.ttf",
+      "sha1": "15b8f82252fa84d8bc377b572823b578722876c8"
+    }
+  ]
+}

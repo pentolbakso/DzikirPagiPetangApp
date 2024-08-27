@@ -3,6 +3,7 @@ import {View, ViewStyle} from 'react-native';
 
 type Props = {
   style?: ViewStyle;
+  children: React.ReactNode;
 };
 
 const Card: FunctionComponent<Props> = ({children, style}) => {

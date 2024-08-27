@@ -1,4 +1,3 @@
-import {useTheme} from '@react-navigation/native';
 import * as React from 'react';
 import {AppState, StatusBar} from 'react-native';
 import {useDispatch, useSelector} from 'react-redux';
@@ -23,10 +22,13 @@ const Loader = () => {
   React.useEffect(() => {
     _startListening();
 
-    AppState.addEventListener('change', _handleAppStateChange);
+    const subscription = AppState.addEventListener(
+      'change',
+      _handleAppStateChange,
+    );
     return () => {
       console.log('app quit? removeEventListener appStateChange');
-      AppState.removeEventListener('change', _handleAppStateChange);
+      subscription.remove();
     };
   }, []);
 
