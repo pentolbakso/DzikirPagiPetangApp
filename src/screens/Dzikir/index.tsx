@@ -22,11 +22,7 @@ const rippleConfig = {color: 'lightgray', borderless: true};
 
 const AnimatedPagerView = Animated.createAnimatedComponent(PagerView);
 
-type Props = {
-  children: React.ReactNode;
-};
-
-const Drawer: React.FC<Props & MenuDrawerProps> = props => {
+const Drawer = (props: MenuDrawerProps) => {
   return (
     <MenuDrawer
       open={props.open}
