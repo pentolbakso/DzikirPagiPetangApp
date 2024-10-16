@@ -65,7 +65,7 @@ const BigMenu = ({
 );
 
 const HomeScreen = () => {
-  const navigation = useNavigation();
+  const navigation = useNavigation<any>();
   const {colors: themeColors} = useTheme();
   const hour = dayjs().hour();
   const timeMode = React.useMemo(() => {

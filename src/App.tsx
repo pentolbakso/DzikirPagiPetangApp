@@ -4,6 +4,7 @@ import {Provider, useSelector} from 'react-redux';
 import {store} from './rematch/store';
 import Navigator from './navigator';
 import Loader from './Loader';
+
 const App = () => {
   return (
     <Provider store={store}>

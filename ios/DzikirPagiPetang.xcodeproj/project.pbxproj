@@ -12,16 +12,16 @@
 		13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
+		14130C5CE1614090A6AEF51E /* Nunito-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 837C311FACBF440BB0F87E53 /* Nunito-Bold.ttf */; };
+		498FF041D0834DE3B49D8684 /* Nunito-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 11A274C64D6340BF8A24F91F /* Nunito-Light.ttf */; };
+		72986C26EB1A40D28483298C /* Nunito-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A7AA214B6C6843D98D5D8364 /* Nunito-SemiBold.ttf */; };
 		7699B88040F8A987B510C191 /* libPods-DzikirPagiPetang-DzikirPagiPetangTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-DzikirPagiPetang-DzikirPagiPetangTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
-		BD4B284AF665E10E8D25F911 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = CD450FF3402A078D63C94B04 /* PrivacyInfo.xcprivacy */; };
-		6268483334BE478AA3905236 /* KFGQPCUthmanicScriptHAFS.otf in Resources */ = {isa = PBXBuildFile; fileRef = 91333505378A4664B514B169 /* KFGQPCUthmanicScriptHAFS.otf */; };
-		26818CFEFA6D439B82E5C578 /* Nunito-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3A37885470B74E0F97092297 /* Nunito-Bold.ttf */; };
-		840483034B8D49F6A3721669 /* Nunito-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F7282356C7504082B34CD509 /* Nunito-Italic.ttf */; };
-		91CF9CEA27494CB0ACF6BBD4 /* Nunito-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 128D713E58E442D8977AD09F /* Nunito-Light.ttf */; };
-		A63C342DD7754E3B8C92E44C /* Nunito-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EA1D9DFFD6DF45A1A406A71C /* Nunito-Regular.ttf */; };
-		85FD0B8CA5FB4790BFA5BECF /* Nunito-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 54583D0D0677438087733BEA /* Nunito-SemiBold.ttf */; };
-		C3607D1C01714105AAEB3A3E /* adwa-assalaf.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3D696606D951430292D2020C /* adwa-assalaf.ttf */; };
+		A8F5A6C330A14FFF8C3E0948 /* adwa-assalaf.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A1F92B136F0C4C43B6C8C092 /* adwa-assalaf.ttf */; };
+		AC44DEDC931B476686191B09 /* Nunito-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D65832AFD51548D2B50992D3 /* Nunito-Italic.ttf */; };
+		D53A167889BCF7738901E9FB /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = EA9300EB3C36C7F6174572DC /* PrivacyInfo.xcprivacy */; };
+		DB29E78D8985483EB87DFF80 /* KFGQPCUthmanicScriptHAFS.otf in Resources */ = {isa = PBXBuildFile; fileRef = 27A250ECEB4344BAA3DD6D99 /* KFGQPCUthmanicScriptHAFS.otf */; };
+		F1613FB505384C6292BD7828 /* Nunito-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8AF2876298034D079EC4921C /* Nunito-Regular.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +38,7 @@
 		00E356EE1AD99517003FC87E /* DzikirPagiPetangTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DzikirPagiPetangTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* DzikirPagiPetangTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DzikirPagiPetangTests.m; sourceTree = "<group>"; };
+		11A274C64D6340BF8A24F91F /* Nunito-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Nunito-Light.ttf"; path = "../src/assets/fonts/Nunito-Light.ttf"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* DzikirPagiPetang.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DzikirPagiPetang.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = DzikirPagiPetang/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AppDelegate.mm; path = DzikirPagiPetang/AppDelegate.mm; sourceTree = "<group>"; };
@@ -46,21 +47,20 @@
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = DzikirPagiPetang/main.m; sourceTree = "<group>"; };
 		13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = PrivacyInfo.xcprivacy; path = DzikirPagiPetang/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		19F6CBCC0A4E27FBF8BF4A61 /* libPods-DzikirPagiPetang-DzikirPagiPetangTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DzikirPagiPetang-DzikirPagiPetangTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		27A250ECEB4344BAA3DD6D99 /* KFGQPCUthmanicScriptHAFS.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = KFGQPCUthmanicScriptHAFS.otf; path = ../src/assets/fonts/KFGQPCUthmanicScriptHAFS.otf; sourceTree = "<group>"; };
 		3B4392A12AC88292D35C810B /* Pods-DzikirPagiPetang.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DzikirPagiPetang.debug.xcconfig"; path = "Target Support Files/Pods-DzikirPagiPetang/Pods-DzikirPagiPetang.debug.xcconfig"; sourceTree = "<group>"; };
 		5709B34CF0A7D63546082F79 /* Pods-DzikirPagiPetang.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DzikirPagiPetang.release.xcconfig"; path = "Target Support Files/Pods-DzikirPagiPetang/Pods-DzikirPagiPetang.release.xcconfig"; sourceTree = "<group>"; };
 		5B7EB9410499542E8C5724F5 /* Pods-DzikirPagiPetang-DzikirPagiPetangTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DzikirPagiPetang-DzikirPagiPetangTests.debug.xcconfig"; path = "Target Support Files/Pods-DzikirPagiPetang-DzikirPagiPetangTests/Pods-DzikirPagiPetang-DzikirPagiPetangTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5DCACB8F33CDC322A6C60F78 /* libPods-DzikirPagiPetang.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DzikirPagiPetang.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = DzikirPagiPetang/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		837C311FACBF440BB0F87E53 /* Nunito-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Nunito-Bold.ttf"; path = "../src/assets/fonts/Nunito-Bold.ttf"; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-DzikirPagiPetang-DzikirPagiPetangTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DzikirPagiPetang-DzikirPagiPetangTests.release.xcconfig"; path = "Target Support Files/Pods-DzikirPagiPetang-DzikirPagiPetangTests/Pods-DzikirPagiPetang-DzikirPagiPetangTests.release.xcconfig"; sourceTree = "<group>"; };
-		CD450FF3402A078D63C94B04 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xml; name = PrivacyInfo.xcprivacy; path = DzikirPagiPetang/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		8AF2876298034D079EC4921C /* Nunito-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Nunito-Regular.ttf"; path = "../src/assets/fonts/Nunito-Regular.ttf"; sourceTree = "<group>"; };
+		A1F92B136F0C4C43B6C8C092 /* adwa-assalaf.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "adwa-assalaf.ttf"; path = "../src/assets/fonts/adwa-assalaf.ttf"; sourceTree = "<group>"; };
+		A7AA214B6C6843D98D5D8364 /* Nunito-SemiBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Nunito-SemiBold.ttf"; path = "../src/assets/fonts/Nunito-SemiBold.ttf"; sourceTree = "<group>"; };
+		D65832AFD51548D2B50992D3 /* Nunito-Italic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Nunito-Italic.ttf"; path = "../src/assets/fonts/Nunito-Italic.ttf"; sourceTree = "<group>"; };
+		EA9300EB3C36C7F6174572DC /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xml; name = PrivacyInfo.xcprivacy; path = DzikirPagiPetang/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
-		91333505378A4664B514B169 /* KFGQPCUthmanicScriptHAFS.otf */ = {isa = PBXFileReference; name = "KFGQPCUthmanicScriptHAFS.otf"; path = "../src/assets/fonts/KFGQPCUthmanicScriptHAFS.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		3A37885470B74E0F97092297 /* Nunito-Bold.ttf */ = {isa = PBXFileReference; name = "Nunito-Bold.ttf"; path = "../src/assets/fonts/Nunito-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		F7282356C7504082B34CD509 /* Nunito-Italic.ttf */ = {isa = PBXFileReference; name = "Nunito-Italic.ttf"; path = "../src/assets/fonts/Nunito-Italic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		128D713E58E442D8977AD09F /* Nunito-Light.ttf */ = {isa = PBXFileReference; name = "Nunito-Light.ttf"; path = "../src/assets/fonts/Nunito-Light.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		EA1D9DFFD6DF45A1A406A71C /* Nunito-Regular.ttf */ = {isa = PBXFileReference; name = "Nunito-Regular.ttf"; path = "../src/assets/fonts/Nunito-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		54583D0D0677438087733BEA /* Nunito-SemiBold.ttf */ = {isa = PBXFileReference; name = "Nunito-SemiBold.ttf"; path = "../src/assets/fonts/Nunito-SemiBold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		3D696606D951430292D2020C /* adwa-assalaf.ttf */ = {isa = PBXFileReference; name = "adwa-assalaf.ttf"; path = "../src/assets/fonts/adwa-assalaf.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +100,21 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		0606B6438F3C475B8539E46C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				27A250ECEB4344BAA3DD6D99 /* KFGQPCUthmanicScriptHAFS.otf */,
+				837C311FACBF440BB0F87E53 /* Nunito-Bold.ttf */,
+				D65832AFD51548D2B50992D3 /* Nunito-Italic.ttf */,
+				11A274C64D6340BF8A24F91F /* Nunito-Light.ttf */,
+				8AF2876298034D079EC4921C /* Nunito-Regular.ttf */,
+				A7AA214B6C6843D98D5D8364 /* Nunito-SemiBold.ttf */,
+				A1F92B136F0C4C43B6C8C092 /* adwa-assalaf.ttf */,
+			);
+			name = Resources;
+			path = "";
+			sourceTree = "<group>";
+		};
 		13B07FAE1A68108700A75B9A /* DzikirPagiPetang */ = {
 			isa = PBXGroup;
 			children = (
@@ -110,7 +125,7 @@
 				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
 				13B07FB71A68108700A75B9A /* main.m */,
 				13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */,
-				CD450FF3402A078D63C94B04 /* PrivacyInfo.xcprivacy */,
+				EA9300EB3C36C7F6174572DC /* PrivacyInfo.xcprivacy */,
 			);
 			name = DzikirPagiPetang;
 			sourceTree = "<group>";
@@ -141,7 +156,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				BBD78D7AC51CEA395F1C20DB /* Pods */,
-				AB5D94EBA299403BA7B851A7 /* Resources */,
+				0606B6438F3C475B8539E46C /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -167,21 +182,6 @@
 			);
 			path = Pods;
 			sourceTree = "<group>";
-		};
-		AB5D94EBA299403BA7B851A7 /* Resources */ = {
-			isa = "PBXGroup";
-			children = (
-				91333505378A4664B514B169 /* KFGQPCUthmanicScriptHAFS.otf */,
-				3A37885470B74E0F97092297 /* Nunito-Bold.ttf */,
-				F7282356C7504082B34CD509 /* Nunito-Italic.ttf */,
-				128D713E58E442D8977AD09F /* Nunito-Light.ttf */,
-				EA1D9DFFD6DF45A1A406A71C /* Nunito-Regular.ttf */,
-				54583D0D0677438087733BEA /* Nunito-SemiBold.ttf */,
-				3D696606D951430292D2020C /* adwa-assalaf.ttf */,
-			);
-			name = Resources;
-			sourceTree = "<group>";
-			path = "";
 		};
 /* End PBXGroup section */
 
@@ -278,14 +278,14 @@
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
-				BD4B284AF665E10E8D25F911 /* PrivacyInfo.xcprivacy in Resources */,
-				6268483334BE478AA3905236 /* KFGQPCUthmanicScriptHAFS.otf in Resources */,
-				26818CFEFA6D439B82E5C578 /* Nunito-Bold.ttf in Resources */,
-				840483034B8D49F6A3721669 /* Nunito-Italic.ttf in Resources */,
-				91CF9CEA27494CB0ACF6BBD4 /* Nunito-Light.ttf in Resources */,
-				A63C342DD7754E3B8C92E44C /* Nunito-Regular.ttf in Resources */,
-				85FD0B8CA5FB4790BFA5BECF /* Nunito-SemiBold.ttf in Resources */,
-				C3607D1C01714105AAEB3A3E /* adwa-assalaf.ttf in Resources */,
+				D53A167889BCF7738901E9FB /* PrivacyInfo.xcprivacy in Resources */,
+				DB29E78D8985483EB87DFF80 /* KFGQPCUthmanicScriptHAFS.otf in Resources */,
+				14130C5CE1614090A6AEF51E /* Nunito-Bold.ttf in Resources */,
+				AC44DEDC931B476686191B09 /* Nunito-Italic.ttf in Resources */,
+				498FF041D0834DE3B49D8684 /* Nunito-Light.ttf in Resources */,
+				F1613FB505384C6292BD7828 /* Nunito-Regular.ttf in Resources */,
+				72986C26EB1A40D28483298C /* Nunito-SemiBold.ttf in Resources */,
+				A8F5A6C330A14FFF8C3E0948 /* adwa-assalaf.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -507,17 +507,18 @@
 			baseConfigurationReference = 3B4392A12AC88292D35C810B /* Pods-DzikirPagiPetang.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CLANG_ENABLE_MODULES = YES;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = CL8V4SRG8A;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = DzikirPagiPetang/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Dzikir Pagi Petang";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.reference";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.0;
+				MARKETING_VERSION = 1.0;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -525,13 +526,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.pagipetangstudio.dzikirpagipetang;
 				PRODUCT_NAME = DzikirPagiPetang;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
-				SUPPORTS_MACCATALYST = NO;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
-				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
@@ -541,16 +537,17 @@
 			baseConfigurationReference = 5709B34CF0A7D63546082F79 /* Pods-DzikirPagiPetang.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CLANG_ENABLE_MODULES = YES;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = CL8V4SRG8A;
 				INFOPLIST_FILE = DzikirPagiPetang/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Dzikir Pagi Petang";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.reference";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.0;
+				MARKETING_VERSION = 1.0;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -558,12 +555,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.pagipetangstudio.dzikirpagipetang;
 				PRODUCT_NAME = DzikirPagiPetang;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
-				SUPPORTS_MACCATALYST = NO;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
-				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
@@ -641,7 +633,10 @@
 					"-DFOLLY_CFG_NO_COROUTINES=1",
 					"-DFOLLY_HAVE_CLOCK_GETTIME=1",
 				);
-				OTHER_LDFLAGS = "$(inherited)  ";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					" ",
+				);
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) DEBUG";
@@ -714,7 +709,10 @@
 					"-DFOLLY_CFG_NO_COROUTINES=1",
 					"-DFOLLY_HAVE_CLOCK_GETTIME=1",
 				);
-				OTHER_LDFLAGS = "$(inherited)  ";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					" ",
+				);
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
 				USE_HERMES = true;

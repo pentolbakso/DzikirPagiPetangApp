@@ -11,4 +11,4 @@ export type Dzikir = {
   from_quran?: boolean;
   is_surah?: boolean;
   max_counter?: number;
-}
+};
