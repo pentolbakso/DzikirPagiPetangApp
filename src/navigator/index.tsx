@@ -3,6 +3,7 @@ import {
   DarkTheme,
   DefaultTheme,
   NavigationContainer,
+  Theme,
 } from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import HomeScreen from '../screens/Home';
@@ -33,20 +34,13 @@ const MyDarkTheme = {
   },
 };
 
-const Navigator = () => {
-  // const scheme = useColorScheme();
-  const darkMode = useSelector((state: RootState) => state.app.darkMode);
-  // console.log('darkMode', darkMode);
+const Navigator = ({theme}: {theme: Theme | undefined}) => {
   return (
-    <NavigationContainer
-      // theme={MyLightTheme}
-      theme={darkMode ? MyDarkTheme : MyLightTheme}>
+    <NavigationContainer theme={theme}>
       <Stack.Navigator
         screenOptions={{
-          headerStyle: {
-            // backgroundColor: '#fff',
-          },
-          headerTintColor: '#333',
+          headerStyle: {},
+          // headerTintColor: '#333',
           headerShown: false,
           headerBackTitleVisible: false,
         }}>

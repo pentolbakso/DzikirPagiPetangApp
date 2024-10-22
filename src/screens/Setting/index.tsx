@@ -24,24 +24,27 @@ import {Dispatch, RootState} from '../../rematch/store';
 import {Switch} from 'react-native-gesture-handler';
 import Icon from 'react-native-vector-icons/Feather';
 import Rate, {AndroidMarket} from 'react-native-rate';
-import {useTheme, useNavigation} from '@react-navigation/native';
+import {useNavigation} from '@react-navigation/native';
+import {useTheme} from 'react-native-paper';
 
 const Menu = ({label, onPress}: {label: string; onPress?: () => void}) => {
-  const {colors: themeColors} = useTheme();
+  const {colors} = useTheme();
   return (
     <Pressable
       onPress={onPress}
       style={{
         paddingVertical: 10,
         borderBottomWidth: 0.5,
-        borderBottomColor: themeColors.border,
+        borderBottomColor: colors.outline,
         flexDirection: 'row',
         alignItems: 'center',
       }}>
-      <TextRegular style={{flex: 1, color: themeColors.text}}>
-        {label}
-      </TextRegular>
-      <Icon name="chevron-right" size={18} color={themeColors.text} />
+      <TextRegular style={{flex: 1}}>{label}</TextRegular>
+      <Icon
+        name="chevron-right"
+        size={18}
+        color={colors.onSecondaryContainer}
+      />
     </Pressable>
   );
 };
@@ -53,7 +56,7 @@ const ModalReference = ({
   visible: boolean;
   onDismiss: () => void;
 }) => {
-  const {colors: themeColors} = useTheme();
+  const {colors} = useTheme();
 
   return (
     <Modal
@@ -75,13 +78,11 @@ const ModalReference = ({
             overflow: 'hidden',
             width: '90%',
             padding: 15,
-            backgroundColor: themeColors.card,
           }}>
-          <TextBold
-            style={{color: themeColors.text, fontSize: 18, marginBottom: 10}}>
+          <TextBold style={{fontSize: 18, marginBottom: 10}}>
             Referensi
           </TextBold>
-          <TextRegular style={{color: themeColors.text, marginBottom: 10}}>
+          <TextRegular style={{marginBottom: 10}}>
             Referensi diambil dari artikel berjudul "Bacaan Dzikir Pagi" dan
             "Bacaan Dzikir Petang" dari website Rumasyho.com, disusun oleh
             Ustadz Muhammad Abduh Tuasikal Hafidzahullah.
@@ -92,7 +93,7 @@ const ModalReference = ({
                 'https://rumaysho.com/1636-bacaan-dzikir-pagi.html',
               )
             }>
-            <TextItalic style={{color: themeColors.primary}}>
+            <TextItalic style={{color: colors.primary}}>
               Bacaan Dzikir Pagi
             </TextItalic>
           </Pressable>
@@ -102,16 +103,14 @@ const ModalReference = ({
                 'https://rumaysho.com/1638-bacaan-dzikir-petang.html',
               )
             }>
-            <TextItalic style={{color: themeColors.primary}}>
+            <TextItalic style={{color: colors.primary}}>
               Bacaan Dzikir Petang
             </TextItalic>
           </Pressable>
           <Pressable
             onPress={onDismiss}
             style={{alignItems: 'center', marginTop: 10}}>
-            <TextSemiBold style={{color: themeColors.text, fontSize: 18}}>
-              OK
-            </TextSemiBold>
+            <TextSemiBold style={{fontSize: 18}}>OK</TextSemiBold>
           </Pressable>
         </View>
       </View>
@@ -121,7 +120,7 @@ const ModalReference = ({
 
 const SettingScreen = () => {
   const navigation = useNavigation();
-  const {colors: themeColors} = useTheme();
+  const {colors} = useTheme();
   const width = useWindowDimensions().width;
   const dispatch = useDispatch<Dispatch>();
   const initialArabicFontSize = useSelector(
@@ -179,22 +178,18 @@ const SettingScreen = () => {
     Linking.openURL('https://www.instagram.com/pagipetangstudio/');
   };
 
-  React.useEffect(() => {
-    navigation.setOptions({
-      headerTintColor: themeColors.text,
-    });
-  }, [darkMode]);
-
   return (
-    <ScrollView style={{flex: 1, padding: 10}}>
-      <Card style={{paddingVertical: 5, backgroundColor: themeColors.card}}>
+    <ScrollView style={{flex: 1, padding: 15}}>
+      <Card
+        style={{
+          padding: 15,
+          backgroundColor: colors.secondaryContainer,
+        }}>
         <View style={{flexDirection: 'row'}}>
-          <TextRegular style={{fontSize: 16, flex: 1, color: themeColors.text}}>
+          <TextRegular style={{fontSize: 16, flex: 1}}>
             Ukuran teks arab
           </TextRegular>
-          <TextBold style={{fontSize: 16, color: themeColors.text}}>
-            {arabicFontSize}
-          </TextBold>
+          <TextBold style={{fontSize: 16}}>{arabicFontSize}</TextBold>
         </View>
         <View style={{alignItems: 'center'}}>
           <Slider
@@ -202,10 +197,10 @@ const SettingScreen = () => {
             minimumValue={20}
             maximumValue={48}
             step={1}
-            thumbTintColor={Colors.lightBlue}
+            thumbTintColor={colors.tertiary}
             value={initialArabicFontSize}
-            maximumTrackTintColor="#ddd"
-            minimumTrackTintColor={Colors.lightBlue}
+            maximumTrackTintColor={colors.surfaceDisabled}
+            minimumTrackTintColor={colors.tertiary}
             onSlidingStart={() => showPreview(true)}
             onSlidingComplete={val => {
               showPreview(false);
@@ -215,12 +210,10 @@ const SettingScreen = () => {
           />
         </View>
         <View style={{flexDirection: 'row'}}>
-          <TextRegular style={{fontSize: 16, flex: 1, color: themeColors.text}}>
+          <TextRegular style={{fontSize: 16, flex: 1}}>
             Ukuran teks terjemahan
           </TextRegular>
-          <TextBold style={{fontSize: 16, color: themeColors.text}}>
-            {translationFontSize}
-          </TextBold>
+          <TextBold style={{fontSize: 16}}>{translationFontSize}</TextBold>
         </View>
         <View style={{alignItems: 'center'}}>
           <Slider
@@ -228,10 +221,10 @@ const SettingScreen = () => {
             minimumValue={12}
             maximumValue={24}
             step={1}
-            thumbTintColor={Colors.lightBlue}
+            thumbTintColor={colors.tertiary}
             value={initialTranslationFontSize}
-            maximumTrackTintColor="#ddd"
-            minimumTrackTintColor={Colors.lightBlue}
+            maximumTrackTintColor={colors.surfaceDisabled}
+            minimumTrackTintColor={colors.tertiary}
             onSlidingStart={() => showPreview(true)}
             onSlidingComplete={() => showPreview(false)}
             onValueChange={val => {
@@ -243,25 +236,23 @@ const SettingScreen = () => {
         <View
           style={{flexDirection: 'row', alignItems: 'center', marginTop: 5}}>
           <Switch
-            trackColor={{false: '#ddd', true: Colors.lightBlue}}
+            trackColor={{false: colors.surfaceDisabled, true: colors.tertiary}}
             thumbColor={Colors.white}
-            ios_backgroundColor="#ddd"
+            ios_backgroundColor={colors.surfaceDisabled}
             onValueChange={(value: boolean) => {
               dispatch.app.setShowArabicLatin(value);
             }}
             value={showArabicLatin}
           />
-          <TextRegular style={{marginLeft: 10, color: themeColors.text}}>
+          <TextRegular style={{marginLeft: 10}}>
             Tampilkan arab latin
           </TextRegular>
         </View>
         <View style={{flexDirection: 'row', marginTop: 15}}>
-          <TextRegular style={{fontSize: 16, flex: 1, color: themeColors.text}}>
+          <TextRegular style={{fontSize: 16, flex: 1}}>
             Ukuran teks arab latin
           </TextRegular>
-          <TextBold style={{fontSize: 16, color: themeColors.text}}>
-            {arabicLatinFontSize}
-          </TextBold>
+          <TextBold style={{fontSize: 16}}>{arabicLatinFontSize}</TextBold>
         </View>
         <View style={{alignItems: 'center'}}>
           <Slider
@@ -269,10 +260,14 @@ const SettingScreen = () => {
             minimumValue={12}
             maximumValue={24}
             step={1}
-            thumbTintColor={showArabicLatin ? Colors.lightBlue : '#aaa'}
+            thumbTintColor={
+              showArabicLatin ? colors.tertiary : colors.surfaceDisabled
+            }
             value={initialArabicLatinFontSize}
-            maximumTrackTintColor="#ddd"
-            minimumTrackTintColor={showArabicLatin ? Colors.lightBlue : '#aaa'}
+            maximumTrackTintColor={colors.surfaceDisabled}
+            minimumTrackTintColor={
+              showArabicLatin ? colors.tertiary : colors.surfaceDisabled
+            }
             onSlidingStart={() => showPreview(true)}
             onSlidingComplete={() => showPreview(false)}
             onValueChange={val => {
@@ -284,70 +279,81 @@ const SettingScreen = () => {
         </View>
       </Card>
       {preview && (
-        <Card style={{marginTop: 10, backgroundColor: themeColors.card}}>
+        <Card
+          style={{
+            marginTop: 10,
+            backgroundColor: colors.primaryContainer,
+            padding: 15,
+          }}>
           <TextArabic
-            style={{fontSize: arabicFontSize, color: themeColors.text}}>
+            style={{
+              fontSize: arabicFontSize,
+              color: colors.onPrimaryContainer,
+            }}>
             ضَرَبَ زَيْدٌ عَمْرًا
           </TextArabic>
           {showArabicLatin && (
-            <TextLight
-              style={{fontSize: arabicLatinFontSize, color: themeColors.text}}>
+            <TextLight style={{fontSize: arabicLatinFontSize}}>
               Dhoroba Zaidun Amran
             </TextLight>
           )}
-          <TextRegular
-            style={{fontSize: translationFontSize, color: themeColors.text}}>
+          <TextRegular style={{fontSize: translationFontSize}}>
             Zaid telah memukul Amr
           </TextRegular>
         </Card>
       )}
-      <Card style={{marginTop: 10, backgroundColor: themeColors.card}}>
+      <Card
+        style={{
+          marginTop: 10,
+          backgroundColor: colors.secondaryContainer,
+          padding: 15,
+        }}>
         <View
           style={{flexDirection: 'row', alignItems: 'center', marginTop: 5}}>
           <Switch
-            trackColor={{false: '#ddd', true: Colors.lightBlue}}
+            trackColor={{false: colors.surfaceDisabled, true: colors.tertiary}}
             thumbColor={Colors.white}
-            ios_backgroundColor="#ddd"
+            ios_backgroundColor={colors.surfaceDisabled}
             onValueChange={(value: boolean) => {
               dispatch.app.setShowCounter(value);
             }}
             value={!!showCounter}
           />
-          <TextRegular
-            style={{marginLeft: 10, color: themeColors.text, marginRight: 10}}>
+          <TextRegular style={{marginLeft: 10, marginRight: 10}}>
             Penghitung dzikir
           </TextRegular>
           <Switch
-            trackColor={{false: '#ddd', true: Colors.lightBlue}}
+            trackColor={{false: colors.surfaceDisabled, true: colors.tertiary}}
             thumbColor={Colors.white}
-            ios_backgroundColor="#ddd"
+            ios_backgroundColor={colors.surfaceDisabled}
             onValueChange={(value: boolean) => {
               dispatch.app.setEnableVibrate(value);
             }}
             value={!!enableVibrate}
             disabled={!showCounter}
           />
-          <TextRegular style={{marginLeft: 10, color: themeColors.text}}>
-            Getar
-          </TextRegular>
+          <TextRegular style={{marginLeft: 10}}>Getar</TextRegular>
         </View>
         <View
           style={{flexDirection: 'row', alignItems: 'center', marginTop: 10}}>
           <Switch
-            trackColor={{false: '#ddd', true: Colors.lightBlue}}
+            trackColor={{false: colors.surfaceDisabled, true: colors.tertiary}}
             thumbColor={Colors.white}
-            ios_backgroundColor="#ddd"
+            ios_backgroundColor={colors.surfaceDisabled}
             onValueChange={(value: boolean) => {
               dispatch.app.setDarkMode(value);
             }}
             value={!!darkMode}
           />
-          <TextRegular style={{marginLeft: 10, color: themeColors.text}}>
-            Mode gelap
-          </TextRegular>
+          <TextRegular style={{marginLeft: 10}}>Mode gelap</TextRegular>
         </View>
       </Card>
-      <Card style={{marginTop: 10, backgroundColor: themeColors.card}}>
+      <Card
+        style={{
+          marginTop: 10,
+          backgroundColor: colors.secondaryContainer,
+          padding: 15,
+        }}>
         <Menu label={'Beri Rating'} onPress={handleRateOurApp} />
         <Menu
           label={'Referensi'}
@@ -357,7 +363,6 @@ const SettingScreen = () => {
       <Pressable onPress={openPagiPetangWeb}>
         <TextRegular
           style={{
-            color: themeColors.text,
             marginTop: 10,
             textAlign: 'center',
             fontSize: 14,

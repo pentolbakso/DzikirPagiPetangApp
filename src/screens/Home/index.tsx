@@ -5,12 +5,14 @@ import LinearGradient from 'react-native-linear-gradient';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import {TextBold, TextRegular} from '../../components/Text';
 import Icon from 'react-native-vector-icons/Feather';
-import {useNavigation, useTheme} from '@react-navigation/native';
+import {useNavigation} from '@react-navigation/native';
 import dayjs from 'dayjs';
+import {useTheme} from 'react-native-paper';
 
 type BigMenuProps = {
   subtitle: string;
   title: string;
+  titleColor: string;
   titleSize?: number;
   style?: ViewStyle;
   gradicentColors: Array<string>;
@@ -46,14 +48,14 @@ const BigMenu = ({
           alignItems: 'center',
           padding: 20,
         }}>
-        <TextRegular style={{fontSize: 20, color: '#fff'}}>
+        <TextRegular style={{fontSize: 20, color: props.titleColor}}>
           {props.subtitle}
         </TextRegular>
         <TextBold
           style={{
             width: 200,
             fontSize: titleSize,
-            color: '#fff',
+            color: props.titleColor,
             marginTop: -10,
             textAlign: 'center',
           }}>
@@ -66,7 +68,7 @@ const BigMenu = ({
 
 const HomeScreen = () => {
   const navigation = useNavigation<any>();
-  const {colors: themeColors} = useTheme();
+  const {colors} = useTheme();
   const hour = dayjs().hour();
   const timeMode = React.useMemo(() => {
     // let hour = 3;
@@ -76,27 +78,31 @@ const HomeScreen = () => {
   }, [hour]);
 
   return (
-    <SafeAreaView style={{flex: 1}}>
-      <ScrollView contentContainerStyle={{flex: 1, padding: 10}}>
+    <SafeAreaView style={{flex: 1, backgroundColor: colors.background}}>
+      <ScrollView contentContainerStyle={{flex: 1, padding: 15}}>
         <BigMenu
           subtitle="dzikir"
           title={'pagi'}
+          titleColor={colors.background}
           style={{
             flexGrow: timeMode == 'pagi' ? 3 : 1,
           }}
           // gradicentColors={['#1061B0', '#3585DA', '#59C1E8', '#FCD32D']}
-          gradicentColors={['#FCD32D', '#C3305D']}
-          angle={45}
+          // gradicentColors={['#FCD32D', '#C3305D']}
+          gradicentColors={[colors.primaryContainer, colors.primary]}
+          angle={180}
           onPress={() => navigation.navigate('Dzikir', {time: 'pagi'})}
         />
-        <View style={{height: 10, backgroundColor: themeColors.background}} />
+        <View style={{height: 10, backgroundColor: colors.background}} />
         <BigMenu
           subtitle="dzikir"
           title="petang"
+          titleColor={colors.background}
           style={{flexGrow: timeMode == 'petang' ? 3 : 1}}
-          gradicentColors={['#103d63', '#C3305D']}
+          // gradicentColors={['#103d63', '#C3305D']}
+          gradicentColors={[colors.tertiaryContainer, colors.tertiary]}
           onPress={() => navigation.navigate('Dzikir', {time: 'petang'})}
-          angle={225}
+          angle={0}
         />
         {/* <View style={{height: 2, backgroundColor: '#fff'}} /> */}
         {/* <BigMenu

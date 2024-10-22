@@ -32,12 +32,14 @@ const Loader = () => {
     };
   }, []);
 
-  return (
-    <StatusBar
-      barStyle={darkMode ? 'light-content' : 'dark-content'}
-      backgroundColor={darkMode ? '#000' : '#fff'}
-    />
-  );
+  return null;
+
+  // return (
+  //   <StatusBar
+  //     barStyle={darkMode ? 'light-content' : 'dark-content'}
+  //     backgroundColor={darkMode ? '#000' : '#fff'}
+  //   />
+  // );
 };
 
 export default Loader;

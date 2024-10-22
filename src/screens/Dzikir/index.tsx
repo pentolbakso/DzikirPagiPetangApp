@@ -1,4 +1,4 @@
-import {useNavigation, useRoute, useTheme} from '@react-navigation/native';
+import {useNavigation, useRoute} from '@react-navigation/native';
 import * as React from 'react';
 import {Animated, Platform, Pressable, Text, Vibration} from 'react-native';
 import {View} from 'react-native';
@@ -17,6 +17,8 @@ import {useDispatch, useSelector} from 'react-redux';
 import {Dispatch, RootState} from '../../rematch/store';
 import Content from './Content';
 import Notes from './Notes';
+import ContentV2 from './ContentV2';
+import {useTheme} from 'react-native-paper';
 
 const rippleConfig = {color: 'lightgray', borderless: true};
 
@@ -44,6 +46,7 @@ const SwitchModeButton = ({
   initialMode: string;
   onChange: (val: string) => void;
 }) => {
+  const {colors} = useTheme();
   const [mode, setMode] = React.useState(initialMode);
   const SwitchBtn = React.useMemo(
     () =>
@@ -63,19 +66,20 @@ const SwitchModeButton = ({
               height: '100%',
               alignItems: 'center',
               justifyContent: 'center',
-              backgroundColor: mode == id ? Colors.lightBlue : undefined,
+              backgroundColor: mode == id ? colors.primaryContainer : undefined,
             }}
             onPress={() => onPress(id)}>
             <Text
               style={{
                 fontWeight: '600',
-                color: mode == id ? Colors.white : Colors.lightBlue,
+                color:
+                  mode == id ? colors.onPrimaryContainer : colors.onBackground,
               }}>
               {label}
             </Text>
           </Pressable>
         ),
-    [mode],
+    [mode, colors],
   );
 
   const handlePress = React.useCallback(
@@ -91,8 +95,9 @@ const SwitchModeButton = ({
       style={{
         flexDirection: 'row',
         borderWidth: 1,
-        borderColor: Colors.lightBlue,
+        borderColor: colors.primaryContainer,
         // borderRadius: 0,
+        // backgroundColor: colors.primary,
         overflow: 'hidden',
         height: 32,
         minWidth: 180,
@@ -106,7 +111,7 @@ const SwitchModeButton = ({
 const DzikirScreen = () => {
   const navigation = useNavigation();
   const route = useRoute();
-  const {colors: themeColors} = useTheme();
+  const {colors} = useTheme();
   const time: string = (route.params as any).time || undefined;
   const [currentPage, setCurrentPage] = React.useState(0);
   const [drawerOpened, setDrawerOpened] = React.useState(false);
@@ -171,14 +176,12 @@ const DzikirScreen = () => {
         />
         <ScrollView
           style={{
-            backgroundColor: themeColors.card,
-            maxWidth: '60%',
-            paddingTop: 20,
+            backgroundColor: colors.background,
+            maxWidth: '70%',
+            paddingTop: 50,
           }}>
           <View style={{padding: 10}}>
-            <TextBold style={{fontSize: 22, color: themeColors.text}}>
-              Dzikir {time}
-            </TextBold>
+            <TextBold style={{fontSize: 22}}>Dzikir {time}</TextBold>
           </View>
           {items.map((item, idx) => (
             <Pressable
@@ -189,24 +192,27 @@ const DzikirScreen = () => {
               }}
               style={{
                 padding: 10,
-                borderBottomColor: themeColors.border,
+                borderBottomColor: colors.outlineVariant,
                 borderBottomWidth: 1,
                 backgroundColor:
-                  currentPage == idx ? Colors.lightBlue : themeColors.card,
+                  currentPage == idx ? colors.primaryContainer : colors.surface,
               }}>
               <TextRegular
                 style={{
-                  color: currentPage == idx ? Colors.white : themeColors.text,
+                  color:
+                    currentPage == idx
+                      ? colors.onPrimaryContainer
+                      : colors.onBackground,
                 }}>
                 {item.title}
               </TextRegular>
             </Pressable>
           ))}
-          <View style={{height: 30}} />
+          <View style={{height: 120}} />
         </ScrollView>
       </View>
     ),
-    [items, time, currentPage],
+    [items, time, currentPage, colors],
   );
 
   const progress = React.useMemo(() => {
@@ -223,7 +229,7 @@ const DzikirScreen = () => {
       overlay={true}
       // opacity={0.4}
       position="right">
-      <SafeAreaView style={{flex: 1, backgroundColor: themeColors.background}}>
+      <SafeAreaView style={{flex: 1, backgroundColor: colors.background}}>
         <View
           style={{
             flexDirection: 'row',
@@ -234,7 +240,7 @@ const DzikirScreen = () => {
           <Pressable
             onPress={() => navigation.goBack()}
             hitSlop={{left: 10, top: 10, right: 10, bottom: 10}}>
-            <Icon name="home" size={22} color={themeColors.text} />
+            <Icon name="home" size={22} color={colors.onBackground} />
           </Pressable>
           <View style={{flex: 1, alignItems: 'center'}}>
             <SwitchModeButton
@@ -245,7 +251,7 @@ const DzikirScreen = () => {
           <Pressable
             onPress={() => setDrawerOpened(true)}
             hitSlop={{left: 10, top: 10, right: 10, bottom: 10}}>
-            <Icon name="list" size={22} color={themeColors.text} />
+            <Icon name="list" size={22} color={colors.onBackground} />
           </Pressable>
         </View>
         <Progress.Bar
@@ -253,8 +259,8 @@ const DzikirScreen = () => {
           width={null}
           borderRadius={0}
           borderWidth={0}
-          color={Colors.lightBlue}
-          unfilledColor={themeColors.card}
+          color={colors.primary}
+          unfilledColor={colors.surfaceDisabled}
           height={3}
         />
         <AnimatedPagerView
@@ -264,7 +270,7 @@ const DzikirScreen = () => {
           {React.useMemo(
             () =>
               items.map((item, idx) => {
-                return <Content item={item} key={idx} mode={mode} />;
+                return <ContentV2 item={item} key={idx} mode={mode} />;
               }),
             [items, mode],
           )}
@@ -278,30 +284,29 @@ const DzikirScreen = () => {
           {!!showCounter &&
             !!currentItem?.max_counter &&
             currentItem?.max_counter > 1 && (
-              <Pressable
-                onPress={increaseCounter}
-                android_ripple={rippleConfig}>
+              <Pressable onPress={increaseCounter} hitSlop={50}>
                 <CircularProgress
                   value={counters.get(currentItem?.id) || 0}
-                  radius={40}
+                  radius={36}
                   duration={300}
-                  progressValueColor={Colors.lightBlue}
+                  progressValueColor={colors.onSecondaryContainer}
                   progressValueStyle={{fontSize: 22, fontFamily: 'Nunito-Bold'}}
                   maxValue={currentItem?.max_counter}
                   title={undefined}
-                  titleFontSize={16}
-                  titleColor={'#333'}
-                  titleStyle={{fontWeight: 'bold'}}
-                  circleBackgroundColor={themeColors.card}
-                  activeStrokeColor={'#2465FD'}
-                  activeStrokeSecondaryColor={'#C3305D'}
-                  inActiveStrokeColor={themeColors.border}
+                  // titleFontSize={16}
+                  // titleColor={colors.onSecondary}
+                  // titleStyle={{fontWeight: 'bold'}}
+                  circleBackgroundColor={colors.secondaryContainer}
+                  activeStrokeColor={colors.primary}
+                  activeStrokeSecondaryColor={colors.tertiary}
+                  inActiveStrokeColor={colors.backdrop}
                   activeStrokeWidth={8}
                 />
               </Pressable>
             )}
         </View>
         {mounted && <Notes item={currentItem} />}
+        {/* <Notes item={currentItem} /> */}
       </SafeAreaView>
     </Drawer>
   );

@@ -1,5 +1,6 @@
 import * as React from 'react';
-import {Platform, Text, TextStyle} from 'react-native';
+import {Platform, TextStyle} from 'react-native';
+import {Text} from 'react-native-paper';
 
 export const TextBold = ({
   children,
@@ -8,7 +9,13 @@ export const TextBold = ({
   children: any;
   style?: TextStyle;
 }) => (
-  <Text style={{fontSize: 16, fontFamily: 'Nunito-Bold', ...style}}>
+  <Text
+    style={{
+      fontSize: 16,
+      fontFamily: 'Nunito-Bold',
+      fontWeight: 700,
+      ...style,
+    }}>
     {children}
   </Text>
 );
@@ -20,7 +27,13 @@ export const TextSemiBold = ({
   children: any;
   style?: TextStyle;
 }) => (
-  <Text style={{fontSize: 16, fontFamily: 'Nunito-SemiBold', ...style}}>
+  <Text
+    style={{
+      fontSize: 16,
+      fontFamily: 'Nunito-SemiBold',
+      fontWeight: 500,
+      ...style,
+    }}>
     {children}
   </Text>
 );
@@ -44,7 +57,13 @@ export const TextLight = ({
   children: any;
   style?: TextStyle;
 }) => (
-  <Text style={{fontSize: 16, fontFamily: 'Nunito-Light', ...style}}>
+  <Text
+    style={{
+      fontSize: 16,
+      fontFamily: 'Nunito-Light',
+      fontWeight: '200',
+      ...style,
+    }}>
     {children}
   </Text>
 );
@@ -60,6 +79,7 @@ export const TextRegular = ({
     style={{
       fontSize: 16,
       fontFamily: Platform.OS == 'ios' ? 'Nunito' : 'Nunito-Regular',
+      fontWeight: '400',
       ...style,
     }}>
     {children}
