@@ -13,6 +13,7 @@ import {useColorScheme} from 'react-native';
 import {Colors} from '../colors';
 import {useSelector} from 'react-redux';
 import {RootState} from '../rematch/store';
+import PaletteScreen from '../screens/Palette';
 
 const Stack = createStackNavigator();
 
@@ -58,6 +59,11 @@ const Navigator = ({theme}: {theme: Theme | undefined}) => {
           name="Setting"
           component={SettingScreen}
           options={{headerTitle: 'Pengaturan', headerShown: true}}
+        />
+        <Stack.Screen
+          name="Palettes"
+          component={PaletteScreen}
+          options={{headerTitle: 'Warna', headerShown: true}}
         />
       </Stack.Navigator>
     </NavigationContainer>

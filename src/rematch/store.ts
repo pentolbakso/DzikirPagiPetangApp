@@ -3,7 +3,7 @@ import loading, {ExtraModelsFromLoading} from '@rematch/loading';
 import persist from '@rematch/persist';
 import {models, RootModel} from './models';
 import {createTransform} from 'redux-persist';
-import {AppState} from 'react-native';
+// import {AppState} from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const appTransformer = createTransform(
@@ -31,7 +31,7 @@ export const store = init<RootModel, FullModel>({
     persist({
       key: 'root',
       storage: AsyncStorage,
-      version: 1,
+      version: 2,
       whitelist: ['app'],
       transforms: [appTransformer],
     }),

@@ -11,6 +11,7 @@ export type AppState = {
   darkMode: boolean;
   showCounter: boolean;
   enableVibrate: boolean;
+  themeColor: string | undefined;
 };
 
 export const app = createModel<RootModel>()({
@@ -24,6 +25,7 @@ export const app = createModel<RootModel>()({
     darkMode: false,
     showCounter: false,
     enableVibrate: false,
+    themeColor: undefined,
   } as AppState,
 
   reducers: {
@@ -53,6 +55,9 @@ export const app = createModel<RootModel>()({
     },
     setEnableVibrate(state: AppState, value: boolean) {
       return {...state, enableVibrate: value};
+    },
+    setThemeColor(state: AppState, value: string | undefined) {
+      return {...state, themeColor: value};
     },
   },
 

@@ -14,13 +14,9 @@ import {
 
 export const useAppTheme = () => {
   const isDarkMode = useColorScheme() === 'dark';
-  //   const [sourceColor, setSourceColor] = React.useState<string>('#6750A4');
 
   const [theme, setTheme] = React.useState<Material3Theme>(
-    // createThemeFromSourceColor('#000'),
-    createThemeFromSourceColor('#FFF'),
-    // createThemeFromSourceColor('#FFDE3E'),
-    // createThemeFromSourceColor('#6750A4'),
+    createThemeFromSourceColor('#6750A4'),
   );
 
   const {LightTheme, DarkTheme} = adaptNavigationTheme({
@@ -29,6 +25,7 @@ export const useAppTheme = () => {
   });
 
   const updateTheme = (sourceColor: string) => {
+    console.log('updateTheme', sourceColor);
     setTheme(createThemeFromSourceColor(sourceColor));
   };
 

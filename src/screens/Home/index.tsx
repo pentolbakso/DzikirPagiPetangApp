@@ -7,7 +7,7 @@ import {TextBold, TextRegular} from '../../components/Text';
 import Icon from 'react-native-vector-icons/Feather';
 import {useNavigation} from '@react-navigation/native';
 import dayjs from 'dayjs';
-import {useTheme} from 'react-native-paper';
+import {IconButton, useTheme} from 'react-native-paper';
 
 type BigMenuProps = {
   subtitle: string;
@@ -90,7 +90,7 @@ const HomeScreen = () => {
           // gradicentColors={['#1061B0', '#3585DA', '#59C1E8', '#FCD32D']}
           // gradicentColors={['#FCD32D', '#C3305D']}
           gradicentColors={[colors.primaryContainer, colors.primary]}
-          angle={180}
+          angle={0}
           onPress={() => navigation.navigate('Dzikir', {time: 'pagi'})}
         />
         <View style={{height: 10, backgroundColor: colors.background}} />
@@ -102,7 +102,7 @@ const HomeScreen = () => {
           // gradicentColors={['#103d63', '#C3305D']}
           gradicentColors={[colors.tertiaryContainer, colors.tertiary]}
           onPress={() => navigation.navigate('Dzikir', {time: 'petang'})}
-          angle={0}
+          angle={180}
         />
         {/* <View style={{height: 2, backgroundColor: '#fff'}} /> */}
         {/* <BigMenu
@@ -115,11 +115,20 @@ const HomeScreen = () => {
           onPress={() => navigation.navigate('Dzikir', {time: 'petang'})}
         /> */}
         <View style={{position: 'absolute', top: 25, right: 25}}>
-          <Pressable
-            onPress={() => navigation.navigate('Setting')}
-            hitSlop={{left: 10, top: 10, right: 10, bottom: 10}}>
-            <Icon name="settings" color="white" size={24} />
-          </Pressable>
+          <View style={{flexDirection: 'row'}}>
+            <IconButton
+              icon={'palette-outline'}
+              size={24}
+              iconColor={colors.background}
+              onPress={() => navigation.navigate('Palettes')}
+            />
+            <IconButton
+              icon={'cog-outline'}
+              iconColor={colors.background}
+              size={24}
+              onPress={() => navigation.navigate('Setting')}
+            />
+          </View>
         </View>
       </ScrollView>
     </SafeAreaView>
