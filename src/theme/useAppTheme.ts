@@ -1,5 +1,4 @@
 import * as React from 'react';
-import {useColorScheme} from 'react-native';
 import {
   adaptNavigationTheme,
   MD3DarkTheme,
@@ -11,9 +10,11 @@ import {
   DarkTheme as NavigationDarkTheme,
   DefaultTheme as NavigationDefaultTheme,
 } from '@react-navigation/native';
+import {useSelector} from 'react-redux';
+import {RootState} from '../rematch/store';
 
 export const useAppTheme = () => {
-  const isDarkMode = useColorScheme() === 'dark';
+  const isDarkMode = useSelector((state: RootState) => state.app.darkMode);
 
   const [theme, setTheme] = React.useState<Material3Theme>(
     createThemeFromSourceColor('#6750A4'),

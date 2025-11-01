@@ -1,9 +1,8 @@
 import * as React from 'react';
-import {Pressable, useColorScheme, View, ViewStyle} from 'react-native';
+import {Pressable, View, ViewStyle} from 'react-native';
 import {ScrollView} from 'react-native-gesture-handler';
 import {createThemeFromSourceColor} from '../../theme/createMaterial3Theme';
-import {MD3DarkTheme, MD3LightTheme, Surface} from 'react-native-paper';
-import {useAppTheme} from '../../theme/useAppTheme';
+import {MD3DarkTheme, MD3LightTheme} from 'react-native-paper';
 import {useDispatch, useSelector} from 'react-redux';
 import {Dispatch, RootState} from '../../rematch/store';
 import {useNavigation} from '@react-navigation/native';
@@ -81,8 +80,7 @@ const PaletteScreen = () => {
   const navigate = useNavigation();
   const dispatch = useDispatch<Dispatch>();
   const themeColor = useSelector((state: RootState) => state.app.themeColor);
-
-  const isDarkMode = useColorScheme() === 'dark';
+  const isDarkMode = useSelector((state: RootState) => state.app.darkMode);
 
   const handlePress = React.useCallback(
     (color: string) => {

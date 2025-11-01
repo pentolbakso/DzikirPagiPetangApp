@@ -5,6 +5,7 @@ import {
   Modal,
   Pressable,
   ScrollView,
+  useColorScheme,
   useWindowDimensions,
   View,
 } from 'react-native';
@@ -122,6 +123,8 @@ const SettingScreen = () => {
   const navigation = useNavigation();
   const {colors} = useTheme();
   const width = useWindowDimensions().width;
+  const initialDarkMode = useColorScheme() === 'dark';
+
   const dispatch = useDispatch<Dispatch>();
   const initialArabicFontSize = useSelector(
     (state: RootState) => state.app.arabicFontSize || 32,
@@ -136,7 +139,7 @@ const SettingScreen = () => {
     (state: RootState) => state.app.showArabicLatin || false,
   );
   const darkMode = useSelector(
-    (state: RootState) => state.app.darkMode || false,
+    (state: RootState) => state.app.darkMode || initialDarkMode,
   );
   const showCounter = useSelector(
     (state: RootState) => state.app.showCounter || false,
