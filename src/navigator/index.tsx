@@ -43,7 +43,7 @@ const Navigator = ({theme}: {theme: Theme | undefined}) => {
           headerStyle: {},
           // headerTintColor: '#333',
           headerShown: false,
-          headerBackTitleVisible: false,
+          // headerBackTitleVisible: false,
         }}>
         <Stack.Screen
           name="Home"

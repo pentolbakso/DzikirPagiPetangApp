@@ -5,7 +5,6 @@ import {Dzikir} from '../../types';
 import BottomSheet, {BottomSheetView} from '@gorhom/bottom-sheet';
 import {Colors} from '../../colors';
 import {ScrollView} from 'react-native-gesture-handler';
-import Icon from 'react-native-vector-icons/Feather';
 import {Button, useTheme} from 'react-native-paper';
 
 const BottomSheetBackground = (props: any) => {

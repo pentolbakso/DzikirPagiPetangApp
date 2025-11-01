@@ -22,7 +22,7 @@ import Card from '../../components/Card';
 import {useDispatch, useSelector} from 'react-redux';
 import {Dispatch, RootState} from '../../rematch/store';
 import {Switch} from 'react-native-gesture-handler';
-import Icon from 'react-native-vector-icons/Feather';
+import Icon from '@react-native-vector-icons/feather';
 import Rate, {AndroidMarket} from 'react-native-rate';
 import {useNavigation} from '@react-navigation/native';
 import {useTheme} from 'react-native-paper';

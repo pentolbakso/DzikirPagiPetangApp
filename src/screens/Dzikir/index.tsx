@@ -8,7 +8,6 @@ import {TextBold, TextRegular} from '../../components/Text';
 import {dzikirDb} from '../../services/db';
 import {Dzikir} from '../../types';
 import {ScrollView} from 'react-native-gesture-handler';
-import Icon from 'react-native-vector-icons/Feather';
 import * as Progress from 'react-native-progress';
 import {Colors} from '../../colors';
 import MenuDrawer, {MenuDrawerProps} from 'react-native-side-drawer';
@@ -19,6 +18,7 @@ import Content from './Content';
 import Notes from './Notes';
 import ContentV2 from './ContentV2';
 import {useTheme} from 'react-native-paper';
+import Icon from '@react-native-vector-icons/feather';
 
 const rippleConfig = {color: 'lightgray', borderless: true};
 

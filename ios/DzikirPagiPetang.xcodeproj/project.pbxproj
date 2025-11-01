@@ -7,71 +7,41 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		00E356F31AD99517003FC87E /* DzikirPagiPetangTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* DzikirPagiPetangTests.m */; };
 		0C80B921A6F3F58F76C31292 /* libPods-DzikirPagiPetang.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DCACB8F33CDC322A6C60F78 /* libPods-DzikirPagiPetang.a */; };
-		13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
-		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		14130C5CE1614090A6AEF51E /* Nunito-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 837C311FACBF440BB0F87E53 /* Nunito-Bold.ttf */; };
-		498FF041D0834DE3B49D8684 /* Nunito-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 11A274C64D6340BF8A24F91F /* Nunito-Light.ttf */; };
-		72986C26EB1A40D28483298C /* Nunito-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A7AA214B6C6843D98D5D8364 /* Nunito-SemiBold.ttf */; };
-		7699B88040F8A987B510C191 /* libPods-DzikirPagiPetang-DzikirPagiPetangTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-DzikirPagiPetang-DzikirPagiPetangTests.a */; };
+		761780ED2CA45674006654EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761780EC2CA45674006654EE /* AppDelegate.swift */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
-		A8F5A6C330A14FFF8C3E0948 /* adwa-assalaf.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A1F92B136F0C4C43B6C8C092 /* adwa-assalaf.ttf */; };
-		AC44DEDC931B476686191B09 /* Nunito-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D65832AFD51548D2B50992D3 /* Nunito-Italic.ttf */; };
-		D53A167889BCF7738901E9FB /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = EA9300EB3C36C7F6174572DC /* PrivacyInfo.xcprivacy */; };
-		DB29E78D8985483EB87DFF80 /* KFGQPCUthmanicScriptHAFS.otf in Resources */ = {isa = PBXBuildFile; fileRef = 27A250ECEB4344BAA3DD6D99 /* KFGQPCUthmanicScriptHAFS.otf */; };
-		F1613FB505384C6292BD7828 /* Nunito-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8AF2876298034D079EC4921C /* Nunito-Regular.ttf */; };
+		A1E10C874EC501D458852FF8 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */; };
+		52669DC1C22A49349733486D /* KFGQPCUthmanicScriptHAFS.otf in Resources */ = {isa = PBXBuildFile; fileRef = AC6C917D6D78434897ABCC35 /* KFGQPCUthmanicScriptHAFS.otf */; };
+		73CDF0335C774AA68BA4D3ED /* Nunito-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 96AA776D4783427EBEF22200 /* Nunito-Bold.ttf */; };
+		7DA3A630A9D440CE913585C6 /* Nunito-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7E115B4C599E4547A300B05B /* Nunito-Italic.ttf */; };
+		9C72555221C2437E801D6E46 /* Nunito-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7C7585D1E4954A74992E21EC /* Nunito-Light.ttf */; };
+		67AC17B10DCA471DAA47413B /* Nunito-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DA1DFE2B14B341EAA3E13ACD /* Nunito-Regular.ttf */; };
+		83AF78234A9A494E99BA12F8 /* Nunito-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 34DD3C9B26ED412F87FF568C /* Nunito-SemiBold.ttf */; };
+		BE6AFC296A57432495C1E586 /* adwa-assalaf.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2DE6F6914B414112816C9A31 /* adwa-assalaf.ttf */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		00E356F41AD99517003FC87E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 83CBB9F71A601CBA00E9B192 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 13B07F861A680F5B00A75B9A;
-			remoteInfo = DzikirPagiPetang;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
-		00E356EE1AD99517003FC87E /* DzikirPagiPetangTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DzikirPagiPetangTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		00E356F21AD99517003FC87E /* DzikirPagiPetangTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DzikirPagiPetangTests.m; sourceTree = "<group>"; };
-		11A274C64D6340BF8A24F91F /* Nunito-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Nunito-Light.ttf"; path = "../src/assets/fonts/Nunito-Light.ttf"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* DzikirPagiPetang.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DzikirPagiPetang.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = DzikirPagiPetang/AppDelegate.h; sourceTree = "<group>"; };
-		13B07FB01A68108700A75B9A /* AppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AppDelegate.mm; path = DzikirPagiPetang/AppDelegate.mm; sourceTree = "<group>"; };
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = DzikirPagiPetang/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = DzikirPagiPetang/Info.plist; sourceTree = "<group>"; };
-		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = DzikirPagiPetang/main.m; sourceTree = "<group>"; };
 		13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = PrivacyInfo.xcprivacy; path = DzikirPagiPetang/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
-		19F6CBCC0A4E27FBF8BF4A61 /* libPods-DzikirPagiPetang-DzikirPagiPetangTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DzikirPagiPetang-DzikirPagiPetangTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		27A250ECEB4344BAA3DD6D99 /* KFGQPCUthmanicScriptHAFS.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = KFGQPCUthmanicScriptHAFS.otf; path = ../src/assets/fonts/KFGQPCUthmanicScriptHAFS.otf; sourceTree = "<group>"; };
 		3B4392A12AC88292D35C810B /* Pods-DzikirPagiPetang.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DzikirPagiPetang.debug.xcconfig"; path = "Target Support Files/Pods-DzikirPagiPetang/Pods-DzikirPagiPetang.debug.xcconfig"; sourceTree = "<group>"; };
 		5709B34CF0A7D63546082F79 /* Pods-DzikirPagiPetang.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DzikirPagiPetang.release.xcconfig"; path = "Target Support Files/Pods-DzikirPagiPetang/Pods-DzikirPagiPetang.release.xcconfig"; sourceTree = "<group>"; };
-		5B7EB9410499542E8C5724F5 /* Pods-DzikirPagiPetang-DzikirPagiPetangTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DzikirPagiPetang-DzikirPagiPetangTests.debug.xcconfig"; path = "Target Support Files/Pods-DzikirPagiPetang-DzikirPagiPetangTests/Pods-DzikirPagiPetang-DzikirPagiPetangTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5DCACB8F33CDC322A6C60F78 /* libPods-DzikirPagiPetang.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DzikirPagiPetang.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		761780EC2CA45674006654EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = DzikirPagiPetang/AppDelegate.swift; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = DzikirPagiPetang/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		837C311FACBF440BB0F87E53 /* Nunito-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Nunito-Bold.ttf"; path = "../src/assets/fonts/Nunito-Bold.ttf"; sourceTree = "<group>"; };
-		89C6BE57DB24E9ADA2F236DE /* Pods-DzikirPagiPetang-DzikirPagiPetangTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DzikirPagiPetang-DzikirPagiPetangTests.release.xcconfig"; path = "Target Support Files/Pods-DzikirPagiPetang-DzikirPagiPetangTests/Pods-DzikirPagiPetang-DzikirPagiPetangTests.release.xcconfig"; sourceTree = "<group>"; };
-		8AF2876298034D079EC4921C /* Nunito-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Nunito-Regular.ttf"; path = "../src/assets/fonts/Nunito-Regular.ttf"; sourceTree = "<group>"; };
-		A1F92B136F0C4C43B6C8C092 /* adwa-assalaf.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "adwa-assalaf.ttf"; path = "../src/assets/fonts/adwa-assalaf.ttf"; sourceTree = "<group>"; };
-		A7AA214B6C6843D98D5D8364 /* Nunito-SemiBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Nunito-SemiBold.ttf"; path = "../src/assets/fonts/Nunito-SemiBold.ttf"; sourceTree = "<group>"; };
-		D65832AFD51548D2B50992D3 /* Nunito-Italic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Nunito-Italic.ttf"; path = "../src/assets/fonts/Nunito-Italic.ttf"; sourceTree = "<group>"; };
-		EA9300EB3C36C7F6174572DC /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xml; name = PrivacyInfo.xcprivacy; path = DzikirPagiPetang/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		AC6C917D6D78434897ABCC35 /* KFGQPCUthmanicScriptHAFS.otf */ = {isa = PBXFileReference; name = "KFGQPCUthmanicScriptHAFS.otf"; path = "../src/assets/fonts/KFGQPCUthmanicScriptHAFS.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		96AA776D4783427EBEF22200 /* Nunito-Bold.ttf */ = {isa = PBXFileReference; name = "Nunito-Bold.ttf"; path = "../src/assets/fonts/Nunito-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		7E115B4C599E4547A300B05B /* Nunito-Italic.ttf */ = {isa = PBXFileReference; name = "Nunito-Italic.ttf"; path = "../src/assets/fonts/Nunito-Italic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		7C7585D1E4954A74992E21EC /* Nunito-Light.ttf */ = {isa = PBXFileReference; name = "Nunito-Light.ttf"; path = "../src/assets/fonts/Nunito-Light.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		DA1DFE2B14B341EAA3E13ACD /* Nunito-Regular.ttf */ = {isa = PBXFileReference; name = "Nunito-Regular.ttf"; path = "../src/assets/fonts/Nunito-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		34DD3C9B26ED412F87FF568C /* Nunito-SemiBold.ttf */ = {isa = PBXFileReference; name = "Nunito-SemiBold.ttf"; path = "../src/assets/fonts/Nunito-SemiBold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		2DE6F6914B414112816C9A31 /* adwa-assalaf.ttf */ = {isa = PBXFileReference; name = "adwa-assalaf.ttf"; path = "../src/assets/fonts/adwa-assalaf.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		00E356EB1AD99517003FC87E /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				7699B88040F8A987B510C191 /* libPods-DzikirPagiPetang-DzikirPagiPetangTests.a in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		13B07F8C1A680F5B00A75B9A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -83,49 +53,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		00E356EF1AD99517003FC87E /* DzikirPagiPetangTests */ = {
-			isa = PBXGroup;
-			children = (
-				00E356F21AD99517003FC87E /* DzikirPagiPetangTests.m */,
-				00E356F01AD99517003FC87E /* Supporting Files */,
-			);
-			path = DzikirPagiPetangTests;
-			sourceTree = "<group>";
-		};
-		00E356F01AD99517003FC87E /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				00E356F11AD99517003FC87E /* Info.plist */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		0606B6438F3C475B8539E46C /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				27A250ECEB4344BAA3DD6D99 /* KFGQPCUthmanicScriptHAFS.otf */,
-				837C311FACBF440BB0F87E53 /* Nunito-Bold.ttf */,
-				D65832AFD51548D2B50992D3 /* Nunito-Italic.ttf */,
-				11A274C64D6340BF8A24F91F /* Nunito-Light.ttf */,
-				8AF2876298034D079EC4921C /* Nunito-Regular.ttf */,
-				A7AA214B6C6843D98D5D8364 /* Nunito-SemiBold.ttf */,
-				A1F92B136F0C4C43B6C8C092 /* adwa-assalaf.ttf */,
-			);
-			name = Resources;
-			path = "";
-			sourceTree = "<group>";
-		};
 		13B07FAE1A68108700A75B9A /* DzikirPagiPetang */ = {
 			isa = PBXGroup;
 			children = (
-				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
-				13B07FB01A68108700A75B9A /* AppDelegate.mm */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
+				761780EC2CA45674006654EE /* AppDelegate.swift */,
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
-				13B07FB71A68108700A75B9A /* main.m */,
 				13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */,
-				EA9300EB3C36C7F6174572DC /* PrivacyInfo.xcprivacy */,
 			);
 			name = DzikirPagiPetang;
 			sourceTree = "<group>";
@@ -135,7 +70,6 @@
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
 				5DCACB8F33CDC322A6C60F78 /* libPods-DzikirPagiPetang.a */,
-				19F6CBCC0A4E27FBF8BF4A61 /* libPods-DzikirPagiPetang-DzikirPagiPetangTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -152,11 +86,10 @@
 			children = (
 				13B07FAE1A68108700A75B9A /* DzikirPagiPetang */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
-				00E356EF1AD99517003FC87E /* DzikirPagiPetangTests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				BBD78D7AC51CEA395F1C20DB /* Pods */,
-				0606B6438F3C475B8539E46C /* Resources */,
+				FF58A9552F8C4911A3FB82FF /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -167,7 +100,6 @@
 			isa = PBXGroup;
 			children = (
 				13B07F961A680F5B00A75B9A /* DzikirPagiPetang.app */,
-				00E356EE1AD99517003FC87E /* DzikirPagiPetangTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -177,36 +109,28 @@
 			children = (
 				3B4392A12AC88292D35C810B /* Pods-DzikirPagiPetang.debug.xcconfig */,
 				5709B34CF0A7D63546082F79 /* Pods-DzikirPagiPetang.release.xcconfig */,
-				5B7EB9410499542E8C5724F5 /* Pods-DzikirPagiPetang-DzikirPagiPetangTests.debug.xcconfig */,
-				89C6BE57DB24E9ADA2F236DE /* Pods-DzikirPagiPetang-DzikirPagiPetangTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		FF58A9552F8C4911A3FB82FF /* Resources */ = {
+			isa = "PBXGroup";
+			children = (
+				AC6C917D6D78434897ABCC35 /* KFGQPCUthmanicScriptHAFS.otf */,
+				96AA776D4783427EBEF22200 /* Nunito-Bold.ttf */,
+				7E115B4C599E4547A300B05B /* Nunito-Italic.ttf */,
+				7C7585D1E4954A74992E21EC /* Nunito-Light.ttf */,
+				DA1DFE2B14B341EAA3E13ACD /* Nunito-Regular.ttf */,
+				34DD3C9B26ED412F87FF568C /* Nunito-SemiBold.ttf */,
+				2DE6F6914B414112816C9A31 /* adwa-assalaf.ttf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+			path = "";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		00E356ED1AD99517003FC87E /* DzikirPagiPetangTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "DzikirPagiPetangTests" */;
-			buildPhases = (
-				A55EABD7B0C7F3A422A6CC61 /* [CP] Check Pods Manifest.lock */,
-				00E356EA1AD99517003FC87E /* Sources */,
-				00E356EB1AD99517003FC87E /* Frameworks */,
-				00E356EC1AD99517003FC87E /* Resources */,
-				C59DA0FBD6956966B86A3779 /* [CP] Embed Pods Frameworks */,
-				F6A41C54EA430FDDC6A6ED99 /* [CP] Copy Pods Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				00E356F51AD99517003FC87E /* PBXTargetDependency */,
-			);
-			name = DzikirPagiPetangTests;
-			productName = DzikirPagiPetangTests;
-			productReference = 00E356EE1AD99517003FC87E /* DzikirPagiPetangTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 		13B07F861A680F5B00A75B9A /* DzikirPagiPetang */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "DzikirPagiPetang" */;
@@ -236,10 +160,6 @@
 			attributes = {
 				LastUpgradeCheck = 1210;
 				TargetAttributes = {
-					00E356ED1AD99517003FC87E = {
-						CreatedOnToolsVersion = 6.2;
-						TestTargetID = 13B07F861A680F5B00A75B9A;
-					};
 					13B07F861A680F5B00A75B9A = {
 						LastSwiftMigration = 1120;
 					};
@@ -259,33 +179,25 @@
 			projectRoot = "";
 			targets = (
 				13B07F861A680F5B00A75B9A /* DzikirPagiPetang */,
-				00E356ED1AD99517003FC87E /* DzikirPagiPetangTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		00E356EC1AD99517003FC87E /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		13B07F8E1A680F5B00A75B9A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
-				D53A167889BCF7738901E9FB /* PrivacyInfo.xcprivacy in Resources */,
-				DB29E78D8985483EB87DFF80 /* KFGQPCUthmanicScriptHAFS.otf in Resources */,
-				14130C5CE1614090A6AEF51E /* Nunito-Bold.ttf in Resources */,
-				AC44DEDC931B476686191B09 /* Nunito-Italic.ttf in Resources */,
-				498FF041D0834DE3B49D8684 /* Nunito-Light.ttf in Resources */,
-				F1613FB505384C6292BD7828 /* Nunito-Regular.ttf in Resources */,
-				72986C26EB1A40D28483298C /* Nunito-SemiBold.ttf in Resources */,
-				A8F5A6C330A14FFF8C3E0948 /* adwa-assalaf.ttf in Resources */,
+				A1E10C874EC501D458852FF8 /* PrivacyInfo.xcprivacy in Resources */,
+				52669DC1C22A49349733486D /* KFGQPCUthmanicScriptHAFS.otf in Resources */,
+				73CDF0335C774AA68BA4D3ED /* Nunito-Bold.ttf in Resources */,
+				7DA3A630A9D440CE913585C6 /* Nunito-Italic.ttf in Resources */,
+				9C72555221C2437E801D6E46 /* Nunito-Light.ttf in Resources */,
+				67AC17B10DCA471DAA47413B /* Nunito-Regular.ttf in Resources */,
+				83AF78234A9A494E99BA12F8 /* Nunito-SemiBold.ttf in Resources */,
+				BE6AFC296A57432495C1E586 /* adwa-assalaf.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -325,28 +237,6 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DzikirPagiPetang/Pods-DzikirPagiPetang-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		A55EABD7B0C7F3A422A6CC61 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-DzikirPagiPetang-DzikirPagiPetangTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
 		C38B50BA6285516D6DCD4F65 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -369,23 +259,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		C59DA0FBD6956966B86A3779 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-DzikirPagiPetang-DzikirPagiPetangTests/Pods-DzikirPagiPetang-DzikirPagiPetangTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-DzikirPagiPetang-DzikirPagiPetangTests/Pods-DzikirPagiPetang-DzikirPagiPetangTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DzikirPagiPetang-DzikirPagiPetangTests/Pods-DzikirPagiPetang-DzikirPagiPetangTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		E235C05ADACE081382539298 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -403,105 +276,20 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DzikirPagiPetang/Pods-DzikirPagiPetang-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		F6A41C54EA430FDDC6A6ED99 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-DzikirPagiPetang-DzikirPagiPetangTests/Pods-DzikirPagiPetang-DzikirPagiPetangTests-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-DzikirPagiPetang-DzikirPagiPetangTests/Pods-DzikirPagiPetang-DzikirPagiPetangTests-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DzikirPagiPetang-DzikirPagiPetangTests/Pods-DzikirPagiPetang-DzikirPagiPetangTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		00E356EA1AD99517003FC87E /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				00E356F31AD99517003FC87E /* DzikirPagiPetangTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		13B07F871A680F5B00A75B9A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */,
-				13B07FC11A68108700A75B9A /* main.m in Sources */,
+				761780ED2CA45674006654EE /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXTargetDependency section */
-		00E356F51AD99517003FC87E /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 13B07F861A680F5B00A75B9A /* DzikirPagiPetang */;
-			targetProxy = 00E356F41AD99517003FC87E /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
 /* Begin XCBuildConfiguration section */
-		00E356F61AD99517003FC87E /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5B7EB9410499542E8C5724F5 /* Pods-DzikirPagiPetang-DzikirPagiPetangTests.debug.xcconfig */;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = DzikirPagiPetangTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				OTHER_LDFLAGS = (
-					"-ObjC",
-					"-lc++",
-					"$(inherited)",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DzikirPagiPetang.app/DzikirPagiPetang";
-			};
-			name = Debug;
-		};
-		00E356F71AD99517003FC87E /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 89C6BE57DB24E9ADA2F236DE /* Pods-DzikirPagiPetang-DzikirPagiPetangTests.release.xcconfig */;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				COPY_PHASE_STRIP = NO;
-				INFOPLIST_FILE = DzikirPagiPetangTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				OTHER_LDFLAGS = (
-					"-ObjC",
-					"-lc++",
-					"$(inherited)",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DzikirPagiPetang.app/DzikirPagiPetang";
-			};
-			name = Release;
-		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3B4392A12AC88292D35C810B /* Pods-DzikirPagiPetang.debug.xcconfig */;
@@ -512,8 +300,8 @@
 				DEVELOPMENT_TEAM = CL8V4SRG8A;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = DzikirPagiPetang/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "Dzikir Pagi Petang";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.reference";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -524,7 +312,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.pagipetangstudio.dzikirpagipetang;
+				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = DzikirPagiPetang;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -541,8 +329,8 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = CL8V4SRG8A;
 				INFOPLIST_FILE = DzikirPagiPetang/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "Dzikir Pagi Petang";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.reference";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -553,7 +341,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.pagipetangstudio.dzikirpagipetang;
+				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = DzikirPagiPetang;
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -564,7 +352,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CC = "";
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "c++20";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -592,7 +379,6 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
-				CXX = "";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "";
@@ -611,9 +397,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
-				LD = "";
-				LDPLUSPLUS = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					/usr/lib/swift,
 					"$(inherited)",
@@ -633,10 +417,6 @@
 					"-DFOLLY_CFG_NO_COROUTINES=1",
 					"-DFOLLY_HAVE_CLOCK_GETTIME=1",
 				);
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					" ",
-				);
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) DEBUG";
@@ -648,7 +428,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CC = "";
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "c++20";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -676,7 +455,6 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
-				CXX = "";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "";
@@ -688,9 +466,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
-				LD = "";
-				LDPLUSPLUS = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					/usr/lib/swift,
 					"$(inherited)",
@@ -709,10 +485,6 @@
 					"-DFOLLY_CFG_NO_COROUTINES=1",
 					"-DFOLLY_HAVE_CLOCK_GETTIME=1",
 				);
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					" ",
-				);
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
 				USE_HERMES = true;
@@ -723,15 +495,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "DzikirPagiPetangTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				00E356F61AD99517003FC87E /* Debug */,
-				00E356F71AD99517003FC87E /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "DzikirPagiPetang" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

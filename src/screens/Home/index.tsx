@@ -4,7 +4,7 @@ import {ScrollView, View} from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import {TextBold, TextRegular} from '../../components/Text';
-import Icon from 'react-native-vector-icons/Feather';
+import Icon from '@react-native-vector-icons/feather';
 import {useNavigation} from '@react-navigation/native';
 import dayjs from 'dayjs';
 import {IconButton, useTheme} from 'react-native-paper';
@@ -34,7 +34,7 @@ const BigMenu = ({
       colors={gradicentColors}>
       {!!props.icon && (
         <Icon
-          name={props.icon}
+          name={props.icon as any}
           style={{position: 'absolute', zIndex: 0, right: -20, bottom: -10}}
           size={100}
           color={'rgba(255, 255, 255, 0.25)'}
