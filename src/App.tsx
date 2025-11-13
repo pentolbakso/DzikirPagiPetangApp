@@ -8,17 +8,12 @@ import {PaperProvider} from 'react-native-paper';
 import {useAppTheme} from './theme/useAppTheme';
 
 const Content = () => {
-  const themeColor = useSelector((state: RootState) => state.app.themeColor);
-  const {updateTheme, theme, navigationTheme} = useAppTheme();
-
-  React.useEffect(() => {
-    updateTheme(themeColor || '#fff');
-  }, [themeColor]);
+  const {changeTheme, theme} = useAppTheme();
 
   return (
     <PaperProvider theme={theme}>
       <Loader />
-      <Navigator theme={navigationTheme} />
+      <Navigator theme={theme} />
     </PaperProvider>
   );
 };

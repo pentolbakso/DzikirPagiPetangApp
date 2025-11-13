@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {StyleSheet, View} from 'react-native';
+import {View} from 'react-native';
 import {
   TextArabic,
   TextBold,
@@ -11,10 +11,13 @@ import {Dzikir} from '../../types';
 import {ScrollView} from 'react-native-gesture-handler';
 import {useSelector} from 'react-redux';
 import {RootState} from '../../rematch/store';
-import {Card, useTheme} from 'react-native-paper';
+import {Card} from 'react-native-paper';
+import {useAppTheme} from '../../theme/useAppTheme';
 
 const ContentV2 = ({item, mode}: {item: Dzikir; mode: string}) => {
-  const {colors} = useTheme();
+  const {
+    theme: {colors},
+  } = useAppTheme();
   const arabicFontSize = useSelector(
     (state: RootState) => state.app.arabicFontSize,
   );

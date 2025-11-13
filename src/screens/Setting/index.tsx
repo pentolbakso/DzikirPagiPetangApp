@@ -1,6 +1,5 @@
 import * as React from 'react';
 import {
-  Alert,
   Linking,
   Modal,
   Pressable,
@@ -26,10 +25,12 @@ import {Switch} from 'react-native-gesture-handler';
 import Icon from '@react-native-vector-icons/feather';
 import Rate, {AndroidMarket} from 'react-native-rate';
 import {useNavigation} from '@react-navigation/native';
-import {useTheme} from 'react-native-paper';
+import {useAppTheme} from '../../theme/useAppTheme';
 
 const Menu = ({label, onPress}: {label: string; onPress?: () => void}) => {
-  const {colors} = useTheme();
+  const {
+    theme: {colors},
+  } = useAppTheme();
   return (
     <Pressable
       onPress={onPress}
@@ -57,7 +58,9 @@ const ModalReference = ({
   visible: boolean;
   onDismiss: () => void;
 }) => {
-  const {colors} = useTheme();
+  const {
+    theme: {colors},
+  } = useAppTheme();
 
   return (
     <Modal
@@ -121,7 +124,9 @@ const ModalReference = ({
 
 const SettingScreen = () => {
   const navigation = useNavigation();
-  const {colors} = useTheme();
+  const {
+    theme: {colors},
+  } = useAppTheme();
   const width = useWindowDimensions().width;
   const initialDarkMode = useColorScheme() === 'dark';
 

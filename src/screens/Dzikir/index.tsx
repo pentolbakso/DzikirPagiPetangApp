@@ -9,16 +9,14 @@ import {dzikirDb} from '../../services/db';
 import {Dzikir} from '../../types';
 import {ScrollView} from 'react-native-gesture-handler';
 import * as Progress from 'react-native-progress';
-import {Colors} from '../../colors';
 import MenuDrawer, {MenuDrawerProps} from 'react-native-side-drawer';
 import CircularProgress from 'react-native-circular-progress-indicator';
 import {useDispatch, useSelector} from 'react-redux';
 import {Dispatch, RootState} from '../../rematch/store';
-import Content from './Content';
 import Notes from './Notes';
 import ContentV2 from './ContentV2';
-import {useTheme} from 'react-native-paper';
 import Icon from '@react-native-vector-icons/feather';
+import {useAppTheme} from '../../theme/useAppTheme';
 
 const rippleConfig = {color: 'lightgray', borderless: true};
 
@@ -46,7 +44,9 @@ const SwitchModeButton = ({
   initialMode: string;
   onChange: (val: string) => void;
 }) => {
-  const {colors} = useTheme();
+  const {
+    theme: {colors},
+  } = useAppTheme();
   const [mode, setMode] = React.useState(initialMode);
   const SwitchBtn = React.useMemo(
     () =>
@@ -111,7 +111,9 @@ const SwitchModeButton = ({
 const DzikirScreen = () => {
   const navigation = useNavigation();
   const route = useRoute();
-  const {colors} = useTheme();
+  const {
+    theme: {colors},
+  } = useAppTheme();
   const time: string = (route.params as any).time || undefined;
   const [currentPage, setCurrentPage] = React.useState(0);
   const [drawerOpened, setDrawerOpened] = React.useState(false);

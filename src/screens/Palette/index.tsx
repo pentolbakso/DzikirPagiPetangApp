@@ -1,7 +1,6 @@
 import * as React from 'react';
 import {Pressable, View, ViewStyle} from 'react-native';
 import {ScrollView} from 'react-native-gesture-handler';
-import {createThemeFromSourceColor} from '../../theme/createMaterial3Theme';
 import {MD3DarkTheme, MD3LightTheme} from 'react-native-paper';
 import {useDispatch, useSelector} from 'react-redux';
 import {Dispatch, RootState} from '../../rematch/store';
@@ -31,19 +30,6 @@ const ColorView = ({
   onPress: (color: string) => void;
   active: boolean;
 }) => {
-  const theme = React.useMemo(() => {
-    const theme = createThemeFromSourceColor(color);
-    return isDarkMode
-      ? {...MD3DarkTheme, colors: theme.dark}
-      : {...MD3LightTheme, colors: theme.light};
-  }, [color, isDarkMode]);
-
-  const activeStyle: ViewStyle = React.useMemo(
-    () =>
-      active ? {borderWidth: 5, borderColor: theme.colors.inversePrimary} : {},
-    [active, theme],
-  );
-
   return (
     <Pressable onPress={() => onPress(color)}>
       <View
@@ -51,26 +37,9 @@ const ColorView = ({
           height: 50,
           borderRadius: 10,
           overflow: 'hidden',
-          ...activeStyle,
           ...style,
         }}>
-        <View style={{flexDirection: 'row', flex: 1}}>
-          {/* <View style={{flex: 1, backgroundColor: theme.colors.primary}} />
-          <View style={{flex: 1, backgroundColor: theme.colors.secondary}} />
-          <View style={{flex: 1, backgroundColor: theme.colors.tertiary}} /> */}
-          <View
-            style={{flex: 1, backgroundColor: theme.colors.inversePrimary}}
-          />
-          <View
-            style={{flex: 1, backgroundColor: theme.colors.primaryContainer}}
-          />
-          <View
-            style={{flex: 1, backgroundColor: theme.colors.secondaryContainer}}
-          />
-          <View
-            style={{flex: 1, backgroundColor: theme.colors.tertiaryContainer}}
-          />
-        </View>
+        <View style={{flexDirection: 'row', flex: 1}}></View>
       </View>
     </Pressable>
   );

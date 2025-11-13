@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {StyleSheet, View} from 'react-native';
+import {View} from 'react-native';
 import {
   TextArabic,
   TextBold,
@@ -11,10 +11,12 @@ import {Dzikir} from '../../types';
 import {ScrollView} from 'react-native-gesture-handler';
 import {useSelector} from 'react-redux';
 import {RootState} from '../../rematch/store';
-import {useTheme} from '@react-navigation/native';
+import {useAppTheme} from '../../theme/useAppTheme';
 
 const Content = ({item, mode}: {item: Dzikir; mode: string}) => {
-  const {colors: themeColors} = useTheme();
+  const {
+    theme: {colors},
+  } = useAppTheme();
   const arabicFontSize = useSelector(
     (state: RootState) => state.app.arabicFontSize,
   );
@@ -36,13 +38,12 @@ const Content = ({item, mode}: {item: Dzikir; mode: string}) => {
 
   return (
     <ScrollView
-      style={{backgroundColor: themeColors.background, padding: 15, flex: 1}}
+      style={{backgroundColor: colors.background, padding: 15, flex: 1}}
       showsVerticalScrollIndicator={true}>
-      <TextBold
-        style={{fontSize: 24, textAlign: 'center', color: themeColors.text}}>
+      <TextBold style={{fontSize: 24, textAlign: 'center', color: colors.text}}>
         {item.title}
       </TextBold>
-      <TextItalic style={{textAlign: 'center', color: themeColors.text}}>
+      <TextItalic style={{textAlign: 'center', color: colors.text}}>
         {item.note}
       </TextItalic>
 
@@ -52,7 +53,7 @@ const Content = ({item, mode}: {item: Dzikir; mode: string}) => {
             style={{
               textAlign: 'center',
               fontSize: arabicFontSize,
-              color: themeColors.text,
+              color: colors.text,
             }}>
             {arabicArr.join(separator)}
           </TextArabic>
@@ -61,7 +62,7 @@ const Content = ({item, mode}: {item: Dzikir; mode: string}) => {
               style={{
                 marginTop: 15,
                 textAlign: 'center',
-                color: themeColors.text,
+                color: colors.text,
                 fontSize: arabicLatinFontSize,
               }}>
               {latinArr.join(' ')}
@@ -71,7 +72,7 @@ const Content = ({item, mode}: {item: Dzikir; mode: string}) => {
             style={{
               marginTop: 15,
               textAlign: 'center',
-              color: themeColors.text,
+              color: colors.text,
               fontSize: translationFontSize,
             }}>
             {tarjimArr.join(item?.is_surah ? ' ۝ ' : ' ')}
@@ -85,13 +86,13 @@ const Content = ({item, mode}: {item: Dzikir; mode: string}) => {
               style={{
                 paddingVertical: 10,
                 borderBottomWidth: 1,
-                borderBottomColor: themeColors.border,
+                borderBottomColor: colors.border,
               }}>
               <TextArabic
                 style={{
                   textAlign: 'center',
                   fontSize: arabicFontSize,
-                  color: themeColors.text,
+                  color: colors.text,
                 }}>
                 {it}
               </TextArabic>
@@ -99,7 +100,7 @@ const Content = ({item, mode}: {item: Dzikir; mode: string}) => {
                 <TextLight
                   style={{
                     textAlign: 'center',
-                    color: themeColors.text,
+                    color: colors.text,
                     fontSize: arabicLatinFontSize,
                   }}>
                   {latinArr[idx]}
@@ -109,7 +110,7 @@ const Content = ({item, mode}: {item: Dzikir; mode: string}) => {
                 style={{
                   textAlign: 'center',
                   fontSize: translationFontSize,
-                  color: themeColors.text,
+                  color: colors.text,
                 }}>
                 {tarjimArr[idx]}
               </TextRegular>

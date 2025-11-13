@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {Pressable, StyleSheet, ViewStyle} from 'react-native';
+import {Pressable, ViewStyle} from 'react-native';
 import {ScrollView, View} from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import {SafeAreaView} from 'react-native-safe-area-context';
@@ -7,7 +7,8 @@ import {TextBold, TextRegular} from '../../components/Text';
 import Icon from '@react-native-vector-icons/feather';
 import {useNavigation} from '@react-navigation/native';
 import dayjs from 'dayjs';
-import {IconButton, useTheme} from 'react-native-paper';
+import {IconButton} from 'react-native-paper';
+import {useAppTheme} from '../../theme/useAppTheme';
 
 type BigMenuProps = {
   subtitle: string;
@@ -68,7 +69,9 @@ const BigMenu = ({
 
 const HomeScreen = () => {
   const navigation = useNavigation<any>();
-  const {colors} = useTheme();
+  const {
+    theme: {colors},
+  } = useAppTheme();
   const hour = dayjs().hour();
   const timeMode = React.useMemo(() => {
     // let hour = 3;
