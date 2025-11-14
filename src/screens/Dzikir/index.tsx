@@ -72,8 +72,7 @@ const SwitchModeButton = ({
             <Text
               style={{
                 fontWeight: '600',
-                color:
-                  mode == id ? colors.onPrimaryContainer : colors.onBackground,
+                color: mode == id ? colors.onPrimaryContainer : colors.primary,
               }}>
               {label}
             </Text>
@@ -183,7 +182,7 @@ const DzikirScreen = () => {
             paddingTop: 50,
           }}>
           <View style={{padding: 10}}>
-            <TextBold style={{fontSize: 22}}>Dzikir {time}</TextBold>
+            <TextBold style={{fontSize: 22}}>dzikir {time}</TextBold>
           </View>
           {items.map((item, idx) => (
             <Pressable
@@ -193,7 +192,8 @@ const DzikirScreen = () => {
                 ref.current?.setPageWithoutAnimation(idx);
               }}
               style={{
-                padding: 10,
+                paddingHorizontal: 10,
+                paddingVertical: 15,
                 borderBottomColor: colors.outlineVariant,
                 borderBottomWidth: 1,
                 backgroundColor:

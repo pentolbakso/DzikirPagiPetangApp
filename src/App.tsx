@@ -8,12 +8,12 @@ import {PaperProvider} from 'react-native-paper';
 import {useAppTheme} from './theme/useAppTheme';
 
 const Content = () => {
-  const {changeTheme, theme} = useAppTheme();
+  const {theme, navigationTheme} = useAppTheme();
 
   return (
     <PaperProvider theme={theme}>
       <Loader />
-      <Navigator theme={theme} />
+      <Navigator theme={navigationTheme} />
     </PaperProvider>
   );
 };

@@ -50,7 +50,7 @@ const ContentV2 = ({item, mode}: {item: Dzikir; mode: string}) => {
         {item.title}
       </TextBold>
       <TextItalic
-        style={{textAlign: 'center', color: colors.secondary, fontSize: 14}}>
+        style={{textAlign: 'center', color: colors.onBackground, fontSize: 14}}>
         {item.note}
       </TextItalic>
 
@@ -92,7 +92,7 @@ const ContentV2 = ({item, mode}: {item: Dzikir; mode: string}) => {
             mode="contained"
             style={{
               marginTop: 15,
-              backgroundColor: colors.tertiaryContainer,
+              backgroundColor: colors.secondaryContainer,
               paddingHorizontal: 10,
               paddingBottom: 10,
             }}>
@@ -100,7 +100,7 @@ const ContentV2 = ({item, mode}: {item: Dzikir; mode: string}) => {
               style={{
                 marginTop: 15,
                 textAlign: 'center',
-                color: colors.onTertiaryContainer,
+                color: colors.onSecondaryContainer,
                 fontSize: translationFontSize,
               }}>
               {tarjimArr.join(item?.is_surah ? ' ۝ ' : ' ')}
@@ -122,7 +122,7 @@ const ContentV2 = ({item, mode}: {item: Dzikir; mode: string}) => {
                 style={{
                   textAlign: 'center',
                   fontSize: arabicFontSize,
-                  color: colors.onPrimaryContainer,
+                  color: colors.onSecondaryContainer,
                 }}>
                 {it}
               </TextArabic>

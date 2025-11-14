@@ -1,110 +1,75 @@
 import * as React from 'react';
-import {useSelector} from 'react-redux';
-import {RootState} from '../rematch/store';
-import {Colors} from '../colors';
-import {MD2LightTheme, MD2DarkTheme} from 'react-native-paper';
+import {useColorScheme} from 'react-native';
+import {
+  adaptNavigationTheme,
+  MD3DarkTheme,
+  MD3LightTheme,
+} from 'react-native-paper';
 import {
   DarkTheme as NavigationDarkTheme,
   DefaultTheme as NavigationDefaultTheme,
 } from '@react-navigation/native';
-
-type AppColors = {
-  primary: string;
-  primaryContainer: string;
-  onPrimaryContainer: string;
-  secondary: string;
-  secondaryContainer: string;
-  onSecondaryContainer: string;
-  tertiary: string;
-  tertiaryContainer: string;
-  onTertiaryContainer: string;
-  background: string;
-  onBackground: string;
-  outline: string;
-  outlineVariant: string;
-  surfaceDisabled: string;
-};
-
-const lightColors: AppColors = {
-  primary: Colors.lightBlue,
-  primaryContainer: '#BBDEFB',
-  onPrimaryContainer: '#0D47A1',
-  secondary: '#FF9800',
-  secondaryContainer: '#FFE0B2',
-  onSecondaryContainer: '#E65100',
-  tertiary: '#4CAF50',
-  tertiaryContainer: '#C8E6C9',
-  onTertiaryContainer: '#1B5E20',
-  background: Colors.white,
-  onBackground: '#121212',
-  outline: '#000',
-  outlineVariant: '#000',
-  surfaceDisabled: '#ccc',
-};
-
-const darkColors: AppColors = {
-  primary: Colors.lightBlue,
-  primaryContainer: '#BBDEFB',
-  onPrimaryContainer: '#0D47A1',
-  secondary: '#FF9800',
-  secondaryContainer: '#FFE0B2',
-  onSecondaryContainer: '#E65100',
-  tertiary: '#81C784',
-  tertiaryContainer: '#2E7D32',
-  onTertiaryContainer: '#C8E6C9',
-  background: Colors.white,
-  onBackground: '#121212',
-  outline: '#000',
-  outlineVariant: '#000',
-  surfaceDisabled: '#ccc',
-};
-
-const CombinedDefaultTheme = {
-  ...MD2LightTheme,
-  ...NavigationDefaultTheme,
-  colors: {
-    ...MD2LightTheme.colors,
-    ...NavigationDefaultTheme.colors,
-    ...lightColors,
-  },
-};
-const CombinedDarkTheme = {
-  ...MD2DarkTheme,
-  ...NavigationDarkTheme,
-  colors: {
-    ...MD2DarkTheme.colors,
-    ...NavigationDarkTheme.colors,
-    ...darkColors,
-  },
-};
-
-export type AppTheme = typeof CombinedDefaultTheme;
+import {getTheme, ThemeColors} from './themes';
+import {useSelector} from 'react-redux';
+import {RootState} from '../rematch/store';
 
 export const useAppTheme = () => {
   const isDarkMode = useSelector((state: RootState) => state.app.darkMode);
 
-  const [theme, setTheme] = React.useState<AppTheme>(
-    isDarkMode ? CombinedDarkTheme : CombinedDefaultTheme,
+  const [themeColors, setThemeColors] = React.useState<ThemeColors>(
+    getTheme('legacy'),
   );
 
-  const changeTheme = (sourceColor: string) => {
-    console.log('changeTheme', sourceColor);
-    // setTheme();
+  const {LightTheme, DarkTheme} = adaptNavigationTheme({
+    reactNavigationLight: NavigationDefaultTheme,
+    reactNavigationDark: NavigationDarkTheme,
+  });
+
+  const changeTheme = (name: string) => {
+    const theme = getTheme(name);
+    setThemeColors(theme);
   };
 
-  React.useEffect(() => {
-    if (isDarkMode) {
-      setTheme(CombinedDarkTheme);
-    } else {
-      setTheme(CombinedDefaultTheme);
-    }
-  }, [isDarkMode]);
+  const resetTheme = (sourceColor: string) => {
+    changeTheme('legacy');
+  };
+
+  const paperTheme = React.useMemo(
+    () =>
+      isDarkMode
+        ? {...MD3DarkTheme, colors: themeColors.dark}
+        : {...MD3LightTheme, colors: themeColors.light},
+    [isDarkMode, themeColors],
+  );
+
+  const navigationTheme = React.useMemo(
+    () =>
+      isDarkMode
+        ? {
+            ...paperTheme,
+            ...DarkTheme,
+            colors: {
+              ...paperTheme.colors,
+              ...DarkTheme.colors,
+            },
+          }
+        : {
+            ...paperTheme,
+            ...LightTheme,
+            colors: {
+              ...paperTheme.colors,
+              ...LightTheme.colors,
+            },
+          },
+    [isDarkMode, paperTheme],
+  );
 
   return React.useMemo(
     () => ({
-      theme,
+      theme: paperTheme,
       changeTheme,
+      navigationTheme,
     }),
-    [theme, changeTheme],
+    [paperTheme, changeTheme, navigationTheme],
   );
 };

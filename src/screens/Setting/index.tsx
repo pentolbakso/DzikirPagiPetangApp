@@ -190,8 +190,8 @@ const SettingScreen = () => {
     <ScrollView style={{flex: 1, padding: 15}}>
       <Card
         style={{
-          padding: 15,
-          backgroundColor: colors.secondaryContainer,
+          padding: 20,
+          backgroundColor: colors.surface,
         }}>
         <View style={{flexDirection: 'row'}}>
           <TextRegular style={{fontSize: 16, flex: 1}}>
@@ -201,14 +201,14 @@ const SettingScreen = () => {
         </View>
         <View style={{alignItems: 'center'}}>
           <Slider
-            style={{width: width - 40}}
+            style={{width: width - 60}}
             minimumValue={20}
             maximumValue={48}
             step={1}
-            thumbTintColor={colors.tertiary}
+            thumbTintColor={colors.primary}
             value={initialArabicFontSize}
             maximumTrackTintColor={colors.surfaceDisabled}
-            minimumTrackTintColor={colors.tertiary}
+            minimumTrackTintColor={colors.primary}
             onSlidingStart={() => showPreview(true)}
             onSlidingComplete={val => {
               showPreview(false);
@@ -217,7 +217,7 @@ const SettingScreen = () => {
             onValueChange={val => setArabicFontSize(Math.trunc(val))}
           />
         </View>
-        <View style={{flexDirection: 'row'}}>
+        <View style={{flexDirection: 'row', marginTop: 15}}>
           <TextRegular style={{fontSize: 16, flex: 1}}>
             Ukuran teks terjemahan
           </TextRegular>
@@ -225,14 +225,14 @@ const SettingScreen = () => {
         </View>
         <View style={{alignItems: 'center'}}>
           <Slider
-            style={{width: width - 40}}
+            style={{width: width - 60}}
             minimumValue={12}
             maximumValue={24}
             step={1}
-            thumbTintColor={colors.tertiary}
+            thumbTintColor={colors.primary}
             value={initialTranslationFontSize}
             maximumTrackTintColor={colors.surfaceDisabled}
-            minimumTrackTintColor={colors.tertiary}
+            minimumTrackTintColor={colors.primary}
             onSlidingStart={() => showPreview(true)}
             onSlidingComplete={() => showPreview(false)}
             onValueChange={val => {
@@ -242,9 +242,9 @@ const SettingScreen = () => {
           />
         </View>
         <View
-          style={{flexDirection: 'row', alignItems: 'center', marginTop: 5}}>
+          style={{flexDirection: 'row', alignItems: 'center', marginTop: 15}}>
           <Switch
-            trackColor={{false: colors.surfaceDisabled, true: colors.tertiary}}
+            trackColor={{false: colors.surfaceDisabled, true: colors.primary}}
             thumbColor={Colors.white}
             ios_backgroundColor={colors.surfaceDisabled}
             onValueChange={(value: boolean) => {
@@ -264,17 +264,17 @@ const SettingScreen = () => {
         </View>
         <View style={{alignItems: 'center'}}>
           <Slider
-            style={{width: width - 40}}
+            style={{width: width - 60}}
             minimumValue={12}
             maximumValue={24}
             step={1}
             thumbTintColor={
-              showArabicLatin ? colors.tertiary : colors.surfaceDisabled
+              showArabicLatin ? colors.primary : colors.surfaceDisabled
             }
             value={initialArabicLatinFontSize}
             maximumTrackTintColor={colors.surfaceDisabled}
             minimumTrackTintColor={
-              showArabicLatin ? colors.tertiary : colors.surfaceDisabled
+              showArabicLatin ? colors.primary : colors.surfaceDisabled
             }
             onSlidingStart={() => showPreview(true)}
             onSlidingComplete={() => showPreview(false)}
@@ -289,14 +289,14 @@ const SettingScreen = () => {
       {preview && (
         <Card
           style={{
-            marginTop: 10,
-            backgroundColor: colors.primaryContainer,
-            padding: 15,
+            marginTop: 20,
+            backgroundColor: colors.tertiaryContainer,
+            padding: 20,
           }}>
           <TextArabic
             style={{
               fontSize: arabicFontSize,
-              color: colors.onPrimaryContainer,
+              color: colors.onTertiaryContainer,
             }}>
             ضَرَبَ زَيْدٌ عَمْرًا
           </TextArabic>
@@ -312,14 +312,14 @@ const SettingScreen = () => {
       )}
       <Card
         style={{
-          marginTop: 10,
-          backgroundColor: colors.secondaryContainer,
-          padding: 15,
+          marginTop: 20,
+          backgroundColor: colors.surface,
+          padding: 20,
         }}>
         <View
           style={{flexDirection: 'row', alignItems: 'center', marginTop: 5}}>
           <Switch
-            trackColor={{false: colors.surfaceDisabled, true: colors.tertiary}}
+            trackColor={{false: colors.surfaceDisabled, true: colors.primary}}
             thumbColor={Colors.white}
             ios_backgroundColor={colors.surfaceDisabled}
             onValueChange={(value: boolean) => {
@@ -331,7 +331,7 @@ const SettingScreen = () => {
             Penghitung dzikir
           </TextRegular>
           <Switch
-            trackColor={{false: colors.surfaceDisabled, true: colors.tertiary}}
+            trackColor={{false: colors.surfaceDisabled, true: colors.primary}}
             thumbColor={Colors.white}
             ios_backgroundColor={colors.surfaceDisabled}
             onValueChange={(value: boolean) => {
@@ -343,9 +343,9 @@ const SettingScreen = () => {
           <TextRegular style={{marginLeft: 10}}>Getar</TextRegular>
         </View>
         <View
-          style={{flexDirection: 'row', alignItems: 'center', marginTop: 10}}>
+          style={{flexDirection: 'row', alignItems: 'center', marginTop: 20}}>
           <Switch
-            trackColor={{false: colors.surfaceDisabled, true: colors.tertiary}}
+            trackColor={{false: colors.surfaceDisabled, true: colors.primary}}
             thumbColor={Colors.white}
             ios_backgroundColor={colors.surfaceDisabled}
             onValueChange={(value: boolean) => {
@@ -358,9 +358,9 @@ const SettingScreen = () => {
       </Card>
       <Card
         style={{
-          marginTop: 10,
-          backgroundColor: colors.secondaryContainer,
-          padding: 15,
+          marginTop: 20,
+          backgroundColor: colors.surface,
+          padding: 20,
         }}>
         <Menu label={'Beri Rating'} onPress={handleRateOurApp} />
         <Menu

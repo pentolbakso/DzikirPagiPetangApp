@@ -18,7 +18,7 @@ const BottomSheetBackground = (props: any) => {
           borderWidth: 0,
           borderTopColor: colors.outlineVariant,
           borderTopWidth: 1,
-          backgroundColor: colors.tertiaryContainer,
+          backgroundColor: colors.surface,
         },
         {...props.style},
       ]}
@@ -41,12 +41,12 @@ const Notes = ({item}: {item?: Dzikir}) => {
     <BottomSheet
       ref={bottomSheetRef}
       index={0}
-      handleIndicatorStyle={{backgroundColor: colors.tertiary}}
+      handleIndicatorStyle={{backgroundColor: colors.primary}}
       backgroundComponent={props => <BottomSheetBackground {...props} />}
       snapPoints={snapPoints}>
       <BottomSheetView
         style={{
-          backgroundColor: colors.tertiaryContainer,
+          backgroundColor: colors.surface,
           flex: 1,
         }}>
         <View
@@ -56,7 +56,7 @@ const Notes = ({item}: {item?: Dzikir}) => {
           }}>
           <TextSemiBold>CATATAN</TextSemiBold>
           <ScrollView style={{margin: 15}}>
-            <TextRegular style={{color: colors.onTertiaryContainer}}>
+            <TextRegular style={{color: colors.onSurface}}>
               {item?.faedah}
             </TextRegular>
             <Button
