@@ -280,8 +280,8 @@ const DzikirScreen = () => {
         <View
           style={{
             position: 'absolute',
-            bottom: Platform.OS == 'ios' ? 70 : 90,
-            right: 10,
+            bottom: Platform.OS == 'ios' ? 80 : 90,
+            right: 30,
           }}>
           {!!showCounter &&
             !!currentItem?.max_counter &&
@@ -291,17 +291,17 @@ const DzikirScreen = () => {
                   value={counters.get(currentItem?.id) || 0}
                   radius={36}
                   duration={300}
-                  progressValueColor={colors.onSecondaryContainer}
+                  progressValueColor={colors.primary}
                   progressValueStyle={{fontSize: 22, fontFamily: 'Nunito-Bold'}}
                   maxValue={currentItem?.max_counter}
                   title={undefined}
                   // titleFontSize={16}
                   // titleColor={colors.onSecondary}
                   // titleStyle={{fontWeight: 'bold'}}
-                  circleBackgroundColor={colors.secondaryContainer}
+                  circleBackgroundColor={colors.surface}
                   activeStrokeColor={colors.primary}
-                  activeStrokeSecondaryColor={colors.tertiary}
-                  inActiveStrokeColor={colors.backdrop}
+                  activeStrokeSecondaryColor={colors.secondary}
+                  inActiveStrokeColor={colors.outlineVariant}
                   activeStrokeWidth={8}
                 />
               </Pressable>

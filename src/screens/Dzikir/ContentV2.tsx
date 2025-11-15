@@ -114,7 +114,7 @@ const ContentV2 = ({item, mode}: {item: Dzikir; mode: string}) => {
               key={idx}
               mode="contained"
               style={{
-                paddingVertical: 10,
+                paddingVertical: 5,
                 marginBottom: 10,
                 backgroundColor: colors.secondaryContainer,
               }}>

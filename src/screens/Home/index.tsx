@@ -86,24 +86,24 @@ const HomeScreen = () => {
         <BigMenu
           subtitle="dzikir"
           title={'pagi'}
-          titleColor={colors.background}
+          titleColor={colors.primary}
           style={{
             flexGrow: timeMode == 'pagi' ? 3 : 1,
           }}
           // gradicentColors={['#1061B0', '#3585DA', '#59C1E8', '#FCD32D']}
-          // gradicentColors={['#FCD32D', '#C3305D']}
-          gradicentColors={[colors.primaryContainer, colors.primary]}
-          angle={0}
+          // gradicentColors={['#FCD32D','#C3305D']}
+          gradicentColors={[colors.primary, colors.background]}
+          angle={180}
           onPress={() => navigation.navigate('Dzikir', {time: 'pagi'})}
         />
         <View style={{height: 10, backgroundColor: colors.background}} />
         <BigMenu
           subtitle="dzikir"
           title="petang"
-          titleColor={colors.background}
+          titleColor={colors.secondary}
           style={{flexGrow: timeMode == 'petang' ? 3 : 1}}
           // gradicentColors={['#103d63', '#C3305D']}
-          gradicentColors={[colors.tertiaryContainer, colors.tertiary]}
+          gradicentColors={[colors.secondary, colors.background]}
           onPress={() => navigation.navigate('Dzikir', {time: 'petang'})}
           angle={180}
         />
@@ -122,12 +122,12 @@ const HomeScreen = () => {
             <IconButton
               icon={'palette-outline'}
               size={24}
-              iconColor={colors.background}
+              iconColor={colors.onPrimaryContainer}
               onPress={() => navigation.navigate('Palettes')}
             />
             <IconButton
               icon={'cog-outline'}
-              iconColor={colors.background}
+              iconColor={colors.onPrimaryContainer}
               size={24}
               onPress={() => navigation.navigate('Setting')}
             />
