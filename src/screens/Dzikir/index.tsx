@@ -122,9 +122,7 @@ const DzikirScreen = () => {
   const enableVibrate = useSelector(
     (state: RootState) => state.app.enableVibrate || false,
   );
-  const [counters, setCounters] = React.useState<Map<number, number>>(
-    new Map(),
-  );
+  const [counters, setCounters] = React.useState<Record<number, number>>({});
 
   const [mounted, setMounted] = React.useState(false);
   const ref = React.useRef<PagerView>(null);
@@ -144,16 +142,14 @@ const DzikirScreen = () => {
     let max = currentItem?.max_counter || 0;
 
     setCounters(prevCounters => {
-      let count = prevCounters.get(id) || 0;
+      let count = prevCounters[id] || 0;
       if (count >= max) {
         if (enableVibrate) Vibration.vibrate(500);
         return prevCounters;
       }
 
       if (enableVibrate) Vibration.vibrate(100);
-      const newCounters = new Map(prevCounters);
-      newCounters.set(id, count + 1);
-      return newCounters;
+      return {...prevCounters, [id]: count + 1};
     });
   }, [currentItem, enableVibrate]);
 
@@ -220,7 +216,7 @@ const DzikirScreen = () => {
         </ScrollView>
       </View>
     ),
-    [items, time, currentPage, colors],
+    [drawerOpened, items, time, currentPage, colors],
   );
 
   const progress = items ? (currentPage + 1) / items.length : 0;
@@ -291,7 +287,7 @@ const DzikirScreen = () => {
             currentItem?.max_counter > 1 && (
               <Pressable onPress={increaseCounter} hitSlop={50}>
                 <CircularProgress
-                  value={counters.get(currentItem?.id) || 0}
+                  value={counters[currentItem?.id || -1] || 0}
                   radius={36}
                   duration={300}
                   progressValueColor={colors.primary}

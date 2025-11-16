@@ -21,50 +21,47 @@ type BigMenuProps = {
   icon?: string;
   angle?: number;
 };
-const BigMenu = ({
-  gradicentColors,
-  titleSize = 40,
-  angle = 180,
-  ...props
-}: BigMenuProps) => (
-  <View style={props.style}>
-    <LinearGradient
-      style={{flex: 1, borderRadius: 10}}
-      useAngle={true}
-      angle={angle}
-      colors={gradicentColors}>
-      {!!props.icon && (
-        <Icon
-          name={props.icon as any}
-          style={{position: 'absolute', zIndex: 0, right: -20, bottom: -10}}
-          size={100}
-          color={'rgba(255, 255, 255, 0.25)'}
-        />
-      )}
-      <Pressable
-        onPress={props.onPress}
-        style={{
-          flex: 1,
-          justifyContent: 'center',
-          alignItems: 'center',
-          padding: 20,
-        }}>
-        <TextRegular style={{fontSize: 20, color: props.titleColor}}>
-          {props.subtitle}
-        </TextRegular>
-        <TextBold
+const BigMenu = React.memo(
+  ({gradicentColors, titleSize = 40, angle = 180, ...props}: BigMenuProps) => (
+    <View style={props.style}>
+      <LinearGradient
+        style={{flex: 1, borderRadius: 10}}
+        useAngle={true}
+        angle={angle}
+        colors={gradicentColors}>
+        {!!props.icon && (
+          <Icon
+            name={props.icon as any}
+            style={{position: 'absolute', zIndex: 0, right: -20, bottom: -10}}
+            size={100}
+            color={'rgba(255, 255, 255, 0.25)'}
+          />
+        )}
+        <Pressable
+          onPress={props.onPress}
           style={{
-            width: 200,
-            fontSize: titleSize,
-            color: props.titleColor,
-            marginTop: -10,
-            textAlign: 'center',
+            flex: 1,
+            justifyContent: 'center',
+            alignItems: 'center',
+            padding: 20,
           }}>
-          {props.title}
-        </TextBold>
-      </Pressable>
-    </LinearGradient>
-  </View>
+          <TextRegular style={{fontSize: 20, color: props.titleColor}}>
+            {props.subtitle}
+          </TextRegular>
+          <TextBold
+            style={{
+              width: 200,
+              fontSize: titleSize,
+              color: props.titleColor,
+              marginTop: -10,
+              textAlign: 'center',
+            }}>
+            {props.title}
+          </TextBold>
+        </Pressable>
+      </LinearGradient>
+    </View>
+  ),
 );
 
 const HomeScreen = () => {

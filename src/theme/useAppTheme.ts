@@ -20,19 +20,26 @@ export const useAppTheme = () => {
     getTheme('legacy'),
   );
 
-  const {LightTheme, DarkTheme} = adaptNavigationTheme({
-    reactNavigationLight: NavigationDefaultTheme,
-    reactNavigationDark: NavigationDarkTheme,
-  });
+  const {LightTheme, DarkTheme} = React.useMemo(
+    () =>
+      adaptNavigationTheme({
+        reactNavigationLight: NavigationDefaultTheme,
+        reactNavigationDark: NavigationDarkTheme,
+      }),
+    [],
+  );
 
-  const changeTheme = (name: string) => {
+  const changeTheme = React.useCallback((name: string) => {
     const theme = getTheme(name);
     setThemeColors(theme);
-  };
+  }, []);
 
-  const resetTheme = (sourceColor: string) => {
-    changeTheme('legacy');
-  };
+  const resetTheme = React.useCallback(
+    (sourceColor: string) => {
+      changeTheme('legacy');
+    },
+    [changeTheme],
+  );
 
   const paperTheme = React.useMemo(
     () =>
@@ -64,12 +71,9 @@ export const useAppTheme = () => {
     [isDarkMode, paperTheme],
   );
 
-  return React.useMemo(
-    () => ({
-      theme: paperTheme,
-      changeTheme,
-      navigationTheme,
-    }),
-    [paperTheme, changeTheme, navigationTheme],
-  );
+  return {
+    theme: paperTheme,
+    changeTheme,
+    navigationTheme,
+  };
 };
