@@ -20,17 +20,6 @@ import {useAppTheme} from '../../theme/useAppTheme';
 
 const AnimatedPagerView = Animated.createAnimatedComponent(PagerView);
 
-// Memoized component to prevent unnecessary re-renders of all pages
-const DzikirPages = React.memo(
-  ({items, mode}: {items: Array<Dzikir>; mode: string}) => (
-    <>
-      {items.map(item => (
-        <ContentV2 item={item} key={item.id} mode={mode} />
-      ))}
-    </>
-  ),
-);
-
 const Drawer = (props: MenuDrawerProps) => {
   return (
     <MenuDrawer
@@ -279,7 +268,13 @@ const DzikirScreen = () => {
           ref={ref}
           style={{flex: 1}}
           onPageSelected={e => setCurrentPage(e.nativeEvent.position)}>
-          <DzikirPages items={items} mode={mode} />
+          {React.useMemo(
+            () =>
+              items.map((item, idx) => {
+                return <ContentV2 item={item} key={idx} mode={mode} />;
+              }),
+            [items, mode],
+          )}
         </AnimatedPagerView>
         <View
           style={{
