@@ -9,6 +9,7 @@ import {useNavigation} from '@react-navigation/native';
 import dayjs from 'dayjs';
 import {IconButton} from 'react-native-paper';
 import {useAppTheme} from '../../theme/useAppTheme';
+import {Colors} from '../../colors';
 
 type BigMenuProps = {
   subtitle: string;
@@ -83,13 +84,14 @@ const HomeScreen = () => {
         <BigMenu
           subtitle="dzikir"
           title={'pagi'}
-          titleColor={colors.primary}
+          titleColor={Colors.white}
+          //titleColor={colors.primary}
           style={{
             flexGrow: timeMode == 'pagi' ? 3 : 1,
           }}
           // gradicentColors={['#1061B0', '#3585DA', '#59C1E8', '#FCD32D']}
-          // gradicentColors={['#FCD32D','#C3305D']}
-          gradicentColors={[colors.primary, colors.background]}
+          gradicentColors={['#FCD32D', '#C3305D']}
+          // gradicentColors={[colors.primary, colors.background]}
           angle={180}
           onPress={() => navigation.navigate('Dzikir', {time: 'pagi'})}
         />
@@ -97,10 +99,11 @@ const HomeScreen = () => {
         <BigMenu
           subtitle="dzikir"
           title="petang"
-          titleColor={colors.secondary}
+          titleColor={Colors.white}
+          //titleColor={colors.secondary}
           style={{flexGrow: timeMode == 'petang' ? 3 : 1}}
-          // gradicentColors={['#103d63', '#C3305D']}
-          gradicentColors={[colors.secondary, colors.background]}
+          gradicentColors={['#103d63', '#C3305D']}
+          // gradicentColors={[colors.secondary, colors.background]}
           onPress={() => navigation.navigate('Dzikir', {time: 'petang'})}
           angle={180}
         />
