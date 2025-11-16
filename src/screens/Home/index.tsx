@@ -87,7 +87,7 @@ const HomeScreen = () => {
           titleColor={Colors.white}
           //titleColor={colors.primary}
           style={{
-            flexGrow: timeMode == 'pagi' ? 3 : 1,
+            flexGrow: timeMode == 'pagi' ? 4 : 1,
           }}
           // gradicentColors={['#1061B0', '#3585DA', '#59C1E8', '#FCD32D']}
           gradicentColors={['#FCD32D', '#C3305D']}
@@ -101,7 +101,7 @@ const HomeScreen = () => {
           title="petang"
           titleColor={Colors.white}
           //titleColor={colors.secondary}
-          style={{flexGrow: timeMode == 'petang' ? 3 : 1}}
+          style={{flexGrow: timeMode == 'petang' ? 4 : 1}}
           gradicentColors={['#103d63', '#C3305D']}
           // gradicentColors={[colors.secondary, colors.background]}
           onPress={() => navigation.navigate('Dzikir', {time: 'petang'})}
