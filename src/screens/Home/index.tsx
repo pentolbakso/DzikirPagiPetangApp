@@ -92,7 +92,7 @@ const HomeScreen = () => {
           // gradicentColors={['#1061B0', '#3585DA', '#59C1E8', '#FCD32D']}
           gradicentColors={['#FCD32D', '#C3305D']}
           // gradicentColors={[colors.primary, colors.background]}
-          angle={180}
+          angle={90}
           onPress={() => navigation.navigate('Dzikir', {time: 'pagi'})}
         />
         <View style={{height: 10, backgroundColor: colors.background}} />
@@ -105,7 +105,7 @@ const HomeScreen = () => {
           gradicentColors={['#103d63', '#C3305D']}
           // gradicentColors={[colors.secondary, colors.background]}
           onPress={() => navigation.navigate('Dzikir', {time: 'petang'})}
-          angle={180}
+          angle={210}
         />
         {/* <View style={{height: 2, backgroundColor: '#fff'}} /> */}
         {/* <BigMenu
