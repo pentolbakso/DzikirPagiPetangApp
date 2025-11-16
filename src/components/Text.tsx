@@ -2,7 +2,7 @@ import * as React from 'react';
 import {Platform, TextStyle} from 'react-native';
 import {Text} from 'react-native-paper';
 
-export const TextBold = ({
+export const TextBold = React.memo(({
   children,
   style,
 }: {
@@ -18,9 +18,9 @@ export const TextBold = ({
     }}>
     {children}
   </Text>
-);
+));
 
-export const TextSemiBold = ({
+export const TextSemiBold = React.memo(({
   children,
   style,
 }: {
@@ -36,9 +36,9 @@ export const TextSemiBold = ({
     }}>
     {children}
   </Text>
-);
+));
 
-export const TextItalic = ({
+export const TextItalic = React.memo(({
   children,
   style,
 }: {
@@ -48,9 +48,9 @@ export const TextItalic = ({
   <Text style={{fontSize: 16, fontFamily: 'Nunito-Italic', ...style}}>
     {children}
   </Text>
-);
+));
 
-export const TextLight = ({
+export const TextLight = React.memo(({
   children,
   style,
 }: {
@@ -66,9 +66,9 @@ export const TextLight = ({
     }}>
     {children}
   </Text>
-);
+));
 
-export const TextRegular = ({
+export const TextRegular = React.memo(({
   children,
   style,
 }: {
@@ -84,9 +84,9 @@ export const TextRegular = ({
     }}>
     {children}
   </Text>
-);
+));
 
-export const TextArabic = ({
+export const TextArabic = React.memo(({
   children,
   style,
 }: {
@@ -104,4 +104,4 @@ export const TextArabic = ({
     }}>
     {children}
   </Text>
-);
+));

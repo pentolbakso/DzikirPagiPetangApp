@@ -41,7 +41,7 @@ const Notes = ({item}: {item?: Dzikir}) => {
     <BottomSheet
       ref={bottomSheetRef}
       index={0}
-      handleIndicatorStyle={{backgroundColor: colors.primary}}
+      handleIndicatorStyle={{backgroundColor: colors.secondary}}
       backgroundComponent={props => <BottomSheetBackground {...props} />}
       snapPoints={snapPoints}>
       <BottomSheetView

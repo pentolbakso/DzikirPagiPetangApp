@@ -18,8 +18,6 @@ import ContentV2 from './ContentV2';
 import Icon from '@react-native-vector-icons/feather';
 import {useAppTheme} from '../../theme/useAppTheme';
 
-const rippleConfig = {color: 'lightgray', borderless: true};
-
 const AnimatedPagerView = Animated.createAnimatedComponent(PagerView);
 
 const Drawer = (props: MenuDrawerProps) => {
@@ -93,7 +91,7 @@ const SwitchModeButton = ({
     <View
       style={{
         flexDirection: 'row',
-        borderWidth: 1,
+        borderWidth: 2,
         borderColor: colors.primaryContainer,
         // borderRadius: 0,
         // backgroundColor: colors.primary,
@@ -143,15 +141,20 @@ const DzikirScreen = () => {
 
   const increaseCounter = React.useCallback(() => {
     let id = currentItem?.id || -1;
-    let count = counters.get(id) || 0;
     let max = currentItem?.max_counter || 0;
-    if (count >= max) {
-      if (enableVibrate) Vibration.vibrate(500);
-      return;
-    }
+    
+    setCounters(prevCounters => {
+      let count = prevCounters.get(id) || 0;
+      if (count >= max) {
+        if (enableVibrate) Vibration.vibrate(500);
+        return prevCounters;
+      }
 
-    if (enableVibrate) Vibration.vibrate(100);
-    setCounters(new Map(counters.set(id, count + 1)));
+      if (enableVibrate) Vibration.vibrate(100);
+      const newCounters = new Map(prevCounters);
+      newCounters.set(id, count + 1);
+      return newCounters;
+    });
   }, [currentItem, enableVibrate]);
 
   React.useEffect(() => {
@@ -164,7 +167,7 @@ const DzikirScreen = () => {
     };
   }, [navigation]);
 
-  const drawerContent = React.useCallback(
+  const drawerContent = React.useMemo(
     () => (
       <View
         style={{
@@ -184,9 +187,11 @@ const DzikirScreen = () => {
           <View style={{padding: 10}}>
             <TextBold style={{fontSize: 22}}>dzikir {time}</TextBold>
           </View>
-          {items.map((item, idx) => (
+          {items.map((item, idx) => {
+            const isActive = currentPage === idx;
+            return (
             <Pressable
-              key={idx}
+              key={item.id}
               onPress={() => {
                 setDrawerOpened(false);
                 ref.current?.setPageWithoutAnimation(idx);
@@ -197,19 +202,20 @@ const DzikirScreen = () => {
                 borderBottomColor: colors.outlineVariant,
                 borderBottomWidth: 1,
                 backgroundColor:
-                  currentPage == idx ? colors.primaryContainer : colors.surface,
+                  isActive ? colors.primaryContainer : colors.surface,
               }}>
               <TextRegular
                 style={{
                   color:
-                    currentPage == idx
+                    isActive
                       ? colors.onPrimaryContainer
                       : colors.onBackground,
                 }}>
                 {item.title}
               </TextRegular>
             </Pressable>
-          ))}
+            );
+          })}
           <View style={{height: 120}} />
         </ScrollView>
       </View>
@@ -217,15 +223,12 @@ const DzikirScreen = () => {
     [items, time, currentPage, colors],
   );
 
-  const progress = React.useMemo(() => {
-    if (!items) return 0;
-    return (currentPage + 1) / items.length;
-  }, [currentPage, items]);
+  const progress = items ? (currentPage + 1) / items.length : 0;
 
   return (
     <Drawer
       open={drawerOpened}
-      drawerContent={drawerContent()}
+      drawerContent={drawerContent}
       drawerPercentage={100}
       animationTime={150}
       overlay={true}
@@ -261,9 +264,9 @@ const DzikirScreen = () => {
           width={null}
           borderRadius={0}
           borderWidth={0}
-          color={colors.primary}
+          color={colors.secondary}
           unfilledColor={colors.surfaceDisabled}
-          height={3}
+          height={4}
         />
         <AnimatedPagerView
           ref={ref}

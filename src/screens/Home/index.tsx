@@ -119,12 +119,12 @@ const HomeScreen = () => {
         /> */}
         <View style={{position: 'absolute', top: 25, right: 25}}>
           <View style={{flexDirection: 'row'}}>
-            <IconButton
+            {/* <IconButton
               icon={'palette-outline'}
               size={24}
               iconColor={colors.onPrimaryContainer}
               onPress={() => navigation.navigate('Palettes')}
-            />
+            /> */}
             <IconButton
               icon={'cog-outline'}
               iconColor={colors.onPrimaryContainer}
