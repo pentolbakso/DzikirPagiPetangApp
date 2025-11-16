@@ -142,7 +142,7 @@ const DzikirScreen = () => {
   const increaseCounter = React.useCallback(() => {
     let id = currentItem?.id || -1;
     let max = currentItem?.max_counter || 0;
-    
+
     setCounters(prevCounters => {
       let count = prevCounters.get(id) || 0;
       if (count >= max) {
@@ -190,30 +190,30 @@ const DzikirScreen = () => {
           {items.map((item, idx) => {
             const isActive = currentPage === idx;
             return (
-            <Pressable
-              key={item.id}
-              onPress={() => {
-                setDrawerOpened(false);
-                ref.current?.setPageWithoutAnimation(idx);
-              }}
-              style={{
-                paddingHorizontal: 10,
-                paddingVertical: 15,
-                borderBottomColor: colors.outlineVariant,
-                borderBottomWidth: 1,
-                backgroundColor:
-                  isActive ? colors.primaryContainer : colors.surface,
-              }}>
-              <TextRegular
+              <Pressable
+                key={item.id}
+                onPress={() => {
+                  setDrawerOpened(false);
+                  ref.current?.setPageWithoutAnimation(idx);
+                }}
                 style={{
-                  color:
-                    isActive
+                  paddingHorizontal: 10,
+                  paddingVertical: 15,
+                  borderBottomColor: colors.outlineVariant,
+                  borderBottomWidth: 1,
+                  backgroundColor: isActive
+                    ? colors.primaryContainer
+                    : colors.surface,
+                }}>
+                <TextRegular
+                  style={{
+                    color: isActive
                       ? colors.onPrimaryContainer
                       : colors.onBackground,
-                }}>
-                {item.title}
-              </TextRegular>
-            </Pressable>
+                  }}>
+                  {item.title}
+                </TextRegular>
+              </Pressable>
             );
           })}
           <View style={{height: 120}} />

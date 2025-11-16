@@ -18,7 +18,12 @@ const ContentV2 = React.memo(({item, mode}: {item: Dzikir; mode: string}) => {
   const {
     theme: {colors},
   } = useAppTheme();
-  const {arabicFontSize, arabicLatinFontSize, translationFontSize, showArabicLatin} = useSelector(
+  const {
+    arabicFontSize,
+    arabicLatinFontSize,
+    translationFontSize,
+    showArabicLatin,
+  } = useSelector(
     (state: RootState) => ({
       arabicFontSize: state.app.arabicFontSize,
       arabicLatinFontSize: state.app.arabicLatinFontSize,
@@ -28,8 +33,14 @@ const ContentV2 = React.memo(({item, mode}: {item: Dzikir; mode: string}) => {
     shallowEqual,
   );
   const arabicArr = React.useMemo(() => item.arabic.split('|'), [item.arabic]);
-  const latinArr = React.useMemo(() => item.arabic_latin.split('|'), [item.arabic_latin]);
-  const tarjimArr = React.useMemo(() => item.translated_id.split('|'), [item.translated_id]);
+  const latinArr = React.useMemo(
+    () => item.arabic_latin.split('|'),
+    [item.arabic_latin],
+  );
+  const tarjimArr = React.useMemo(
+    () => item.translated_id.split('|'),
+    [item.translated_id],
+  );
   const separator = React.useMemo(() => {
     return !!item.is_surah ? ' ۝ ' : '، ';
   }, [item.is_surah]);
