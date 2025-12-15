@@ -23,6 +23,8 @@ type BigMenuProps = {
   gradicentColors: Array<string>;
   onPress?: () => void;
   icon?: string;
+  iconStyle?: ViewStyle;
+  iconSize?: number;
   angle?: number;
 };
 const BigMenu = React.memo(
@@ -36,8 +38,8 @@ const BigMenu = React.memo(
         {!!props.icon && (
           <Icon
             name={props.icon as any}
-            style={{position: 'absolute', zIndex: 0, right: -20, bottom: -10}}
-            size={100}
+            style={props.iconStyle}
+            size={props.iconSize || 256}
             color={'rgba(255, 255, 255, 0.25)'}
           />
         )}
@@ -102,6 +104,13 @@ const HomeScreen = () => {
           gradicentColors={['#FCD32D', '#C3305D']}
           // gradicentColors={[colors.primary, colors.background]}
           angle={90}
+          icon="sun"
+          iconStyle={{
+            position: 'absolute',
+            zIndex: 0,
+            left: -80,
+            bottom: -100,
+          }}
           onPress={() => navigation.navigate('Dzikir', {time: 'pagi'})}
         />
         <View style={{height: 10, backgroundColor: colors.background}} />
@@ -115,6 +124,15 @@ const HomeScreen = () => {
           style={{flexGrow: timeMode == 'petang' && !isLandscape ? 3 : 1}}
           gradicentColors={['#103d63', '#C3305D']}
           // gradicentColors={[colors.secondary, colors.background]}
+          icon="moon"
+          iconStyle={{
+            position: 'absolute',
+            zIndex: 0,
+            left: '50%',
+            top: '30%',
+            transform: [{translateX: -64}, {translateY: -64}],
+          }}
+          iconSize={128}
           onPress={() => navigation.navigate('Dzikir', {time: 'petang'})}
           angle={210}
         />
