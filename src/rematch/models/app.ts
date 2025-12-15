@@ -1,6 +1,11 @@
 import {createModel} from '@rematch/core';
 import {RootModel} from '.';
 
+export type HabitDay = {
+  pagi: boolean;
+  petang: boolean;
+};
+
 export type AppState = {
   firstTimeUser: boolean;
   viewMode: string;
@@ -12,6 +17,8 @@ export type AppState = {
   showCounter: boolean;
   enableVibrate: boolean;
   themeColor: string | undefined;
+  enableTracker: boolean;
+  habitHistory: Record<string, HabitDay>;
 };
 
 export const app = createModel<RootModel>()({
@@ -26,6 +33,8 @@ export const app = createModel<RootModel>()({
     showCounter: false,
     enableVibrate: false,
     themeColor: undefined,
+    enableTracker: true,
+    habitHistory: {},
   } as AppState,
 
   reducers: {
@@ -58,6 +67,26 @@ export const app = createModel<RootModel>()({
     },
     setThemeColor(state: AppState, value: string | undefined) {
       return {...state, themeColor: value};
+    },
+    setEnableTracker(state: AppState, value: boolean) {
+      return {...state, enableTracker: value};
+    },
+    recordHabit(
+      state: AppState,
+      payload: {date: string; time: 'pagi' | 'petang'},
+    ) {
+      const {date, time} = payload;
+      const dayData = (state.habitHistory || {})[date] || {
+        pagi: false,
+        petang: false,
+      };
+      return {
+        ...state,
+        habitHistory: {
+          ...(state.habitHistory || {}),
+          [date]: {...dayData, [time]: true},
+        },
+      };
     },
   },
 

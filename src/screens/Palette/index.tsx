@@ -49,7 +49,7 @@ const PaletteScreen = () => {
   const navigate = useNavigation();
   const dispatch = useDispatch<Dispatch>();
   const themeColor = useSelector((state: RootState) => state.app.themeColor);
-  const isDarkMode = useSelector((state: RootState) => state.app.darkMode);
+  const isDarkMode = useSelector((state: RootState) => !!state.app.darkMode);
 
   const handlePress = React.useCallback(
     (color: string) => {

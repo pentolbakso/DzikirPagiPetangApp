@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {Pressable, ViewStyle} from 'react-native';
+import {Pressable, useWindowDimensions, ViewStyle} from 'react-native';
 import {ScrollView, View} from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import {SafeAreaView} from 'react-native-safe-area-context';
@@ -10,6 +10,9 @@ import dayjs from 'dayjs';
 import {IconButton} from 'react-native-paper';
 import {useAppTheme} from '../../theme/useAppTheme';
 import {Colors} from '../../colors';
+import {HabitTracker} from '../../components/HabitTracker';
+import {useSelector} from 'react-redux';
+import {RootState} from '../../rematch/store';
 
 type BigMenuProps = {
   subtitle: string;
@@ -67,6 +70,12 @@ const BigMenu = React.memo(
 
 const HomeScreen = () => {
   const navigation = useNavigation<any>();
+  const {width, height} = useWindowDimensions();
+  const isLandscape = width > height;
+  const enableTracker = useSelector(
+    (state: RootState) => !!state.app.enableTracker,
+  );
+
   const {
     theme: {colors},
   } = useAppTheme();
@@ -87,7 +96,7 @@ const HomeScreen = () => {
           titleColor={Colors.white}
           //titleColor={colors.primary}
           style={{
-            flexGrow: timeMode == 'pagi' ? 4 : 1,
+            flexGrow: timeMode == 'pagi' && !isLandscape ? 3 : 1,
           }}
           // gradicentColors={['#1061B0', '#3585DA', '#59C1E8', '#FCD32D']}
           gradicentColors={['#FCD32D', '#C3305D']}
@@ -96,12 +105,14 @@ const HomeScreen = () => {
           onPress={() => navigation.navigate('Dzikir', {time: 'pagi'})}
         />
         <View style={{height: 10, backgroundColor: colors.background}} />
+        {!!enableTracker && <HabitTracker />}
+        <View style={{height: 10, backgroundColor: colors.background}} />
         <BigMenu
           subtitle="dzikir"
           title="petang"
           titleColor={Colors.white}
           //titleColor={colors.secondary}
-          style={{flexGrow: timeMode == 'petang' ? 4 : 1}}
+          style={{flexGrow: timeMode == 'petang' && !isLandscape ? 3 : 1}}
           gradicentColors={['#103d63', '#C3305D']}
           // gradicentColors={[colors.secondary, colors.background]}
           onPress={() => navigation.navigate('Dzikir', {time: 'petang'})}

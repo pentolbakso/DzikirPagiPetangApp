@@ -17,6 +17,7 @@ import Notes from './Notes';
 import ContentV2 from './ContentV2';
 import Icon from '@react-native-vector-icons/feather';
 import {useAppTheme} from '../../theme/useAppTheme';
+import dayjs from 'dayjs';
 
 const AnimatedPagerView = Animated.createAnimatedComponent(PagerView);
 
@@ -117,12 +118,15 @@ const DzikirScreen = () => {
   const dispatch = useDispatch<Dispatch>();
   const mode = useSelector((state: RootState) => state.app.viewMode);
   const showCounter = useSelector(
-    (state: RootState) => state.app.showCounter || false,
+    (state: RootState) => !!state.app.showCounter,
   );
   const enableVibrate = useSelector(
-    (state: RootState) => state.app.enableVibrate || false,
+    (state: RootState) => !!state.app.enableVibrate,
   );
   const [counters, setCounters] = React.useState<Record<number, number>>({});
+  const enableTracker = useSelector(
+    (state: RootState) => !!state.app.enableTracker,
+  );
 
   const [mounted, setMounted] = React.useState(false);
   const ref = React.useRef<PagerView>(null);
@@ -162,6 +166,24 @@ const DzikirScreen = () => {
       unsubscribe();
     };
   }, [navigation]);
+
+  // Track habit: record completion after 60 seconds
+  React.useEffect(() => {
+    if (!enableTracker) return;
+
+    const timer = setTimeout(() => {
+      const today = dayjs().format('YYYY-MM-DD');
+      if (time === 'pagi' || time === 'petang') {
+        console.log('Recording habit for', time, 'on', today);
+        dispatch.app.recordHabit({
+          date: today,
+          time: time as 'pagi' | 'petang',
+        });
+      }
+    }, 60000); // 60 seconds
+
+    return () => clearTimeout(timer);
+  }, [time, enableTracker, dispatch]);
 
   const drawerContent = React.useMemo(
     () => (

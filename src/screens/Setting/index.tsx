@@ -24,7 +24,7 @@ import {Dispatch, RootState} from '../../rematch/store';
 import {Switch} from 'react-native-gesture-handler';
 import Icon from '@react-native-vector-icons/feather';
 import Rate, {AndroidMarket} from 'react-native-rate';
-import {useNavigation} from '@react-navigation/native';
+// import {useNavigation} from '@react-navigation/native';
 import {useAppTheme} from '../../theme/useAppTheme';
 
 const Menu = ({label, onPress}: {label: string; onPress?: () => void}) => {
@@ -123,7 +123,7 @@ const ModalReference = ({
 };
 
 const SettingScreen = () => {
-  const navigation = useNavigation();
+  // const navigation = useNavigation();
   const {
     theme: {colors},
   } = useAppTheme();
@@ -141,16 +141,19 @@ const SettingScreen = () => {
     (state: RootState) => state.app.translationFontSize || 16,
   );
   const showArabicLatin = useSelector(
-    (state: RootState) => state.app.showArabicLatin || false,
+    (state: RootState) => !!state.app.showArabicLatin,
   );
   const darkMode = useSelector(
     (state: RootState) => state.app.darkMode || initialDarkMode,
   );
   const showCounter = useSelector(
-    (state: RootState) => state.app.showCounter || false,
+    (state: RootState) => !!state.app.showCounter,
   );
   const enableVibrate = useSelector(
-    (state: RootState) => state.app.enableVibrate || false,
+    (state: RootState) => !!state.app.enableVibrate,
+  );
+  const enableTracker = useSelector(
+    (state: RootState) => !!state.app.enableTracker,
   );
 
   const [preview, showPreview] = React.useState(false);
@@ -354,6 +357,19 @@ const SettingScreen = () => {
             value={!!darkMode}
           />
           <TextRegular style={{marginLeft: 10}}>Mode gelap</TextRegular>
+        </View>
+        <View
+          style={{flexDirection: 'row', alignItems: 'center', marginTop: 20}}>
+          <Switch
+            trackColor={{false: colors.surfaceDisabled, true: colors.primary}}
+            thumbColor={Colors.white}
+            ios_backgroundColor={colors.surfaceDisabled}
+            onValueChange={(value: boolean) => {
+              dispatch.app.setEnableTracker(value);
+            }}
+            value={!!enableTracker}
+          />
+          <TextRegular style={{marginLeft: 10}}>Dzikir Tracker</TextRegular>
         </View>
       </Card>
       <Card

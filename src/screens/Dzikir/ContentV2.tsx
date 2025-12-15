@@ -28,7 +28,7 @@ const ContentV2 = React.memo(({item, mode}: {item: Dzikir; mode: string}) => {
       arabicFontSize: state.app.arabicFontSize,
       arabicLatinFontSize: state.app.arabicLatinFontSize,
       translationFontSize: state.app.translationFontSize,
-      showArabicLatin: state.app.showArabicLatin,
+      showArabicLatin: !!state.app.showArabicLatin,
     }),
     shallowEqual,
   );

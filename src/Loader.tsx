@@ -4,8 +4,8 @@ import {useDispatch, useSelector} from 'react-redux';
 import {Dispatch, RootState} from './rematch/store';
 
 const Loader = () => {
-  const dispatch = useDispatch<Dispatch>();
-  const darkMode = useSelector((state: RootState) => state.app.darkMode);
+  // const dispatch = useDispatch<Dispatch>();
+  // const darkMode = useSelector((state: RootState) => !!state.app.darkMode);
 
   const _startListening = () => {};
 
