@@ -72,7 +72,7 @@ const ModalReference = ({
         style={{
           flex: 1,
           flexDirection: 'column',
-          backgroundColor: '#000000bb',
+          backgroundColor: colors.background,
           justifyContent: 'center',
           alignItems: 'center',
         }}>
@@ -113,7 +113,7 @@ const ModalReference = ({
           </Pressable>
           <Pressable
             onPress={onDismiss}
-            style={{alignItems: 'center', marginTop: 10}}>
+            style={{alignItems: 'center', marginTop: 20}}>
             <TextSemiBold style={{fontSize: 18}}>OK</TextSemiBold>
           </Pressable>
         </View>
