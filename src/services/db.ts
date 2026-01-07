@@ -22,7 +22,7 @@ export const dzikirDb: Array<Dzikir> = [
     arabic:
       'بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ|قُلْ هُوَ اللَّهُ أَحَدٌ| اللَّهُ الصَّمَدُ| لَمْ يَلِدْ وَلَمْ يُولَدْ| وَلَمْ يَكُن لَّهُ كُفُوًا أَحَدٌ',
     arabic_latin:
-      'Bismillahirrahmannirrahiim| qul huwallahu ahad| Allaahu shomad| lam yalid wa lam yuulad| wa lam yakul lahuu kufuwan ahad',
+      'Bismillahirrahmannirrahiim| Qul huwallahu ahad| Allaahu shomad| Lam yalid wa lam yuulad| Wa lam yakul lahuu kufuwan ahad',
     faedah:
       'Siapa yang mengucapkannya masing-masing tiga kali ketika pagi dan petang, maka segala sesuatu akan dicukupkan untuknya.\n\nHR. Abu Daud no. 5082, Tirmidzi no. 3575. Al Hafizh Abu Thohir mengatakan bahwa sanad hadits ini hasan',
     note: 'Dibaca 3x',
@@ -39,7 +39,7 @@ export const dzikirDb: Array<Dzikir> = [
     arabic:
       'بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ|قُلْ أَعُوذُ بِرَبِّ الْفَلَقِ| مِن شَرِّ مَا خَلَقَ| وَمِن شَرِّ غَاسِقٍ إِذَا وَقَبَ| وَمِن شَرِّ النَّفَّاثَاتِ فِي الْعُقَدِ| وَمِن شَرِّ حَاسِدٍ إِذَا حَسَدَ',
     arabic_latin:
-      'Bismillahirrahmannirrahiim| qul a`uużu birabbil-falaq| min syarri maa khalaq| wa min syarri gaasiqin iżaa waqab| wa min syarrin-naffaatsaati fil-`uqad| wa min syarri ḥaasidin iżaa ḥasad',
+      'Bismillahirrahmannirrahiim| Qul a`uużu birabbil-falaq| Min syarri maa khalaq| Wa min syarri gaasiqin iżaa waqab| Wa min syarrin-naffaatsaati fil-`uqad| Wa min syarri ḥaasidin iżaa ḥasad',
     faedah:
       'Siapa yang mengucapkannya masing-masing tiga kali ketika pagi dan petang, maka segala sesuatu akan dicukupkan untuknya.\n\nHR. Abu Daud no. 5082, Tirmidzi no. 3575. Al Hafizh Abu Thohir mengatakan bahwa sanad hadits ini hasan',
     note: 'Dibaca 3x',
@@ -56,7 +56,7 @@ export const dzikirDb: Array<Dzikir> = [
     arabic:
       'بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ|قُلْ أَعُوذُ بِرَبِّ النَّاسِ| مَلِكِ النَّاسِ| إِلَهِ النَّاسِ| مِن شَرِّ الْوَسْوَاسِ الْخَنَّاسِ| الَّذِي يُوَسْوِسُ فِي صُدُورِ النَّاسِ| مِنَ الْجِنَّةِ وَ النَّاسِ',
     arabic_latin:
-      'Bismillahirrahmannirrahiim| qul a`uużu birabbin-nās| malikin-nās| ilaahin-nās| min syarril-waswaasil-khannaas| alladzii yuwaswisu fii ṣuduurin-naas| minal-jinnati wan-naas',
+      'Bismillahirrahmannirrahiim| Qul a`uużu birabbin-nās| Malikin-nās| Ilaahin-nās| Min syarril-waswaasil-khannaas| Alladzii yuwaswisu fii ṣuduurin-naas| Minal-jinnati wan-naas',
     faedah:
       'Siapa yang mengucapkannya masing-masing tiga kali ketika pagi dan petang, maka segala sesuatu akan dicukupkan untuknya.\n\nHR. Abu Daud no. 5082, Tirmidzi no. 3575. Al Hafizh Abu Thohir mengatakan bahwa sanad hadits ini hasan',
     note: 'Dibaca 3x',
@@ -241,15 +241,17 @@ export const dzikirDb: Array<Dzikir> = [
   },
   {
     id: 17,
-    arabic: 'سُبْحَانَ اللَّهِ وَبِحَمْدِهِ',
-    arabic_latin: 'Subhanallahi wa bi-hamdih.',
+    arabic:
+      'أَمْسَيْنَا عَلَى فِطْرَةِ اْلإِسْلاَمِ وَعَلَى كَلِمَةِ اْلإِخْلاَصِ| وَعَلَى دِيْنِ نَبِيِّنَا مُحَمَّدٍ صَلَّى اللَّهُ عَلَيْهِ وَسَلَّمَ| وَعَلَى مِلَّةِ أَبِيْنَا إِبْرَاهِيْمَ حَنِيْفًا مُسْلِمًا وَمَا كَانَ مِنَ الْمُشْرِكِيْنَ',
+    arabic_latin:
+      'Amsaynaa ‘ala fithrotil islaam wa ‘alaa kalimatil ikhlaash,| wa ‘alaa diini nabiyyinaa Muhammadin shallallahu ‘alaihi wa sallam,| wa ‘alaa millati abiina Ibraahiima haniifam muslimaaw wa maa kaana minal musyrikin',
     faedah:
-      'Barangsiapa yang mengucapkan kalimat ‘subhanallahi wa bi hamdih’ di pagi dan petang hari sebanyak 100x, maka tidak ada yang datang pada hari kiamat yang lebih baik dari yang ia lakukan kecuali orang yang mengucapkan semisal atau lebih dari itu.\n\nHR. Muslim no. 2692',
-    note: 'Dibaca 100x',
-    title: 'Dzikir ringan namun berat di timbangan (tasbih)',
-    translated_id: 'Maha suci Allah, aku memuji-Nya.',
-    time: '',
-    max_counter: 100,
+      'HR. Ahmad (3: 406). Syaikh Syu’aib Al Arnauth mengatakan bahwa sanad hadits ini shahih sesuai syarat Bukhari Muslim. Lihat pula As Silsilah Ash Shahihah no. 2989',
+    note: 'Dibaca 1x',
+    title: 'Doa istiqomah di agama Islam',
+    translated_id:
+      'Di waktu petang kami memegang agama Islam, kalimat ikhlas (kalimat syahadat),| agama Nabi kami Muhammad shallallahu ‘alaihi wa sallam,| dan agama bapak kami Ibrahim, yang berdiri di atas jalan yang lurus, muslim dan tidak tergolong orang-orang musyrik.',
+    time: 'petang',
   },
   {
     id: 18,
@@ -297,6 +299,18 @@ export const dzikirDb: Array<Dzikir> = [
   },
   {
     id: 21,
+    arabic: 'سُبْحَانَ اللَّهِ وَبِحَمْدِهِ',
+    arabic_latin: 'Subhanallahi wa bi-hamdih.',
+    faedah:
+      'Barangsiapa yang mengucapkan kalimat ‘subhanallahi wa bi hamdih’ di pagi dan petang hari sebanyak 100x, maka tidak ada yang datang pada hari kiamat yang lebih baik dari yang ia lakukan kecuali orang yang mengucapkan semisal atau lebih dari itu.\n\nHR. Muslim no. 2692',
+    note: 'Dibaca 100x',
+    title: 'Dzikir ringan namun berat di timbangan (tasbih)',
+    translated_id: 'Maha suci Allah, aku memuji-Nya.',
+    time: '',
+    max_counter: 100,
+  },
+  {
+    id: 22,
     arabic: 'أَسْتَغْفِرُ اللَّهَ وَأَتُوْبُ إِلَيْهِ',
     arabic_latin: 'Astagh-firullah wa atuubu ilaih.',
     faedah: 'HR. Bukhari no. 6307 dan Muslim no. 2702',
@@ -307,7 +321,7 @@ export const dzikirDb: Array<Dzikir> = [
     max_counter: 100,
   },
   {
-    id: 22,
+    id: 23,
     arabic: 'أَعُوْذُ بِكَلِمَاتِ اللَّهِ التَّامَّاتِ| مِنْ شَرِّ مَا خَلَقَ',
     arabic_latin: 'A’udzu bikalimaatillahit-taammaati| min syarri maa kholaq.',
     faedah:
