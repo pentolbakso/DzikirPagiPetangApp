@@ -369,7 +369,9 @@ const SettingScreen = () => {
             }}
             value={!!enableTracker}
           />
-          <TextRegular style={{marginLeft: 10}}>Dzikir Tracker</TextRegular>
+          <TextRegular style={{marginLeft: 10}}>
+            Dzikir Habit Tracker
+          </TextRegular>
         </View>
       </Card>
       <Card
