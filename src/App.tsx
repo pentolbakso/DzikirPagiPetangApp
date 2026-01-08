@@ -8,6 +8,8 @@ import {PaperProvider} from 'react-native-paper';
 import {useAppTheme} from './theme/useAppTheme';
 import {initializeNotifications} from './services/notifications';
 import notifee, {EventType} from '@notifee/react-native';
+import {StatusBar, View, Platform} from 'react-native';
+import SystemNavigationBar from 'react-native-system-navigation-bar';
 
 // Background event handler for notifications
 notifee.onBackgroundEvent(async ({type, detail}) => {
@@ -47,10 +49,26 @@ const Content = () => {
     return unsubscribe;
   }, []);
 
+  // Set Android navigation bar color based on theme
+  React.useEffect(() => {
+    if (Platform.OS === 'android') {
+      SystemNavigationBar.setNavigationColor(
+        theme.colors.background,
+        theme.dark ? 'light' : 'dark',
+      );
+    }
+  }, [theme.colors.background, theme.dark]);
+
   return (
     <PaperProvider theme={theme}>
-      <Loader />
-      <Navigator theme={navigationTheme} />
+      <StatusBar
+        barStyle={theme.dark ? 'light-content' : 'dark-content'}
+        backgroundColor={theme.colors.background}
+      />
+      <View style={{flex: 1, backgroundColor: theme.colors.background}}>
+        <Loader />
+        <Navigator theme={navigationTheme} />
+      </View>
     </PaperProvider>
   );
 };
@@ -58,7 +76,7 @@ const Content = () => {
 const App = () => {
   return (
     <Provider store={store}>
-      <SafeAreaProvider>
+      <SafeAreaProvider style={{flex: 1}}>
         <Content />
       </SafeAreaProvider>
     </Provider>

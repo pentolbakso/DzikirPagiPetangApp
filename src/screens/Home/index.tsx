@@ -132,10 +132,10 @@ const HomeScreen = () => {
             position: 'absolute',
             zIndex: 0,
             left: '50%',
-            top: '30%',
-            transform: [{translateX: -64}, {translateY: -64}],
+            top: '25%',
+            transform: [{translateX: -32}, {translateY: -32}],
           }}
-          iconSize={128}
+          iconSize={64}
           onPress={() => navigation.navigate('Dzikir', {time: 'petang'})}
           angle={210}
         />

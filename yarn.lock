@@ -3125,6 +3125,7 @@ __metadata:
     react-native-screens: ^4.18.0
     react-native-side-drawer: ^2.1.0
     react-native-svg: ^15.14.0
+    react-native-system-navigation-bar: ^2.8.0
     react-native-worklets: ^0.7.1
     react-redux: ^9.2.0
     react-test-renderer: 19.1.0
@@ -3601,11 +3602,11 @@ __metadata:
   linkType: hard
 
 "baseline-browser-mapping@npm:^2.9.0":
-  version: 2.9.11
-  resolution: "baseline-browser-mapping@npm:2.9.11"
+  version: 2.9.12
+  resolution: "baseline-browser-mapping@npm:2.9.12"
   bin:
     baseline-browser-mapping: dist/cli.js
-  checksum: 2c4687cdcb9f74cdc9f584248fda4e3435ec31de192316dfd75ce4cae70cc64e5cc763b8e632ee6a452aa71bd1b9519e478bc190653fd0c30482ab24e49f4eea
+  checksum: 89c342ea24f3fa5a14bbd92365418e8706f78b448e5e69e2ecd6182ae74d333c2504b2afe0f70f4f2482176c3eee0541116dc5be29e10ba5ed120f12e5b80608
   languageName: node
   linkType: hard
 
@@ -3796,9 +3797,9 @@ __metadata:
   linkType: hard
 
 "caniuse-lite@npm:^1.0.30001759":
-  version: 1.0.30001762
-  resolution: "caniuse-lite@npm:1.0.30001762"
-  checksum: 8a21e8fefb0f53cdf72337f5e244e292c6ea45f58d0fea04effc985c73ff89d18ab81f157dcb430236f33d4552c2e1ff0936876c713eec386c5ddca7b61275f5
+  version: 1.0.30001763
+  resolution: "caniuse-lite@npm:1.0.30001763"
+  checksum: ea6b1492b30ffe532c47cae011f27ab043293f1d67d54355df579a7eae35f4bdb3752cc7caa9db6e0a42e08b07aa694f88e2b39cd4baf7b5590eb67aa7d16346
   languageName: node
   linkType: hard
 
@@ -8304,6 +8305,16 @@ __metadata:
     react: "*"
     react-native: "*"
   checksum: a65590d7344e39179b5f7de305001d821d1d25ab17d915781039fdd0b46f71115682fddd9617295ea4c0c0f6bd484633d993abc8f9a3444ea3f72e6cb40cde8a
+  languageName: node
+  linkType: hard
+
+"react-native-system-navigation-bar@npm:^2.8.0":
+  version: 2.8.0
+  resolution: "react-native-system-navigation-bar@npm:2.8.0"
+  peerDependencies:
+    react: "*"
+    react-native: "*"
+  checksum: 786257eeeb1a7c8486c4c4b6029ef8696ad84c42c2ba23e62622c4829351aef6d4ce4e6f70751d2c231c48abcd548839c6ca3fb04c5197557950c5e1f449c84c
   languageName: node
   linkType: hard
 
