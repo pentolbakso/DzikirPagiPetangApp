@@ -18,6 +18,7 @@ import ContentV2 from './ContentV2';
 import Icon from '@react-native-vector-icons/feather';
 import {useAppTheme} from '../../theme/useAppTheme';
 import dayjs from 'dayjs';
+import {onDhikrCompleted} from '../../services/notifications';
 
 const AnimatedPagerView = Animated.createAnimatedComponent(PagerView);
 
@@ -128,6 +129,23 @@ const DzikirScreen = () => {
     (state: RootState) => !!state.app.enableTracker,
   );
 
+  // Select notification settings individually
+  const enableNotifications = useSelector(
+    (state: RootState) => state.app.enableNotifications,
+  );
+  const enablePagiNotification = useSelector(
+    (state: RootState) => state.app.enablePagiNotification,
+  );
+  const enablePetangNotification = useSelector(
+    (state: RootState) => state.app.enablePetangNotification,
+  );
+  const pagiNotificationTime = useSelector(
+    (state: RootState) => state.app.pagiNotificationTime,
+  );
+  const petangNotificationTime = useSelector(
+    (state: RootState) => state.app.petangNotificationTime,
+  );
+
   const [mounted, setMounted] = React.useState(false);
   const ref = React.useRef<PagerView>(null);
 
@@ -171,7 +189,7 @@ const DzikirScreen = () => {
   React.useEffect(() => {
     if (!enableTracker) return;
 
-    const timer = setTimeout(() => {
+    const timer = setTimeout(async () => {
       const today = dayjs().format('YYYY-MM-DD');
       if (time === 'pagi' || time === 'petang') {
         console.log('Recording habit for', time, 'on', today);
@@ -179,11 +197,36 @@ const DzikirScreen = () => {
           date: today,
           time: time as 'pagi' | 'petang',
         });
+
+        // Cancel and reschedule notification after completion
+        if (enableNotifications) {
+          const isNotificationEnabled =
+            time === 'pagi' ? enablePagiNotification : enablePetangNotification;
+          const notificationTime =
+            time === 'pagi' ? pagiNotificationTime : petangNotificationTime;
+
+          if (isNotificationEnabled) {
+            await onDhikrCompleted(time as 'pagi' | 'petang', {
+              enableNotification: isNotificationEnabled,
+              hour: notificationTime.hour,
+              minute: notificationTime.minute,
+            });
+          }
+        }
       }
     }, 60000); // 60 seconds
 
     return () => clearTimeout(timer);
-  }, [time, enableTracker, dispatch]);
+  }, [
+    time,
+    enableTracker,
+    dispatch,
+    enableNotifications,
+    enablePagiNotification,
+    enablePetangNotification,
+    pagiNotificationTime,
+    petangNotificationTime,
+  ]);
 
   const drawerContent = React.useMemo(
     () => (

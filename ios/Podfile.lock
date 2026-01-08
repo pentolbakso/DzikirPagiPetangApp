@@ -2457,6 +2457,34 @@ PODS:
     - ReactCommon/turbomodule/core
     - SocketRocket
     - Yoga
+  - RNDateTimePicker (8.6.0):
+    - boost
+    - DoubleConversion
+    - fast_float
+    - fmt
+    - glog
+    - hermes-engine
+    - RCT-Folly
+    - RCT-Folly/Fabric
+    - RCTRequired
+    - RCTTypeSafety
+    - React-Core
+    - React-debug
+    - React-Fabric
+    - React-featureflags
+    - React-graphics
+    - React-ImageManager
+    - React-jsi
+    - React-NativeModulesApple
+    - React-RCTFabric
+    - React-renderercss
+    - React-rendererdebug
+    - React-utils
+    - ReactCodegen
+    - ReactCommon/turbomodule/bridging
+    - ReactCommon/turbomodule/core
+    - SocketRocket
+    - Yoga
   - RNGestureHandler (2.29.1):
     - boost
     - DoubleConversion
@@ -2485,6 +2513,11 @@ PODS:
     - ReactCommon/turbomodule/core
     - SocketRocket
     - Yoga
+  - RNNotifee (9.1.8):
+    - React-Core
+    - RNNotifee/NotifeeCore (= 9.1.8)
+  - RNNotifee/NotifeeCore (9.1.8):
+    - React-Core
   - RNRate (1.2.12):
     - React-Core
   - RNReanimated (4.2.0):
@@ -2866,7 +2899,9 @@ DEPENDENCIES:
   - ReactCodegen (from `build/generated/ios`)
   - ReactCommon/turbomodule/core (from `../node_modules/react-native/ReactCommon`)
   - "RNCAsyncStorage (from `../node_modules/@react-native-async-storage/async-storage`)"
+  - "RNDateTimePicker (from `../node_modules/@react-native-community/datetimepicker`)"
   - RNGestureHandler (from `../node_modules/react-native-gesture-handler`)
+  - "RNNotifee (from `../node_modules/@notifee/react-native`)"
   - RNRate (from `../node_modules/react-native-rate`)
   - RNReanimated (from `../node_modules/react-native-reanimated`)
   - RNScreens (from `../node_modules/react-native-screens`)
@@ -3035,8 +3070,12 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon"
   RNCAsyncStorage:
     :path: "../node_modules/@react-native-async-storage/async-storage"
+  RNDateTimePicker:
+    :path: "../node_modules/@react-native-community/datetimepicker"
   RNGestureHandler:
     :path: "../node_modules/react-native-gesture-handler"
+  RNNotifee:
+    :path: "../node_modules/@notifee/react-native"
   RNRate:
     :path: "../node_modules/react-native-rate"
   RNReanimated:
@@ -3128,7 +3167,9 @@ SPEC CHECKSUMS:
   ReactCodegen: 6c26f8c25d0b5ae66f86a1cce1777076ac8bcbd8
   ReactCommon: 5f0e5c09a64a2717215dd84380e1a747810406f2
   RNCAsyncStorage: 29f0230e1a25f36c20b05f65e2eb8958d6526e82
+  RNDateTimePicker: 97a86d7c8b51f2d51f694a9dddfe5996dfd9a407
   RNGestureHandler: 29bbca60c881e5243e219e3fe0016060002ed389
+  RNNotifee: 5e3b271e8ea7456a36eec994085543c9adca9168
   RNRate: 7641919330e0d6688ad885a985b4bd697ed7d14c
   RNReanimated: 1a04aa8835f9abaa90282fdebbbe780aed39e20a
   RNScreens: ffbb0296608eb3560de641a711bbdb663ed1f6b4

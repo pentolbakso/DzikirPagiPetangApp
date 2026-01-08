@@ -19,6 +19,11 @@ export type AppState = {
   themeColor: string | undefined;
   enableTracker: boolean;
   habitHistory: Record<string, HabitDay>;
+  enableNotifications: boolean;
+  enablePagiNotification: boolean;
+  enablePetangNotification: boolean;
+  pagiNotificationTime: {hour: number; minute: number};
+  petangNotificationTime: {hour: number; minute: number};
 };
 
 export const app = createModel<RootModel>()({
@@ -35,6 +40,11 @@ export const app = createModel<RootModel>()({
     themeColor: undefined,
     enableTracker: true,
     habitHistory: {},
+    enableNotifications: false,
+    enablePagiNotification: true,
+    enablePetangNotification: true,
+    pagiNotificationTime: {hour: 6, minute: 0},
+    petangNotificationTime: {hour: 16, minute: 0},
   } as AppState,
 
   reducers: {
@@ -87,6 +97,27 @@ export const app = createModel<RootModel>()({
           [date]: {...dayData, [time]: true},
         },
       };
+    },
+    setEnableNotifications(state: AppState, value: boolean) {
+      return {...state, enableNotifications: value};
+    },
+    setEnablePagiNotification(state: AppState, value: boolean) {
+      return {...state, enablePagiNotification: value};
+    },
+    setEnablePetangNotification(state: AppState, value: boolean) {
+      return {...state, enablePetangNotification: value};
+    },
+    setPagiNotificationTime(
+      state: AppState,
+      value: {hour: number; minute: number},
+    ) {
+      return {...state, pagiNotificationTime: value};
+    },
+    setPetangNotificationTime(
+      state: AppState,
+      value: {hour: number; minute: number},
+    ) {
+      return {...state, petangNotificationTime: value};
     },
   },
 

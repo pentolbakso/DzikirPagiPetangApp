@@ -26,6 +26,12 @@ import Icon from '@react-native-vector-icons/feather';
 import Rate, {AndroidMarket} from 'react-native-rate';
 // import {useNavigation} from '@react-navigation/native';
 import {useAppTheme} from '../../theme/useAppTheme';
+import DateTimePickerModal from 'react-native-modal-datetime-picker';
+import {
+  schedulePagiNotification,
+  schedulePetangNotification,
+  cancelNotification,
+} from '../../services/notifications';
 
 const Menu = ({label, onPress}: {label: string; onPress?: () => void}) => {
   const {
@@ -155,10 +161,27 @@ const SettingScreen = () => {
   const enableTracker = useSelector(
     (state: RootState) => !!state.app.enableTracker,
   );
+  const enableNotifications = useSelector(
+    (state: RootState) => !!state.app.enableNotifications,
+  );
+  const enablePagiNotification = useSelector(
+    (state: RootState) => !!state.app.enablePagiNotification,
+  );
+  const enablePetangNotification = useSelector(
+    (state: RootState) => !!state.app.enablePetangNotification,
+  );
+  const pagiNotificationTime = useSelector(
+    (state: RootState) => state.app.pagiNotificationTime,
+  );
+  const petangNotificationTime = useSelector(
+    (state: RootState) => state.app.petangNotificationTime,
+  );
 
   const [preview, showPreview] = React.useState(false);
   const [modalReferenceVisible, setModalReferenceVisible] =
     React.useState(false);
+  const [showPagiTimePicker, setShowPagiTimePicker] = React.useState(false);
+  const [showPetangTimePicker, setShowPetangTimePicker] = React.useState(false);
 
   const [arabicFontSize, setArabicFontSize] = React.useState(
     initialArabicFontSize,
@@ -187,6 +210,113 @@ const SettingScreen = () => {
 
   const openPagiPetangWeb = () => {
     Linking.openURL('https://www.instagram.com/pagipetangstudio/');
+  };
+
+  const handleNotificationsToggle = async (enabled: boolean) => {
+    dispatch.app.setEnableNotifications(enabled);
+    if (enabled) {
+      // Schedule notifications based on individual settings
+      if (enablePagiNotification) {
+        await schedulePagiNotification(
+          pagiNotificationTime.hour,
+          pagiNotificationTime.minute,
+        );
+      }
+      if (enablePetangNotification) {
+        await schedulePetangNotification(
+          petangNotificationTime.hour,
+          petangNotificationTime.minute,
+        );
+      }
+    } else {
+      // Cancel all notifications when disabled
+      await cancelNotification('pagi');
+      await cancelNotification('petang');
+    }
+  };
+
+  const handlePagiNotificationToggle = async (enabled: boolean) => {
+    dispatch.app.setEnablePagiNotification(enabled);
+    if (enableNotifications) {
+      if (enabled) {
+        await schedulePagiNotification(
+          pagiNotificationTime.hour,
+          pagiNotificationTime.minute,
+        );
+      } else {
+        await cancelNotification('pagi');
+      }
+    }
+  };
+
+  const handlePetangNotificationToggle = async (enabled: boolean) => {
+    dispatch.app.setEnablePetangNotification(enabled);
+    if (enableNotifications) {
+      if (enabled) {
+        await schedulePetangNotification(
+          petangNotificationTime.hour,
+          petangNotificationTime.minute,
+        );
+      } else {
+        await cancelNotification('petang');
+      }
+    }
+  };
+
+  const handlePagiTimeChange = async (time: {hour: number; minute: number}) => {
+    dispatch.app.setPagiNotificationTime(time);
+    if (enableNotifications && enablePagiNotification) {
+      await schedulePagiNotification(time.hour, time.minute);
+    }
+  };
+
+  const handlePagiTimeConfirm = (date: Date) => {
+    setShowPagiTimePicker(false);
+    handlePagiTimeChange({
+      hour: date.getHours(),
+      minute: date.getMinutes(),
+    });
+  };
+
+  const handlePetangTimeChange = async (time: {
+    hour: number;
+    minute: number;
+  }) => {
+    dispatch.app.setPetangNotificationTime(time);
+    if (enableNotifications && enablePetangNotification) {
+      await schedulePetangNotification(time.hour, time.minute);
+    }
+  };
+
+  const handlePetangTimeConfirm = (date: Date) => {
+    setShowPetangTimePicker(false);
+    handlePetangTimeChange({
+      hour: date.getHours(),
+      minute: date.getMinutes(),
+    });
+  };
+
+  const formatTime = (hour: number, minute: number) => {
+    const h = hour.toString().padStart(2, '0');
+    const m = minute.toString().padStart(2, '0');
+    return `${h}:${m}`;
+  };
+
+  const getPagiDate = () => {
+    const date = new Date();
+    date.setHours(pagiNotificationTime.hour, pagiNotificationTime.minute, 0, 0);
+    return date;
+  };
+
+  const getPetangDate = () => {
+    const date = new Date();
+    date.setHours(
+      petangNotificationTime.hour,
+      petangNotificationTime.minute,
+      0,
+      0,
+    );
+    return date;
   };
 
   return (
@@ -380,6 +510,110 @@ const SettingScreen = () => {
           backgroundColor: colors.surface,
           padding: 20,
         }}>
+        <View
+          style={{
+            flexDirection: 'row',
+            alignItems: 'center',
+            // marginBottom: 15,
+          }}>
+          <TextRegular style={{fontSize: 16, flex: 1}}>
+            Pengingat Dzikir
+          </TextRegular>
+          <Switch
+            trackColor={{false: colors.surfaceDisabled, true: colors.primary}}
+            thumbColor={Colors.white}
+            ios_backgroundColor={colors.surfaceDisabled}
+            onValueChange={handleNotificationsToggle}
+            value={!!enableNotifications}
+          />
+        </View>
+        {enableNotifications && (
+          <>
+            <View
+              style={{
+                flexDirection: 'row',
+                alignItems: 'center',
+                marginTop: 20,
+              }}>
+              <Switch
+                trackColor={{
+                  false: colors.surfaceDisabled,
+                  true: colors.primary,
+                }}
+                thumbColor={Colors.white}
+                ios_backgroundColor={colors.surfaceDisabled}
+                onValueChange={handlePagiNotificationToggle}
+                value={!!enablePagiNotification}
+              />
+              <TextRegular style={{marginLeft: 10, flex: 1}}>
+                Dzikir Pagi
+              </TextRegular>
+              {enablePagiNotification && (
+                <Pressable
+                  onPress={() => setShowPagiTimePicker(true)}
+                  style={{
+                    paddingVertical: 6,
+                    paddingHorizontal: 12,
+                    borderWidth: 1,
+                    borderColor: colors.primaryContainer,
+                    borderRadius: 6,
+                  }}>
+                  <TextBold style={{color: colors.primary}}>
+                    {formatTime(
+                      pagiNotificationTime.hour,
+                      pagiNotificationTime.minute,
+                    )}
+                  </TextBold>
+                </Pressable>
+              )}
+            </View>
+            <View
+              style={{
+                flexDirection: 'row',
+                alignItems: 'center',
+                marginTop: 15,
+              }}>
+              <Switch
+                trackColor={{
+                  false: colors.surfaceDisabled,
+                  true: colors.primary,
+                }}
+                thumbColor={Colors.white}
+                ios_backgroundColor={colors.surfaceDisabled}
+                onValueChange={handlePetangNotificationToggle}
+                value={!!enablePetangNotification}
+              />
+              <TextRegular style={{marginLeft: 10, flex: 1}}>
+                Dzikir Petang
+              </TextRegular>
+              {enablePetangNotification && (
+                <Pressable
+                  onPress={() => setShowPetangTimePicker(true)}
+                  style={{
+                    paddingVertical: 6,
+                    paddingHorizontal: 12,
+                    borderWidth: 1,
+                    borderColor: colors.primaryContainer,
+                    borderRadius: 6,
+                  }}>
+                  <TextBold style={{color: colors.primary}}>
+                    {formatTime(
+                      petangNotificationTime.hour,
+                      petangNotificationTime.minute,
+                    )}
+                  </TextBold>
+                </Pressable>
+              )}
+            </View>
+          </>
+        )}
+      </Card>
+      <Card
+        style={{
+          marginTop: 20,
+          backgroundColor: colors.surface,
+          padding: 20,
+        }}>
         <Menu label={'Beri Rating'} onPress={handleRateOurApp} />
         <Menu
           label={'Referensi'}
@@ -399,6 +633,22 @@ const SettingScreen = () => {
       <ModalReference
         visible={modalReferenceVisible}
         onDismiss={() => setModalReferenceVisible(false)}
+      />
+      <DateTimePickerModal
+        isVisible={showPagiTimePicker}
+        mode="time"
+        minuteInterval={15}
+        onConfirm={handlePagiTimeConfirm}
+        onCancel={() => setShowPagiTimePicker(false)}
+        date={getPagiDate()}
+      />
+      <DateTimePickerModal
+        isVisible={showPetangTimePicker}
+        mode="time"
+        minuteInterval={15}
+        onConfirm={handlePetangTimeConfirm}
+        onCancel={() => setShowPetangTimePicker(false)}
+        date={getPetangDate()}
       />
       <View style={{height: 50}} />
     </ScrollView>
