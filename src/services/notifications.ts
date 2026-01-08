@@ -3,7 +3,7 @@ import notifee, {
   TriggerType,
   AndroidImportance,
 } from '@notifee/react-native';
-import {PermissionsAndroid, Platform} from 'react-native';
+import {Platform} from 'react-native';
 
 const CHANNEL_ID = 'dhikr-reminders';
 const PAGI_NOTIFICATION_ID = 'dhikr-pagi-reminder';
@@ -24,16 +24,25 @@ export async function createNotificationChannel() {
 }
 
 /**
- * Request notification permission (Android 13+)
+ * Check current notification permission status
+ */
+export async function checkNotificationPermission(): Promise<boolean> {
+  const settings = await notifee.getNotificationSettings();
+  return (
+    settings.authorizationStatus === 1 || // AUTHORIZED (iOS)
+    settings.authorizationStatus === 2 // PROVISIONAL (iOS)
+  );
+}
+
+/**
+ * Request notification permission
  */
 export async function requestNotificationPermission(): Promise<boolean> {
-  if (Platform.OS === 'android' && Platform.Version >= 33) {
-    const granted = await PermissionsAndroid.request(
-      PermissionsAndroid.PERMISSIONS.POST_NOTIFICATIONS,
-    );
-    return granted === PermissionsAndroid.RESULTS.GRANTED;
-  }
-  return true; // iOS handles permissions automatically
+  const settings = await notifee.requestPermission();
+  return (
+    settings.authorizationStatus === 1 || // AUTHORIZED
+    settings.authorizationStatus === 2 // PROVISIONAL
+  );
 }
 
 /**

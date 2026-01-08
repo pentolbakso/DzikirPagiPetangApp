@@ -1,5 +1,6 @@
 import * as React from 'react';
 import {
+  Alert,
   Linking,
   Modal,
   Pressable,
@@ -31,6 +32,8 @@ import {
   schedulePagiNotification,
   schedulePetangNotification,
   cancelNotification,
+  requestNotificationPermission,
+  checkNotificationPermission,
 } from '../../services/notifications';
 
 const Menu = ({label, onPress}: {label: string; onPress?: () => void}) => {
@@ -213,8 +216,34 @@ const SettingScreen = () => {
   };
 
   const handleNotificationsToggle = async (enabled: boolean) => {
-    dispatch.app.setEnableNotifications(enabled);
     if (enabled) {
+      // Check if permission is already granted
+      const hasPermission = await checkNotificationPermission();
+
+      if (!hasPermission) {
+        // Request permission
+        const granted = await requestNotificationPermission();
+
+        if (!granted) {
+          // Permission denied - show alert with option to open settings
+          Alert.alert(
+            'Izin Notifikasi Diperlukan',
+            'Untuk mengaktifkan pengingat dzikir, aplikasi memerlukan izin notifikasi. Silakan aktifkan di pengaturan aplikasi.',
+            [
+              {text: 'Batal', style: 'cancel'},
+              {
+                text: 'Buka Pengaturan',
+                onPress: () => Linking.openSettings(),
+              },
+            ],
+          );
+          return; // Don't update state
+        }
+      }
+
+      // Permission granted - enable and schedule notifications
+      dispatch.app.setEnableNotifications(true);
+
       // Schedule notifications based on individual settings
       if (enablePagiNotification) {
         await schedulePagiNotification(
@@ -229,7 +258,8 @@ const SettingScreen = () => {
         );
       }
     } else {
-      // Cancel all notifications when disabled
+      // Disable and cancel all notifications
+      dispatch.app.setEnableNotifications(false);
       await cancelNotification('pagi');
       await cancelNotification('petang');
     }
