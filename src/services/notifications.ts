@@ -9,6 +9,44 @@ const CHANNEL_ID = 'dhikr-reminders';
 const PAGI_NOTIFICATION_ID = 'dhikr-pagi-reminder';
 const PETANG_NOTIFICATION_ID = 'dhikr-petang-reminder';
 
+const MOTIVATIONAL_PHRASES = [
+  'untuk menenangkan hati.',
+  'agar hati tetap hidup.',
+  'supaya jiwa lebih tenang.',
+  'sebagai pengingat kepada Allah.',
+  'karena zikir menenangkan.',
+  'agar hati tidak goyah.',
+  'supaya iman tetap terjaga.',
+  'sebagai penjaga ketenangan.',
+  'agar pikiran lebih jernih.',
+  'karena hati perlu diingatkan.',
+  'supaya jiwa tidak gelisah.',
+  'sebagai penguat hati.',
+  'agar langkah lebih ringan.',
+  'karena zikir menguatkan.',
+  'supaya hati tetap lembut.',
+  'sebagai tempat kembali.',
+  'agar rasa cemas mereda.',
+  'karena zikir menenangkan jiwa.',
+  'supaya hati lebih kuat.',
+  'sebagai penenang batin.',
+  'agar iman tidak lalai.',
+  'karena mengingat Allah menenangkan.',
+  'supaya hidup lebih terarah.',
+  'sebagai pengingat diri.',
+  'agar hati tetap fokus.',
+  'karena zikir adalah cahaya.',
+  'supaya jiwa lebih damai.',
+  'sebagai penjaga hati.',
+  'agar hati tidak resah.',
+  'karena ketenangan berasal dari zikir.',
+];
+
+function getRandomPhrase(): string {
+  const randomIndex = Math.floor(Math.random() * MOTIVATIONAL_PHRASES.length);
+  return MOTIVATIONAL_PHRASES[randomIndex];
+}
+
 /**
  * Create notification channel for Android
  */
@@ -103,10 +141,11 @@ export async function schedulePagiNotification(
   hour: number = 7,
   minute: number = 0,
 ): Promise<void> {
+  const randomPhrase = getRandomPhrase();
   await scheduleDailyNotification(
     PAGI_NOTIFICATION_ID,
     'Waktunya Dzikir Pagi',
-    'Jangan lupa baca dzikir pagi hari ini 🤲',
+    `Jangan lupa baca dzikir pagi hari ini 🤲 ${randomPhrase}`,
     hour,
     minute,
   );
@@ -118,10 +157,11 @@ export async function schedulePetangNotification(
   hour: number = 17,
   minute: number = 0,
 ): Promise<void> {
+  const randomPhrase = getRandomPhrase();
   await scheduleDailyNotification(
     PETANG_NOTIFICATION_ID,
     'Waktunya Dzikir Petang',
-    'Jangan lupa baca dzikir petang hari ini 🤲',
+    `Jangan lupa baca dzikir petang hari ini 🤲 ${randomPhrase}`,
     hour,
     minute,
   );
