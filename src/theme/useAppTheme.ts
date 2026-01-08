@@ -14,7 +14,10 @@ import {useSelector} from 'react-redux';
 import {RootState} from '../rematch/store';
 
 export const useAppTheme = () => {
-  const isDarkMode = useSelector((state: RootState) => !!state.app.darkMode);
+  const systemIsDark = useColorScheme() === 'dark';
+  const isDarkMode = useSelector((state: RootState) =>
+    state.app.darkMode !== undefined ? state.app.darkMode : systemIsDark,
+  );
 
   const [themeColors, setThemeColors] = React.useState<ThemeColors>(
     getTheme('legacy'),

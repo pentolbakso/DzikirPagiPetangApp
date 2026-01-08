@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {Pressable, View, ViewStyle} from 'react-native';
+import {Pressable, useColorScheme, View, ViewStyle} from 'react-native';
 import {ScrollView} from 'react-native-gesture-handler';
 import {MD3DarkTheme, MD3LightTheme} from 'react-native-paper';
 import {useDispatch, useSelector} from 'react-redux';
@@ -49,7 +49,10 @@ const PaletteScreen = () => {
   const navigate = useNavigation();
   const dispatch = useDispatch<Dispatch>();
   const themeColor = useSelector((state: RootState) => state.app.themeColor);
-  const isDarkMode = useSelector((state: RootState) => !!state.app.darkMode);
+  const systemIsDark = useColorScheme() === 'dark';
+  const isDarkMode = useSelector((state: RootState) =>
+    state.app.darkMode !== undefined ? state.app.darkMode : systemIsDark,
+  );
 
   const handlePress = React.useCallback(
     (color: string) => {

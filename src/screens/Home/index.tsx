@@ -25,13 +25,14 @@ type BigMenuProps = {
   icon?: string;
   iconStyle?: ViewStyle;
   iconSize?: number;
+  iconColor?: string;
   angle?: number;
 };
 const BigMenu = React.memo(
   ({gradicentColors, titleSize = 40, angle = 180, ...props}: BigMenuProps) => (
     <View style={props.style}>
       <LinearGradient
-        style={{flex: 1, borderRadius: 10}}
+        style={{flex: 1, borderRadius: 10, overflow: 'hidden'}}
         useAngle={true}
         angle={angle}
         colors={gradicentColors}>
@@ -40,7 +41,7 @@ const BigMenu = React.memo(
             name={props.icon as any}
             style={props.iconStyle}
             size={props.iconSize || 256}
-            color={'rgba(255, 255, 255, 0.25)'}
+            color={props.iconColor || 'rgba(255, 255, 255, 0.25)'}
           />
         )}
         <Pressable
@@ -105,6 +106,7 @@ const HomeScreen = () => {
           // gradicentColors={[colors.primary, colors.background]}
           angle={90}
           icon="sun"
+          iconColor="rgba(255, 200, 100, 0.3)"
           iconStyle={{
             position: 'absolute',
             zIndex: 0,
@@ -125,6 +127,7 @@ const HomeScreen = () => {
           gradicentColors={['#103d63', '#C3305D']}
           // gradicentColors={[colors.secondary, colors.background]}
           icon="moon"
+          iconColor="rgba(150, 180, 220, 0.3)"
           iconStyle={{
             position: 'absolute',
             zIndex: 0,

@@ -13,7 +13,7 @@ export type AppState = {
   arabicLatinFontSize: number;
   translationFontSize: number;
   showArabicLatin: boolean;
-  darkMode: boolean;
+  darkMode: boolean | undefined;
   showCounter: boolean;
   enableVibrate: boolean;
   themeColor: string | undefined;
@@ -34,7 +34,7 @@ export const app = createModel<RootModel>()({
     arabicLatinFontSize: 16,
     translationFontSize: 16,
     showArabicLatin: false,
-    darkMode: false,
+    darkMode: undefined,
     showCounter: false,
     enableVibrate: false,
     themeColor: undefined,

@@ -149,8 +149,8 @@ const SettingScreen = () => {
   const showArabicLatin = useSelector(
     (state: RootState) => !!state.app.showArabicLatin,
   );
-  const darkMode = useSelector(
-    (state: RootState) => state.app.darkMode || initialDarkMode,
+  const darkMode = useSelector((state: RootState) =>
+    state.app.darkMode !== undefined ? state.app.darkMode : initialDarkMode,
   );
   const showCounter = useSelector(
     (state: RootState) => !!state.app.showCounter,
