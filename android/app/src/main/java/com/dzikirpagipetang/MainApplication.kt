@@ -1,4 +1,4 @@
-package com.dzikirpagipetang
+package com.pagipetangstudio.dzikirpagipetang
 
 import android.app.Application
 import com.facebook.react.PackageList
