@@ -5,40 +5,51 @@ import {
   MD3DarkTheme,
   MD3LightTheme,
 } from 'react-native-paper';
-import {Material3Theme} from './materialThemeTypes';
-import {createThemeFromSourceColor} from './createMaterial3Theme';
 import {
   DarkTheme as NavigationDarkTheme,
   DefaultTheme as NavigationDefaultTheme,
 } from '@react-navigation/native';
+import {getTheme, ThemeColors} from './themes';
+import {useSelector} from 'react-redux';
+import {RootState} from '../rematch/store';
 
 export const useAppTheme = () => {
-  const isDarkMode = useColorScheme() === 'dark';
-
-  const [theme, setTheme] = React.useState<Material3Theme>(
-    createThemeFromSourceColor('#6750A4'),
+  const systemIsDark = useColorScheme() === 'dark';
+  const isDarkMode = useSelector((state: RootState) =>
+    state.app.darkMode !== undefined ? state.app.darkMode : systemIsDark,
   );
 
-  const {LightTheme, DarkTheme} = adaptNavigationTheme({
-    reactNavigationLight: NavigationDefaultTheme,
-    reactNavigationDark: NavigationDarkTheme,
-  });
+  const [themeColors, setThemeColors] = React.useState<ThemeColors>(
+    getTheme('legacy'),
+  );
 
-  const updateTheme = (sourceColor: string) => {
-    console.log('updateTheme', sourceColor);
-    setTheme(createThemeFromSourceColor(sourceColor));
-  };
+  const {LightTheme, DarkTheme} = React.useMemo(
+    () =>
+      adaptNavigationTheme({
+        reactNavigationLight: NavigationDefaultTheme,
+        reactNavigationDark: NavigationDarkTheme,
+      }),
+    [],
+  );
 
-  const resetTheme = (sourceColor: string) => {
-    setTheme(createThemeFromSourceColor('#6750A4'));
-  };
+  const changeTheme = React.useCallback((name: string) => {
+    const theme = getTheme(name);
+    setThemeColors(theme);
+  }, []);
+
+  const resetTheme = React.useCallback(
+    (sourceColor: string) => {
+      changeTheme('legacy');
+    },
+    [changeTheme],
+  );
 
   const paperTheme = React.useMemo(
     () =>
       isDarkMode
-        ? {...MD3DarkTheme, colors: theme.dark}
-        : {...MD3LightTheme, colors: theme.light},
-    [isDarkMode, theme],
+        ? {...MD3DarkTheme, colors: themeColors.dark}
+        : {...MD3LightTheme, colors: themeColors.light},
+    [isDarkMode, themeColors],
   );
 
   const navigationTheme = React.useMemo(
@@ -60,15 +71,12 @@ export const useAppTheme = () => {
               ...LightTheme.colors,
             },
           },
-    [isDarkMode, paperTheme, theme],
+    [isDarkMode, paperTheme],
   );
 
-  return React.useMemo(
-    () => ({
-      theme: paperTheme,
-      updateTheme,
-      navigationTheme,
-    }),
-    [paperTheme, updateTheme, navigationTheme],
-  );
+  return {
+    theme: paperTheme,
+    changeTheme,
+    navigationTheme,
+  };
 };

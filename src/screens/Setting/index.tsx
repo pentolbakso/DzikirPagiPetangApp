@@ -5,6 +5,7 @@ import {
   Modal,
   Pressable,
   ScrollView,
+  useColorScheme,
   useWindowDimensions,
   View,
 } from 'react-native';
@@ -22,13 +23,23 @@ import Card from '../../components/Card';
 import {useDispatch, useSelector} from 'react-redux';
 import {Dispatch, RootState} from '../../rematch/store';
 import {Switch} from 'react-native-gesture-handler';
-import Icon from 'react-native-vector-icons/Feather';
+import Icon from '@react-native-vector-icons/feather';
 import Rate, {AndroidMarket} from 'react-native-rate';
-import {useNavigation} from '@react-navigation/native';
-import {useTheme} from 'react-native-paper';
+// import {useNavigation} from '@react-navigation/native';
+import {useAppTheme} from '../../theme/useAppTheme';
+import DateTimePickerModal from 'react-native-modal-datetime-picker';
+import {
+  schedulePagiNotification,
+  schedulePetangNotification,
+  cancelNotification,
+  requestNotificationPermission,
+  checkNotificationPermission,
+} from '../../services/notifications';
 
 const Menu = ({label, onPress}: {label: string; onPress?: () => void}) => {
-  const {colors} = useTheme();
+  const {
+    theme: {colors},
+  } = useAppTheme();
   return (
     <Pressable
       onPress={onPress}
@@ -56,7 +67,9 @@ const ModalReference = ({
   visible: boolean;
   onDismiss: () => void;
 }) => {
-  const {colors} = useTheme();
+  const {
+    theme: {colors},
+  } = useAppTheme();
 
   return (
     <Modal
@@ -68,7 +81,7 @@ const ModalReference = ({
         style={{
           flex: 1,
           flexDirection: 'column',
-          backgroundColor: '#000000bb',
+          backgroundColor: colors.background,
           justifyContent: 'center',
           alignItems: 'center',
         }}>
@@ -109,7 +122,7 @@ const ModalReference = ({
           </Pressable>
           <Pressable
             onPress={onDismiss}
-            style={{alignItems: 'center', marginTop: 10}}>
+            style={{alignItems: 'center', marginTop: 20}}>
             <TextSemiBold style={{fontSize: 18}}>OK</TextSemiBold>
           </Pressable>
         </View>
@@ -119,9 +132,13 @@ const ModalReference = ({
 };
 
 const SettingScreen = () => {
-  const navigation = useNavigation();
-  const {colors} = useTheme();
+  // const navigation = useNavigation();
+  const {
+    theme: {colors},
+  } = useAppTheme();
   const width = useWindowDimensions().width;
+  const initialDarkMode = useColorScheme() === 'dark';
+
   const dispatch = useDispatch<Dispatch>();
   const initialArabicFontSize = useSelector(
     (state: RootState) => state.app.arabicFontSize || 32,
@@ -133,21 +150,41 @@ const SettingScreen = () => {
     (state: RootState) => state.app.translationFontSize || 16,
   );
   const showArabicLatin = useSelector(
-    (state: RootState) => state.app.showArabicLatin || false,
+    (state: RootState) => !!state.app.showArabicLatin,
   );
-  const darkMode = useSelector(
-    (state: RootState) => state.app.darkMode || false,
+  const darkMode = useSelector((state: RootState) =>
+    state.app.darkMode !== undefined ? state.app.darkMode : initialDarkMode,
   );
   const showCounter = useSelector(
-    (state: RootState) => state.app.showCounter || false,
+    (state: RootState) => !!state.app.showCounter,
   );
   const enableVibrate = useSelector(
-    (state: RootState) => state.app.enableVibrate || false,
+    (state: RootState) => !!state.app.enableVibrate,
+  );
+  const enableTracker = useSelector(
+    (state: RootState) => !!state.app.enableTracker,
+  );
+  const enableNotifications = useSelector(
+    (state: RootState) => !!state.app.enableNotifications,
+  );
+  const enablePagiNotification = useSelector(
+    (state: RootState) => !!state.app.enablePagiNotification,
+  );
+  const enablePetangNotification = useSelector(
+    (state: RootState) => !!state.app.enablePetangNotification,
+  );
+  const pagiNotificationTime = useSelector(
+    (state: RootState) => state.app.pagiNotificationTime,
+  );
+  const petangNotificationTime = useSelector(
+    (state: RootState) => state.app.petangNotificationTime,
   );
 
   const [preview, showPreview] = React.useState(false);
   const [modalReferenceVisible, setModalReferenceVisible] =
     React.useState(false);
+  const [showPagiTimePicker, setShowPagiTimePicker] = React.useState(false);
+  const [showPetangTimePicker, setShowPetangTimePicker] = React.useState(false);
 
   const [arabicFontSize, setArabicFontSize] = React.useState(
     initialArabicFontSize,
@@ -178,12 +215,146 @@ const SettingScreen = () => {
     Linking.openURL('https://www.instagram.com/pagipetangstudio/');
   };
 
+  const handleNotificationsToggle = async (enabled: boolean) => {
+    if (enabled) {
+      // Check if permission is already granted
+      const hasPermission = await checkNotificationPermission();
+
+      if (!hasPermission) {
+        // Request permission
+        const granted = await requestNotificationPermission();
+
+        if (!granted) {
+          // Permission denied - show alert with option to open settings
+          Alert.alert(
+            'Izin Notifikasi Diperlukan',
+            'Untuk mengaktifkan pengingat dzikir, aplikasi memerlukan izin notifikasi. Silakan aktifkan di pengaturan aplikasi.',
+            [
+              {text: 'Batal', style: 'cancel'},
+              {
+                text: 'Buka Pengaturan',
+                onPress: () => Linking.openSettings(),
+              },
+            ],
+          );
+          return; // Don't update state
+        }
+      }
+
+      // Permission granted - enable and schedule notifications
+      dispatch.app.setEnableNotifications(true);
+
+      // Schedule notifications based on individual settings
+      if (enablePagiNotification) {
+        await schedulePagiNotification(
+          pagiNotificationTime.hour,
+          pagiNotificationTime.minute,
+        );
+      }
+      if (enablePetangNotification) {
+        await schedulePetangNotification(
+          petangNotificationTime.hour,
+          petangNotificationTime.minute,
+        );
+      }
+    } else {
+      // Disable and cancel all notifications
+      dispatch.app.setEnableNotifications(false);
+      await cancelNotification('pagi');
+      await cancelNotification('petang');
+    }
+  };
+
+  const handlePagiNotificationToggle = async (enabled: boolean) => {
+    dispatch.app.setEnablePagiNotification(enabled);
+    if (enableNotifications) {
+      if (enabled) {
+        await schedulePagiNotification(
+          pagiNotificationTime.hour,
+          pagiNotificationTime.minute,
+        );
+      } else {
+        await cancelNotification('pagi');
+      }
+    }
+  };
+
+  const handlePetangNotificationToggle = async (enabled: boolean) => {
+    dispatch.app.setEnablePetangNotification(enabled);
+    if (enableNotifications) {
+      if (enabled) {
+        await schedulePetangNotification(
+          petangNotificationTime.hour,
+          petangNotificationTime.minute,
+        );
+      } else {
+        await cancelNotification('petang');
+      }
+    }
+  };
+
+  const handlePagiTimeChange = async (time: {hour: number; minute: number}) => {
+    dispatch.app.setPagiNotificationTime(time);
+    if (enableNotifications && enablePagiNotification) {
+      await schedulePagiNotification(time.hour, time.minute);
+    }
+  };
+
+  const handlePagiTimeConfirm = (date: Date) => {
+    setShowPagiTimePicker(false);
+    handlePagiTimeChange({
+      hour: date.getHours(),
+      minute: date.getMinutes(),
+    });
+  };
+
+  const handlePetangTimeChange = async (time: {
+    hour: number;
+    minute: number;
+  }) => {
+    dispatch.app.setPetangNotificationTime(time);
+    if (enableNotifications && enablePetangNotification) {
+      await schedulePetangNotification(time.hour, time.minute);
+    }
+  };
+
+  const handlePetangTimeConfirm = (date: Date) => {
+    setShowPetangTimePicker(false);
+    handlePetangTimeChange({
+      hour: date.getHours(),
+      minute: date.getMinutes(),
+    });
+  };
+
+  const formatTime = (hour: number, minute: number) => {
+    const h = hour.toString().padStart(2, '0');
+    const m = minute.toString().padStart(2, '0');
+    return `${h}:${m}`;
+  };
+
+  const getPagiDate = () => {
+    const date = new Date();
+    date.setHours(pagiNotificationTime.hour, pagiNotificationTime.minute, 0, 0);
+    return date;
+  };
+
+  const getPetangDate = () => {
+    const date = new Date();
+    date.setHours(
+      petangNotificationTime.hour,
+      petangNotificationTime.minute,
+      0,
+      0,
+    );
+    return date;
+  };
+
   return (
     <ScrollView style={{flex: 1, padding: 15}}>
       <Card
         style={{
-          padding: 15,
-          backgroundColor: colors.secondaryContainer,
+          padding: 20,
+          backgroundColor: colors.surface,
         }}>
         <View style={{flexDirection: 'row'}}>
           <TextRegular style={{fontSize: 16, flex: 1}}>
@@ -193,14 +364,14 @@ const SettingScreen = () => {
         </View>
         <View style={{alignItems: 'center'}}>
           <Slider
-            style={{width: width - 40}}
+            style={{width: width - 60}}
             minimumValue={20}
             maximumValue={48}
             step={1}
-            thumbTintColor={colors.tertiary}
+            thumbTintColor={colors.primary}
             value={initialArabicFontSize}
             maximumTrackTintColor={colors.surfaceDisabled}
-            minimumTrackTintColor={colors.tertiary}
+            minimumTrackTintColor={colors.primary}
             onSlidingStart={() => showPreview(true)}
             onSlidingComplete={val => {
               showPreview(false);
@@ -209,7 +380,7 @@ const SettingScreen = () => {
             onValueChange={val => setArabicFontSize(Math.trunc(val))}
           />
         </View>
-        <View style={{flexDirection: 'row'}}>
+        <View style={{flexDirection: 'row', marginTop: 15}}>
           <TextRegular style={{fontSize: 16, flex: 1}}>
             Ukuran teks terjemahan
           </TextRegular>
@@ -217,14 +388,14 @@ const SettingScreen = () => {
         </View>
         <View style={{alignItems: 'center'}}>
           <Slider
-            style={{width: width - 40}}
+            style={{width: width - 60}}
             minimumValue={12}
             maximumValue={24}
             step={1}
-            thumbTintColor={colors.tertiary}
+            thumbTintColor={colors.primary}
             value={initialTranslationFontSize}
             maximumTrackTintColor={colors.surfaceDisabled}
-            minimumTrackTintColor={colors.tertiary}
+            minimumTrackTintColor={colors.primary}
             onSlidingStart={() => showPreview(true)}
             onSlidingComplete={() => showPreview(false)}
             onValueChange={val => {
@@ -234,9 +405,9 @@ const SettingScreen = () => {
           />
         </View>
         <View
-          style={{flexDirection: 'row', alignItems: 'center', marginTop: 5}}>
+          style={{flexDirection: 'row', alignItems: 'center', marginTop: 15}}>
           <Switch
-            trackColor={{false: colors.surfaceDisabled, true: colors.tertiary}}
+            trackColor={{false: colors.surfaceDisabled, true: colors.primary}}
             thumbColor={Colors.white}
             ios_backgroundColor={colors.surfaceDisabled}
             onValueChange={(value: boolean) => {
@@ -256,17 +427,17 @@ const SettingScreen = () => {
         </View>
         <View style={{alignItems: 'center'}}>
           <Slider
-            style={{width: width - 40}}
+            style={{width: width - 60}}
             minimumValue={12}
             maximumValue={24}
             step={1}
             thumbTintColor={
-              showArabicLatin ? colors.tertiary : colors.surfaceDisabled
+              showArabicLatin ? colors.primary : colors.surfaceDisabled
             }
             value={initialArabicLatinFontSize}
             maximumTrackTintColor={colors.surfaceDisabled}
             minimumTrackTintColor={
-              showArabicLatin ? colors.tertiary : colors.surfaceDisabled
+              showArabicLatin ? colors.primary : colors.surfaceDisabled
             }
             onSlidingStart={() => showPreview(true)}
             onSlidingComplete={() => showPreview(false)}
@@ -281,14 +452,14 @@ const SettingScreen = () => {
       {preview && (
         <Card
           style={{
-            marginTop: 10,
-            backgroundColor: colors.primaryContainer,
-            padding: 15,
+            marginTop: 20,
+            backgroundColor: colors.tertiaryContainer,
+            padding: 20,
           }}>
           <TextArabic
             style={{
               fontSize: arabicFontSize,
-              color: colors.onPrimaryContainer,
+              color: colors.onTertiaryContainer,
             }}>
             ضَرَبَ زَيْدٌ عَمْرًا
           </TextArabic>
@@ -304,14 +475,14 @@ const SettingScreen = () => {
       )}
       <Card
         style={{
-          marginTop: 10,
-          backgroundColor: colors.secondaryContainer,
-          padding: 15,
+          marginTop: 20,
+          backgroundColor: colors.surface,
+          padding: 20,
         }}>
         <View
           style={{flexDirection: 'row', alignItems: 'center', marginTop: 5}}>
           <Switch
-            trackColor={{false: colors.surfaceDisabled, true: colors.tertiary}}
+            trackColor={{false: colors.surfaceDisabled, true: colors.primary}}
             thumbColor={Colors.white}
             ios_backgroundColor={colors.surfaceDisabled}
             onValueChange={(value: boolean) => {
@@ -323,7 +494,7 @@ const SettingScreen = () => {
             Penghitung dzikir
           </TextRegular>
           <Switch
-            trackColor={{false: colors.surfaceDisabled, true: colors.tertiary}}
+            trackColor={{false: colors.surfaceDisabled, true: colors.primary}}
             thumbColor={Colors.white}
             ios_backgroundColor={colors.surfaceDisabled}
             onValueChange={(value: boolean) => {
@@ -335,9 +506,9 @@ const SettingScreen = () => {
           <TextRegular style={{marginLeft: 10}}>Getar</TextRegular>
         </View>
         <View
-          style={{flexDirection: 'row', alignItems: 'center', marginTop: 10}}>
+          style={{flexDirection: 'row', alignItems: 'center', marginTop: 20}}>
           <Switch
-            trackColor={{false: colors.surfaceDisabled, true: colors.tertiary}}
+            trackColor={{false: colors.surfaceDisabled, true: colors.primary}}
             thumbColor={Colors.white}
             ios_backgroundColor={colors.surfaceDisabled}
             onValueChange={(value: boolean) => {
@@ -347,12 +518,131 @@ const SettingScreen = () => {
           />
           <TextRegular style={{marginLeft: 10}}>Mode gelap</TextRegular>
         </View>
+        <View
+          style={{flexDirection: 'row', alignItems: 'center', marginTop: 20}}>
+          <Switch
+            trackColor={{false: colors.surfaceDisabled, true: colors.primary}}
+            thumbColor={Colors.white}
+            ios_backgroundColor={colors.surfaceDisabled}
+            onValueChange={(value: boolean) => {
+              dispatch.app.setEnableTracker(value);
+            }}
+            value={!!enableTracker}
+          />
+          <TextRegular style={{marginLeft: 10}}>
+            Dzikir Habit Tracker
+          </TextRegular>
+        </View>
       </Card>
       <Card
         style={{
-          marginTop: 10,
-          backgroundColor: colors.secondaryContainer,
-          padding: 15,
+          marginTop: 20,
+          backgroundColor: colors.surface,
+          padding: 20,
+        }}>
+        <View
+          style={{
+            flexDirection: 'row',
+            alignItems: 'center',
+            // marginBottom: 15,
+          }}>
+          <TextRegular style={{fontSize: 16, flex: 1}}>
+            Pengingat Dzikir
+          </TextRegular>
+          <Switch
+            trackColor={{false: colors.surfaceDisabled, true: colors.primary}}
+            thumbColor={Colors.white}
+            ios_backgroundColor={colors.surfaceDisabled}
+            onValueChange={handleNotificationsToggle}
+            value={!!enableNotifications}
+          />
+        </View>
+        {enableNotifications && (
+          <>
+            <View
+              style={{
+                flexDirection: 'row',
+                alignItems: 'center',
+                marginTop: 20,
+              }}>
+              <Switch
+                trackColor={{
+                  false: colors.surfaceDisabled,
+                  true: colors.primary,
+                }}
+                thumbColor={Colors.white}
+                ios_backgroundColor={colors.surfaceDisabled}
+                onValueChange={handlePagiNotificationToggle}
+                value={!!enablePagiNotification}
+              />
+              <TextRegular style={{marginLeft: 10, flex: 1}}>
+                Dzikir Pagi
+              </TextRegular>
+              {enablePagiNotification && (
+                <Pressable
+                  onPress={() => setShowPagiTimePicker(true)}
+                  style={{
+                    paddingVertical: 6,
+                    paddingHorizontal: 12,
+                    borderWidth: 1,
+                    borderColor: colors.primaryContainer,
+                    borderRadius: 6,
+                  }}>
+                  <TextBold style={{color: colors.primary}}>
+                    {formatTime(
+                      pagiNotificationTime.hour,
+                      pagiNotificationTime.minute,
+                    )}
+                  </TextBold>
+                </Pressable>
+              )}
+            </View>
+            <View
+              style={{
+                flexDirection: 'row',
+                alignItems: 'center',
+                marginTop: 15,
+              }}>
+              <Switch
+                trackColor={{
+                  false: colors.surfaceDisabled,
+                  true: colors.primary,
+                }}
+                thumbColor={Colors.white}
+                ios_backgroundColor={colors.surfaceDisabled}
+                onValueChange={handlePetangNotificationToggle}
+                value={!!enablePetangNotification}
+              />
+              <TextRegular style={{marginLeft: 10, flex: 1}}>
+                Dzikir Petang
+              </TextRegular>
+              {enablePetangNotification && (
+                <Pressable
+                  onPress={() => setShowPetangTimePicker(true)}
+                  style={{
+                    paddingVertical: 6,
+                    paddingHorizontal: 12,
+                    borderWidth: 1,
+                    borderColor: colors.primaryContainer,
+                    borderRadius: 6,
+                  }}>
+                  <TextBold style={{color: colors.primary}}>
+                    {formatTime(
+                      petangNotificationTime.hour,
+                      petangNotificationTime.minute,
+                    )}
+                  </TextBold>
+                </Pressable>
+              )}
+            </View>
+          </>
+        )}
+      </Card>
+      <Card
+        style={{
+          marginTop: 20,
+          backgroundColor: colors.surface,
+          padding: 20,
         }}>
         <Menu label={'Beri Rating'} onPress={handleRateOurApp} />
         <Menu
@@ -373,6 +663,22 @@ const SettingScreen = () => {
       <ModalReference
         visible={modalReferenceVisible}
         onDismiss={() => setModalReferenceVisible(false)}
+      />
+      <DateTimePickerModal
+        isVisible={showPagiTimePicker}
+        mode="time"
+        minuteInterval={15}
+        onConfirm={handlePagiTimeConfirm}
+        onCancel={() => setShowPagiTimePicker(false)}
+        date={getPagiDate()}
+      />
+      <DateTimePickerModal
+        isVisible={showPetangTimePicker}
+        mode="time"
+        minuteInterval={15}
+        onConfirm={handlePetangTimeConfirm}
+        onCancel={() => setShowPetangTimePicker(false)}
+        date={getPetangDate()}
       />
       <View style={{height: 50}} />
     </ScrollView>

@@ -1,15 +1,16 @@
 import * as React from 'react';
-import {View, Platform, Pressable} from 'react-native';
+import {View, Platform} from 'react-native';
 import {TextRegular, TextSemiBold} from '../../components/Text';
 import {Dzikir} from '../../types';
 import BottomSheet, {BottomSheetView} from '@gorhom/bottom-sheet';
-import {Colors} from '../../colors';
 import {ScrollView} from 'react-native-gesture-handler';
-import Icon from 'react-native-vector-icons/Feather';
-import {Button, useTheme} from 'react-native-paper';
+import {Button} from 'react-native-paper';
+import {useAppTheme} from '../../theme/useAppTheme';
 
 const BottomSheetBackground = (props: any) => {
-  const {colors} = useTheme();
+  const {
+    theme: {colors},
+  } = useAppTheme();
   return (
     <View
       style={[
@@ -17,7 +18,7 @@ const BottomSheetBackground = (props: any) => {
           borderWidth: 0,
           borderTopColor: colors.outlineVariant,
           borderTopWidth: 1,
-          backgroundColor: colors.tertiaryContainer,
+          backgroundColor: colors.surface,
         },
         {...props.style},
       ]}
@@ -26,7 +27,9 @@ const BottomSheetBackground = (props: any) => {
 };
 
 const Notes = ({item}: {item?: Dzikir}) => {
-  const {colors} = useTheme();
+  const {
+    theme: {colors},
+  } = useAppTheme();
   const bottomSheetRef = React.useRef<BottomSheet>(null);
   const snapPoints = React.useMemo(
     () => (Platform.OS == 'ios' ? [60, '60%'] : [80, '60%']),
@@ -38,12 +41,12 @@ const Notes = ({item}: {item?: Dzikir}) => {
     <BottomSheet
       ref={bottomSheetRef}
       index={0}
-      handleIndicatorStyle={{backgroundColor: colors.tertiary}}
+      handleIndicatorStyle={{backgroundColor: colors.secondary}}
       backgroundComponent={props => <BottomSheetBackground {...props} />}
       snapPoints={snapPoints}>
       <BottomSheetView
         style={{
-          backgroundColor: colors.tertiaryContainer,
+          backgroundColor: colors.surface,
           flex: 1,
         }}>
         <View
@@ -53,7 +56,7 @@ const Notes = ({item}: {item?: Dzikir}) => {
           }}>
           <TextSemiBold>CATATAN</TextSemiBold>
           <ScrollView style={{margin: 15}}>
-            <TextRegular style={{color: colors.onTertiaryContainer}}>
+            <TextRegular style={{color: colors.onSurface}}>
               {item?.faedah}
             </TextRegular>
             <Button

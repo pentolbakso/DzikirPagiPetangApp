@@ -8,19 +8,17 @@ import {TextBold, TextRegular} from '../../components/Text';
 import {dzikirDb} from '../../services/db';
 import {Dzikir} from '../../types';
 import {ScrollView} from 'react-native-gesture-handler';
-import Icon from 'react-native-vector-icons/Feather';
 import * as Progress from 'react-native-progress';
-import {Colors} from '../../colors';
 import MenuDrawer, {MenuDrawerProps} from 'react-native-side-drawer';
 import CircularProgress from 'react-native-circular-progress-indicator';
 import {useDispatch, useSelector} from 'react-redux';
 import {Dispatch, RootState} from '../../rematch/store';
-import Content from './Content';
 import Notes from './Notes';
 import ContentV2 from './ContentV2';
-import {useTheme} from 'react-native-paper';
-
-const rippleConfig = {color: 'lightgray', borderless: true};
+import Icon from '@react-native-vector-icons/feather';
+import {useAppTheme} from '../../theme/useAppTheme';
+import dayjs from 'dayjs';
+import {onDhikrCompleted} from '../../services/notifications';
 
 const AnimatedPagerView = Animated.createAnimatedComponent(PagerView);
 
@@ -46,7 +44,9 @@ const SwitchModeButton = ({
   initialMode: string;
   onChange: (val: string) => void;
 }) => {
-  const {colors} = useTheme();
+  const {
+    theme: {colors},
+  } = useAppTheme();
   const [mode, setMode] = React.useState(initialMode);
   const SwitchBtn = React.useMemo(
     () =>
@@ -72,8 +72,7 @@ const SwitchModeButton = ({
             <Text
               style={{
                 fontWeight: '600',
-                color:
-                  mode == id ? colors.onPrimaryContainer : colors.onBackground,
+                color: mode == id ? colors.onPrimaryContainer : colors.primary,
               }}>
               {label}
             </Text>
@@ -94,7 +93,7 @@ const SwitchModeButton = ({
     <View
       style={{
         flexDirection: 'row',
-        borderWidth: 1,
+        borderWidth: 2,
         borderColor: colors.primaryContainer,
         // borderRadius: 0,
         // backgroundColor: colors.primary,
@@ -111,20 +110,40 @@ const SwitchModeButton = ({
 const DzikirScreen = () => {
   const navigation = useNavigation();
   const route = useRoute();
-  const {colors} = useTheme();
+  const {
+    theme: {colors},
+  } = useAppTheme();
   const time: string = (route.params as any).time || undefined;
   const [currentPage, setCurrentPage] = React.useState(0);
   const [drawerOpened, setDrawerOpened] = React.useState(false);
   const dispatch = useDispatch<Dispatch>();
   const mode = useSelector((state: RootState) => state.app.viewMode);
   const showCounter = useSelector(
-    (state: RootState) => state.app.showCounter || false,
+    (state: RootState) => !!state.app.showCounter,
   );
   const enableVibrate = useSelector(
-    (state: RootState) => state.app.enableVibrate || false,
+    (state: RootState) => !!state.app.enableVibrate,
   );
-  const [counters, setCounters] = React.useState<Map<number, number>>(
-    new Map(),
+  const [counters, setCounters] = React.useState<Record<number, number>>({});
+  const enableTracker = useSelector(
+    (state: RootState) => !!state.app.enableTracker,
+  );
+
+  // Select notification settings individually
+  const enableNotifications = useSelector(
+    (state: RootState) => state.app.enableNotifications,
+  );
+  const enablePagiNotification = useSelector(
+    (state: RootState) => state.app.enablePagiNotification,
+  );
+  const enablePetangNotification = useSelector(
+    (state: RootState) => state.app.enablePetangNotification,
+  );
+  const pagiNotificationTime = useSelector(
+    (state: RootState) => state.app.pagiNotificationTime,
+  );
+  const petangNotificationTime = useSelector(
+    (state: RootState) => state.app.petangNotificationTime,
   );
 
   const [mounted, setMounted] = React.useState(false);
@@ -142,15 +161,18 @@ const DzikirScreen = () => {
 
   const increaseCounter = React.useCallback(() => {
     let id = currentItem?.id || -1;
-    let count = counters.get(id) || 0;
     let max = currentItem?.max_counter || 0;
-    if (count >= max) {
-      if (enableVibrate) Vibration.vibrate(500);
-      return;
-    }
 
-    if (enableVibrate) Vibration.vibrate(100);
-    setCounters(new Map(counters.set(id, count + 1)));
+    setCounters(prevCounters => {
+      let count = prevCounters[id] || 0;
+      if (count >= max) {
+        if (enableVibrate) Vibration.vibrate(500);
+        return prevCounters;
+      }
+
+      if (enableVibrate) Vibration.vibrate(100);
+      return {...prevCounters, [id]: count + 1};
+    });
   }, [currentItem, enableVibrate]);
 
   React.useEffect(() => {
@@ -163,7 +185,50 @@ const DzikirScreen = () => {
     };
   }, [navigation]);
 
-  const drawerContent = React.useCallback(
+  // Track habit: record completion after 60 seconds
+  React.useEffect(() => {
+    if (!enableTracker) return;
+
+    const timer = setTimeout(async () => {
+      const today = dayjs().format('YYYY-MM-DD');
+      if (time === 'pagi' || time === 'petang') {
+        console.log('Recording habit for', time, 'on', today);
+        dispatch.app.recordHabit({
+          date: today,
+          time: time as 'pagi' | 'petang',
+        });
+
+        // Cancel and reschedule notification after completion
+        if (enableNotifications) {
+          const isNotificationEnabled =
+            time === 'pagi' ? enablePagiNotification : enablePetangNotification;
+          const notificationTime =
+            time === 'pagi' ? pagiNotificationTime : petangNotificationTime;
+
+          if (isNotificationEnabled) {
+            await onDhikrCompleted(time as 'pagi' | 'petang', {
+              enableNotification: isNotificationEnabled,
+              hour: notificationTime.hour,
+              minute: notificationTime.minute,
+            });
+          }
+        }
+      }
+    }, 60000); // 60 seconds
+
+    return () => clearTimeout(timer);
+  }, [
+    time,
+    enableTracker,
+    dispatch,
+    enableNotifications,
+    enablePagiNotification,
+    enablePetangNotification,
+    pagiNotificationTime,
+    petangNotificationTime,
+  ]);
+
+  const drawerContent = React.useMemo(
     () => (
       <View
         style={{
@@ -181,49 +246,50 @@ const DzikirScreen = () => {
             paddingTop: 50,
           }}>
           <View style={{padding: 10}}>
-            <TextBold style={{fontSize: 22}}>Dzikir {time}</TextBold>
+            <TextBold style={{fontSize: 22}}>dzikir {time}</TextBold>
           </View>
-          {items.map((item, idx) => (
-            <Pressable
-              key={idx}
-              onPress={() => {
-                setDrawerOpened(false);
-                ref.current?.setPageWithoutAnimation(idx);
-              }}
-              style={{
-                padding: 10,
-                borderBottomColor: colors.outlineVariant,
-                borderBottomWidth: 1,
-                backgroundColor:
-                  currentPage == idx ? colors.primaryContainer : colors.surface,
-              }}>
-              <TextRegular
+          {items.map((item, idx) => {
+            const isActive = currentPage === idx;
+            return (
+              <Pressable
+                key={item.id}
+                onPress={() => {
+                  setDrawerOpened(false);
+                  ref.current?.setPageWithoutAnimation(idx);
+                }}
                 style={{
-                  color:
-                    currentPage == idx
+                  paddingHorizontal: 10,
+                  paddingVertical: 15,
+                  borderBottomColor: colors.outlineVariant,
+                  borderBottomWidth: 1,
+                  backgroundColor: isActive
+                    ? colors.primaryContainer
+                    : colors.surface,
+                }}>
+                <TextRegular
+                  style={{
+                    color: isActive
                       ? colors.onPrimaryContainer
                       : colors.onBackground,
-                }}>
-                {item.title}
-              </TextRegular>
-            </Pressable>
-          ))}
+                  }}>
+                  {item.title}
+                </TextRegular>
+              </Pressable>
+            );
+          })}
           <View style={{height: 120}} />
         </ScrollView>
       </View>
     ),
-    [items, time, currentPage, colors],
+    [drawerOpened, items, time, currentPage, colors],
   );
 
-  const progress = React.useMemo(() => {
-    if (!items) return 0;
-    return (currentPage + 1) / items.length;
-  }, [currentPage, items]);
+  const progress = items ? (currentPage + 1) / items.length : 0;
 
   return (
     <Drawer
       open={drawerOpened}
-      drawerContent={drawerContent()}
+      drawerContent={drawerContent}
       drawerPercentage={100}
       animationTime={150}
       overlay={true}
@@ -259,9 +325,9 @@ const DzikirScreen = () => {
           width={null}
           borderRadius={0}
           borderWidth={0}
-          color={colors.primary}
+          color={colors.secondary}
           unfilledColor={colors.surfaceDisabled}
-          height={3}
+          height={4}
         />
         <AnimatedPagerView
           ref={ref}
@@ -278,28 +344,28 @@ const DzikirScreen = () => {
         <View
           style={{
             position: 'absolute',
-            bottom: Platform.OS == 'ios' ? 70 : 90,
-            right: 10,
+            bottom: Platform.OS == 'ios' ? 80 : 90,
+            right: 30,
           }}>
           {!!showCounter &&
             !!currentItem?.max_counter &&
             currentItem?.max_counter > 1 && (
               <Pressable onPress={increaseCounter} hitSlop={50}>
                 <CircularProgress
-                  value={counters.get(currentItem?.id) || 0}
+                  value={counters[currentItem?.id || -1] || 0}
                   radius={36}
                   duration={300}
-                  progressValueColor={colors.onSecondaryContainer}
+                  progressValueColor={colors.primary}
                   progressValueStyle={{fontSize: 22, fontFamily: 'Nunito-Bold'}}
                   maxValue={currentItem?.max_counter}
                   title={undefined}
                   // titleFontSize={16}
                   // titleColor={colors.onSecondary}
                   // titleStyle={{fontWeight: 'bold'}}
-                  circleBackgroundColor={colors.secondaryContainer}
+                  circleBackgroundColor={colors.surface}
                   activeStrokeColor={colors.primary}
-                  activeStrokeSecondaryColor={colors.tertiary}
-                  inActiveStrokeColor={colors.backdrop}
+                  activeStrokeSecondaryColor={colors.secondary}
+                  inActiveStrokeColor={colors.outlineVariant}
                   activeStrokeWidth={8}
                 />
               </Pressable>

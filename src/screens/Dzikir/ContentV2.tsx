@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {StyleSheet, View} from 'react-native';
+import {View} from 'react-native';
 import {
   TextArabic,
   TextBold,
@@ -9,30 +9,41 @@ import {
 } from '../../components/Text';
 import {Dzikir} from '../../types';
 import {ScrollView} from 'react-native-gesture-handler';
-import {useSelector} from 'react-redux';
+import {useSelector, shallowEqual} from 'react-redux';
 import {RootState} from '../../rematch/store';
-import {Card, useTheme} from 'react-native-paper';
+import {Card} from 'react-native-paper';
+import {useAppTheme} from '../../theme/useAppTheme';
 
-const ContentV2 = ({item, mode}: {item: Dzikir; mode: string}) => {
-  const {colors} = useTheme();
-  const arabicFontSize = useSelector(
-    (state: RootState) => state.app.arabicFontSize,
+const ContentV2 = React.memo(({item, mode}: {item: Dzikir; mode: string}) => {
+  const {
+    theme: {colors},
+  } = useAppTheme();
+  const {
+    arabicFontSize,
+    arabicLatinFontSize,
+    translationFontSize,
+    showArabicLatin,
+  } = useSelector(
+    (state: RootState) => ({
+      arabicFontSize: state.app.arabicFontSize,
+      arabicLatinFontSize: state.app.arabicLatinFontSize,
+      translationFontSize: state.app.translationFontSize,
+      showArabicLatin: !!state.app.showArabicLatin,
+    }),
+    shallowEqual,
   );
-  const arabicLatinFontSize = useSelector(
-    (state: RootState) => state.app.arabicLatinFontSize,
+  const arabicArr = React.useMemo(() => item.arabic.split('|'), [item.arabic]);
+  const latinArr = React.useMemo(
+    () => item.arabic_latin.split('|'),
+    [item.arabic_latin],
   );
-  const translationFontSize = useSelector(
-    (state: RootState) => state.app.translationFontSize,
+  const tarjimArr = React.useMemo(
+    () => item.translated_id.split('|'),
+    [item.translated_id],
   );
-  const showArabicLatin = useSelector(
-    (state: RootState) => state.app.showArabicLatin,
-  );
-  const arabicArr = React.useMemo(() => item.arabic.split('|'), [item]);
-  const latinArr = React.useMemo(() => item.arabic_latin.split('|'), [item]);
-  const tarjimArr = React.useMemo(() => item.translated_id.split('|'), [item]);
   const separator = React.useMemo(() => {
     return !!item.is_surah ? ' ۝ ' : '، ';
-  }, [item]);
+  }, [item.is_surah]);
 
   return (
     <ScrollView
@@ -47,7 +58,7 @@ const ContentV2 = ({item, mode}: {item: Dzikir; mode: string}) => {
         {item.title}
       </TextBold>
       <TextItalic
-        style={{textAlign: 'center', color: colors.secondary, fontSize: 14}}>
+        style={{textAlign: 'center', color: colors.onBackground, fontSize: 14}}>
         {item.note}
       </TextItalic>
 
@@ -89,7 +100,7 @@ const ContentV2 = ({item, mode}: {item: Dzikir; mode: string}) => {
             mode="contained"
             style={{
               marginTop: 15,
-              backgroundColor: colors.tertiaryContainer,
+              backgroundColor: colors.secondaryContainer,
               paddingHorizontal: 10,
               paddingBottom: 10,
             }}>
@@ -97,7 +108,7 @@ const ContentV2 = ({item, mode}: {item: Dzikir; mode: string}) => {
               style={{
                 marginTop: 15,
                 textAlign: 'center',
-                color: colors.onTertiaryContainer,
+                color: colors.onSecondaryContainer,
                 fontSize: translationFontSize,
               }}>
               {tarjimArr.join(item?.is_surah ? ' ۝ ' : ' ')}
@@ -111,7 +122,7 @@ const ContentV2 = ({item, mode}: {item: Dzikir; mode: string}) => {
               key={idx}
               mode="contained"
               style={{
-                paddingVertical: 10,
+                paddingVertical: 5,
                 marginBottom: 10,
                 backgroundColor: colors.secondaryContainer,
               }}>
@@ -119,7 +130,7 @@ const ContentV2 = ({item, mode}: {item: Dzikir; mode: string}) => {
                 style={{
                   textAlign: 'center',
                   fontSize: arabicFontSize,
-                  color: colors.onPrimaryContainer,
+                  color: colors.onSecondaryContainer,
                 }}>
                 {it}
               </TextArabic>
@@ -147,5 +158,5 @@ const ContentV2 = ({item, mode}: {item: Dzikir; mode: string}) => {
       <View style={{height: 170}} />
     </ScrollView>
   );
-};
+});
 export default ContentV2;

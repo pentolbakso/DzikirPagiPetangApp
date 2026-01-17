@@ -6,7 +6,7 @@ export const dzikirDb: Array<Dzikir> = [
     arabic:
       'اللَّهُ لَا إِلَهَ إِلَّا هُوَ الْحَيُّ الْقَيُّومُ| لَا تَأْخُذُهُ سِنَةٌ وَلَا نَوْمٌ| لَهُ مَا فِي السَّمَاوَاتِ وَمَا فِي الْأَرْضِ| مَنْ ذَا الَّذِي يَشْفَعُ عِنْدَهُ إِلَّا بِإِذْنِهِ| يَعْلَمُ مَا بَيْنَ أَيْدِيْهِمْ وَمَا خَلْفَهُمْ| وَلَا يُحِيطُوْنَ بِشَيْءٍ مِنْ عِلْمِهِ إِلَّا بِمَا شَاءَ| وَسِعَ كُرْسِيُّهُ السَّمَاوَاتِ وَالْأَرْضَ| وَلَا يَئُوْدُهُ حِفْظُهُمَا| وَهُوَ الْعَلِيُّ الْعَظِيْمُ',
     arabic_latin:
-      'Allaahu laa illaa huwal-hayyul-qayyuum,| laa ta’khudzuhuu sinatu wa laa nauum,| lahuu maa fis-samawati wa maa fil-ard,| man dzalladzii yasyfa’u ‘indahuu illaa bi idznih.| Ya’lamu maa baina aidiihim wa maa khalfahum,| wa laa yuhiithuuna bi syai’im min’ilmihii illaa bimaa syaa’a,| wa si’a kursiyyuhus-samaawaati wal-ard,| wa laa ya’uudhuhuu hifzhuhumaa| wa huwal-‘aliyyul-‘azhiim.',
+      'Allaahu laa illaaha illahu wal-hayyul-qayyum,| laa ta’khudhuhu sinatuw wa laa nawm,| lahuu maa fis-samaawaati wa maa fil-ard,| man dzalladzii yashfa’u ‘indahu illaa bi idznih,| ya’lamu maa baina aidiihim wa maa khalfahum,| wa laa yuhiithuuna bi syai’im min’ilmihi illaa bimaa syaa’a,| wa si’a kursiyyuhus-samaawaati wal-ard,| wa laa ya’uduhu hifzhuhumaa,| wa huwal-‘aliyyul-‘azhiim.',
     faedah:
       'Siapa yang membacanya ketika petang, maka ia akan dilindungi (oleh Allah dari berbagai gangguan) hingga pagi. Siapa yang membacanya ketika pagi, maka ia akan dilindungi hingga petang.\n\nHR. Al Hakim (1: 562). Syaikh Al Albani menshahihkan hadits tersebut dalam Shahih At Targhib wa At Tarhib no. 655',
     note: 'Dibaca 1x',
@@ -22,7 +22,7 @@ export const dzikirDb: Array<Dzikir> = [
     arabic:
       'بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ|قُلْ هُوَ اللَّهُ أَحَدٌ| اللَّهُ الصَّمَدُ| لَمْ يَلِدْ وَلَمْ يُولَدْ| وَلَمْ يَكُن لَّهُ كُفُوًا أَحَدٌ',
     arabic_latin:
-      'Bismillahirrahmannirrahiim| Qul huwallahu ahad| Allahu shomad| lam yalid wa lam yụlad| wa lam yakul lahụ kufuwan ahad',
+      'Bismillahirrahmannirrahiim| Qul huwallahu ahad| Allaahu shomad| Lam yalid wa lam yuulad| Wa lam yakul lahuu kufuwan ahad',
     faedah:
       'Siapa yang mengucapkannya masing-masing tiga kali ketika pagi dan petang, maka segala sesuatu akan dicukupkan untuknya.\n\nHR. Abu Daud no. 5082, Tirmidzi no. 3575. Al Hafizh Abu Thohir mengatakan bahwa sanad hadits ini hasan',
     note: 'Dibaca 3x',
@@ -39,7 +39,7 @@ export const dzikirDb: Array<Dzikir> = [
     arabic:
       'بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ|قُلْ أَعُوذُ بِرَبِّ الْفَلَقِ| مِن شَرِّ مَا خَلَقَ| وَمِن شَرِّ غَاسِقٍ إِذَا وَقَبَ| وَمِن شَرِّ النَّفَّاثَاتِ فِي الْعُقَدِ| وَمِن شَرِّ حَاسِدٍ إِذَا حَسَدَ',
     arabic_latin:
-      'Bismillahirrahmannirrahiim| qul a`ụżu birabbil-falaq| min syarri mā khalaq| wa min syarri gāsiqin iżā waqab|wa min syarrin-naffāṡāti fil-`uqad| wa min syarri ḥāsidin iżā ḥasad',
+      'Bismillahirrahmannirrahiim| Qul a`uużu birabbil-falaq| Min syarri maa khalaq| Wa min syarri gaasiqin iżaa waqab| Wa min syarrin-naffaatsaati fil-`uqad| Wa min syarri ḥaasidin iżaa ḥasad',
     faedah:
       'Siapa yang mengucapkannya masing-masing tiga kali ketika pagi dan petang, maka segala sesuatu akan dicukupkan untuknya.\n\nHR. Abu Daud no. 5082, Tirmidzi no. 3575. Al Hafizh Abu Thohir mengatakan bahwa sanad hadits ini hasan',
     note: 'Dibaca 3x',
@@ -56,7 +56,7 @@ export const dzikirDb: Array<Dzikir> = [
     arabic:
       'بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ|قُلْ أَعُوذُ بِرَبِّ النَّاسِ| مَلِكِ النَّاسِ| إِلَهِ النَّاسِ| مِن شَرِّ الْوَسْوَاسِ الْخَنَّاسِ| الَّذِي يُوَسْوِسُ فِي صُدُورِ النَّاسِ| مِنَ الْجِنَّةِ وَ النَّاسِ',
     arabic_latin:
-      'Bismillahirrahmannirrahiim| qul a`ụżu birabbin-nās| malikin-nās| ilāhin-nās| min syarril-waswāsil-khannās| alladzi yuwaswisu fī ṣudụrin-nās| minal-jinnati wan-nās',
+      'Bismillahirrahmannirrahiim| Qul a`uużu birabbin-nās| Malikin-nās| Ilaahin-nās| Min syarril-waswaasil-khannaas| Alladzii yuwaswisu fii ṣuduurin-naas| Minal-jinnati wan-naas',
     faedah:
       'Siapa yang mengucapkannya masing-masing tiga kali ketika pagi dan petang, maka segala sesuatu akan dicukupkan untuknya.\n\nHR. Abu Daud no. 5082, Tirmidzi no. 3575. Al Hafizh Abu Thohir mengatakan bahwa sanad hadits ini hasan',
     note: 'Dibaca 3x',
@@ -85,7 +85,7 @@ export const dzikirDb: Array<Dzikir> = [
   {
     id: 6,
     arabic:
-      'أَمْسَيْنَا وَأَمْسَى الْمُلْكُ لِلَّهِ| وَالْحَمْدُ لِلَّهِ| لَا إِلَهَ إِلَّا اللَّهُ وَحْدَهُ لَا شَرِيكَ لَهُ| لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ| وَهُوَ عَلَى كُلِّ شَيْءٍ قَدِيرٌ| رَبِّ أَسْأَلُكَ خَيْرَ مَا فِي هَذِهِ اللَّيْلَةِ وَخَيْرَ مَا بَعْدَهَا| وَأَعُوذُبِكَ مِنْ شَرِّ مَا فِي هَذِهِ اللَّيْلَةِ وَشَرِّ مَا بَعْدَهَا| رَبِّ أَعُوذُبِكَ مِنَ الْكَسَلِ وَسُوءِ الْكِبَرِ| رَبِّ أَعُوذُبِكَ مِنْ عَذَابٍ فِي النَّارِ وَعَذَابٍ فِي الْقَبْرِ',
+      'أَمْسَيْنَا وَأَمْسَى الْمُلْكُ لِلَّهِ| وَالْحَمْدُ لِلَّهِ| لَا إِلَهَ إِلَّا اللَّهُ وَحْدَهُ لَا شَرِيْكَ لَهُ| لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ| وَهُوَ عَلَى كُلِّ شَيْءٍ قَدِيْرٌ| رَبِّ أَسْأَلُكَ خَيْرَ مَا فِي هَذِهِ اللَّيْلَةِ وَخَيْرَ مَا بَعْدَهَا| وَأَعُوذُبِكَ مِنْ شَرِّ مَا فِي هَذِهِ اللَّيْلَةِ وَشَرِّ مَا بَعْدَهَا| رَبِّ أَعُوذُبِكَ مِنَ الْكَسَلِ وَسُوءِ الْكِبَرِ| رَبِّ أَعُوذُبِكَ مِنْ عَذَابٍ فِي النَّارِ وَعَذَابٍ فِي الْقَبْرِ',
     arabic_latin:
       'Amsaynaa wa amsal mulku lillah| walhamdulillah| laa ilaha illallah wahdahu laa syarika lah,| lahul mulku walahul hamdu| wa huwa ‘ala kulli syai-in qodir.| Robbi as-aluka khoiro maa fii hadzihil lailah wa khoiro maa ba’dahaa,| wa a’udzu bika min syarri maa fii hadzihil lailah wa syarri maa ba’dahaa.| Robbi a’udzu bika minal kasali wa suu-il kibar.| Robbi a’udzu bika min ‘adzabin fin naari wa ‘adzabin fil qobri.',
     faedah:
@@ -113,7 +113,7 @@ export const dzikirDb: Array<Dzikir> = [
   {
     id: 8,
     arabic:
-      'اللَّهُمَّ بِكَ أَمْسَيْنَا| وَبِكَ أَصْبَحْنَا|وَبِكَ نَحْيَا وَبِكَ نَمُوتُ| وَإِلَيْكَ الْمَصِيْرُ',
+      'اللَّهُمَّ بِكَ أَمْسَيْنَا| وَبِكَ أَصْبَحْنَا|وَبِكَ نَحْيَا وَبِكَ نَمُوْتُ| وَإِلَيْكَ الْمَصِيْرُ',
     arabic_latin:
       'Allahumma bika amsaynaa| wa bika ash-bahnaa| wa bika nahyaa wa bika namuutu| wa ilaikal mashiir.',
     faedah:
@@ -141,7 +141,7 @@ export const dzikirDb: Array<Dzikir> = [
   {
     id: 10,
     arabic:
-      'اللَّهُمَّ عَافِنِي فِي بَدَنِي| اللَّهُمَّ عَافِنِي فِي سَمعِي| اللَّهُمَّ عَافِنِي فِي بَصَرِي| لاَإِلَهَ إلاَّ أَّنتَ| اَللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنَ الكُفرِ وَالفَقرِ| اَللَّهُمَّ إِنِّي أعُوذُ بِكَ مِن عَذَابِ القَبرِ| لاَإِلَهَ إلاَّأنتَ',
+      'اللَّهُمَّ عَافِنِي فِي بَدَنِي| اللَّهُمَّ عَافِنِي فِي سَمْعِي| اللَّهُمَّ عَافِنِي فِي بَصَرِي| لاَإِلَهَ إلاَّ أَنْتَ| اَللَّهُمَّ إِنِّي أَعُوْذُ بِكَ مِنَ الْكُفْرِ وَالفَقْرِ| اَللَّهُمَّ إِنِّي أعُوْذُ بِكَ مِنْ عَذَابِ القَبْرِ| لاَ إِلَهَ إلاَّ أَنْتَ',
     arabic_latin:
       'Allahumma ‘aafinii fii badanii.| Allahumma ‘aafinii fii sam’ii.| Allahumma ‘aafinii fii bashorii.| Laa ilaaha illa anta.| Allahumma inni a’uudzubika minal kufri wal faqri.| Allahumma innii ‘audzu bika min ‘adzabil qabri.| laa ilaaha illa anta.',
     faedah:
@@ -241,15 +241,17 @@ export const dzikirDb: Array<Dzikir> = [
   },
   {
     id: 17,
-    arabic: 'سُبْحَانَ اللَّهِ وَبِحَمْدِهِ',
-    arabic_latin: 'Subhanallahi wa bi-hamdih.',
+    arabic:
+      'أَمْسَيْنَا عَلَى فِطْرَةِ اْلإِسْلاَمِ وَعَلَى كَلِمَةِ اْلإِخْلاَصِ| وَعَلَى دِيْنِ نَبِيِّنَا مُحَمَّدٍ صَلَّى اللَّهُ عَلَيْهِ وَسَلَّمَ| وَعَلَى مِلَّةِ أَبِيْنَا إِبْرَاهِيْمَ حَنِيْفًا مُسْلِمًا وَمَا كَانَ مِنَ الْمُشْرِكِيْنَ',
+    arabic_latin:
+      'Amsaynaa ‘ala fithrotil islaam wa ‘alaa kalimatil ikhlaash,| wa ‘alaa diini nabiyyinaa Muhammadin shallallahu ‘alaihi wa sallam,| wa ‘alaa millati abiina Ibraahiima haniifam muslimaaw wa maa kaana minal musyrikin',
     faedah:
-      'Barangsiapa yang mengucapkan kalimat ‘subhanallahi wa bi hamdih’ di pagi dan petang hari sebanyak 100x, maka tidak ada yang datang pada hari kiamat yang lebih baik dari yang ia lakukan kecuali orang yang mengucapkan semisal atau lebih dari itu.\n\nHR. Muslim no. 2692',
-    note: 'Dibaca 100x',
-    title: 'Dzikir ringan namun berat di timbangan (tasbih)',
-    translated_id: 'Maha suci Allah, aku memuji-Nya.',
-    time: '',
-    max_counter: 100,
+      'HR. Ahmad (3: 406). Syaikh Syu’aib Al Arnauth mengatakan bahwa sanad hadits ini shahih sesuai syarat Bukhari Muslim. Lihat pula As Silsilah Ash Shahihah no. 2989',
+    note: 'Dibaca 1x',
+    title: 'Doa istiqomah di agama Islam',
+    translated_id:
+      'Di waktu petang kami memegang agama Islam, kalimat ikhlas (kalimat syahadat),| agama Nabi kami Muhammad shallallahu ‘alaihi wa sallam,| dan agama bapak kami Ibrahim, yang berdiri di atas jalan yang lurus, muslim dan tidak tergolong orang-orang musyrik.',
+    time: 'petang',
   },
   {
     id: 18,
@@ -297,6 +299,18 @@ export const dzikirDb: Array<Dzikir> = [
   },
   {
     id: 21,
+    arabic: 'سُبْحَانَ اللَّهِ وَبِحَمْدِهِ',
+    arabic_latin: 'Subhanallahi wa bi-hamdih.',
+    faedah:
+      'Barangsiapa yang mengucapkan kalimat ‘subhanallahi wa bi hamdih’ di pagi dan petang hari sebanyak 100x, maka tidak ada yang datang pada hari kiamat yang lebih baik dari yang ia lakukan kecuali orang yang mengucapkan semisal atau lebih dari itu.\n\nHR. Muslim no. 2692',
+    note: 'Dibaca 100x',
+    title: 'Dzikir ringan namun berat di timbangan (tasbih)',
+    translated_id: 'Maha suci Allah, aku memuji-Nya.',
+    time: '',
+    max_counter: 100,
+  },
+  {
+    id: 22,
     arabic: 'أَسْتَغْفِرُ اللَّهَ وَأَتُوْبُ إِلَيْهِ',
     arabic_latin: 'Astagh-firullah wa atuubu ilaih.',
     faedah: 'HR. Bukhari no. 6307 dan Muslim no. 2702',
@@ -307,15 +321,15 @@ export const dzikirDb: Array<Dzikir> = [
     max_counter: 100,
   },
   {
-    id: 22,
-    arabic: 'أَعُوْذُ بِكَلِمَاتِ اللَّهِ التَّامَّاتِ مِنْ شَرِّ مَا خَلَقَ',
-    arabic_latin: 'A’udzu bikalimaatillahit-taammaati min syarri maa kholaq.',
+    id: 23,
+    arabic: 'أَعُوْذُ بِكَلِمَاتِ اللَّهِ التَّامَّاتِ| مِنْ شَرِّ مَا خَلَقَ',
+    arabic_latin: 'A’udzu bikalimaatillahit-taammaati| min syarri maa kholaq.',
     faedah:
       'Siapa yang mengucapkannya di petang hari, niscaya tidak ada racun atau binatang (seperti: kalajengking) yang mencelakakannya di malam itu.\n\nHR. Ahmad 2: 290. Syaikh Syu’aib Al Arnauth mengatakan bahwa sanad hadits ini shahih sesuai syarat Muslim. Lihat komentar Syaikh Syu’aib Al Arnauth terhadap hadits ini untuk pengertian hummah diartikan dengan racun atau sengatan kalajengking',
     note: 'Dibaca 3x',
     title: "Do'a meminta perlindungan",
     translated_id:
-      'Aku berlindung dengan kalimat-kalimat Allah yang sempurna dari kejahatan makhluk yang diciptakanNya.',
+      'Aku berlindung dengan kalimat-kalimat Allah yang sempurna| dari kejahatan makhluk yang diciptakanNya.',
     time: 'petang',
     max_counter: 3,
   },

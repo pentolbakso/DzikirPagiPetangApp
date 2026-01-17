@@ -1,0 +1,41 @@
+import {ThemeColors} from '.';
+import {Colors} from '../../colors';
+
+export default <ThemeColors>{
+  light: {
+    primary: '#2196f3',
+    primaryContainer: '#2196f3',
+    onPrimaryContainer: '#fff',
+    secondary: '#FF9800',
+    secondaryContainer: '#f5f5f5',
+    onSecondaryContainer: '#111',
+    tertiary: '#4CAF50',
+    tertiaryContainer: '#C8E6C9',
+    onTertiaryContainer: '#1B5E20',
+    background: Colors.white,
+    onBackground: '#121212',
+    outline: '#000',
+    outlineVariant: '#ddd',
+    surface: '#eee',
+    surfaceDisabled: '#ccc',
+    onSurface: '#121212',
+  },
+  dark: {
+    primary: '#2196f3',
+    primaryContainer: '#2196f3',
+    onPrimaryContainer: '#E0E0E0',
+    secondary: '#FFB74D',
+    secondaryContainer: '#191919',
+    onSecondaryContainer: '#E0E0E0',
+    tertiary: '#81C784',
+    tertiaryContainer: '#1B5E20',
+    onTertiaryContainer: '#C8E6C9',
+    background: '#121212',
+    onBackground: '#E0E0E0',
+    outline: '#666',
+    outlineVariant: '#444',
+    surface: '#222',
+    surfaceDisabled: '#333',
+    onSurface: '#E0E0E0',
+  },
+};

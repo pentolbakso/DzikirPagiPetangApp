@@ -31,7 +31,7 @@ export const store = init<RootModel, FullModel>({
     persist({
       key: 'root',
       storage: AsyncStorage,
-      version: 2,
+      version: 3,
       whitelist: ['app'],
       transforms: [appTransformer],
     }),
