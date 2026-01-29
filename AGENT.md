@@ -200,6 +200,19 @@ const pagiTime = useSelector(
 5. **Gestures:** Disabled on Dzikir screen to prevent accidental exits
 6. **Platform Code:** Avoid platform-specific (iOS/Android) code suggestions unless critical
 7. **Testing:** Always test on both platforms due to native differences
+8. **Undefined Safety:** Always check for undefined values — use optional chaining (`?.`) and nullish coalescing (`??`) or provide defaults for safety.
+
+Examples:
+
+```typescript
+// selector with default
+const pagiTime = useSelector(
+  (s: RootState) => s.app.pagiNotificationTime ?? {hour: 6, minute: 0},
+);
+
+// safe access
+const hour = state.app.pagiNotificationTime?.hour ?? 6;
+```
 
 ---
 
