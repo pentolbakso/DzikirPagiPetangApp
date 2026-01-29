@@ -174,10 +174,12 @@ const SettingScreen = () => {
     (state: RootState) => !!state.app.enablePetangNotification,
   );
   const pagiNotificationTime = useSelector(
-    (state: RootState) => state.app.pagiNotificationTime,
+    (state: RootState) =>
+      state.app.pagiNotificationTime || {hour: 6, minute: 0},
   );
   const petangNotificationTime = useSelector(
-    (state: RootState) => state.app.petangNotificationTime,
+    (state: RootState) =>
+      state.app.petangNotificationTime || {hour: 16, minute: 0},
   );
 
   const [preview, showPreview] = React.useState(false);
@@ -247,14 +249,14 @@ const SettingScreen = () => {
       // Schedule notifications based on individual settings
       if (enablePagiNotification) {
         await schedulePagiNotification(
-          pagiNotificationTime.hour,
-          pagiNotificationTime.minute,
+          pagiNotificationTime?.hour,
+          pagiNotificationTime?.minute,
         );
       }
       if (enablePetangNotification) {
         await schedulePetangNotification(
-          petangNotificationTime.hour,
-          petangNotificationTime.minute,
+          petangNotificationTime?.hour,
+          petangNotificationTime?.minute,
         );
       }
     } else {
@@ -270,8 +272,8 @@ const SettingScreen = () => {
     if (enableNotifications) {
       if (enabled) {
         await schedulePagiNotification(
-          pagiNotificationTime.hour,
-          pagiNotificationTime.minute,
+          pagiNotificationTime?.hour,
+          pagiNotificationTime?.minute,
         );
       } else {
         await cancelNotification('pagi');
@@ -284,8 +286,8 @@ const SettingScreen = () => {
     if (enableNotifications) {
       if (enabled) {
         await schedulePetangNotification(
-          petangNotificationTime.hour,
-          petangNotificationTime.minute,
+          petangNotificationTime?.hour,
+          petangNotificationTime?.minute,
         );
       } else {
         await cancelNotification('petang');
@@ -296,7 +298,7 @@ const SettingScreen = () => {
   const handlePagiTimeChange = async (time: {hour: number; minute: number}) => {
     dispatch.app.setPagiNotificationTime(time);
     if (enableNotifications && enablePagiNotification) {
-      await schedulePagiNotification(time.hour, time.minute);
+      await schedulePagiNotification(time?.hour, time?.minute);
     }
   };
 
@@ -314,7 +316,7 @@ const SettingScreen = () => {
   }) => {
     dispatch.app.setPetangNotificationTime(time);
     if (enableNotifications && enablePetangNotification) {
-      await schedulePetangNotification(time.hour, time.minute);
+      await schedulePetangNotification(time?.hour, time?.minute);
     }
   };
 
@@ -334,15 +336,20 @@ const SettingScreen = () => {
 
   const getPagiDate = () => {
     const date = new Date();
-    date.setHours(pagiNotificationTime.hour, pagiNotificationTime.minute, 0, 0);
+    date.setHours(
+      pagiNotificationTime?.hour,
+      pagiNotificationTime?.minute,
+      0,
+      0,
+    );
     return date;
   };
 
   const getPetangDate = () => {
     const date = new Date();
     date.setHours(
-      petangNotificationTime.hour,
-      petangNotificationTime.minute,
+      petangNotificationTime?.hour,
+      petangNotificationTime?.minute,
       0,
       0,
     );
@@ -590,8 +597,8 @@ const SettingScreen = () => {
                   }}>
                   <TextBold style={{color: colors.primary}}>
                     {formatTime(
-                      pagiNotificationTime.hour,
-                      pagiNotificationTime.minute,
+                      pagiNotificationTime?.hour,
+                      pagiNotificationTime?.minute,
                     )}
                   </TextBold>
                 </Pressable>
@@ -628,8 +635,8 @@ const SettingScreen = () => {
                   }}>
                   <TextBold style={{color: colors.primary}}>
                     {formatTime(
-                      petangNotificationTime.hour,
-                      petangNotificationTime.minute,
+                      petangNotificationTime?.hour,
+                      petangNotificationTime?.minute,
                     )}
                   </TextBold>
                 </Pressable>
